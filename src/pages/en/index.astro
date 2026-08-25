@@ -11,22 +11,22 @@ import { services } from '../../data/services';
   alternate="/"
 >
   <section class="mx-auto max-w-5xl px-4 py-20 text-center">
-    <h1 class="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
+    <h1 class="text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl">
       From idea to product, software solutions
     </h1>
-    <p class="mx-auto mt-4 max-w-2xl text-lg text-slate-600">
+    <p class="mx-auto mt-4 max-w-2xl text-lg text-neutral-600">
       We build your web, mobile and custom software projects end to end.
     </p>
     <div class="mt-8 flex justify-center gap-4">
       <a
         href="/en/contact/"
-        class="rounded-lg bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-slate-700"
+        class="rounded-lg bg-brand px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-dark"
       >
         Get in Touch
       </a>
       <a
         href="/en/projects/"
-        class="rounded-lg border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-700 transition-colors hover:border-slate-500"
+        class="rounded-lg border border-neutral-300 px-6 py-3 text-sm font-semibold text-neutral-700 transition-colors hover:border-neutral-500"
       >
         Our Projects
       </a>
@@ -34,16 +34,16 @@ import { services } from '../../data/services';
   </section>
 
   <section class="mx-auto max-w-5xl px-4 pb-16">
-    <h2 class="text-2xl font-bold text-slate-900">Our Services</h2>
+    <h2 class="text-2xl font-bold text-neutral-900">Our Services</h2>
     <div class="mt-6 grid gap-6 sm:grid-cols-2">
       {
         services.map((service) => (
           <a
             href={`/en/services/${service.en.slug}/`}
-            class="rounded-lg border border-slate-200 p-6 transition-shadow hover:shadow-md"
+            class="rounded-lg border border-neutral-200 p-6 transition hover:border-brand/40 hover:shadow-md"
           >
-            <h3 class="font-semibold text-slate-900">{service.en.title}</h3>
-            <p class="mt-2 text-sm text-slate-600">{service.en.summary}</p>
+            <h3 class="font-semibold text-neutral-900">{service.en.title}</h3>
+            <p class="mt-2 text-sm text-neutral-600">{service.en.summary}</p>
           </a>
         ))
       }
@@ -51,7 +51,7 @@ import { services } from '../../data/services';
   </section>
 
   <section class="mx-auto max-w-5xl px-4 pb-20">
-    <h2 class="text-2xl font-bold text-slate-900">Why İscotera?</h2>
+    <h2 class="text-2xl font-bold text-neutral-900">Why İscotera?</h2>
     <div class="mt-6">
       <PagePlaceholder note="Brand strengths will go here: experience, approach, references..." />
     </div>

@@ -20,8 +20,8 @@ const { service } = Astro.props;
   alternate={`/hizmetler/${service.tr.slug}/`}
 >
   <section class="mx-auto max-w-3xl px-4 py-16">
-    <h1 class="text-3xl font-bold text-slate-900">{service.en.title}</h1>
-    <p class="mt-3 text-lg text-slate-600">{service.en.summary}</p>
+    <h1 class="text-3xl font-bold text-neutral-900">{service.en.title}</h1>
+    <p class="mt-3 text-lg text-neutral-600">{service.en.summary}</p>
     <div class="mt-8 space-y-6">
       <PagePlaceholder note="Detailed description: scope, process, technologies used..." />
       <PagePlaceholder note="Related projects / references" />
@@ -30,7 +30,7 @@ const { service } = Astro.props;
     <div class="mt-10">
       <a
         href="/en/contact/"
-        class="inline-block rounded-lg bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-slate-700"
+        class="inline-block rounded-lg bg-brand px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-dark"
       >
         Let's Talk About Your Project
       </a>

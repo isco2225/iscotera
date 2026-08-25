@@ -1,2 +1,9 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+
+/* Marka paleti: beyaz zemin + nötr siyah/gri + kırmızı vurgu.
+   Kural: kırmızı yalnızca vurgu içindir (CTA, logo, hover) — zemin/metin rengi olarak kullanılmaz. */
+@theme {
+  --color-brand: #e50914;
+  --color-brand-dark: #b20710;
+}
