@@ -32,8 +32,7 @@ const organizationSchema = {
   '@type': 'Organization',
   name: siteName,
   url: Astro.site?.toString(),
-  // TODO: logo hazır olduğunda ekle:
-  // logo: 'https://iscotera.com/logo.png',
+  logo: new URL('/favicon.svg', Astro.site).toString(),
   // TODO: sosyal profiller hazır olduğunda "sameAs" listesi ekle (LinkedIn, GitHub...)
 };
 ---
@@ -43,7 +42,6 @@ const organizationSchema = {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
 
     <title>{fullTitle}</title>

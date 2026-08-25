@@ -53,7 +53,7 @@ otomatik oluşur.
 
 ## Yayına almadan önce (TODO)
 
-- [ ] Logo + favicon değişimi, `BaseLayout` içindeki JSON-LD `logo` alanı
+- [x] Logo + favicon (İ monogramı: siyah zemin, beyaz gövde, kırmızı nokta)
 - [ ] `og:image` sosyal paylaşım görseli
 - [ ] İletişim sayfası: gerçek e-posta + form servisi bağlantısı
 - [ ] Cloudflare Pages / Vercel'e bağla, `iscotera.com` DNS ayarları

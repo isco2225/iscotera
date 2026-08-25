@@ -27,8 +27,17 @@ const currentPath = Astro.url.pathname;
 
 <header class="border-b border-neutral-200">
   <div class="mx-auto flex max-w-5xl items-center justify-between gap-6 px-4 py-4">
-    <a href={r.home} class="text-xl font-bold tracking-tight text-neutral-900">
-      <span class="text-brand">İSCO</span>TERA
+    <a href={r.home} class="flex items-center gap-3 text-2xl font-bold tracking-tight text-neutral-900">
+      <svg viewBox="0 0 64 64" class="h-8 w-8" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#171717"></rect>
+        <circle cx="32" cy="13" r="5" fill="#E50914"></circle>
+        <rect x="28" y="22" width="8" height="34" rx="3" fill="#FFFFFF"></rect>
+      </svg>
+      {/* leading-none + translate: büyük harfli metnin satır kutusundaki alt boşluğu
+          telafi eden optik hizalama — logo kutusunun dikey merkezine oturtur. */}
+      <span class="leading-none translate-y-[0.09em]"
+        ><span class="text-brand">İSCO</span>TERA</span
+      >
     </a>
 
     <nav aria-label={lang === 'tr' ? 'Ana menü' : 'Main menu'}>
