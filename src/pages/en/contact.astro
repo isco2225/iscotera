@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PagePlaceholder from '../../components/PagePlaceholder.astro';
+---
+
+<BaseLayout
+  title="Contact"
+  description="Get in touch with Iscotera about your project."
+  lang="en"
+  alternate="/iletisim/"
+>
+  <section class="mx-auto max-w-3xl px-4 py-16">
+    <h1 class="text-3xl font-bold text-slate-900">Contact</h1>
+    <p class="mt-3 text-slate-600">
+      Write to us about your project and we'll get back to you shortly.
+    </p>
+    <div class="mt-8 space-y-6">
+      <PagePlaceholder note="Email address and phone (if any) will go here" />
+      <PagePlaceholder note="Contact form: will be wired to a static form service (e.g. Formspree / Cloudflare Worker) before launch" />
+    </div>
+  </section>
+</BaseLayout>

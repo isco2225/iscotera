@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PagePlaceholder from '../components/PagePlaceholder.astro';
+---
+
+<BaseLayout
+  title="İletişim"
+  description="Projeniz için Iscotera ile iletişime geçin."
+  lang="tr"
+  alternate="/en/contact/"
+>
+  <section class="mx-auto max-w-3xl px-4 py-16">
+    <h1 class="text-3xl font-bold text-slate-900">İletişim</h1>
+    <p class="mt-3 text-slate-600">
+      Projenizi konuşmak için bize yazın; en kısa sürede dönüş yapalım.
+    </p>
+    <div class="mt-8 space-y-6">
+      <PagePlaceholder note="E-posta adresi ve (varsa) telefon buraya eklenecek" />
+      <PagePlaceholder note="İletişim formu: yayına alırken statik form servisi (ör. Formspree / Cloudflare Worker) bağlanacak" />
+    </div>
+  </section>
+</BaseLayout>

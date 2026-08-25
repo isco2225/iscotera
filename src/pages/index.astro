@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PagePlaceholder from '../components/PagePlaceholder.astro';
+import { services } from '../data/services';
+---
+
+<BaseLayout
+  title="Iscotera — Yazılım Çözümleri"
+  description="Iscotera; web, mobil ve işletmelere özel yazılım çözümleri geliştiren bir yazılım firmasıdır."
+  lang="tr"
+  alternate="/en/"
+>
+  <section class="mx-auto max-w-5xl px-4 py-20 text-center">
+    <h1 class="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
+      Fikirden ürüne, yazılım çözümleri
+    </h1>
+    <p class="mx-auto mt-4 max-w-2xl text-lg text-slate-600">
+      Web, mobil ve işletmenize özel yazılım projelerinizi uçtan uca geliştiriyoruz.
+    </p>
+    <div class="mt-8 flex justify-center gap-4">
+      <a
+        href="/iletisim/"
+        class="rounded-lg bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-slate-700"
+      >
+        Bize Ulaşın
+      </a>
+      <a
+        href="/projeler/"
+        class="rounded-lg border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-700 transition-colors hover:border-slate-500"
+      >
+        Projelerimiz
+      </a>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-5xl px-4 pb-16">
+    <h2 class="text-2xl font-bold text-slate-900">Hizmetlerimiz</h2>
+    <div class="mt-6 grid gap-6 sm:grid-cols-2">
+      {
+        services.map((service) => (
+          <a
+            href={`/hizmetler/${service.tr.slug}/`}
+            class="rounded-lg border border-slate-200 p-6 transition-shadow hover:shadow-md"
+          >
+            <h3 class="font-semibold text-slate-900">{service.tr.title}</h3>
+            <p class="mt-2 text-sm text-slate-600">{service.tr.summary}</p>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-5xl px-4 pb-20">
+    <h2 class="text-2xl font-bold text-slate-900">Neden Iscotera?</h2>
+    <div class="mt-6">
+      <PagePlaceholder
+        note="Bu bölüme markanın güçlü yönleri yazılacak: deneyim, yaklaşım, referanslar..."
+      />
+    </div>
+  </section>
+</BaseLayout>

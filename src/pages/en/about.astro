@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PagePlaceholder from '../../components/PagePlaceholder.astro';
+---
+
+<BaseLayout
+  title="About"
+  description="Iscotera's story, vision and way of working."
+  lang="en"
+  alternate="/hakkimizda/"
+>
+  <section class="mx-auto max-w-3xl px-4 py-16">
+    <h1 class="text-3xl font-bold text-slate-900">About Us</h1>
+    <div class="mt-8 space-y-6">
+      <PagePlaceholder note="Company story: how Iscotera started, what it does, who it serves" />
+      <PagePlaceholder note="Vision and way of working" />
+      <PagePlaceholder note="Team / founder introduction (optional)" />
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,27 @@
+---
+import { routes, useTranslations, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const r = routes[lang];
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-slate-200 bg-slate-50">
+  <div
+    class="mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 px-4 py-8 text-sm text-slate-500 sm:flex-row"
+  >
+    <p>© {year} Iscotera. {t('footer.rights')}</p>
+    <nav aria-label={lang === 'tr' ? 'Alt menü' : 'Footer menu'}>
+      <ul class="flex items-center gap-4">
+        <li><a href={r.about} class="hover:text-slate-800">{t('nav.about')}</a></li>
+        <li><a href={r.services} class="hover:text-slate-800">{t('nav.services')}</a></li>
+        <li><a href={r.contact} class="hover:text-slate-800">{t('nav.contact')}</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>

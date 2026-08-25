@@ -1,0 +1,16 @@
+---
+// İçeriği henüz yazılmamış bölümler için geçici kutu.
+// Gerçek içerik geldikçe bu bileşen kullanımdan kalkacak.
+
+interface Props {
+  note: string;
+}
+
+const { note } = Astro.props;
+---
+
+<div
+  class="rounded-lg border-2 border-dashed border-slate-300 bg-slate-50 p-8 text-center text-sm text-slate-400"
+>
+  {note}
+</div>

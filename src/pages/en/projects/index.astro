@@ -1,0 +1,50 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PagePlaceholder from '../../../components/PagePlaceholder.astro';
+import { useTranslations } from '../../../i18n/ui';
+
+const t = useTranslations('en');
+
+// Drafts are visible in dev only; hidden in production builds.
+const projects = (
+  await getCollection(
+    'projects',
+    ({ id, data }) => id.startsWith('en/') && (import.meta.env.DEV || !data.draft)
+  )
+).sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout
+  title="Projects"
+  description="Projects and case studies delivered by Iscotera."
+  lang="en"
+  alternate="/projeler/"
+>
+  <section class="mx-auto max-w-5xl px-4 py-16">
+    <h1 class="text-3xl font-bold text-slate-900">Our Projects</h1>
+    <p class="mt-3 max-w-2xl text-slate-600">
+      Projects we delivered and the results they achieved.
+    </p>
+
+    <div class="mt-8">
+      {
+        projects.length === 0 ? (
+          <PagePlaceholder note={t('projects.empty')} />
+        ) : (
+          <div class="grid gap-6 sm:grid-cols-2">
+            {projects.map((project) => (
+              <a
+                href={`/en/projects/${project.id.replace('en/', '')}/`}
+                class="rounded-lg border border-slate-200 p-6 transition-shadow hover:shadow-md"
+              >
+                <h2 class="font-semibold text-slate-900">{project.data.title}</h2>
+                <p class="mt-2 text-sm text-slate-600">{project.data.description}</p>
+              </a>
+            ))}
+          </div>
+        )
+      }
+    </div>
+  </section>
+</BaseLayout>

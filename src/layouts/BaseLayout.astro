@@ -1,0 +1,85 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { defaultLang, type Lang } from '../i18n/ui';
+
+interface Props {
+  title: string;
+  description: string;
+  lang?: Lang;
+  /** Aynı sayfanın diğer dildeki yolu (ör. "/en/about/"). Verilirse hreflang etiketleri üretilir. */
+  alternate?: string;
+  ogType?: 'website' | 'article';
+}
+
+const {
+  title,
+  description,
+  lang = defaultLang,
+  alternate,
+  ogType = 'website',
+} = Astro.props;
+
+const siteName = 'Iscotera';
+const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const alternateUrl = alternate ? new URL(alternate, Astro.site) : undefined;
+const otherLang: Lang = lang === 'tr' ? 'en' : 'tr';
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: siteName,
+  url: Astro.site?.toString(),
+  // TODO: logo hazır olduğunda ekle:
+  // logo: 'https://iscotera.com/logo.png',
+  // TODO: sosyal profiller hazır olduğunda "sameAs" listesi ekle (LinkedIn, GitHub...)
+};
+---
+
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    {
+      alternateUrl && (
+        <>
+          <link rel="alternate" hreflang={lang} href={canonical} />
+          <link rel="alternate" hreflang={otherLang} href={alternateUrl} />
+          <link
+            rel="alternate"
+            hreflang="x-default"
+            href={lang === defaultLang ? canonical : alternateUrl}
+          />
+        </>
+      )
+    }
+
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={lang === 'tr' ? 'tr_TR' : 'en_US'} />
+    {/* TODO: og:image — sosyal paylaşım görseli hazırlanınca eklenecek */}
+    <meta name="twitter:card" content="summary" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+  </head>
+  <body class="flex min-h-screen flex-col bg-white text-slate-800 antialiased">
+    <Header lang={lang} alternate={alternate} />
+    <main class="flex-1">
+      <slot />
+    </main>
+    <Footer lang={lang} />
+  </body>
+</html>
