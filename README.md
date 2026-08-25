@@ -1,6 +1,6 @@
-# Iscotera Web
+# İscotera Web
 
-[iscotera.com](https://iscotera.com) — Iscotera yazılım firmasının kurumsal tanıtım sitesi.
+[iscotera.com](https://iscotera.com) — İscotera yazılım firmasının kurumsal tanıtım sitesi.
 
 **Teknoloji:** Astro 7 + Tailwind CSS 4, tamamen statik çıktı. Türkçe (varsayılan) + İngilizce (`/en/`).
 

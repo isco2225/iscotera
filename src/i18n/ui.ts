@@ -39,7 +39,7 @@ export const ui = {
     'blog.readMore': 'Devamını oku',
     'blog.empty': 'Henüz yayınlanmış yazı yok.',
     'projects.empty': 'Proje detayları yakında eklenecek.',
-    'meta.siteName': 'Iscotera',
+    'meta.siteName': 'İscotera',
   },
   en: {
     'nav.home': 'Home',
@@ -52,7 +52,7 @@ export const ui = {
     'blog.readMore': 'Read more',
     'blog.empty': 'No posts published yet.',
     'projects.empty': 'Project details coming soon.',
-    'meta.siteName': 'Iscotera',
+    'meta.siteName': 'İscotera',
   },
 } as const;
 

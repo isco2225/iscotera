@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Corporate marketing site for Iscotera (a software company), served at https://iscotera.com. Fully static Astro 7 + Tailwind CSS 4 build. The primary goals are SEO/brand visibility, so preserving the SEO plumbing (canonical, hreflang, sitemap, JSON-LD) on every page matters more than usual.
+Corporate marketing site for İscotera (a software company), served at https://iscotera.com. Fully static Astro 7 + Tailwind CSS 4 build. The primary goals are SEO/brand visibility, so preserving the SEO plumbing (canonical, hreflang, sitemap, JSON-LD) on every page matters more than usual.
 
 Repository: https://github.com/isco2225/iscotera. Site content is written in Turkish and English; **commit messages must be in English**.
 

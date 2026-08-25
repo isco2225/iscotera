@@ -21,7 +21,7 @@ const {
   ogType = 'website',
 } = Astro.props;
 
-const siteName = 'Iscotera';
+const siteName = 'İscotera';
 const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const alternateUrl = alternate ? new URL(alternate, Astro.site) : undefined;
