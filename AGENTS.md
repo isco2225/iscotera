@@ -34,6 +34,6 @@ Draft content (`draft: true` in frontmatter) renders in dev but is excluded from
 
 - **Brand palette is white/black/red.** Red (`--color-brand` / `--color-brand-dark` tokens in `src/styles/global.css`, used as Tailwind `bg-brand` etc.) is an accent color only — CTAs, logo dot, hovers — never a background or text color for content. Grays are the `neutral-*` scale (not `slate-*`, which clashes with red).
 
-- **Blog is hidden from the nav** until 3–4 real posts exist, to avoid an empty-blog look. The commented-out entry is in `src/components/Header.astro`. The pages themselves are live at `/blog/` and `/en/blog/`.
+- **Blog is in the nav** (added 2026-08-25 at the user's request, before real posts exist) — the listing shows an empty-state message until posts are published.
 - The sitemap integration emits hreflang alternates itself (configured in `astro.config.mjs`); `public/robots.txt` points to `/sitemap-index.xml`.
 - Pre-launch TODOs (logo, og:image, contact details/form, hosting + DNS, Search Console, analytics) are tracked in README.md.

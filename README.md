@@ -45,8 +45,8 @@ otomatik oluşur.
 
 ## Bilinçli kararlar
 
-- **Blog menüde gizli:** 3-4 yazı yayınlanana kadar ana menüye eklenmeyecek
-  (`src/components/Header.astro` içinde işaretli). Sayfalar `/blog/` adresinde hazır.
+- **Blog menüde:** yazı yayınlanana kadar listede "Henüz yayınlanmış yazı yok"
+  mesajı görünür — ilk yazılar öncelikli iş.
 - **hreflang:** Her sayfa `BaseLayout`'a `alternate` prop'u ile diğer dildeki
   karşılığını bildirir; blog yazılarının birebir çevirisi olmadığı için yazı
   sayfalarında alternate verilmez.

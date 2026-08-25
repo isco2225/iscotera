@@ -11,12 +11,11 @@ const { lang, alternate } = Astro.props;
 const t = useTranslations(lang);
 const r = routes[lang];
 
-// Blog bilinçli olarak menüde yok: 3-4 yazı yayınlanana kadar gizli kalacak.
-// Eklemek için: { href: r.blog, label: t('nav.blog') }
 const navItems = [
   { href: r.about, label: t('nav.about') },
   { href: r.services, label: t('nav.services') },
   { href: r.projects, label: t('nav.projects') },
+  { href: r.blog, label: t('nav.blog') },
   { href: r.contact, label: t('nav.contact') },
 ];
 
