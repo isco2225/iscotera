@@ -22,6 +22,7 @@ const { Content } = await render(project);
   description={project.data.description}
   lang="tr"
   ogType="article"
+  back={{ href: '/projeler/', label: 'Projeler' }}
 >
   <article class="mx-auto max-w-3xl px-4 py-16">
     <h1 class="text-3xl font-bold text-neutral-900">{project.data.title}</h1>

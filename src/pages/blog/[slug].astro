@@ -22,6 +22,7 @@ const { Content } = await render(post);
   description={post.data.description}
   lang="tr"
   ogType="article"
+  back={{ href: '/blog/', label: 'Blog' }}
 >
   <article class="mx-auto max-w-3xl px-4 py-16">
     <time datetime={post.data.pubDate.toISOString()} class="text-sm text-neutral-500">

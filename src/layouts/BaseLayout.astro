@@ -11,6 +11,8 @@ interface Props {
   /** Aynı sayfanın diğer dildeki yolu (ör. "/en/about/"). Verilirse hreflang etiketleri üretilir. */
   alternate?: string;
   ogType?: 'website' | 'article';
+  /** İç sayfalarda içeriğin üstünde gösterilen "geri" bağlantısı (üst sayfaya götürür). */
+  back?: { href: string; label: string };
 }
 
 const {
@@ -19,6 +21,7 @@ const {
   lang = defaultLang,
   alternate,
   ogType = 'website',
+  back,
 } = Astro.props;
 
 const siteName = 'İscotera';
@@ -76,6 +79,30 @@ const organizationSchema = {
   <body class="flex min-h-screen flex-col bg-white text-neutral-800 antialiased">
     <Header lang={lang} alternate={alternate} />
     <main class="flex-1">
+      {
+        back && (
+          <div class="mx-auto w-full max-w-5xl px-4 pt-6">
+            <a
+              href={back.href}
+              class="inline-flex min-h-11 items-center gap-1.5 text-sm text-neutral-500 transition-colors hover:text-neutral-900"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                class="h-4 w-4"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M15 18 L9 12 L15 6" />
+              </svg>
+              {back.label}
+            </a>
+          </div>
+        )
+      }
       <slot />
     </main>
     <Footer lang={lang} />

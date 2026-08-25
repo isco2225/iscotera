@@ -21,12 +21,16 @@ const navItems = [
 
 const otherLang: Lang = lang === 'tr' ? 'en' : 'tr';
 const switchHref = alternate ?? routes[otherLang].home;
+const switchLabel = otherLang === 'en' ? 'Switch to English' : "Türkçe'ye geç";
 const currentPath = Astro.url.pathname;
 ---
 
 <header class="border-b border-neutral-200">
   <div class="mx-auto flex max-w-5xl items-center justify-between gap-6 px-4 py-4">
-    <a href={r.home} class="flex items-center gap-3 text-2xl font-bold tracking-tight text-neutral-900">
+    <a
+      href={r.home}
+      class="flex items-center gap-3 text-2xl font-bold tracking-tight text-neutral-900"
+    >
       <svg viewBox="0 0 64 64" class="h-8 w-8" aria-hidden="true">
         <rect width="64" height="64" rx="14" fill="#171717"></rect>
         <rect x="28" y="8" width="8" height="8" rx="4" fill="#E50914"></rect>
@@ -39,8 +43,8 @@ const currentPath = Astro.url.pathname;
       >
     </a>
 
-    <nav aria-label={lang === 'tr' ? 'Ana menü' : 'Main menu'}>
-      <ul class="flex items-center gap-4 text-sm sm:gap-6">
+    <nav aria-label={lang === 'tr' ? 'Ana menü' : 'Main menu'} class="hidden md:block">
+      <ul class="flex items-center gap-6 text-sm">
         {
           navItems.map((item) => (
             <li>
@@ -63,12 +67,105 @@ const currentPath = Astro.url.pathname;
           <a
             href={switchHref}
             class="rounded border border-neutral-300 px-2 py-1 text-xs font-semibold text-neutral-600 transition-colors hover:border-neutral-500 hover:text-neutral-900"
-            aria-label={otherLang === 'en' ? 'Switch to English' : "Türkçe'ye geç"}
+            aria-label={switchLabel}
           >
             {otherLang.toUpperCase()}
           </a>
         </li>
       </ul>
     </nav>
+
+    <button
+      id="menu-toggle"
+      type="button"
+      class="-mr-2 rounded-lg p-2.5 text-neutral-700 transition-colors hover:bg-neutral-100 md:hidden"
+      aria-label={lang === 'tr' ? 'Menüyü aç' : 'Open menu'}
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <line x1="4" y1="6" x2="20" y2="6"></line>
+        <line x1="4" y1="12" x2="20" y2="12"></line>
+        <line x1="4" y1="18" x2="20" y2="18"></line>
+      </svg>
+    </button>
   </div>
 </header>
+
+{/* Mobil menü: sağdan kayan çekmece + karartma katmanı */}
+<div id="menu-overlay" class="fixed inset-0 z-40 hidden bg-black/40 md:hidden"></div>
+<aside
+  id="mobile-menu"
+  class="fixed inset-y-0 right-0 z-50 w-72 max-w-[85vw] translate-x-full bg-white shadow-xl transition-transform duration-200 ease-out md:hidden"
+  aria-label={lang === 'tr' ? 'Mobil menü' : 'Mobile menu'}
+>
+  <div class="flex items-center justify-between border-b border-neutral-200 px-5 py-4">
+    <span class="text-lg font-bold tracking-tight text-neutral-900"
+      ><span class="text-brand">İSCO</span>TERA</span
+    >
+    <button
+      id="menu-close"
+      type="button"
+      class="-mr-1 rounded-lg p-2.5 text-neutral-700 transition-colors hover:bg-neutral-100"
+      aria-label={lang === 'tr' ? 'Menüyü kapat' : 'Close menu'}
+    >
+      <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  <nav aria-label={lang === 'tr' ? 'Ana menü' : 'Main menu'}>
+    <ul class="flex flex-col p-3">
+      {
+        navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              aria-current={currentPath === item.href ? 'page' : undefined}
+              class:list={[
+                'block rounded-lg px-3 py-3 text-base transition-colors hover:bg-neutral-100',
+                currentPath === item.href
+                  ? 'font-semibold text-neutral-900'
+                  : 'text-neutral-700',
+              ]}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+  <div class="border-t border-neutral-200 p-4">
+    <a
+      href={switchHref}
+      class="block rounded-lg border border-neutral-300 px-3 py-3 text-center text-sm font-semibold text-neutral-700 transition-colors hover:border-neutral-500"
+      aria-label={switchLabel}
+    >
+      {otherLang === 'en' ? 'English' : 'Türkçe'}
+    </a>
+  </div>
+</aside>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const closeBtn = document.getElementById('menu-close');
+  const overlay = document.getElementById('menu-overlay');
+  const menu = document.getElementById('mobile-menu');
+
+  function setOpen(open: boolean) {
+    if (!toggle || !overlay || !menu) return;
+    toggle.setAttribute('aria-expanded', String(open));
+    overlay.classList.toggle('hidden', !open);
+    menu.classList.toggle('translate-x-full', !open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+
+  toggle?.addEventListener('click', () => setOpen(true));
+  closeBtn?.addEventListener('click', () => setOpen(false));
+  overlay?.addEventListener('click', () => setOpen(false));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') setOpen(false);
+  });
+</script>
