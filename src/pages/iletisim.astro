@@ -1,11 +1,41 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import PagePlaceholder from '../components/PagePlaceholder.astro';
+import ContactCard from '../components/ContactCard.astro';
+import { contact } from '../data/contact';
+
+const channels = [
+  {
+    icon: 'mail',
+    label: 'E-posta',
+    value: contact.email,
+    href: `mailto:${contact.email}`,
+  },
+  {
+    icon: 'phone',
+    label: 'Telefon',
+    value: contact.phoneDisplay,
+    href: `tel:${contact.phoneE164}`,
+  },
+  {
+    icon: 'whatsapp',
+    label: 'WhatsApp',
+    value: contact.phoneDisplay,
+    href: contact.whatsappUrl,
+    external: true,
+  },
+  {
+    icon: 'instagram',
+    label: 'Instagram',
+    value: contact.instagramHandle,
+    href: contact.instagramUrl,
+    external: true,
+  },
+] as const;
 ---
 
 <BaseLayout
   title="İletişim"
-  description="Projeniz için İscotera ile iletişime geçin."
+  description="Projeniz için İscotera ile iletişime geçin: e-posta, telefon, WhatsApp veya Instagram."
   lang="tr"
   alternate="/en/contact/"
   back={{ href: '/', label: 'Ana Sayfa' }}
@@ -15,9 +45,8 @@ import PagePlaceholder from '../components/PagePlaceholder.astro';
     <p class="mt-3 text-neutral-600">
       Projenizi konuşmak için bize yazın; en kısa sürede dönüş yapalım.
     </p>
-    <div class="mt-8 space-y-6">
-      <PagePlaceholder note="E-posta adresi ve (varsa) telefon buraya eklenecek" />
-      <PagePlaceholder note="İletişim formu: yayına alırken statik form servisi (ör. Formspree / Cloudflare Worker) bağlanacak" />
+    <div class="mt-8 grid gap-4 sm:grid-cols-2">
+      {channels.map((channel) => <ContactCard {...channel} />)}
     </div>
   </section>
 </BaseLayout>

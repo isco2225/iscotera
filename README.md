@@ -55,7 +55,8 @@ otomatik oluşur.
 
 - [x] Logo + favicon (İ monogramı: siyah zemin, beyaz gövde, kırmızı nokta)
 - [ ] `og:image` sosyal paylaşım görseli
-- [ ] İletişim sayfası: gerçek e-posta + form servisi bağlantısı
+- [x] İletişim sayfası: e-posta, telefon, WhatsApp ve Instagram bilgileri
+- [ ] İletişim formu: statik form servisi bağlantısı (ör. Formspree / Cloudflare Worker)
 - [ ] Cloudflare Pages / Vercel'e bağla, `iscotera.com` DNS ayarları
 - [ ] Google Search Console kaydı + sitemap gönderimi
 - [ ] Analitik (Plausible / Umami)

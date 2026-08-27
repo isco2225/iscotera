@@ -1,5 +1,6 @@
 ---
 import { routes, useTranslations, type Lang } from '../i18n/ui';
+import { contact } from '../data/contact';
 
 interface Props {
   lang: Lang;
@@ -12,16 +13,41 @@ const year = new Date().getFullYear();
 ---
 
 <footer class="border-t border-neutral-200 bg-neutral-50">
-  <div
-    class="mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 px-4 py-8 text-sm text-neutral-500 sm:flex-row"
-  >
-    <p>© {year} İscotera. {t('footer.rights')}</p>
-    <nav aria-label={lang === 'tr' ? 'Alt menü' : 'Footer menu'}>
-      <ul class="flex items-center gap-4">
-        <li><a href={r.about} class="hover:text-neutral-800">{t('nav.about')}</a></li>
-        <li><a href={r.services} class="hover:text-neutral-800">{t('nav.services')}</a></li>
-        <li><a href={r.contact} class="hover:text-neutral-800">{t('nav.contact')}</a></li>
+  <div class="mx-auto max-w-5xl px-4 py-8 text-sm text-neutral-500">
+    <div class="flex flex-col items-center justify-between gap-4 sm:flex-row">
+      <ul
+        class="flex flex-wrap items-center justify-center gap-4"
+        aria-label={lang === 'tr' ? 'İletişim kanalları' : 'Contact channels'}
+      >
+        <li>
+          <a href={`mailto:${contact.email}`} class="hover:text-neutral-800">
+            {contact.email}
+          </a>
+        </li>
+        <li>
+          <a href={`tel:${contact.phoneE164}`} class="hover:text-neutral-800">
+            {contact.phoneDisplay}
+          </a>
+        </li>
+        <li>
+          <a
+            href={contact.instagramUrl}
+            target="_blank"
+            rel="noopener"
+            class="hover:text-neutral-800"
+          >
+            {contact.instagramHandle}
+          </a>
+        </li>
       </ul>
-    </nav>
+      <nav aria-label={lang === 'tr' ? 'Alt menü' : 'Footer menu'}>
+        <ul class="flex items-center gap-4">
+          <li><a href={r.about} class="hover:text-neutral-800">{t('nav.about')}</a></li>
+          <li><a href={r.services} class="hover:text-neutral-800">{t('nav.services')}</a></li>
+          <li><a href={r.contact} class="hover:text-neutral-800">{t('nav.contact')}</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="mt-6 text-center sm:text-left">© {year} İscotera. {t('footer.rights')}</p>
   </div>
 </footer>

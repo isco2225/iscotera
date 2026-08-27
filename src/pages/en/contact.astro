@@ -1,11 +1,41 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PagePlaceholder from '../../components/PagePlaceholder.astro';
+import ContactCard from '../../components/ContactCard.astro';
+import { contact } from '../../data/contact';
+
+const channels = [
+  {
+    icon: 'mail',
+    label: 'Email',
+    value: contact.email,
+    href: `mailto:${contact.email}`,
+  },
+  {
+    icon: 'phone',
+    label: 'Phone',
+    value: contact.phoneDisplay,
+    href: `tel:${contact.phoneE164}`,
+  },
+  {
+    icon: 'whatsapp',
+    label: 'WhatsApp',
+    value: contact.phoneDisplay,
+    href: contact.whatsappUrl,
+    external: true,
+  },
+  {
+    icon: 'instagram',
+    label: 'Instagram',
+    value: contact.instagramHandle,
+    href: contact.instagramUrl,
+    external: true,
+  },
+] as const;
 ---
 
 <BaseLayout
   title="Contact"
-  description="Get in touch with İscotera about your project."
+  description="Get in touch with İscotera about your project: email, phone, WhatsApp or Instagram."
   lang="en"
   alternate="/iletisim/"
   back={{ href: '/en/', label: 'Home' }}
@@ -15,9 +45,8 @@ import PagePlaceholder from '../../components/PagePlaceholder.astro';
     <p class="mt-3 text-neutral-600">
       Write to us about your project and we'll get back to you shortly.
     </p>
-    <div class="mt-8 space-y-6">
-      <PagePlaceholder note="Email address and phone (if any) will go here" />
-      <PagePlaceholder note="Contact form: will be wired to a static form service (e.g. Formspree / Cloudflare Worker) before launch" />
+    <div class="mt-8 grid gap-4 sm:grid-cols-2">
+      {channels.map((channel) => <ContactCard {...channel} />)}
     </div>
   </section>
 </BaseLayout>
