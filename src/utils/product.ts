@@ -40,3 +40,24 @@ export function platformLabels(data: ProjectData): string[] {
   if (data.stores.web) platforms.push('Web');
   return platforms;
 }
+
+// Aynı ürün iki dilde ve birden çok sayfada render edildiği için uyarı
+// yineleniyor; bir kez basılsın diye görülenler burada tutuluyor.
+const warnedPending = new Set<string>();
+
+/**
+ * stores.pending dolu kaldığı sürece sayfada tıklanamaz bir rozet duruyor.
+ * Bu, bağlantı gelene kadar düzeni görmek için konan geçici bir yer tutucu —
+ * yayına sessizce çıkmasın diye her derlemede uyarı basılıyor.
+ */
+export function warnPendingStores(title: string, data: ProjectData): void {
+  if (data.stores.pending.length === 0) return;
+  const key = `${title}:${data.stores.pending.join(',')}`;
+  if (warnedPending.has(key)) return;
+  warnedPending.add(key);
+  console.warn(
+    `[ürünler] "${title}": ${data.stores.pending.join(', ')} bağlantısı eksik. ` +
+      'Rozet tıklanamaz yer tutucu olarak basılıyor; yayına çıkmadan önce ' +
+      'stores alanına adresi ekleyip pending listesinden çıkarın.'
+  );
+}

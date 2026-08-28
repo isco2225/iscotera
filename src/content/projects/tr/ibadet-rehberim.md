@@ -13,6 +13,10 @@ cover: "../_images/ibadet-rehberim/screen-discover-feed.png"
 stores:
   googlePlay: "https://play.google.com/store/apps/details?id=com.omran.huzur_islamda"
   web: "https://ibadetrehberim.com/"
+  # App Store bağlantısı elimize geçince appStore alanı doldurulup bu iki
+  # satır silinecek; rozet o an tıklanabilir hâle gelir.
+  pending:
+    - appStore
 features:
   - title: "Namaz vakitleri, bulunduğunuz yere göre"
     text: "Vakitler Diyanet'in hesaplama yöntemiyle ve konumunuza göre hesaplanır. Vakit girdiğinde bildirim gelir, telefon çevrimdışıyken bile. Ne saate bakmanız gerekir ne de internete."

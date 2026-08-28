@@ -28,10 +28,18 @@ tags: ["web"]
 
 # Mağaza bağlantıları. İndirme rozetleri bu alandan basılır; App Store
 # rozeti daima ilk sırada gelir.
+#
+# Ürün mağazada yayında ama bağlantı henüz elinizde değilse mağazayı
+# 'pending' listesine yazın: rozet, düzeni bozmadan tıklanamaz bir yer
+# tutucu olarak çıkar. Bu bir "yakında" ilanı değildir, yalnızca eksik
+# bağlantıdır — dolu kaldığı her derlemede uyarı basılır, yayına
+# çıkmadan önce boşalmalıdır.
 stores:
   web: "https://example.com/"
   # appStore: "https://apps.apple.com/..."
   # googlePlay: "https://play.google.com/store/apps/details?id=..."
+  # pending:
+  #   - appStore
 
 # Mağaza puanı. YALNIZCA mağazadan bakıp doğruladığınız gerçek değeri
 # yazın; puan hem sayfada hem yapılandırılmış veride görünür ve uydurma

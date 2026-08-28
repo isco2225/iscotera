@@ -15,13 +15,25 @@
 // derleme anında dosya varlığı kontrol ediliyor: yoksa metin butonuna
 // düşülüyor, dosya public/badges/ altına konduğu anda otomatik olarak resmî
 // rozete geçiliyor. İndirme adresleri public/badges/README.md içinde.
+//
+// stores.pending içindeki mağazalar tıklanamaz yer tutucu olarak çıkar:
+// ürün mağazada yayında ama bağlantı henüz elimizde değil. Metin normal
+// rozet metniyle aynı ("App Store'dan indir") — burada ürünün durumu
+// hakkında bir iddia YOK, yalnızca bağlantı eksik; "yakında" yazmak
+// yayında olan bir uygulama için yanlış olurdu.
+//
+// Bu durumda resmî rozet görseli kullanılmıyor: rozet, mağaza sayfasına
+// götüren bir bağlantı için lisanslı — hiçbir yere gitmeyen bir düğmede
+// kullanmak marka kurallarının dışına çıkar. Yer tutucu, kendi metin
+// düğmemizin sönük hâli.
 
+import type { CollectionEntry } from 'astro:content';
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { useTranslations, type Lang } from '../i18n/ui';
 
 interface Props {
-  stores: { appStore?: string; googlePlay?: string };
+  stores: CollectionEntry<'projects'>['data']['stores'];
   lang: Lang;
   class?: string;
 }
@@ -36,43 +48,62 @@ const hasBadge = (file: string) =>
   existsSync(join(process.cwd(), 'public', 'badges', file));
 
 // Sıra önemli: App Store önce.
-const badges = [
-  {
-    href: stores.appStore,
-    label: t('product.appStore'),
-    file: `app-store-${lang}.svg`,
-  },
-  {
-    href: stores.googlePlay,
-    label: t('product.googlePlay'),
-    file: `google-play-${lang}.png`,
-  },
-]
-  .filter((badge) => Boolean(badge.href))
-  .map((badge) => ({ ...badge, image: hasBadge(badge.file) ? `/badges/${badge.file}` : null }));
+const badges = (
+  [
+    {
+      store: 'appStore',
+      href: stores.appStore,
+      label: t('product.appStore'),
+      file: `app-store-${lang}.svg`,
+    },
+    {
+      store: 'googlePlay',
+      href: stores.googlePlay,
+      label: t('product.googlePlay'),
+      file: `google-play-${lang}.png`,
+    },
+  ] as const
+)
+  .map((badge) => ({
+    ...badge,
+    pending: !badge.href && stores.pending.includes(badge.store),
+  }))
+  .filter((badge) => badge.href || badge.pending)
+  .map((badge) => ({
+    ...badge,
+    image: badge.href && hasBadge(badge.file) ? `/badges/${badge.file}` : null,
+  }));
 ---
 
 {
   badges.length > 0 && (
     <ul class:list={['flex flex-wrap items-center gap-3', className]}>
-      {badges.map((badge) => (
-        <li>
-          <a
-            href={badge.href}
-            target="_blank"
-            rel="noopener"
-            class="inline-flex min-h-12 items-center rounded-lg"
-          >
-            {badge.image ? (
-              <img src={badge.image} alt={badge.label} height="48" class="h-12 w-auto" />
-            ) : (
-              <span class="inline-flex min-h-12 items-center rounded-lg border border-line-strong px-5 text-sm font-semibold text-ink-soft transition-colors hover:border-ink-subtle">
-                {badge.label}
-              </span>
-            )}
-          </a>
-        </li>
-      ))}
+      {badges.map((badge) =>
+        badge.pending ? (
+          <li>
+            <span class="inline-flex min-h-12 items-center rounded-lg border border-line px-5 text-sm font-semibold text-ink-subtle">
+              {badge.label}
+            </span>
+          </li>
+        ) : (
+          <li>
+            <a
+              href={badge.href}
+              target="_blank"
+              rel="noopener"
+              class="inline-flex min-h-12 items-center rounded-lg"
+            >
+              {badge.image ? (
+                <img src={badge.image} alt={badge.label} height="48" class="h-12 w-auto" />
+              ) : (
+                <span class="inline-flex min-h-12 items-center rounded-lg border border-line-strong px-5 text-sm font-semibold text-ink-soft transition-colors hover:border-ink-subtle">
+                  {badge.label}
+                </span>
+              )}
+            </a>
+          </li>
+        )
+      )}
     </ul>
   )
 }

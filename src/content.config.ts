@@ -69,6 +69,12 @@ const projects = defineCollection({
           appStore: z.string().url().optional(),
           googlePlay: z.string().url().optional(),
           web: z.string().url().optional(),
+          // Ürün mağazada yayında ama bağlantı henüz elimizde değilken,
+          // rozetin yerini tutar: sayfa düzeni son hâlinde görünür, rozet
+          // tıklanamaz olur. Bağlantı gelince ilgili alan doldurulup mağaza
+          // bu listeden çıkarılır. Yayına çıkmadan önce boşalması gerekir —
+          // dolu kaldığı her derlemede uyarı basılır.
+          pending: z.array(z.enum(['appStore', 'googlePlay'])).default([]),
         })
         .default({}),
       // Mağaza puanı. Yalnızca doğrulanmış gerçek değer yazılır: sayfada

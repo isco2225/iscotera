@@ -20,7 +20,7 @@ import StoreBadges from './StoreBadges.astro';
 import FeatureRow from './FeatureRow.astro';
 import Faq from './Faq.astro';
 import SocialLinks from './SocialLinks.astro';
-import { platformLabels } from '../utils/product';
+import { platformLabels, warnPendingStores } from '../utils/product';
 import { routes, useTranslations, type Lang } from '../i18n/ui';
 
 interface Props {
@@ -55,6 +55,7 @@ const {
 } = project.data;
 
 const platforms = platformLabels(project.data);
+warnPendingStores(title, project.data);
 const promise = tagline ?? description;
 const hasStoreBadge = Boolean(stores.appStore || stores.googlePlay);
 
