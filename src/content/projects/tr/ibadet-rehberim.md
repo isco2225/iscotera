@@ -1,25 +1,67 @@
 ---
 title: "İbadet Rehberim"
 description: "Namaz vakitleri, zikirmatik ve yapay zekâ destekli asistanı tek bir sade ekranda toplayan iOS ve Android uygulaması."
+type: product
+tagline: "Namaz vakti, zikir ve merak ettiğiniz dinî sorular için tek bir sade uygulama."
+status: live
+category: "Mobil uygulama"
 client: "Kendi ürünümüz"
 year: 2026
 tags: ["mobil", "flutter", "firebase", "ios", "android"]
 logo: "../_images/ibadet-rehberim/logo.png"
 cover: "../_images/ibadet-rehberim/screen-discover-feed.png"
+stores:
+  googlePlay: "https://play.google.com/store/apps/details?id=com.omran.huzur_islamda"
+  web: "https://ibadetrehberim.com/"
+features:
+  - title: "Namaz vakitleri, bulunduğunuz yere göre"
+    text: "Vakitler Diyanet'in hesaplama yöntemiyle ve konumunuza göre hesaplanır. Vakit girdiğinde bildirim gelir, telefon çevrimdışıyken bile. Ne saate bakmanız gerekir ne de internete."
+    image: "../_images/ibadet-rehberim/screen-prayer-times.png"
+    alt: "İbadet Rehberim ezan vakitleri ekranı: şehre göre günlük namaz vakitleri ve vakit girdiğinde gelen bildirim"
+  - title: "Nerede kaldığınızı hatırlayan zikirmatik"
+    text: "Hazır zikir setlerinden birini seçin ya da kendi tesbihatınızı oluşturun. Günlük hedefinizi belirleyin; saymayı ve nerede kaldığınızı uygulama üstlensin."
+    image: "../_images/ibadet-rehberim/screen-dhikr-tracking.png"
+    alt: "İbadet Rehberim zikir ekranı: günlük zikir hedefleri ve tamamlanma oranları"
+  - title: "Sorabileceğiniz bir İslami asistan"
+    text: "Aklınıza takılan dinî soruyu yazın, yapay zekâ destekli asistan yanıtlasın. Yanıtın hangi kaynağa dayandığı da yazılı, yani okuduğunuzu doğrulayabilirsiniz."
+    image: "../_images/ibadet-rehberim/screen-assistant.png"
+    alt: "İbadet Rehberim islami asistan ekranı: kullanıcının sorduğu dinî soruya verilen kaynaklı yanıt"
+  - title: "Her gün yenilenen kısa bir akış"
+    text: "Günün duası, hadisi ve ayeti tek ekranda. Her gönderide bilginin alındığı kaynak yazıyor; okuduğunuz şeyin nereye dayandığını görüyorsunuz."
+    image: "../_images/ibadet-rehberim/screen-discover-feed.png"
+    alt: "İbadet Rehberim keşfet akışı: günün duası, hadisi ve ayeti, her biri kaynağıyla birlikte"
 screenshots:
   - src: "../_images/ibadet-rehberim/screen-prayer-times.png"
     alt: "İbadet Rehberim ezan vakitleri ekranı: şehre göre günlük namaz vakitleri ve vakit girdiğinde gelen bildirim"
+    caption: "Namaz vakitleri"
   - src: "../_images/ibadet-rehberim/screen-dhikr-tracking.png"
     alt: "İbadet Rehberim zikir ekranı: günlük zikir hedefleri ve tamamlanma oranları"
+    caption: "Zikirmatik"
   - src: "../_images/ibadet-rehberim/screen-assistant.png"
     alt: "İbadet Rehberim islami asistan ekranı: kullanıcının sorduğu dinî soruya verilen kaynaklı yanıt"
+    caption: "İslami asistan"
+# NOT: rating alanı bilerek boş. Google Play'deki gerçek puan ve değerlendirme
+# sayısı doğrulanmadan yazılmayacak; uydurulmuş bir puanı sayfada göstermek de
+# yapılandırılmış veride bildirmek de kural ihlali.
 results:
   - value: "1.000+"
     label: "Google Play'den indirme"
   - value: "5,0"
     label: "kullanıcı puanı"
-  - value: "iOS + Android"
-    label: "tek uygulama, iki platform"
+pricing:
+  label: "Ücretsiz"
+  note: "Uygulama ücretsiz indiriliyor ve temel özelliklerin tamamı ücretsiz. Reklam görmek istemeyenler için haftalık ya da yıllık premium seçeneği var."
+faq:
+  - q: "Uygulama ücretli mi?"
+    a: "Hayır. Uygulama ücretsiz indiriliyor ve temel özelliklerin tamamı ücretsiz. Yalnızca reklamları kaldırmak isteyenler için haftalık ya da yıllık premium aboneliği bulunuyor."
+  - q: "İnternet olmadan çalışır mı?"
+    a: "Evet. Veriler önce telefonda saklandığı için namaz vakitleri, zikirmatik ve kayıtlarınız çevrimdışı da çalışır; vakit bildirimleri telefon çevrimdışıyken de gelir. Yalnızca İslami asistan ve günlük akış internet bağlantısı ister."
+  - q: "Telefonumu değiştirirsem kayıtlarım kaybolur mu?"
+    a: "Hesabınızla giriş yaptıysanız hayır. Zikir ilerlemeniz yedeklenir, yeni cihazınızda giriş yaptığınızda kaldığınız yerden devam edersiniz. Hesap açmak zorunlu değil, ama yedekleme için gerekiyor."
+  - q: "Namaz vakitleri hangi yönteme göre hesaplanıyor?"
+    a: "Diyanet İşleri Başkanlığı'nın hesaplama yöntemine göre ve bulunduğunuz konum esas alınarak."
+  - q: "iPhone sürümü var mı?"
+    a: "Evet. Uygulama tek bir kaynaktan hem iPhone hem Android için geliştirildi; iki platformda da aynı özellikler var ve yeni özellikler ikisine aynı anda geliyor."
 social:
   - platform: instagram
     href: "https://www.instagram.com/ibadetrehberim.app/"
@@ -27,11 +69,12 @@ social:
     href: "https://www.tiktok.com/@ibadetrehberim"
   - platform: youtube
     href: "https://www.youtube.com/@ibadetrehberim"
-links:
-  - label: "ibadetrehberim.com"
-    href: "https://ibadetrehberim.com/"
-  - label: "Google Play'de indir"
-    href: "https://play.google.com/store/apps/details?id=com.omran.huzur_islamda"
+app:
+  schemaType: MobileApplication
+  applicationCategory: LifestyleApplication
+  operatingSystem: "ANDROID, IOS"
+  price: "0"
+  priceCurrency: "TRY"
 order: 1
 draft: true
 ---
@@ -39,27 +82,6 @@ draft: true
 **İbadet Rehberim**, günlük ibadetleri takip etmeyi kolaylaştıran bir mobil
 uygulama. Fikri, tasarımı ve yazılımı bize ait; baştan sona İscotera'da
 geliştirdik.
-
-## Uygulamada neler var
-
-Günlük ibadet için gereken her şeyi tek bir sade arayüzde topladık:
-
-- **Namaz vakitleri** — bulunduğunuz konuma göre, Diyanet'in hesaplama
-  yöntemiyle.
-- **Vakit bildirimleri** — tam vaktinde. Telefon çevrimdışıyken de çalışır.
-- **Akıllı Zikirmatik** — hazır zikir setleri ya da kendi oluşturduğunuz tesbihatlar,
-  günlük hedef takibiyle.
-- **İslami asistan** — merak ettiğiniz dinî soruları sorabileceğiniz, yapay
-  zekâ destekli bir sohbet ekranı.
-- **Günün duası, hadisi ve ayeti** — her gün yenilenen kısa bir akış.
-  Gönderilerin içinde bilginin hangi kaynaktan alındığı yazıyor; okuduğunuz
-  şeyin nereye dayandığını görebiliyorsunuz.
-- **Telefon değişse de kaybolmayan kayıtlar** — hesabınızla giriş yaptığınızda
-  zikir ilerlemeniz yedeklenir, yeni cihazınızda kaldığınız yerden devam
-  edersiniz.
-
-Uygulama ücretsiz. Reklam görmek istemeyenler için haftalık ya da yıllık
-premium seçeneği var.
 
 ## Nasıl geliştirdik
 
