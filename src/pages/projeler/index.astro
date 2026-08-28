@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import ProjectCard from '../../components/ProjectCard.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PagePlaceholder from '../../components/PagePlaceholder.astro';
 import { useTranslations } from '../../i18n/ui';
@@ -16,16 +17,16 @@ const projects = (
 ---
 
 <BaseLayout
-  title="Projeler"
-  description="İscotera'nın tamamladığı projeler ve vaka çalışmaları."
+  title="Ürünler"
+  description="İscotera'nın geliştirdiği ürünler ve vaka çalışmaları."
   lang="tr"
   alternate="/en/projects/"
   back={{ href: '/', label: 'Ana Sayfa' }}
 >
   <section class="mx-auto max-w-5xl px-4 py-16">
-    <h1 class="text-3xl font-bold text-neutral-900">Projelerimiz</h1>
+    <h1 class="text-3xl font-bold text-neutral-900">Ürünlerimiz</h1>
     <p class="mt-3 max-w-2xl text-neutral-600">
-      Tamamladığımız projeler ve elde edilen sonuçlar.
+      Geliştirdiğimiz ürünler ve elde edilen sonuçlar.
     </p>
 
     <div class="mt-8">
@@ -33,19 +34,29 @@ const projects = (
         projects.length === 0 ? (
           <PagePlaceholder note={t('projects.empty')} />
         ) : (
-          <div class="grid gap-6 sm:grid-cols-2">
+          <div class="flex flex-col gap-8">
             {projects.map((project) => (
-              <a
+              <ProjectCard
+                project={project}
                 href={`/projeler/${project.id.replace('tr/', '')}/`}
-                class="rounded-lg border border-neutral-200 p-6 transition hover:border-brand/40 hover:shadow-md"
-              >
-                <h2 class="font-semibold text-neutral-900">{project.data.title}</h2>
-                <p class="mt-2 text-sm text-neutral-600">{project.data.description}</p>
-              </a>
+                linkLabel="İncele"
+                as="h2"
+              />
             ))}
           </div>
         )
       }
     </div>
+
+    <section class="mt-16 rounded-2xl border border-neutral-200 bg-neutral-50 p-8 text-center sm:p-12">
+      <h2 class="text-2xl font-bold text-neutral-900">Sıradaki ürün sizinki olsun</h2>
+      <p class="mx-auto mt-3 max-w-xl text-neutral-600">Aklınızdaki fikri birlikte konuşalım; size dürüst bir yol haritası ve net bir bütçe çıkaralım.</p>
+      <a
+        href="/iletisim/"
+        class="mt-6 inline-block rounded-lg bg-action px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-action-dark"
+      >
+        Projenizi konuşalım
+      </a>
+    </section>
   </section>
 </BaseLayout>
