@@ -37,7 +37,7 @@ draft: true
 ---
 
 **İbadet Rehberim** is a mobile app that makes it easier to keep up with daily
-worship. The idea, the design and the software are all ours — we built it
+worship. The idea, the design and the software are all ours; we built it
 end to end at İscotera.
 
 ## What the app does
@@ -65,8 +65,8 @@ yearly premium option.
 
 We designed the interface for every age from the start: large, legible type,
 few but unambiguous buttons, and navigation that needs no learning. If someone
-has increased the text size on their phone, the app follows that setting — a
-person who configured it once does not have to do it again here.
+has increased the text size on their phone, the app follows that setting.
+A person who set it once does not have to set it again here.
 
 We built the app for both iPhone and Android from a single source. For our
 clients that means something concrete: you do not commission two separate
@@ -85,5 +85,5 @@ a small team can sustain and that will not buckle as the user count grows.
 The app is live and updated regularly. It has been in continuous development
 since November 2025, with new features in every release.
 
-If you have a mobile app in mind, [get in touch](/en/contact/) — let's talk
+If you have a mobile app in mind, [get in touch](/en/contact/). Let's talk
 about how to make it real.

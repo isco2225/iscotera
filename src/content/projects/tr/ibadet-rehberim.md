@@ -37,7 +37,7 @@ draft: true
 ---
 
 **İbadet Rehberim**, günlük ibadetleri takip etmeyi kolaylaştıran bir mobil
-uygulama. Fikri, tasarımı ve yazılımı bize ait — baştan sona İscotera'da
+uygulama. Fikri, tasarımı ve yazılımı bize ait; baştan sona İscotera'da
 geliştirdik.
 
 ## Uygulamada neler var
@@ -65,7 +65,7 @@ premium seçeneği var.
 
 Arayüzü baştan her yaştan kullanıcıyı düşünerek tasarladık: büyük ve okunaklı
 yazılar, az sayıda ama net buton, öğrenmek gerektirmeyen bir gezinme. Kullanıcı
-telefonunun yazı boyutunu büyütmüşse uygulama da ona uyum sağlıyor — ayarı bir
+telefonunun yazı boyutunu büyütmüşse uygulama da ona uyum sağlıyor. Ayarı bir
 kez yapmış olan kişi burada yeniden uğraşmıyor.
 
 Uygulamayı tek bir kaynaktan hem iPhone hem Android için geliştirdik. Bu,
@@ -90,5 +90,5 @@ bu yaklaşımı ayrıntılı anlatmıştık.
 Uygulama yayında ve düzenli güncelleniyor. Kasım 2025'ten bu yana kesintisiz
 geliştiriliyor; her sürümde yeni özellikler ekleniyor.
 
-Aklınızda bir mobil uygulama fikri varsa [bize ulaşın](/iletisim/) —
-nasıl hayata geçireceğimizi birlikte konuşalım.
+Aklınızda bir mobil uygulama fikri varsa [bize ulaşın](/iletisim/).
+Nasıl hayata geçireceğimizi birlikte konuşalım.

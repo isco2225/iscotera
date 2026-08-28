@@ -8,8 +8,8 @@ tags: ["yazılım mimarisi", "clean architecture", "mühendislik"]
 Bir projeyi devraldığınızı düşünün. Basit bir soru soruyorsunuz: "Bu sistemde
 kargo ücreti nasıl hesaplanıyor?" Cevap bir dosyada değil; biraz controller'da,
 biraz veritabanı sorgusunun içinde, biraz da üç yıl önce yazılmış bir
-template'in ortasında. İş kuralı diye bir şey yok ortada — framework'ün içine
-eriyip dağılmış bir şeyler var.
+template'in ortasında. İş kuralı diye bir şey yok ortada; framework'ün
+içine eriyip dağılmış bir şeyler var.
 
 Clean Architecture tam olarak bu soruna verilmiş bir cevap. Ama son yıllarda
 öyle bir noktaya geldi ki, kimi ekipler için din, kimileri için küfür. İki
@@ -82,8 +82,8 @@ Kendi projelerimizde şu üç soruya bakıyoruz:
    çekirdeği onlardan yalıtmak sigorta değil, zorunluluktur.
 
 Üçüne de "evet" diyorsanız, dependency rule'u ciddiye alın. Ama o zaman bile
-tavsiyemiz kademeli olması: önce sadece iş kurallarını dışarıdan yalıtın —
-tek bir "domain" klasörü bile devrim yaratır. On bir dosyalık tam seremoniye,
+tavsiyemiz kademeli olması: önce sadece iş kurallarını dışarıdan yalıtın.
+Tek bir "domain" klasörü bile devrim yaratır. On bir dosyalık tam seremoniye,
 ancak sistem büyüyüp o dosyalar kendini haklı çıkardığında geçin.
 [Pragmatik yaklaşımı savunanların](https://threedots.tech/episode/is-clean-architecture-overengineering/)
 söylediği gibi: bu bir felsefe, boyama kitabı değil.
@@ -94,9 +94,9 @@ söylediği gibi: bu bir felsefe, boyama kitabı değil.
 dozu, projenin ömrü ve iş kuralının yoğunluğu kadar.** Kısa ömürlü, ince iş
 mantıklı projelerde framework'ün doğal yapısına saygı duyuyoruz; uzun ömürlü,
 kural yoğun sistemlerde ise çekirdeği ilk günden yalıtıyoruz. İki durumda da
-gerekçeyi yazılı bırakıyoruz — çünkü mimari kararın en kötüsü, neden
+gerekçeyi yazılı bırakıyoruz, çünkü mimari kararın en kötüsü neden
 verildiği unutulmuş olandır.
 
 Elinizde büyüyen ve kuralları framework'e gömülmeye başlamış bir sistem
-varsa, [bir kahve içimi konuşalım](/iletisim/) — mevcut kodu görmeden reçete
-yazmayız, ama neye baktığımızı iyi biliriz.
+varsa, [bir kahve içimi konuşalım](/iletisim/). Kodu görmeden reçete
+yazmayız, ama neye bakacağımızı biliyoruz.

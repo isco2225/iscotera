@@ -8,7 +8,7 @@ tags: ["özel yazılım", "işletme", "karar rehberi"]
 İşini büyütmek isteyen hemen her işletme bir noktada aynı soruyla karşılaşır:
 "Bu işi hazır bir programla mı çözsek, yoksa bize özel bir yazılım mı
 yaptırsak?" Bu yazıda iki yolun da güçlü ve zayıf yanlarını, satış kaygısı
-olmadan, olduğu gibi anlatacağız — çünkü doğru cevap her işletme için aynı
+olmadan, olduğu gibi anlatacağız, çünkü doğru cevap her işletme için aynı
 değil.
 
 ## Hazır paketin güçlü olduğu yerler
@@ -51,8 +51,8 @@ demektir. Doğru kurgulandığında:
 
 - **Süreçleriniz otomatikleşir.** Elle yapılan, hataya açık işler ortadan
   kalkar.
-- **Sistemleriniz birbiriyle konuşur.** Muhasebe, stok, saha ekibi — veri bir
-  kez girilir, her yerde görünür.
+- **Sistemleriniz birbiriyle konuşur.** Muhasebe, stok ve saha ekibi arasında
+  veri bir kez girilir, her yerde görünür.
 - **Rekabet avantajı olur.** Rakibiniz aynı hazır paketi satın alabilir; ama
   sizin süreçlerinize göre işlenmiş bir sistemi kopyalayamaz.
 - **Sahibi sizsiniz.** Abonelik zamları, kapanan servisler, değişen şartlar
@@ -86,6 +86,6 @@ yazılım. Kararsız kaldığınız nokta tam olarak burasıysa — süreçlerin
 kadarının "standart" olduğundan emin değilseniz — bir saatlik bir analiz
 görüşmesi, aylarca sürecek bir yanlış yatırımdan daha ucuzdur.
 
-Bu analizi birlikte yapmak isterseniz [bize ulaşın](/iletisim/) — mevcut
+Bu analizi birlikte yapmak isterseniz [bize ulaşın](/iletisim/). Mevcut
 akışınıza bakar, dürüst bir yol haritası çıkarırız. Bazen vereceğimiz cevap
 "size özel yazılım gerekmiyor" olur; bunu da söyleriz.
