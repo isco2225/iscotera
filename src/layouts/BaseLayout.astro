@@ -65,6 +65,12 @@ const organizationSchema = {
         document.documentElement.dataset.theme = theme;
         var meta = document.querySelector('meta[name="theme-color"]');
         if (meta) meta.content = theme === 'dark' ? '#101012' : '#ffffff';
+        // Anahtarların görünümünü CSS hallediyor; ekran okuyucunun duyduğu
+        // açık/kapalı durumu ise burada güncellenir. Bu script <head>'de
+        // çalıştığında düğmeler henüz yok — Header yüklenince tekrar çağırır.
+        document.querySelectorAll('[data-theme-toggle]').forEach(function (el) {
+          el.setAttribute('aria-checked', theme === 'dark' ? 'true' : 'false');
+        });
       };
 
       (function () {
