@@ -45,7 +45,7 @@ rating:
 # buradaki "kullanıcı puanı" maddesi kaldırıldı.
 results:
   - value: "1.000+"
-    label: "Google Play'den indirme"
+    label: "Google Play"
 pricing:
   label: "Ücretsiz"
 faq:
@@ -69,6 +69,9 @@ testimonials:
     author: "Ad Soyad"
     role: "Google Play yorumu"
   - quote: "Sorduğum soruların cevabının hangi kaynaktan geldiğini yazması güven veriyor. Reklamsız sürüme geçtim, tamamen sade bir uygulama oldu."
+    author: "Ad Soyad"
+    role: "Google Play yorumu"
+  - quote: "İnternet çekmediği yerlerde bile vakitler ve zikirmatik sorunsuz çalışıyor. Her sabah günün duasını okumak için de açıyorum, kısa ve kaynağı yazılı."
     author: "Ad Soyad"
     role: "Google Play yorumu"
 social:

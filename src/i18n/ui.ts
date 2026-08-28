@@ -53,8 +53,8 @@ export const ui = {
     'product.ratingUnit': 'değerlendirme',
     'product.ratingUnitPlural': 'değerlendirme',
     // "App Store" ve "Google Play" marka adı; çevrilmez.
-    'product.appStore': "App Store'dan indir",
-    'product.googlePlay': "Google Play'den indir",
+    'product.appStore': "App Store",
+    'product.googlePlay': "Google Play",
     'product.website': 'Web sitesini incele',
     'product.ctaStoreTitle': 'Uygulamayı deneyin',
     'product.ctaStoreText': 'Ücretsiz indirin, kendiniz görün.',

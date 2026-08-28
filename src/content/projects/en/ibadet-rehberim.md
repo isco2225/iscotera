@@ -71,6 +71,9 @@ testimonials:
   - quote: "It tells you which source an answer comes from, which builds trust. I moved to the ad-free version and the app became completely calm."
     author: "Name Surname"
     role: "Google Play review"
+  - quote: "Prayer times and the dhikr counter keep working even where there is no signal. I also open it every morning for the prayer of the day, short and with its source written underneath."
+    author: "Name Surname"
+    role: "Google Play review"
 social:
   - platform: instagram
     href: "https://www.instagram.com/ibadetrehberim.app/"
