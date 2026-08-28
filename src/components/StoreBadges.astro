@@ -17,6 +17,7 @@
 // rozete geçiliyor. İndirme adresleri public/badges/README.md içinde.
 
 import { existsSync } from 'node:fs';
+import { join } from 'node:path';
 import { useTranslations, type Lang } from '../i18n/ui';
 
 interface Props {
@@ -28,8 +29,11 @@ interface Props {
 const { stores, lang, class: className } = Astro.props;
 const t = useTranslations(lang);
 
+// Yol proje köküne göre çözülüyor: derlemede bu bileşen dist/ altındaki bir
+// pakete giriyor, yani import.meta.url'e göre göreceli bir yol public/ yerine
+// dist/public/'a bakar ve rozet dosyası hiçbir zaman bulunamazdı.
 const hasBadge = (file: string) =>
-  existsSync(new URL(`../../public/badges/${file}`, import.meta.url));
+  existsSync(join(process.cwd(), 'public', 'badges', file));
 
 // Sıra önemli: App Store önce.
 const badges = [

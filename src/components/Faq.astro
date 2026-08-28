@@ -5,6 +5,9 @@
 // klavye erişimi ve ekran okuyucu duyurusu hazır geliyor, sayfaya tek satır
 // JavaScript inmiyor. Ok işaretinin dönmesi de CSS'in :open durumundan
 // geliyor, script'ten değil.
+//
+// Safari'nin kendi üçgen işaretini gizleyen kural burada değil global.css'te:
+// bu kurulumda bileşene özel <style> blokları derleme çıktısına hiç girmiyor.
 
 interface Props {
   items: { q: string; a: string }[];
@@ -38,10 +41,3 @@ const { items, class: className } = Astro.props;
     ))
   }
 </div>
-
-<style>
-  /* Safari işareti list-style ile gizlenmiyor, ayrıca kaldırmak gerekiyor. */
-  summary::-webkit-details-marker {
-    display: none;
-  }
-</style>
