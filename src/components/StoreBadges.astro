@@ -1,0 +1,74 @@
+---
+// Mağaza indirme rozetleri.
+//
+// Rozet görselleri Apple ve Google'ın kendi kurallarına tabi, o yüzden burada
+// birkaç şey bilerek sabit:
+//   * App Store rozeti sıralamada daima ilk gelir (Apple Identity Guidelines).
+//   * Google Play rozeti başka bir mağaza rozetinden küçük olamaz; ikisi de
+//     aynı yükseklikte (48px) basılıyor.
+//   * Rozetin rengi, oranı ve iç boşluğu değiştirilmiyor, üzerine filtre
+//     uygulanmıyor. Siyah rozetin çevresindeki gri çerçeve görselin parçası,
+//     kırpılmıyor — bu yüzden bağlantıda kenarlık/zemin yok.
+//   * "App Store" ve "Google Play" marka adı, çevrilmiyor.
+//
+// Resmî görseller henüz repoda yok. Site onlar olmadan da bozulmasın diye
+// derleme anında dosya varlığı kontrol ediliyor: yoksa metin butonuna
+// düşülüyor, dosya public/badges/ altına konduğu anda otomatik olarak resmî
+// rozete geçiliyor. İndirme adresleri public/badges/README.md içinde.
+
+import { existsSync } from 'node:fs';
+import { useTranslations, type Lang } from '../i18n/ui';
+
+interface Props {
+  stores: { appStore?: string; googlePlay?: string };
+  lang: Lang;
+  class?: string;
+}
+
+const { stores, lang, class: className } = Astro.props;
+const t = useTranslations(lang);
+
+const hasBadge = (file: string) =>
+  existsSync(new URL(`../../public/badges/${file}`, import.meta.url));
+
+// Sıra önemli: App Store önce.
+const badges = [
+  {
+    href: stores.appStore,
+    label: t('product.appStore'),
+    file: `app-store-${lang}.svg`,
+  },
+  {
+    href: stores.googlePlay,
+    label: t('product.googlePlay'),
+    file: `google-play-${lang}.png`,
+  },
+]
+  .filter((badge) => Boolean(badge.href))
+  .map((badge) => ({ ...badge, image: hasBadge(badge.file) ? `/badges/${badge.file}` : null }));
+---
+
+{
+  badges.length > 0 && (
+    <ul class:list={['flex flex-wrap items-center gap-3', className]}>
+      {badges.map((badge) => (
+        <li>
+          <a
+            href={badge.href}
+            target="_blank"
+            rel="noopener"
+            class="inline-flex min-h-12 items-center rounded-lg"
+          >
+            {badge.image ? (
+              <img src={badge.image} alt={badge.label} height="48" class="h-12 w-auto" />
+            ) : (
+              <span class="inline-flex min-h-12 items-center rounded-lg border border-line-strong px-5 text-sm font-semibold text-ink-soft transition-colors hover:border-ink-subtle">
+                {badge.label}
+              </span>
+            )}
+          </a>
+        </li>
+      ))}
+    </ul>
+  )
+}

@@ -1,0 +1,47 @@
+---
+// Sıkça sorulan sorular akordeonu.
+//
+// Tarayıcının kendi <details>/<summary> öğeleriyle yazıldı: açılıp kapanma,
+// klavye erişimi ve ekran okuyucu duyurusu hazır geliyor, sayfaya tek satır
+// JavaScript inmiyor. Ok işaretinin dönmesi de CSS'in :open durumundan
+// geliyor, script'ten değil.
+
+interface Props {
+  items: { q: string; a: string }[];
+  class?: string;
+}
+
+const { items, class: className } = Astro.props;
+---
+
+<div class:list={['divide-y divide-line border-y border-line', className]}>
+  {
+    items.map((item) => (
+      <details class="group">
+        <summary class="flex min-h-11 cursor-pointer list-none items-center justify-between gap-4 py-4 font-semibold text-ink-strong">
+          {item.q}
+          <svg
+            viewBox="0 0 24 24"
+            class="h-5 w-5 shrink-0 text-ink-faint transition-transform group-open:rotate-180"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M6 9l6 6 6-6" />
+          </svg>
+        </summary>
+        <p class="pb-4 text-ink-muted">{item.a}</p>
+      </details>
+    ))
+  }
+</div>
+
+<style>
+  /* Safari işareti list-style ile gizlenmiyor, ayrıca kaldırmak gerekiyor. */
+  summary::-webkit-details-marker {
+    display: none;
+  }
+</style>

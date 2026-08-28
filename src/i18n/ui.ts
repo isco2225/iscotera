@@ -40,6 +40,30 @@ export const ui = {
     'blog.empty': 'Henüz yayınlanmış yazı yok.',
     'projects.empty': 'Ürün detayları yakında eklenecek.',
     'meta.siteName': 'İscotera',
+
+    // Ürün sayfası
+    'product.status.live': 'Yayında',
+    'product.status.beta': 'Beta',
+    'product.status.development': 'Geliştiriliyor',
+    'product.features': 'Öne çıkan özellikler',
+    'product.screenshots': 'Uygulamadan görüntüler',
+    'product.testimonials': 'Kullanıcılar ne diyor?',
+    'product.pricing': 'Fiyat',
+    'product.faq': 'Sıkça sorulan sorular',
+    // {value} ve {count} bileşende gerçek değerlerle değiştirilir.
+    'product.ratingAria': '5 üzerinden {value} puan, {count} değerlendirmeye göre.',
+    'product.ratingUnit': 'değerlendirme',
+    'product.ratingUnitPlural': 'değerlendirme',
+    // "App Store" ve "Google Play" marka adı; çevrilmez.
+    'product.appStore': "App Store'dan indir",
+    'product.googlePlay': "Google Play'den indir",
+    'product.website': 'Web sitesini aç',
+    'product.ctaStoreTitle': 'Uygulamayı deneyin',
+    'product.ctaStoreText': 'Ücretsiz indirin, kendiniz görün.',
+    'product.ctaContactTitle': 'Benzer bir ürün mü düşünüyorsunuz?',
+    'product.ctaContactText':
+      'Aklınızdaki fikri birlikte konuşalım; size dürüst bir yol haritası ve net bir bütçe çıkaralım.',
+    'product.ctaContactLink': 'Bize ulaşın',
   },
   en: {
     'nav.home': 'Home',
@@ -53,6 +77,28 @@ export const ui = {
     'blog.empty': 'No posts published yet.',
     'projects.empty': 'Product details coming soon.',
     'meta.siteName': 'İscotera',
+
+    // Product page
+    'product.status.live': 'Live',
+    'product.status.beta': 'Beta',
+    'product.status.development': 'In development',
+    'product.features': 'What it does',
+    'product.screenshots': 'Inside the app',
+    'product.testimonials': 'What people say',
+    'product.pricing': 'Pricing',
+    'product.faq': 'Frequently asked questions',
+    'product.ratingAria': 'Rated {value} out of 5, based on {count} ratings.',
+    'product.ratingUnit': 'rating',
+    'product.ratingUnitPlural': 'ratings',
+    'product.appStore': 'Download on the App Store',
+    'product.googlePlay': 'Get it on Google Play',
+    'product.website': 'Visit the website',
+    'product.ctaStoreTitle': 'Try the app',
+    'product.ctaStoreText': 'Download it for free and see for yourself.',
+    'product.ctaContactTitle': 'Thinking about a product like this?',
+    'product.ctaContactText':
+      "Tell us what you have in mind and we'll map out an honest plan and a clear budget.",
+    'product.ctaContactLink': 'Get in touch',
   },
 } as const;
 
