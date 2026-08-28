@@ -38,7 +38,7 @@ const otherPosts = (
   back={{ href: '/blog/', label: 'Blog' }}
 >
   <article class="mx-auto max-w-3xl px-4 py-16">
-    <div class="flex items-center gap-2 text-sm text-neutral-500">
+    <div class="flex items-center gap-2 text-sm text-ink-subtle">
       <time datetime={post.data.pubDate.toISOString()}>
         {
           post.data.pubDate.toLocaleDateString('tr-TR', {
@@ -52,7 +52,7 @@ const otherPosts = (
       <span>{minutes} dk okuma</span>
     </div>
 
-    <h1 class="mt-3 text-3xl font-bold leading-tight text-neutral-900 sm:text-4xl">
+    <h1 class="mt-3 text-3xl font-bold leading-tight text-ink-strong sm:text-4xl">
       {post.data.title}
     </h1>
 
@@ -60,7 +60,7 @@ const otherPosts = (
       post.data.tags.length > 0 && (
         <div class="mt-4 flex flex-wrap gap-2">
           {post.data.tags.map((tag) => (
-            <span class="rounded-full bg-neutral-100 px-3 py-1 text-xs text-neutral-600">
+            <span class="rounded-full bg-surface-raised px-3 py-1 text-xs text-ink-muted">
               {tag}
             </span>
           ))}
@@ -68,24 +68,37 @@ const otherPosts = (
       )
     }
 
-    <div class="mt-6 flex items-center gap-2.5 border-y border-neutral-200 py-4">
+    <div class="mt-6 flex items-center gap-2.5 border-y border-line py-4">
       <svg viewBox="0 0 64 64" class="h-7 w-7" aria-hidden="true">
-        <rect width="64" height="64" rx="14" fill="#171717"></rect>
-        <rect x="28" y="8" width="8" height="8" rx="4" fill="#E50914"></rect>
+        <rect
+          x="1"
+          y="1"
+          width="62"
+          height="62"
+          rx="13"
+          stroke-width="2"
+          style="fill: var(--logo-tile); stroke: var(--logo-stroke)"></rect>
+        <rect
+          x="28"
+          y="8"
+          width="8"
+          height="8"
+          rx="4"
+          style="fill: var(--color-brand)"></rect>
         <path d="M28 24 Q28 21 31 21 L33 21 Q36 21 36 24 L36 50 L28 56 Z" fill="#FFFFFF"></path>
       </svg>
-      <span class="text-sm font-semibold text-neutral-800">İscotera Ekibi</span>
+      <span class="text-sm font-semibold text-ink">İscotera Ekibi</span>
     </div>
 
-    <div class="prose prose-neutral mt-8 max-w-none">
+    <div class="prose prose-neutral mt-8 max-w-none dark:prose-invert">
       <Content />
     </div>
 
-    <aside class="mt-14 rounded-xl border border-neutral-200 bg-neutral-50 p-8">
-      <h2 class="text-xl font-bold text-neutral-900">
+    <aside class="mt-14 rounded-xl border border-line bg-surface-muted p-8">
+      <h2 class="text-xl font-bold text-ink-strong">
         Bu konuyu işletmeniz için konuşalım
       </h2>
-      <p class="mt-2 text-neutral-600">
+      <p class="mt-2 text-ink-muted">
         Süreçlerinize birlikte bakalım; size dürüst bir yol haritası çıkaralım.
       </p>
       <a
@@ -98,8 +111,8 @@ const otherPosts = (
 
     {
       otherPosts.length > 0 && (
-        <section class="mt-14 border-t border-neutral-200 pt-8">
-          <h2 class="text-lg font-bold text-neutral-900">Diğer yazılar</h2>
+        <section class="mt-14 border-t border-line pt-8">
+          <h2 class="text-lg font-bold text-ink-strong">Diğer yazılar</h2>
           <ul class="mt-4 space-y-4">
             {otherPosts.map((other) => (
               <li>
@@ -107,14 +120,14 @@ const otherPosts = (
                   href={`/blog/${other.id.replace('tr/', '')}/`}
                   class="group block"
                 >
-                  <span class="text-sm text-neutral-500">
+                  <span class="text-sm text-ink-subtle">
                     {other.data.pubDate.toLocaleDateString('tr-TR', {
                       year: 'numeric',
                       month: 'long',
                       day: 'numeric',
                     })}
                   </span>
-                  <span class="block font-semibold text-neutral-900 transition-colors group-hover:text-action">
+                  <span class="block font-semibold text-ink-strong transition-colors group-hover:text-action-ink">
                     {other.data.title}
                   </span>
                 </a>

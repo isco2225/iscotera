@@ -45,6 +45,12 @@ otomatik oluşur.
 
 ## Bilinçli kararlar
 
+- **Karanlık mod:** iki durumlu düğme (üstte, dil değiştiricinin yanında). İlk
+  ziyarette işletim sistemi tercihine uyar, kullanıcı düğmeye bastığı anda
+  seçim tarayıcıya kaydedilir. Renkler `src/styles/global.css` içindeki anlamsal
+  token'lardan gelir — sayfalarda artık `bg-white` / `text-neutral-900` gibi
+  sabit renk sınıfı **yazılmaz**, `bg-surface` / `text-ink-strong` yazılır.
+  Böylece yeni sayfa iki modda da kendiliğinden doğru görünür.
 - **Blog menüde:** yazı yayınlanana kadar listede "Henüz yayınlanmış yazı yok"
   mesajı görünür — ilk yazılar öncelikli iş.
 - **hreflang:** Her sayfa `BaseLayout`'a `alternate` prop'u ile diğer dildeki

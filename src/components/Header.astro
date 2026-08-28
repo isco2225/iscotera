@@ -23,17 +23,34 @@ const otherLang: Lang = lang === 'tr' ? 'en' : 'tr';
 const switchHref = alternate ?? routes[otherLang].home;
 const switchLabel = otherLang === 'en' ? 'Switch to English' : "Türkçe'ye geç";
 const currentPath = Astro.url.pathname;
+const themeLabel = lang === 'tr' ? 'Açık / koyu tema değiştir' : 'Toggle light / dark theme';
 ---
 
-<header class="border-b border-neutral-200">
+<header class="border-b border-line">
   <div class="mx-auto flex max-w-5xl items-center justify-between gap-6 px-4 py-4">
     <a
       href={r.home}
-      class="flex items-center gap-3 text-2xl font-bold tracking-tight text-neutral-900"
+      class="flex items-center gap-3 text-2xl font-bold tracking-tight text-ink-strong"
     >
+      {/* Kutu koyu zeminde kaybolmasın diye bir tık açılır ve saç teli bir
+          kenarlık kazanır (değişkenler global.css'te). Kenarlığın kırpılmaması
+          için dikdörtgen 1px içeri alındı. */}
       <svg viewBox="0 0 64 64" class="h-8 w-8" aria-hidden="true">
-        <rect width="64" height="64" rx="14" fill="#171717"></rect>
-        <rect x="28" y="8" width="8" height="8" rx="4" fill="#E50914"></rect>
+        <rect
+          x="1"
+          y="1"
+          width="62"
+          height="62"
+          rx="13"
+          stroke-width="2"
+          style="fill: var(--logo-tile); stroke: var(--logo-stroke)"></rect>
+        <rect
+          x="28"
+          y="8"
+          width="8"
+          height="8"
+          rx="4"
+          style="fill: var(--color-brand)"></rect>
         <path d="M28 24 Q28 21 31 21 L33 21 Q36 21 36 24 L36 50 L28 56 Z" fill="#FFFFFF"></path>
       </svg>
       {/* leading-none + translate: büyük harfli metnin satır kutusundaki alt boşluğu
@@ -52,10 +69,10 @@ const currentPath = Astro.url.pathname;
                 href={item.href}
                 aria-current={currentPath === item.href ? 'page' : undefined}
                 class:list={[
-                  'transition-colors hover:text-neutral-900',
+                  'transition-colors hover:text-ink-strong',
                   currentPath === item.href
-                    ? 'font-semibold text-neutral-900'
-                    : 'text-neutral-600',
+                    ? 'font-semibold text-ink-strong'
+                    : 'text-ink-muted',
                 ]}
               >
                 {item.label}
@@ -66,11 +83,46 @@ const currentPath = Astro.url.pathname;
         <li>
           <a
             href={switchHref}
-            class="rounded border border-neutral-300 px-2 py-1 text-xs font-semibold text-neutral-600 transition-colors hover:border-neutral-500 hover:text-neutral-900"
+            class="rounded border border-line-strong px-2 py-1 text-xs font-semibold text-ink-muted transition-colors hover:border-ink-subtle hover:text-ink-strong"
             aria-label={switchLabel}
           >
             {otherLang.toUpperCase()}
           </a>
+        </li>
+        <li class="flex">
+          <button
+            type="button"
+            data-theme-toggle
+            class="rounded-lg p-1.5 text-ink-muted transition-colors hover:bg-surface-raised hover:text-ink-strong"
+            aria-label={themeLabel}
+          >
+            <svg
+              viewBox="0 0 24 24"
+              class="h-5 w-5 dark:hidden"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="4"></circle>
+              <path
+                d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
+              ></path>
+            </svg>
+            <svg
+              viewBox="0 0 24 24"
+              class="hidden h-5 w-5 dark:block"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path>
+            </svg>
+          </button>
         </li>
       </ul>
     </nav>
@@ -78,7 +130,7 @@ const currentPath = Astro.url.pathname;
     <button
       id="menu-toggle"
       type="button"
-      class="-mr-2 rounded-lg p-2.5 text-neutral-700 transition-colors hover:bg-neutral-100 md:hidden"
+      class="-mr-2 rounded-lg p-2.5 text-ink-soft transition-colors hover:bg-surface-raised md:hidden"
       aria-label={lang === 'tr' ? 'Menüyü aç' : 'Open menu'}
       aria-expanded="false"
       aria-controls="mobile-menu"
@@ -96,17 +148,17 @@ const currentPath = Astro.url.pathname;
 <div id="menu-overlay" class="fixed inset-0 z-40 hidden bg-black/40 md:hidden"></div>
 <aside
   id="mobile-menu"
-  class="fixed inset-y-0 right-0 z-50 w-72 max-w-[85vw] translate-x-full bg-white shadow-xl transition-transform duration-200 ease-out md:hidden"
+  class="fixed inset-y-0 right-0 z-50 w-72 max-w-[85vw] translate-x-full bg-surface shadow-xl transition-transform duration-200 ease-out md:hidden"
   aria-label={lang === 'tr' ? 'Mobil menü' : 'Mobile menu'}
 >
-  <div class="flex items-center justify-between border-b border-neutral-200 px-5 py-4">
-    <span class="text-lg font-bold tracking-tight text-neutral-900"
+  <div class="flex items-center justify-between border-b border-line px-5 py-4">
+    <span class="text-lg font-bold tracking-tight text-ink-strong"
       ><span class="text-brand">İSCO</span>TERA</span
     >
     <button
       id="menu-close"
       type="button"
-      class="-mr-1 rounded-lg p-2.5 text-neutral-700 transition-colors hover:bg-neutral-100"
+      class="-mr-1 rounded-lg p-2.5 text-ink-soft transition-colors hover:bg-surface-raised"
       aria-label={lang === 'tr' ? 'Menüyü kapat' : 'Close menu'}
     >
       <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
@@ -124,10 +176,10 @@ const currentPath = Astro.url.pathname;
               href={item.href}
               aria-current={currentPath === item.href ? 'page' : undefined}
               class:list={[
-                'block rounded-lg px-3 py-3 text-base transition-colors hover:bg-neutral-100',
+                'block rounded-lg px-3 py-3 text-base transition-colors hover:bg-surface-raised',
                 currentPath === item.href
-                  ? 'font-semibold text-neutral-900'
-                  : 'text-neutral-700',
+                  ? 'font-semibold text-ink-strong'
+                  : 'text-ink-soft',
               ]}
             >
               {item.label}
@@ -137,14 +189,47 @@ const currentPath = Astro.url.pathname;
       }
     </ul>
   </nav>
-  <div class="border-t border-neutral-200 p-4">
+  <div class="flex gap-2 border-t border-line p-4">
     <a
       href={switchHref}
-      class="block rounded-lg border border-neutral-300 px-3 py-3 text-center text-sm font-semibold text-neutral-700 transition-colors hover:border-neutral-500"
+      class="flex-1 rounded-lg border border-line-strong px-3 py-3 text-center text-sm font-semibold text-ink-soft transition-colors hover:border-ink-subtle"
       aria-label={switchLabel}
     >
       {otherLang === 'en' ? 'English' : 'Türkçe'}
     </a>
+    <button
+      type="button"
+      data-theme-toggle
+      class="flex w-14 shrink-0 items-center justify-center rounded-lg border border-line-strong text-ink-soft transition-colors hover:border-ink-subtle"
+      aria-label={themeLabel}
+    >
+      <svg
+        viewBox="0 0 24 24"
+        class="h-5 w-5 dark:hidden"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        aria-hidden="true"
+      >
+        <circle cx="12" cy="12" r="4"></circle>
+        <path
+          d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
+        ></path>
+      </svg>
+      <svg
+        viewBox="0 0 24 24"
+        class="hidden h-5 w-5 dark:block"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path>
+      </svg>
+    </button>
   </div>
 </aside>
 
@@ -167,5 +252,27 @@ const currentPath = Astro.url.pathname;
   overlay?.addEventListener('click', () => setOpen(false));
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') setOpen(false);
+  });
+
+  // BaseLayout'taki satır içi script tanımlar: data-theme ile birlikte mobil
+  // tarayıcı çubuğunun rengini de günceller, böylece renkler tek yerde durur.
+  function setTheme(theme: 'light' | 'dark') {
+    (window as unknown as { __setTheme(t: string): void }).__setTheme(theme);
+  }
+
+  // Tema: iki durumlu. İlk ziyarette sistem tercihi geçerlidir (data-theme'i
+  // BaseLayout'taki satır içi script yazar); düğmeye basıldığı anda seçim
+  // localStorage'a kaydedilir ve bundan sonra sistem tercihinin önüne geçer.
+  document.querySelectorAll('[data-theme-toggle]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const root = document.documentElement;
+      const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+      setTheme(next);
+      try {
+        localStorage.setItem('theme', next);
+      } catch {
+        // Gizli sekmede yazma engellenebilir; tema yine de bu sayfada değişir.
+      }
+    });
   });
 </script>

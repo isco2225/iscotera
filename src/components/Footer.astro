@@ -12,20 +12,20 @@ const r = routes[lang];
 const year = new Date().getFullYear();
 ---
 
-<footer class="border-t border-neutral-200 bg-neutral-50">
-  <div class="mx-auto max-w-5xl px-4 py-8 text-sm text-neutral-500">
+<footer class="border-t border-line bg-surface-muted">
+  <div class="mx-auto max-w-5xl px-4 py-8 text-sm text-ink-subtle">
     <div class="flex flex-col items-center justify-between gap-4 sm:flex-row">
       <ul
         class="flex flex-wrap items-center justify-center gap-4"
         aria-label={lang === 'tr' ? 'İletişim kanalları' : 'Contact channels'}
       >
         <li>
-          <a href={`mailto:${contact.email}`} class="hover:text-neutral-800">
+          <a href={`mailto:${contact.email}`} class="hover:text-ink">
             {contact.email}
           </a>
         </li>
         <li>
-          <a href={`tel:${contact.phoneE164}`} class="hover:text-neutral-800">
+          <a href={`tel:${contact.phoneE164}`} class="hover:text-ink">
             {contact.phoneDisplay}
           </a>
         </li>
@@ -34,7 +34,7 @@ const year = new Date().getFullYear();
             href={contact.instagramUrl}
             target="_blank"
             rel="noopener"
-            class="hover:text-neutral-800"
+            class="hover:text-ink"
           >
             {contact.instagramHandle}
           </a>
@@ -42,9 +42,9 @@ const year = new Date().getFullYear();
       </ul>
       <nav aria-label={lang === 'tr' ? 'Alt menü' : 'Footer menu'}>
         <ul class="flex items-center gap-4">
-          <li><a href={r.about} class="hover:text-neutral-800">{t('nav.about')}</a></li>
-          <li><a href={r.services} class="hover:text-neutral-800">{t('nav.services')}</a></li>
-          <li><a href={r.contact} class="hover:text-neutral-800">{t('nav.contact')}</a></li>
+          <li><a href={r.about} class="hover:text-ink">{t('nav.about')}</a></li>
+          <li><a href={r.services} class="hover:text-ink">{t('nav.services')}</a></li>
+          <li><a href={r.contact} class="hover:text-ink">{t('nav.contact')}</a></li>
         </ul>
       </nav>
     </div>

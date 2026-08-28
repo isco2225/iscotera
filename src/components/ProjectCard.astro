@@ -18,16 +18,16 @@ const { title, description, logo, cover, results } = project.data;
 
 <a
   href={href}
-  class="group grid overflow-hidden rounded-2xl border border-neutral-200 transition hover:border-brand/40 hover:shadow-lg sm:grid-cols-5"
+  class="group grid overflow-hidden rounded-2xl border border-line transition hover:border-brand/40 hover:shadow-lg sm:grid-cols-5"
 >
   {
     cover && (
-      <div class="flex items-center justify-center bg-neutral-50 p-8 sm:col-span-2">
+      <div class="flex items-center justify-center bg-surface-muted p-8 sm:col-span-2">
         <Image
           src={cover}
           alt=""
           width={440}
-          class="w-full max-w-[200px] rounded-xl border border-neutral-200 shadow-sm"
+          class="w-full max-w-[200px] rounded-xl border border-line shadow-sm"
         />
       </div>
     )
@@ -45,29 +45,29 @@ const { title, description, logo, cover, results } = project.data;
             src={logo}
             alt=""
             width={80}
-            class="h-10 w-10 shrink-0 rounded-lg border border-neutral-200"
+            class="h-10 w-10 shrink-0 rounded-lg border border-line"
           />
         )
       }
-      <Heading class="text-xl font-bold text-neutral-900">{title}</Heading>
+      <Heading class="text-xl font-bold text-ink-strong">{title}</Heading>
     </div>
 
-    <p class="text-neutral-600">{description}</p>
+    <p class="text-ink-muted">{description}</p>
 
     {
       results.length > 0 && (
-        <dl class="flex flex-wrap gap-x-6 gap-y-2 border-t border-neutral-200 pt-4">
+        <dl class="flex flex-wrap gap-x-6 gap-y-2 border-t border-line pt-4">
           {results.map((result) => (
             <div class="flex items-baseline gap-1.5">
-              <dt class="font-bold text-neutral-900">{result.value}</dt>
-              <dd class="text-sm text-neutral-500">{result.label}</dd>
+              <dt class="font-bold text-ink-strong">{result.value}</dt>
+              <dd class="text-sm text-ink-subtle">{result.label}</dd>
             </div>
           ))}
         </dl>
       )
     }
 
-    <span class="text-sm font-semibold text-action">
+    <span class="text-sm font-semibold text-action-ink">
       {linkLabel}{' '}
       <span
         class="inline-block transition-transform group-hover:translate-x-1"

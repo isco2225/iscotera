@@ -1,15 +1,95 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+/* Karanlık mod, <html data-theme="dark"> ile açılır. Tercih BaseLayout'taki
+   satır içi script tarafından, sayfa boyanmadan önce yazılır. */
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
 /* Marka paleti: beyaz zemin + nötr siyah/gri + kırmızı vurgu + mavi eylem rengi.
    Kural: kırmızı yalnızca marka vurgusudur (logo, hover, ince çizgi) — dolu buton
-   zemini olarak kullanılmaz; dolu butonlar --color-action (mavi) kullanır. */
+   zemini olarak kullanılmaz; dolu butonlar --color-action (mavi) kullanır.
+
+   ÖNEMLİ: Sayfalarda artık sabit renk sınıfı (bg-white, text-neutral-900…)
+   kullanılmaz; aşağıdaki anlamsal token'lar kullanılır. Token'ların açık mod
+   değerleri Tailwind'in neutral tonlarının birebir aynısıdır, karanlık mod
+   değerleri ise :root[data-theme='dark'] bloğunda değişir. Böylece sayfaların
+   karanlık moddan haberi olması gerekmez. */
 @theme {
+  /* Zeminler */
+  --color-surface: #ffffff;
+  --color-surface-muted: #fafafa;
+  --color-surface-raised: #f5f5f5;
+
+  /* Çizgiler */
+  --color-line: #e5e5e5;
+  --color-line-strong: #d4d4d4;
+
+  /* Metin tonları — koyudan açığa */
+  --color-ink-strong: #171717;
+  --color-ink: #262626;
+  --color-ink-soft: #404040;
+  --color-ink-muted: #525252;
+  --color-ink-subtle: #737373;
+  --color-ink-faint: #a3a3a3;
+
+  /* Marka kırmızısı: kimlik ve dekorasyon (logo, adım numaraları, hover çizgisi) */
   --color-brand: #e50914;
   --color-brand-dark: #b20710;
 
   /* Eylem rengi: dolu butonlar (CTA, yönlendirme) bu tonu kullanır.
-     Kırmızı dolu buton "sil / iptal et" gibi okunduğu için ayrıldı. */
+     Kırmızı dolu buton "sil / iptal et" gibi okunduğu için ayrıldı.
+     action-ink ise bağlantı/başlık metni içindir: karanlık modda dolu buton
+     zemininin okunur tonu ile metnin okunur tonu aynı olamıyor. */
   --color-action: #1d4ed8;
   --color-action-dark: #1e40af;
+  --color-action-ink: #1d4ed8;
+}
+
+/* Karanlık mod değerleri. Yalnızca token'lar yeniden tanımlanır; bileşenlerde
+   ayrıca dark: varyantı yazmaya gerek kalmaz.
+   Kontrast oranları #101012 zeminine karşı ölçüldü (AA eşiği 4.5:1). */
+:root[data-theme='dark'] {
+  --color-surface: #101012;
+  --color-surface-muted: #17171a;
+  --color-surface-raised: #202024;
+
+  --color-line: #2a2a30;
+  --color-line-strong: #3a3a42;
+
+  --color-ink-strong: #f4f4f5; /* 16.9:1 */
+  --color-ink: #d4d4d8; /*        12.8:1 */
+  --color-ink-soft: #c0c0c8; /*   10.5:1 */
+  --color-ink-muted: #a1a1aa; /*   7.4:1 */
+  --color-ink-subtle: #8b8b94; /*  5.5:1 — açık moddaki #737373 koyuda eşiğin altına düşüyor */
+  --color-ink-faint: #6b6b75; /*   3.0:1 — yalnızca dekoratif ikon, metin değil */
+
+  /* #e50914 koyu zeminde 3.9:1'e düşüyor; marka kırmızısının açılmış hâli */
+  --color-brand: #ff4d57; /*       5.8:1 */
+  --color-brand-dark: #e50914;
+
+  --color-action: #2563eb; /*      beyaz yazıyla 5.2:1 */
+  --color-action-dark: #1d4ed8;
+  --color-action-ink: #60a5fa; /*  7.5:1 */
+}
+
+/* Tarayıcının kendi arayüzü de (kaydırma çubuğu, form kontrolleri, otomatik
+   doldurma) temaya uysun. */
+:root {
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+}
+
+/* Logo, koyu zeminde kutusu kaybolmasın diye bir tık açılır ve saç teli bir
+   kenarlık kazanır. Renkler Header'daki SVG'de bu değişkenlerden okunur. */
+:root {
+  --logo-tile: #171717;
+  --logo-stroke: transparent;
+}
+
+:root[data-theme='dark'] {
+  --logo-tile: #1c1c20;
+  --logo-stroke: #34343c;
 }

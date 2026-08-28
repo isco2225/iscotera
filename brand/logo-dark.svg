@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Koyu zemin varyantı. Marka değişmiyor: kutu #171717'den #1C1C20'ye
+       açılıyor ve koyu zeminde silueti kaybolmasın diye saç teli bir kenarlık
+       alıyor; nokta da koyuda okunur tona (#FF4D57) geçiyor.
+       Açık zeminler için logo.svg ve PNG dışa aktarımları kullanılır. -->
+  <rect x="1" y="1" width="62" height="62" rx="13" fill="#1C1C20" stroke="#34343C" stroke-width="2"/>
+  <rect x="28" y="8" width="8" height="8" rx="4" fill="#FF4D57"/>
+  <path d="M28 24 Q28 21 31 21 L33 21 Q36 21 36 24 L36 50 L28 56 Z" fill="#FFFFFF"/>
+</svg>
