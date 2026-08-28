@@ -22,8 +22,9 @@ import Faq from './Faq.astro';
 import SocialLinks from './SocialLinks.astro';
 import {
   PRODUCT_IMAGE_WIDTH,
+  isPlaceholder,
   platformLabels,
-  warnPendingStores,
+  warnUnfinishedData,
 } from '../utils/product';
 import { routes, useTranslations, type Lang } from '../i18n/ui';
 
@@ -59,7 +60,7 @@ const {
 } = project.data;
 
 const platforms = platformLabels(project.data);
-warnPendingStores(title, project.data);
+warnUnfinishedData(title, project.data);
 
 // tagline hero'daki kısa vaat cümlesi, description ise arama sonucunda
 // görünen tam açıklama. İkisi ayrı: tagline'ı meta description olarak
@@ -84,10 +85,15 @@ const renderedLogo = logo ? await getImage({ src: logo, width: 128 }) : null;
 
 // SoftwareApplication şeması.
 //
-// aggregateRating YALNIZCA puan sayfada da görünürken ekleniyor: Google,
-// kullanıcıya gösterilmeyen puanı yapılandırılmış veride bildirmeyi kural
-// ihlali sayıyor. Aşağıdaki kanıt şeridi rating varsa her zaman Rating
-// bileşenini basıyor, yani iki koşul aynı alana bağlı.
+// aggregateRating iki koşulu birden geçmek zorunda:
+//   1. Puan sayfada da görünüyor olmalı. Google, kullanıcıya gösterilmeyen
+//      puanı yapılandırılmış veride bildirmeyi kural ihlali sayıyor; aşağıdaki
+//      kanıt şeridi rating varsa her zaman Rating bileşenini bastığı için bu
+//      koşul rating alanının kendisine bağlı.
+//   2. Puan gerçek olmalı. Düzeni görmek için doldurulmuş örnek bir puan
+//      sayfada durabilir ama şemaya giremez — uydurma bir değeri arama
+//      motoruna bildirmek manuel işleme yol açar.
+const ratingIsReal = Boolean(rating) && !isPlaceholder(project.data, 'rating');
 const appSchema = app
   ? {
       '@context': 'https://schema.org',
@@ -111,7 +117,7 @@ const appSchema = app
             installUrl: [stores.appStore, stores.googlePlay].filter(Boolean),
           }
         : {}),
-      ...(rating
+      ...(rating && ratingIsReal
         ? {
             aggregateRating: {
               '@type': 'AggregateRating',

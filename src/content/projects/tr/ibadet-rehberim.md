@@ -44,14 +44,18 @@ screenshots:
   - src: "../_images/ibadet-rehberim/screen-assistant.png"
     alt: "İbadet Rehberim islami asistan ekranı: kullanıcının sorduğu dinî soruya verilen kaynaklı yanıt"
     caption: "İslami asistan"
-# NOT: rating alanı bilerek boş. Google Play'deki gerçek puan ve değerlendirme
-# sayısı doğrulanmadan yazılmayacak; uydurulmuş bir puanı sayfada göstermek de
-# yapılandırılmış veride bildirmek de kural ihlali.
+# ÖRNEK VERİ — düzeni görmek için konuldu, gerçek değil.
+# Google Play'deki gerçek puan ve değerlendirme sayısı gelince burası
+# güncellenecek ve aşağıdaki placeholderData listesinden 'rating' çıkarılacak.
+# O zamana kadar bu puan sayfada görünür ama yapılandırılmış veriye girmez.
+rating:
+  value: 4.6
+  count: 128
+# Puan artık rating alanından geliyor; şeritte iki kez görünmesin diye
+# buradaki "kullanıcı puanı" maddesi kaldırıldı.
 results:
   - value: "1.000+"
     label: "Google Play'den indirme"
-  - value: "5,0"
-    label: "kullanıcı puanı"
 pricing:
   label: "Ücretsiz"
   note: "Uygulama ücretsiz indiriliyor ve temel özelliklerin tamamı ücretsiz. Reklam görmek istemeyenler için haftalık ya da yıllık premium seçeneği var."
@@ -66,6 +70,18 @@ faq:
     a: "Diyanet İşleri Başkanlığı'nın hesaplama yöntemine göre ve bulunduğunuz konum esas alınarak."
   - q: "iPhone sürümü var mı?"
     a: "Evet. Uygulama tek bir kaynaktan hem iPhone hem Android için geliştirildi; iki platformda da aynı özellikler var ve yeni özellikler ikisine aynı anda geliyor."
+# ÖRNEK VERİ — düzeni görmek için konuldu, gerçek yorum değil.
+# "Ad Soyad" bilerek yer tutucu olarak bırakıldı ki gerçek sanılmasın.
+testimonials:
+  - quote: "Vakit bildirimleri tam zamanında geliyor, artık saate bakma ihtiyacı duymuyorum. Yazılar da büyük olduğu için annem bile rahatça kullanıyor."
+    author: "Ad Soyad"
+    role: "Google Play yorumu"
+  - quote: "Zikir hedeflerimi tutturup tutturmadığımı görebilmek beni gerçekten düzenli hâle getirdi. Telefonumu değiştirdiğimde de kayıtlarım duruyordu."
+    author: "Ad Soyad"
+    role: "Google Play yorumu"
+  - quote: "Sorduğum soruların cevabının hangi kaynaktan geldiğini yazması güven veriyor. Reklamsız sürüme geçtim, tamamen sade bir uygulama oldu."
+    author: "Ad Soyad"
+    role: "Google Play yorumu"
 social:
   - platform: instagram
     href: "https://www.instagram.com/ibadetrehberim.app/"
@@ -79,6 +95,11 @@ app:
   operatingSystem: "ANDROID, IOS"
   price: "0"
   priceCurrency: "TRY"
+# Aşağıdaki alanlar gerçek veriyle değiştirilene kadar yapılandırılmış
+# veriden hariç tutulur ve her derlemede uyarı basılır.
+placeholderData:
+  - rating
+  - testimonials
 order: 1
 draft: true
 ---

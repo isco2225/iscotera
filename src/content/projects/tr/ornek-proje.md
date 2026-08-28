@@ -43,8 +43,12 @@ stores:
 
 # Mağaza puanı. YALNIZCA mağazadan bakıp doğruladığınız gerçek değeri
 # yazın; puan hem sayfada hem yapılandırılmış veride görünür ve uydurma
-# bir değer Google tarafında manuel işleme yol açar. Emin değilseniz
-# alanı hiç eklemeyin.
+# bir değer Google tarafında manuel işleme yol açar.
+#
+# Yalnızca düzeni görmek için geçici bir değer koymanız gerekiyorsa alan
+# adını aşağıdaki placeholderData listesine ekleyin: değer sayfada
+# görünmeye devam eder ama yapılandırılmış veriye girmez ve her derlemede
+# uyarı basılır.
 # rating:
 #   value: 4.8
 #   count: 126
@@ -72,7 +76,8 @@ screenshots: []
   #   alt: "Ana ekran: günlük özet ve kısayollar"
   #   caption: "Ana ekran"
 
-# Gerçek, izin alınmış yorumlar. Uydurma yorum yazılmaz.
+# Gerçek, izin alınmış yorumlar. Geçici örnek yorum koyacaksanız
+# placeholderData listesine 'testimonials' ekleyin.
 testimonials: []
   # - quote: "..."
   #   author: "Ad Soyad"
@@ -104,6 +109,13 @@ app:
   operatingSystem: "ANDROID, IOS"
   price: "0"
   priceCurrency: "TRY"
+
+# Düzeni görmek için geçici doldurulmuş alanlar. Buradaki alanlar sayfada
+# görünür ama yapılandırılmış veriye girmez; dolu kaldığı her derlemede
+# uyarı basılır. Yayına çıkmadan önce boşalması gerekir.
+placeholderData: []
+  # - rating
+  # - testimonials
 
 order: 1
 draft: true

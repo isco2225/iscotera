@@ -55,23 +55,51 @@ export function platformLabels(data: ProjectData): string[] {
   return platforms;
 }
 
+/**
+ * İlgili alan yalnızca düzeni görmek için doldurulmuş örnek veri mi?
+ * Öyleyse sayfada görünür ama yapılandırılmış veriye girmez.
+ */
+export function isPlaceholder(
+  data: ProjectData,
+  field: 'rating' | 'testimonials'
+): boolean {
+  return data.placeholderData.includes(field);
+}
+
 // Aynı ürün iki dilde ve birden çok sayfada render edildiği için uyarı
 // yineleniyor; bir kez basılsın diye görülenler burada tutuluyor.
-const warnedPending = new Set<string>();
+const warned = new Set<string>();
+
+function warnOnce(key: string, message: string): void {
+  if (warned.has(key)) return;
+  warned.add(key);
+  console.warn(message);
+}
 
 /**
- * stores.pending dolu kaldığı sürece sayfada tıklanamaz bir rozet duruyor.
- * Bu, bağlantı gelene kadar düzeni görmek için konan geçici bir yer tutucu —
- * yayına sessizce çıkmasın diye her derlemede uyarı basılıyor.
+ * Sayfada duran ama gerçek olmayan her şeyi derlemede yüzümüze söyler:
+ * bağlantısı gelmemiş mağaza rozetleri ve düzeni görmek için doldurulmuş
+ * örnek veriler. İkisi de yayına sessizce çıkmamalı.
  */
-export function warnPendingStores(title: string, data: ProjectData): void {
-  if (data.stores.pending.length === 0) return;
-  const key = `${title}:${data.stores.pending.join(',')}`;
-  if (warnedPending.has(key)) return;
-  warnedPending.add(key);
-  console.warn(
-    `[ürünler] "${title}": ${data.stores.pending.join(', ')} bağlantısı eksik. ` +
-      'Rozet tıklanamaz yer tutucu olarak basılıyor; yayına çıkmadan önce ' +
-      'stores alanına adresi ekleyip pending listesinden çıkarın.'
-  );
+export function warnUnfinishedData(title: string, data: ProjectData): void {
+  const { pending } = data.stores;
+  if (pending.length > 0) {
+    warnOnce(
+      `stores:${title}:${pending.join(',')}`,
+      `[ürünler] "${title}": ${pending.join(', ')} bağlantısı eksik. ` +
+        'Rozet tıklanamaz yer tutucu olarak basılıyor; yayına çıkmadan önce ' +
+        'stores alanına adresi ekleyip pending listesinden çıkarın.'
+    );
+  }
+
+  const placeholders = data.placeholderData;
+  if (placeholders.length > 0) {
+    warnOnce(
+      `placeholder:${title}:${placeholders.join(',')}`,
+      `[ürünler] "${title}": ${placeholders.join(', ')} alanı ÖRNEK VERİ. ` +
+        'Sayfada görünüyor ama yapılandırılmış veriye dahil edilmedi. ' +
+        'Yayına çıkmadan önce gerçeğiyle değiştirip placeholderData ' +
+        'listesinden çıkarın.'
+    );
+  }
 }

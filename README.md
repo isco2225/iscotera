@@ -54,7 +54,9 @@ içinde yazılı; şablonu kopyalayıp doldurmak en hızlısı.
 - **`rating` uydurulmaz.** Puan ve değerlendirme sayısı mağazadan bakılıp
   doğrulanmadan yazılmaz. Bu değerler sayfada göründüğü gibi yapılandırılmış
   veriye de girer; gösterilmeyen ya da gerçek olmayan bir puanı bildirmek
-  Google tarafında manuel işleme yol açar. Emin değilseniz alanı hiç eklemeyin.
+  Google tarafında manuel işleme yol açar. Yalnızca düzeni görmek için geçici
+  bir değer gerekiyorsa alan adını `placeholderData` listesine yazın: değer
+  sayfada görünür ama şemaya girmez ve her derlemede uyarı basılır.
 - **`results` ölçülebilir şeyler içindir**, en fazla 3 madde. "iOS + Android"
   bir sonuç değil özelliktir ve yanındaki gerçek sayıları da şüpheli gösterir.
 - **Özellikler gövdeye madde madde yazılmaz**, `features` alanına girer. Gövdede

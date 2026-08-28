@@ -44,14 +44,18 @@ screenshots:
   - src: "../_images/ibadet-rehberim/screen-assistant.png"
     alt: "İbadet Rehberim assistant screen: an answer to a religious question with its source cited"
     caption: "Islamic assistant"
-# NOTE: the rating field is deliberately empty. The real Google Play score and
-# review count go in only once they are verified; showing an invented score on
-# the page, or reporting one in structured data, breaks the rules either way.
+# ÖRNEK VERİ — düzeni görmek için konuldu, gerçek değil. Gerçek puan ve
+# değerlendirme sayısı gelince burası güncellenecek ve aşağıdaki
+# placeholderData listesinden 'rating' çıkarılacak. O zamana kadar puan
+# sayfada görünür ama yapılandırılmış veriye girmez.
+rating:
+  value: 4.6
+  count: 128
+# Puan artık rating alanından geliyor; şeritte iki kez görünmesin diye
+# buradaki "user rating" maddesi kaldırıldı.
 results:
   - value: "1,000+"
     label: "Google Play downloads"
-  - value: "5.0"
-    label: "user rating"
 pricing:
   label: "Free"
   note: "The app is free to download and every core feature is free. There is a weekly or yearly premium option for people who would rather not see ads."
@@ -66,6 +70,18 @@ faq:
     a: "Using the calculation method of the Turkish Directorate of Religious Affairs, based on your current location."
   - q: "Is there an iPhone version?"
     a: "Yes. The app was built for both iPhone and Android from a single source; both platforms have the same features, and new features reach them at the same time."
+# ÖRNEK VERİ — düzeni görmek için konuldu, gerçek yorum değil.
+# "Name Surname" bilerek yer tutucu olarak bırakıldı ki gerçek sanılmasın.
+testimonials:
+  - quote: "The prayer time notifications arrive exactly on time, so I no longer keep checking the clock. The type is large enough that even my mother uses it comfortably."
+    author: "Name Surname"
+    role: "Google Play review"
+  - quote: "Being able to see whether I hit my dhikr goals is what actually made me consistent. My records were still there when I switched phones."
+    author: "Name Surname"
+    role: "Google Play review"
+  - quote: "It tells you which source an answer comes from, which builds trust. I moved to the ad-free version and the app became completely calm."
+    author: "Name Surname"
+    role: "Google Play review"
 social:
   - platform: instagram
     href: "https://www.instagram.com/ibadetrehberim.app/"
@@ -79,6 +95,11 @@ app:
   operatingSystem: "ANDROID, IOS"
   price: "0"
   priceCurrency: "TRY"
+# Aşağıdaki alanlar gerçek veriyle değiştirilene kadar yapılandırılmış
+# veriden hariç tutulur ve her derlemede uyarı basılır.
+placeholderData:
+  - rating
+  - testimonials
 order: 1
 draft: true
 ---

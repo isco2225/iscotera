@@ -138,6 +138,13 @@ const projects = defineCollection({
           priceCurrency: z.string().default('TRY'),
         })
         .optional(),
+      // Düzeni görmek için geçici olarak doldurulmuş, gerçek olmayan alanlar.
+      // Buraya yazılan alan sayfada görünmeye devam eder ama yapılandırılmış
+      // veriye GİRMEZ: uydurma bir puanı ya da yorumu şemada bildirmek
+      // Google'ın kurallarını ihlal eder ve manuel işleme yol açar. Ayrıca
+      // dolu kaldığı her derlemede uyarı basılır — yayına çıkmadan önce
+      // boşalması gerekir.
+      placeholderData: z.array(z.enum(['rating', 'testimonials'])).default([]),
       order: z.number().default(0),
       draft: z.boolean().default(false),
     }),
