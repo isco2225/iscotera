@@ -23,7 +23,7 @@ export async function getStaticPaths() {
         params: { slug },
         props: {
           project,
-          alternate: translated.has(slug) ? `/projeler/${slug}/` : undefined,
+          alternate: translated.has(slug) ? `/urunler/${slug}/` : undefined,
         },
       };
     });
@@ -39,7 +39,7 @@ const { Content } = await render(project);
   lang="en"
   alternate={alternate}
   ogType="article"
-  back={{ href: '/en/projects/', label: 'Products' }}
+  back={{ href: '/en/products/', label: 'Products' }}
 >
   <article class="mx-auto max-w-3xl px-4 py-16">
     <div class="flex items-center gap-4">

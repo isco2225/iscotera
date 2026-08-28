@@ -20,7 +20,7 @@ const projects = (
   title="Ürünler"
   description="İscotera'nın geliştirdiği ürünler ve vaka çalışmaları."
   lang="tr"
-  alternate="/en/projects/"
+  alternate="/en/products/"
   back={{ href: '/', label: 'Ana Sayfa' }}
 >
   <section class="mx-auto max-w-5xl px-4 py-16">
@@ -38,7 +38,7 @@ const projects = (
             {projects.map((project) => (
               <ProjectCard
                 project={project}
-                href={`/projeler/${project.id.replace('tr/', '')}/`}
+                href={`/urunler/${project.id.replace('tr/', '')}/`}
                 linkLabel="İncele"
                 lang="tr"
                 as="h2"

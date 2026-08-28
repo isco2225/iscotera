@@ -71,7 +71,7 @@ const steps = [
         Bize Ulaşın
       </a>
       <a
-        href="/projeler/"
+        href="/urunler/"
         class="rounded-lg border border-line-strong px-6 py-3 text-sm font-semibold text-ink-soft transition-colors hover:border-ink-subtle"
       >
         Ürünlerimiz
@@ -118,7 +118,7 @@ const steps = [
         <div class="flex items-baseline justify-between gap-4">
           <h2 class="text-2xl font-bold text-ink-strong">Ürünlerimiz</h2>
           <a
-            href="/projeler/"
+            href="/urunler/"
             class="shrink-0 text-sm font-semibold text-action-ink hover:underline"
           >
             Tümünü gör
@@ -128,7 +128,7 @@ const steps = [
           {products.map((product) => (
             <ProjectCard
               project={product}
-              href={`/projeler/${product.id.replace('tr/', '')}/`}
+              href={`/urunler/${product.id.replace('tr/', '')}/`}
               linkLabel="İncele"
               lang="tr"
             />

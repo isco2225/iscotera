@@ -20,7 +20,7 @@ const projects = (
   title="Products"
   description="Products built by İscotera and their case studies."
   lang="en"
-  alternate="/projeler/"
+  alternate="/urunler/"
   back={{ href: '/en/', label: 'Home' }}
 >
   <section class="mx-auto max-w-5xl px-4 py-16">
@@ -38,7 +38,7 @@ const projects = (
             {projects.map((project) => (
               <ProjectCard
                 project={project}
-                href={`/en/projects/${project.id.replace('en/', '')}/`}
+                href={`/en/products/${project.id.replace('en/', '')}/`}
                 linkLabel="View case study"
                 lang="en"
                 as="h2"
