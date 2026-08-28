@@ -24,23 +24,28 @@ const posts = (
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 2);
 
-// TODO: Draft copy — review against how the team actually works.
+// Process steps. NOTE: the commitments here (two-week build cadence,
+// ongoing support) have to be promises the team can keep.
 const steps = [
   {
-    title: "Let's talk",
-    text: "We get clear on what you need and what your budget is. If you don't need software, we say so.",
+    title: 'Discovery',
+    thesis: 'We start by talking about what not to build.',
+    text: 'We go through what you need, what you already run and what your budget is. If custom software is not the right answer, we say so.',
   },
   {
-    title: 'We plan',
-    text: 'Scope, timeline and cost, in writing — so nothing surprises you later.',
+    title: 'Planning',
+    thesis: 'Timeline and cost, in writing, before a line of code.',
+    text: 'We break the scope into items and put a duration and a price on each. The document you approve stays our shared reference to the end.',
   },
   {
-    title: 'We build',
-    text: 'You see a working version at regular intervals and we steer the direction together.',
+    title: 'Building',
+    thesis: 'You see progress along the way, not at the end.',
+    text: 'We show a working version every two weeks. Correcting course early always costs less than discovering a surprise at the finish.',
   },
   {
-    title: 'We ship',
-    text: 'We launch the product and stay on for its maintenance afterwards.',
+    title: 'Launch and after',
+    thesis: 'Our responsibility does not end at handover.',
+    text: 'We take the product live and hand it over to your team. After that we stay on for maintenance and new features.',
   },
 ];
 ---
@@ -119,16 +124,16 @@ const steps = [
   <section class="mx-auto max-w-5xl px-4 pb-16">
     <h2 class="text-2xl font-bold text-neutral-900">How we work</h2>
     <p class="mt-3 max-w-2xl text-neutral-600">
-      We keep the process open from start to finish, so you always know what
-      happens at each stage.
+      At every stage you know what happens and what we decide together.
     </p>
-    <ol class="mt-8 grid gap-6 sm:grid-cols-2">
+    <ol class="mt-6 grid gap-4 sm:grid-cols-2">
       {
         steps.map((step, i) => (
-          <li class="rounded-lg border border-neutral-200 p-6">
-            <span class="text-sm font-bold text-brand">0{i + 1}</span>
-            <h3 class="mt-2 font-semibold text-neutral-900">{step.title}</h3>
-            <p class="mt-2 text-sm text-neutral-600">{step.text}</p>
+          <li class="rounded-lg border border-neutral-200 p-5">
+            <span class="text-xs font-bold text-brand">0{i + 1}</span>
+            <h3 class="mt-1.5 font-semibold text-neutral-900">{step.title}</h3>
+            <p class="mt-1.5 text-sm font-medium text-neutral-800">{step.thesis}</p>
+            <p class="mt-1.5 text-sm text-neutral-600">{step.text}</p>
           </li>
         ))
       }
