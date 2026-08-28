@@ -45,7 +45,7 @@ rating:
 # buradaki "kullanıcı puanı" maddesi kaldırıldı.
 results:
   - value: "1.000+"
-    label: "Google Play"
+    label: "indirme"
 pricing:
   label: "Ücretsiz"
 faq:

@@ -45,7 +45,7 @@ rating:
 # buradaki "user rating" maddesi kaldırıldı.
 results:
   - value: "1,000+"
-    label: "Google Play downloads"
+    label: "downloads"
 pricing:
   label: "Free"
 faq:
