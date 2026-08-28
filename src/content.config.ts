@@ -24,6 +24,14 @@ const projects = defineCollection({
     z.object({
       title: z.string(),
       description: z.string(),
+      // Ürün tanıtımı ile vaka çalışması aynı koleksiyonda duruyor; ayrım
+      // hangi anlatının öne çıkacağını seçebilmek için tutuluyor.
+      type: z.enum(['product', 'case-study']).default('product'),
+      // Hero'daki tek cümlelik vaat. Yoksa description'a düşülür.
+      tagline: z.string().optional(),
+      status: z.enum(['live', 'beta', 'development']).default('live'),
+      // Künye rozetinde görünen tür (ör. "Mobil uygulama").
+      category: z.string().optional(),
       client: z.string().optional(),
       year: z.number().optional(),
       tags: z.array(z.string()).default([]),
@@ -31,16 +39,62 @@ const projects = defineCollection({
       logo: image().optional(),
       // Liste kartında gösterilen tanıtım görseli.
       cover: image().optional(),
-      // En fazla 3 ekran görüntüsü önerilir — sayfa kalabalıklaşmasın.
+      // Grid üç sütunlu: dördüncü görsel tek başına alt satıra düşüp hizayı
+      // bozduğu için sınır üçte tutuluyor.
       screenshots: z
         .array(z.object({ src: image(), alt: z.string() }))
-        .max(4)
+        .max(3)
         .default([]),
       // Vaka çalışması kartlarında gösterilen ölçülebilir sonuçlar
-      // (ör. { value: '10.000+', label: 'indirme' }).
+      // (ör. { value: '10.000+', label: 'indirme' }). Şerit üç sütun.
       results: z
         .array(z.object({ value: z.string(), label: z.string() }))
+        .max(3)
         .default([]),
+      // Mağaza bağlantıları links'ten ayrı duruyor: rozetler ve yapılandırılmış
+      // veri bu alandan üretiliyor, serbest bağlantı listesinden değil.
+      stores: z
+        .object({
+          appStore: z.string().url().optional(),
+          googlePlay: z.string().url().optional(),
+          web: z.string().url().optional(),
+        })
+        .default({}),
+      // Mağaza puanı. Yalnızca doğrulanmış gerçek değer yazılır: sayfada
+      // gösterilmeyen ya da uydurulmuş bir puanı yapılandırılmış veride
+      // bildirmek Google'ın kurallarını ihlal eder ve manuel işleme yol açar.
+      rating: z
+        .object({
+          value: z.number().min(0).max(5),
+          count: z.number().int().positive(),
+        })
+        .optional(),
+      testimonials: z
+        .array(
+          z.object({
+            quote: z.string(),
+            author: z.string(),
+            role: z.string().optional(),
+          })
+        )
+        .default([]),
+      // Her özellik kendi görseliyle eşleşir; madde listesi değil, dönüşümlü
+      // metin/görsel bloğu olarak render edilir.
+      features: z
+        .array(
+          z.object({
+            title: z.string(),
+            text: z.string(),
+            image: image().optional(),
+            alt: z.string().optional(),
+          })
+        )
+        .default([]),
+      // Fiyat modeli (ör. { label: 'Ücretsiz', note: 'Reklamsız kullanım için premium' }).
+      pricing: z
+        .object({ label: z.string(), note: z.string().optional() })
+        .optional(),
+      faq: z.array(z.object({ q: z.string(), a: z.string() })).default([]),
       // Ürünün sosyal medya hesapları; başlığın altında ikon olarak çıkar.
       social: z
         .array(
@@ -50,10 +104,23 @@ const projects = defineCollection({
           })
         )
         .default([]),
-      // Canlı ürün, mağaza ve kaynak kod bağlantıları.
+      // Mağaza dışı bağlantılar (basında çıkanlar, kaynak kod vb.).
       links: z
         .array(z.object({ label: z.string(), href: z.string().url() }))
         .default([]),
+      // SoftwareApplication yapılandırılmış verisinin girdileri; alan boşsa
+      // sayfa bu şemayı hiç basmaz.
+      app: z
+        .object({
+          schemaType: z
+            .enum(['MobileApplication', 'WebApplication', 'SoftwareApplication'])
+            .default('SoftwareApplication'),
+          applicationCategory: z.string(),
+          operatingSystem: z.string(),
+          price: z.string().default('0'),
+          priceCurrency: z.string().default('TRY'),
+        })
+        .optional(),
       order: z.number().default(0),
       draft: z.boolean().default(false),
     }),
