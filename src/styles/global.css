@@ -1,9 +1,15 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-/* Marka paleti: beyaz zemin + nötr siyah/gri + kırmızı vurgu.
-   Kural: kırmızı yalnızca vurgu içindir (CTA, logo, hover) — zemin/metin rengi olarak kullanılmaz. */
+/* Marka paleti: beyaz zemin + nötr siyah/gri + kırmızı vurgu + mavi eylem rengi.
+   Kural: kırmızı yalnızca marka vurgusudur (logo, hover, ince çizgi) — dolu buton
+   zemini olarak kullanılmaz; dolu butonlar --color-action (mavi) kullanır. */
 @theme {
   --color-brand: #e50914;
   --color-brand-dark: #b20710;
+
+  /* Eylem rengi: dolu butonlar (CTA, yönlendirme) bu tonu kullanır.
+     Kırmızı dolu buton "sil / iptal et" gibi okunduğu için ayrıldı. */
+  --color-action: #1d4ed8;
+  --color-action-dark: #1e40af;
 }
