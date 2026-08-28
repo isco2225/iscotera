@@ -305,30 +305,44 @@ const faqSchema =
     shots.length > 0 && (
       <section class="mx-auto max-w-5xl px-4 pb-16">
         <h2 class="text-2xl font-bold text-ink-strong">{t('product.screenshots')}</h2>
-        <ul class="mt-8 grid grid-cols-3 gap-4 sm:gap-6">
-          {shots.map((shot) => (
-            <li>
-              <figure>
-                <img
-                  src={shot.rendered.src}
-                  alt={shot.alt}
-                  width={PRODUCT_IMAGE_WIDTH}
-                  height={Math.round(
-                    (PRODUCT_IMAGE_WIDTH * shot.src.height) / shot.src.width
+        {/* Telefonda üç sütun, ekran görüntüsü başına ~104px demek: o boyutta
+            görselin içinde hiçbir şey seçilemiyordu. Mobilde bu yüzden yatay
+            kaydırmaya dönüyor (mağazaların ekran görüntüsü galerileri gibi),
+            sm'den itibaren üç sütunlu grid'e geçiyor. Kaydırma tarayıcının
+            kendi işi, JavaScript yok; kutuya tabindex verildi ki klavyeyle de
+            kaydırılabilsin. -mx-4/px-4 ikilisi şeridin ekran kenarına kadar
+            uzanmasını ama ilk görselin metinle hizalı kalmasını sağlıyor. */}
+        <div
+          class="mt-8 -mx-4 snap-x snap-mandatory overflow-x-auto px-4 pb-2 sm:mx-0 sm:snap-none sm:overflow-visible sm:px-0 sm:pb-0"
+          tabindex="0"
+          role="group"
+          aria-label={t('product.screenshots')}
+        >
+          <ul class="flex gap-4 sm:grid sm:grid-cols-3 sm:gap-6">
+            {shots.map((shot) => (
+              <li class="w-[62%] shrink-0 snap-start sm:w-auto">
+                <figure>
+                  <img
+                    src={shot.rendered.src}
+                    alt={shot.alt}
+                    width={PRODUCT_IMAGE_WIDTH}
+                    height={Math.round(
+                      (PRODUCT_IMAGE_WIDTH * shot.src.height) / shot.src.width
+                    )}
+                    loading="lazy"
+                    decoding="async"
+                    class="w-full rounded-xl border border-line"
+                  />
+                  {shot.caption && (
+                    <figcaption class="mt-3 text-sm text-ink-subtle">
+                      {shot.caption}
+                    </figcaption>
                   )}
-                  loading="lazy"
-                  decoding="async"
-                  class="w-full rounded-xl border border-line"
-                />
-                {shot.caption && (
-                  <figcaption class="mt-3 text-sm text-ink-subtle">
-                    {shot.caption}
-                  </figcaption>
-                )}
-              </figure>
-            </li>
-          ))}
-        </ul>
+                </figure>
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
     )
   }

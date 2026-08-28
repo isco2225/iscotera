@@ -11,10 +11,21 @@ type ProjectData = CollectionEntry<'projects'>['data'];
  * blokları ile alttaki grid aynı ekranları gösterdiği için bu, sayfa
  * ağırlığının yaklaşık üçte biri kadar boşuna trafik demekti.
  *
- * 520px, görsellerin ekranda kapladığı en geniş yerin (~300px) iki katına
- * yakın; yüksek yoğunluklu ekranlarda da net duruyor.
+ * Değer, görselin ekranda kapladığı EN GENİŞ yerin iki katı olmalı: yüksek
+ * yoğunluklu (2x) ekranlar bir CSS pikseli için iki aygıt pikseli istiyor,
+ * altında kalınca tarayıcı görseli büyütüyor ve ekran görüntüsündeki küçük
+ * arayüz yazıları bulanıklaşıyor.
+ *
+ * En geniş kullanım, ekran görüntüleri gridinin masaüstündeki sütunu: 1024px
+ * kapsayıcıda üç sütun ve iki boşluk kalınca sütun başına ~315px düşüyor,
+ * yani 630 aygıt pikseli gerekiyor. 640 hepsini karşılıyor:
+ *
+ *   hero kapağı      300px ekranda -> 1,07x
+ *   özellik bloğu    320px ekranda -> 1,00x
+ *   grid (masaüstü)  315px ekranda -> 1,02x
+ *   grid (mobil)     ~213px ekranda -> 1,50x
  */
-export const PRODUCT_IMAGE_WIDTH = 520;
+export const PRODUCT_IMAGE_WIDTH = 640;
 
 const OS_LABELS: Record<string, string> = {
   ios: 'iOS',
