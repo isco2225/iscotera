@@ -92,10 +92,32 @@ otomatik oluşur.
 
 ## Yayına almadan önce (TODO)
 
+### İbadet Rehberim ürün sayfası
+
+Sayfa hazır ama `draft: true`; içindeki üç şey gerçek veriyle değişmeden
+yayınlanmamalı. İlk ikisi `npm run build` sırasında uyarı bastığı için
+gözden kaçmaz.
+
+- [ ] **Puanı gerçeğiyle değiştir.** Şu an `rating: 4.6 / 128` yer tutucu.
+      Google Play'deki gerçek puanı ve değerlendirme sayısını yaz, sonra
+      `placeholderData` listesinden `rating` satırını sil. Ancak o zaman
+      `aggregateRating` yapılandırılmış veriye girer — uydurma puan bildirmek
+      Google'da manuel işleme yol açıyor, o yüzden şu an bilerek dışarıda.
+- [ ] **Yorumları gerçeğiyle değiştir.** Dört yorum yer tutucu, imzaları
+      "Ad Soyad" / "Name Surname". Gerçek yorumları (izin alarak) koyup
+      `placeholderData` listesinden `testimonials` satırını sil.
+- [ ] **App Store bağlantısını ekle.** `stores.appStore` alanına adresi yaz ve
+      `stores.pending` listesini sil; rozet o an tıklanabilir hâle gelir.
+      Resmî rozet görselleri için `public/badges/README.md`.
+- [ ] Yukarıdaki üçü bitince iki dilde de `draft: true` satırını `false` yap.
+
+### Site geneli
+
 - [x] Logo + favicon (İ monogramı: siyah zemin, beyaz gövde, kırmızı nokta)
 - [ ] `og:image` sosyal paylaşım görseli
 - [x] İletişim sayfası: e-posta, telefon, WhatsApp ve Instagram bilgileri
 - [ ] İletişim formu: statik form servisi bağlantısı (ör. Formspree / Cloudflare Worker)
 - [ ] Cloudflare Pages / Vercel'e bağla, `iscotera.com` DNS ayarları
 - [ ] Google Search Console kaydı + sitemap gönderimi
-- [ ] Analitik (Plausible / Umami)
+- [ ] Analitik (Plausible / Umami) — geldiğinde çerez/onay konusunu yeniden aç;
+      tema tercihi için geçerli olan muafiyet analitiği kapsamıyor
