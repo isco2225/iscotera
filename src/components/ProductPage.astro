@@ -20,7 +20,11 @@ import StoreBadges from './StoreBadges.astro';
 import FeatureRow from './FeatureRow.astro';
 import Faq from './Faq.astro';
 import SocialLinks from './SocialLinks.astro';
-import { platformLabels, warnPendingStores } from '../utils/product';
+import {
+  PRODUCT_IMAGE_WIDTH,
+  platformLabels,
+  warnPendingStores,
+} from '../utils/product';
 import { routes, useTranslations, type Lang } from '../i18n/ui';
 
 interface Props {
@@ -56,6 +60,10 @@ const {
 
 const platforms = platformLabels(project.data);
 warnPendingStores(title, project.data);
+
+// tagline hero'daki kısa vaat cümlesi, description ise arama sonucunda
+// görünen tam açıklama. İkisi ayrı: tagline'ı meta description olarak
+// kullanmak arama sonucundaki satırı gereksiz yere kısaltıyordu.
 const promise = tagline ?? description;
 const hasStoreBadge = Boolean(stores.appStore || stores.googlePlay);
 
@@ -69,7 +77,7 @@ const absolute = (path: string) => new URL(path, Astro.site).toString();
 const shots = await Promise.all(
   screenshots.map(async (shot) => ({
     ...shot,
-    rendered: await getImage({ src: shot.src, width: 480 }),
+    rendered: await getImage({ src: shot.src, width: PRODUCT_IMAGE_WIDTH }),
   }))
 );
 const renderedLogo = logo ? await getImage({ src: logo, width: 128 }) : null;
@@ -85,7 +93,7 @@ const appSchema = app
       '@context': 'https://schema.org',
       '@type': app.schemaType,
       name: title,
-      description: promise,
+      description,
       url: canonical,
       applicationCategory: app.applicationCategory,
       operatingSystem: app.operatingSystem,
@@ -133,7 +141,7 @@ const faqSchema =
 
 <BaseLayout
   title={title}
-  description={promise}
+  description={description}
   lang={lang}
   alternate={alternate}
   ogType="article"
@@ -164,6 +172,7 @@ const faqSchema =
                 src={logo}
                 alt=""
                 width={128}
+                loading="eager"
                 class="h-16 w-16 shrink-0 rounded-2xl border border-line"
               />
             )
@@ -227,10 +236,15 @@ const faqSchema =
       {
         cover && (
           <div class="flex justify-center">
+            {/* Sayfanın en üstündeki büyük görsel, yani LCP öğesi. Astro'nun
+                varsayılanı lazy; burada bırakılırsa tarayıcı bu görseli
+                keşfetmek için düzen hesabını bekler ve LCP gecikir. */}
             <Image
               src={cover}
               alt=""
-              width={560}
+              width={PRODUCT_IMAGE_WIDTH}
+              loading="eager"
+              fetchpriority="high"
               class="w-full max-w-[300px] rounded-3xl border border-line shadow-lg"
             />
           </div>
@@ -292,8 +306,10 @@ const faqSchema =
                 <img
                   src={shot.rendered.src}
                   alt={shot.alt}
-                  width={480}
-                  height={Math.round((480 * shot.src.height) / shot.src.width)}
+                  width={PRODUCT_IMAGE_WIDTH}
+                  height={Math.round(
+                    (PRODUCT_IMAGE_WIDTH * shot.src.height) / shot.src.width
+                  )}
                   loading="lazy"
                   decoding="async"
                   class="w-full rounded-xl border border-line"

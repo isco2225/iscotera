@@ -8,6 +8,7 @@
 // nasıl göründüğünü görüyor, hayal etmek zorunda kalmıyor.
 
 import { Image } from 'astro:assets';
+import { PRODUCT_IMAGE_WIDTH } from '../utils/product';
 
 interface Props {
   title: string;
@@ -32,7 +33,7 @@ const { title, text, image, alt, reverse = false } = Astro.props;
         <Image
           src={image}
           alt={alt ?? ''}
-          width={520}
+          width={PRODUCT_IMAGE_WIDTH}
           class="w-full max-w-[260px] rounded-2xl border border-line shadow-sm"
         />
       </div>

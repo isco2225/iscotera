@@ -2,6 +2,20 @@ import type { CollectionEntry } from 'astro:content';
 
 type ProjectData = CollectionEntry<'projects'>['data'];
 
+/**
+ * Ürün sayfasındaki bütün ürün görselleri (kapak, özellik blokları, ekran
+ * görüntüleri gridi) bu genişlikte üretilir.
+ *
+ * Tek değer olması şart: aynı kaynak görsel iki farklı genişlikte istendiğinde
+ * Astro iki ayrı dosya üretiyor ve tarayıcı ikisini de indiriyor. Özellik
+ * blokları ile alttaki grid aynı ekranları gösterdiği için bu, sayfa
+ * ağırlığının yaklaşık üçte biri kadar boşuna trafik demekti.
+ *
+ * 520px, görsellerin ekranda kapladığı en geniş yerin (~300px) iki katına
+ * yakın; yüksek yoğunluklu ekranlarda da net duruyor.
+ */
+export const PRODUCT_IMAGE_WIDTH = 520;
+
 const OS_LABELS: Record<string, string> = {
   ios: 'iOS',
   android: 'Android',
