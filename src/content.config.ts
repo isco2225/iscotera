@@ -41,8 +41,19 @@ const projects = defineCollection({
       cover: image().optional(),
       // Grid üç sütunlu: dördüncü görsel tek başına alt satıra düşüp hizayı
       // bozduğu için sınır üçte tutuluyor.
+      //
+      // caption görselin altında görünen kısa ekran adı ("Namaz vakitleri"),
+      // alt ise ekran okuyucunun duyduğu tam tarif. İkisi ayrı: başlık olarak
+      // okunabilir uzunlukta bir etiket ile erişilebilirlik için gereken
+      // ayrıntı aynı cümlede toplanamıyor.
       screenshots: z
-        .array(z.object({ src: image(), alt: z.string() }))
+        .array(
+          z.object({
+            src: image(),
+            alt: z.string(),
+            caption: z.string().optional(),
+          })
+        )
         .max(3)
         .default([]),
       // Vaka çalışması kartlarında gösterilen ölçülebilir sonuçlar

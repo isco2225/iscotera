@@ -1,0 +1,404 @@
+---
+// Ürün detay sayfasının tamamı.
+//
+// TR ve EN rotaları (src/pages/urunler/[slug].astro ve
+// src/pages/en/products/[slug].astro) bu bileşeni çağırıyor. Sitenin geri
+// kalanında sayfalar dil başına ayrı yazılıyor ama burada bilerek tek gövde
+// var: bölüm sırası satış akışının kendisi, iki dilde ayrışırsa bir taraf
+// sessizce eksik kalır. Değişen her şey (metinler) zaten ui.ts'te.
+//
+// Bölüm sırası: hero → kanıt → özellikler → ekranlar → anlatı → yorumlar →
+// fiyat → SSS → kapanış. Boş bırakılan alanın bölümü hiç render edilmiyor.
+
+import type { CollectionEntry } from 'astro:content';
+import { render } from 'astro:content';
+import { Image, getImage } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProductMeta from './ProductMeta.astro';
+import Rating from './Rating.astro';
+import StoreBadges from './StoreBadges.astro';
+import FeatureRow from './FeatureRow.astro';
+import Faq from './Faq.astro';
+import SocialLinks from './SocialLinks.astro';
+import { platformLabels } from '../utils/product';
+import { routes, useTranslations, type Lang } from '../i18n/ui';
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+  lang: Lang;
+  alternate?: string;
+}
+
+const { project, lang, alternate } = Astro.props;
+const t = useTranslations(lang);
+const { Content } = await render(project);
+
+const {
+  title,
+  description,
+  tagline,
+  status,
+  category,
+  logo,
+  cover,
+  stores,
+  rating,
+  results,
+  features,
+  screenshots,
+  testimonials,
+  pricing,
+  faq,
+  social,
+  links,
+  app,
+} = project.data;
+
+const platforms = platformLabels(project.data);
+const promise = tagline ?? description;
+const hasStoreBadge = Boolean(stores.appStore || stores.googlePlay);
+
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+const absolute = (path: string) => new URL(path, Astro.site).toString();
+
+// Görsellerin optimize edilmiş adresleri hem sayfada hem şemada kullanılıyor;
+// aynı getImage çağrısından geldikleri için şemadaki adres sayfada gerçekten
+// yayınlanan dosyayı gösteriyor. Kaynak dosyanın kendi yolunu (logo.src)
+// şemaya yazmak, o dosya derlemede yayınlanmayabildiği için güvenli değil.
+const shots = await Promise.all(
+  screenshots.map(async (shot) => ({
+    ...shot,
+    rendered: await getImage({ src: shot.src, width: 480 }),
+  }))
+);
+const renderedLogo = logo ? await getImage({ src: logo, width: 128 }) : null;
+
+// SoftwareApplication şeması.
+//
+// aggregateRating YALNIZCA puan sayfada da görünürken ekleniyor: Google,
+// kullanıcıya gösterilmeyen puanı yapılandırılmış veride bildirmeyi kural
+// ihlali sayıyor. Aşağıdaki kanıt şeridi rating varsa her zaman Rating
+// bileşenini basıyor, yani iki koşul aynı alana bağlı.
+const appSchema = app
+  ? {
+      '@context': 'https://schema.org',
+      '@type': app.schemaType,
+      name: title,
+      description: promise,
+      url: canonical,
+      applicationCategory: app.applicationCategory,
+      operatingSystem: app.operatingSystem,
+      offers: {
+        '@type': 'Offer',
+        price: app.price,
+        priceCurrency: app.priceCurrency,
+      },
+      ...(renderedLogo ? { image: absolute(renderedLogo.src) } : {}),
+      ...(shots.length > 0
+        ? { screenshot: shots.map((shot) => absolute(shot.rendered.src)) }
+        : {}),
+      ...(hasStoreBadge
+        ? {
+            installUrl: [stores.appStore, stores.googlePlay].filter(Boolean),
+          }
+        : {}),
+      ...(rating
+        ? {
+            aggregateRating: {
+              '@type': 'AggregateRating',
+              ratingValue: rating.value,
+              ratingCount: rating.count,
+              bestRating: 5,
+              worstRating: 1,
+            },
+          }
+        : {}),
+    }
+  : null;
+
+const faqSchema =
+  faq.length > 0
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faq.map((item) => ({
+          '@type': 'Question',
+          name: item.q,
+          acceptedAnswer: { '@type': 'Answer', text: item.a },
+        })),
+      }
+    : null;
+---
+
+<BaseLayout
+  title={title}
+  description={promise}
+  lang={lang}
+  alternate={alternate}
+  ogType="article"
+  back={{ href: routes[lang].projects, label: t('nav.projects') }}
+>
+  {/* Tek bir Fragment: slot ataması koşullu ifadenin dışında kalsın. */}
+  <Fragment slot="head">
+    {
+      appSchema && (
+        <script type="application/ld+json" set:html={JSON.stringify(appSchema)} />
+      )
+    }
+    {
+      faqSchema && (
+        <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+      )
+    }
+  </Fragment>
+
+  {/* 1 — Hero */}
+  <section class="mx-auto max-w-5xl px-4 py-12 sm:py-16">
+    <div class="grid items-center gap-10 md:grid-cols-2">
+      <div>
+        <div class="flex items-center gap-4">
+          {
+            logo && (
+              <Image
+                src={logo}
+                alt=""
+                width={128}
+                class="h-16 w-16 shrink-0 rounded-2xl border border-line"
+              />
+            )
+          }
+          <h1 class="text-3xl font-bold text-ink-strong sm:text-4xl">{title}</h1>
+        </div>
+
+        <ProductMeta
+          status={status}
+          category={category}
+          platforms={platforms}
+          price={pricing?.label}
+          lang={lang}
+          class="mt-5"
+        />
+
+        <p class="mt-5 text-lg text-ink-muted">{promise}</p>
+
+        <StoreBadges stores={stores} lang={lang} class="mt-7" />
+
+        {/* Web adresi ve mağaza dışı bağlantılar: rozetlerin yanında ikinci
+            derece, metin bağlantısı olarak. */}
+        {
+          (stores.web || links.length > 0) && (
+            <ul class="mt-4 flex flex-wrap items-center gap-x-6">
+              {stores.web && (
+                <li>
+                  <a
+                    href={stores.web}
+                    target="_blank"
+                    rel="noopener"
+                    class="inline-flex min-h-11 items-center text-sm font-semibold text-action-ink hover:underline"
+                  >
+                    {t('product.website')}
+                  </a>
+                </li>
+              )}
+              {links.map((link) => (
+                <li>
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener"
+                    class="inline-flex min-h-11 items-center text-sm font-semibold text-action-ink hover:underline"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )
+        }
+
+        {
+          social.length > 0 && (
+            <SocialLinks links={social} name={title} class="mt-3 -ml-2.5" />
+          )
+        }
+      </div>
+
+      {
+        cover && (
+          <div class="flex justify-center">
+            <Image
+              src={cover}
+              alt=""
+              width={560}
+              class="w-full max-w-[300px] rounded-3xl border border-line shadow-lg"
+            />
+          </div>
+        )
+      }
+    </div>
+  </section>
+
+  {/* 2 — Kanıt şeridi: puan ve sayılar, sayfanın geri kalanından ayrı bantta */}
+  {
+    (rating || results.length > 0) && (
+      <section class="border-y border-line bg-surface-muted">
+        <div class="mx-auto flex max-w-5xl flex-wrap items-center gap-x-12 gap-y-6 px-4 py-8">
+          {rating && <Rating value={rating.value} count={rating.count} lang={lang} />}
+          {results.length > 0 && (
+            <dl class="flex flex-wrap gap-x-12 gap-y-6">
+              {results.map((result) => (
+                <div>
+                  <dt class="text-2xl font-bold text-ink-strong">{result.value}</dt>
+                  <dd class="mt-1 text-sm text-ink-muted">{result.label}</dd>
+                </div>
+              ))}
+            </dl>
+          )}
+        </div>
+      </section>
+    )
+  }
+
+  {/* 3 — Özellikler */}
+  {
+    features.length > 0 && (
+      <section class="mx-auto max-w-5xl px-4 py-16">
+        <h2 class="text-2xl font-bold text-ink-strong">{t('product.features')}</h2>
+        <div class="mt-10 flex flex-col gap-14">
+          {features.map((feature, i) => (
+            <FeatureRow
+              title={feature.title}
+              text={feature.text}
+              image={feature.image}
+              alt={feature.alt}
+              reverse={i % 2 === 1}
+            />
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  {/* 4 — Ekran görüntüleri */}
+  {
+    shots.length > 0 && (
+      <section class="mx-auto max-w-5xl px-4 pb-16">
+        <h2 class="text-2xl font-bold text-ink-strong">{t('product.screenshots')}</h2>
+        <ul class="mt-8 grid grid-cols-3 gap-4 sm:gap-6">
+          {shots.map((shot) => (
+            <li>
+              <figure>
+                <img
+                  src={shot.rendered.src}
+                  alt={shot.alt}
+                  width={480}
+                  height={Math.round((480 * shot.src.height) / shot.src.width)}
+                  loading="lazy"
+                  decoding="async"
+                  class="w-full rounded-xl border border-line"
+                />
+                {shot.caption && (
+                  <figcaption class="mt-3 text-sm text-ink-subtle">
+                    {shot.caption}
+                  </figcaption>
+                )}
+              </figure>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+
+  {/* 5 — Anlatı: neden yaptık, nasıl geliştirdik */}
+  <section class="mx-auto max-w-3xl px-4 pb-16">
+    <div class="prose prose-neutral max-w-none dark:prose-invert">
+      <Content />
+    </div>
+  </section>
+
+  {/* 6 — Yorumlar */}
+  {
+    testimonials.length > 0 && (
+      <section class="border-t border-line bg-surface-muted">
+        <div class="mx-auto max-w-5xl px-4 py-16">
+          <h2 class="text-2xl font-bold text-ink-strong">
+            {t('product.testimonials')}
+          </h2>
+          <ul class="mt-8 grid gap-6 sm:grid-cols-2">
+            {testimonials.map((testimonial) => (
+              <li class="rounded-2xl border border-line bg-surface p-6">
+                <figure>
+                  <blockquote class="text-ink">
+                    <p>{testimonial.quote}</p>
+                  </blockquote>
+                  <figcaption class="mt-4 text-sm text-ink-subtle">
+                    <span class="font-semibold text-ink-soft">{testimonial.author}</span>
+                    {testimonial.role && <> &middot; {testimonial.role}</>}
+                  </figcaption>
+                </figure>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    )
+  }
+
+  {/* 7 — Fiyat */}
+  {
+    pricing && (
+      <section class="mx-auto max-w-5xl px-4 py-16">
+        <h2 class="text-2xl font-bold text-ink-strong">{t('product.pricing')}</h2>
+        <div class="mt-6 rounded-2xl border border-line p-8">
+          <p class="text-2xl font-bold text-ink-strong">{pricing.label}</p>
+          {pricing.note && <p class="mt-2 text-ink-muted">{pricing.note}</p>}
+        </div>
+      </section>
+    )
+  }
+
+  {/* 8 — SSS */}
+  {
+    faq.length > 0 && (
+      <section class="mx-auto max-w-3xl px-4 pb-16">
+        <h2 class="text-2xl font-bold text-ink-strong">{t('product.faq')}</h2>
+        <Faq items={faq} class="mt-6" />
+      </section>
+    )
+  }
+
+  {/* 9 — Kapanış: ürün mağazadaysa indirme çağrısı, değilse iletişim */}
+  <section class="mx-auto max-w-5xl px-4 pb-20">
+    <div class="rounded-2xl border border-line bg-surface-muted p-8 text-center sm:p-12">
+      {
+        hasStoreBadge ? (
+          <>
+            <h2 class="text-2xl font-bold text-ink-strong">
+              {t('product.ctaStoreTitle')}
+            </h2>
+            <p class="mx-auto mt-3 max-w-xl text-ink-muted">
+              {t('product.ctaStoreText')}
+            </p>
+            <StoreBadges stores={stores} lang={lang} class="mt-6 justify-center" />
+          </>
+        ) : (
+          <>
+            <h2 class="text-2xl font-bold text-ink-strong">
+              {t('product.ctaContactTitle')}
+            </h2>
+            <p class="mx-auto mt-3 max-w-xl text-ink-muted">
+              {t('product.ctaContactText')}
+            </p>
+            <a
+              href={routes[lang].contact}
+              class="mt-6 inline-flex min-h-11 items-center rounded-lg bg-action px-6 text-sm font-semibold text-white transition-colors hover:bg-action-dark"
+            >
+              {t('product.ctaContactLink')}
+            </a>
+          </>
+        )
+      }
+    </div>
+  </section>
+</BaseLayout>

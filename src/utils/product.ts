@@ -1,19 +1,42 @@
 import type { CollectionEntry } from 'astro:content';
 
-type Stores = CollectionEntry<'projects'>['data']['stores'];
+type ProjectData = CollectionEntry<'projects'>['data'];
+
+const OS_LABELS: Record<string, string> = {
+  ios: 'iOS',
+  android: 'Android',
+  web: 'Web',
+  windows: 'Windows',
+  macos: 'macOS',
+  linux: 'Linux',
+};
 
 /**
- * Künye rozetindeki platform adları. Kaynak olarak mağaza bağlantıları
- * kullanılıyor: "iOS" yazabilmek için App Store'da gerçekten bir sayfanın
- * olması gerekiyor, aksi halde kanıtlayamadığımız bir şey iddia etmiş oluruz.
+ * Künye rozetindeki platform adları.
  *
- * Adlar işletim sistemi/platform adı olduğu için iki dilde de aynı; ui.ts'e
- * çeviri girmiyor.
+ * Kaynak olarak önce app.operatingSystem kullanılıyor — yani sayfada görünen
+ * platform listesi ile SoftwareApplication şemasına yazılan değer aynı yerden
+ * geliyor. İkisinin ayrışması, sayfada bulunmayan bir bilgiyi yapılandırılmış
+ * veride bildirmek anlamına gelirdi.
+ *
+ * app bloğu yoksa mağaza bağlantılarına düşülüyor: "iOS" yazabilmek için
+ * App Store'da gerçekten bir sayfa olması gerekiyor.
+ *
+ * Adlar işletim sistemi adı olduğu için iki dilde de aynı; ui.ts'e çeviri
+ * girmiyor.
  */
-export function platformsFromStores(stores: Stores): string[] {
+export function platformLabels(data: ProjectData): string[] {
+  if (data.app?.operatingSystem) {
+    return data.app.operatingSystem
+      .split(',')
+      .map((os) => os.trim())
+      .filter(Boolean)
+      .map((os) => OS_LABELS[os.toLowerCase()] ?? os);
+  }
+
   const platforms: string[] = [];
-  if (stores.appStore) platforms.push('iOS');
-  if (stores.googlePlay) platforms.push('Android');
-  if (stores.web) platforms.push('Web');
+  if (data.stores.appStore) platforms.push('iOS');
+  if (data.stores.googlePlay) platforms.push('Android');
+  if (data.stores.web) platforms.push('Web');
   return platforms;
 }
