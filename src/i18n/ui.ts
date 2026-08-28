@@ -46,9 +46,7 @@ export const ui = {
     'product.status.beta': 'Beta',
     'product.status.development': 'Geliştiriliyor',
     'product.features': 'Öne çıkan özellikler',
-    'product.screenshots': 'Uygulamadan görüntüler',
     'product.testimonials': 'Kullanıcılar ne diyor?',
-    'product.pricing': 'Fiyat',
     'product.faq': 'Sıkça sorulan sorular',
     // {value} ve {count} bileşende gerçek değerlerle değiştirilir.
     'product.ratingAria': '5 üzerinden {value} puan, {count} değerlendirmeye göre.',
@@ -57,7 +55,7 @@ export const ui = {
     // "App Store" ve "Google Play" marka adı; çevrilmez.
     'product.appStore': "App Store'dan indir",
     'product.googlePlay': "Google Play'den indir",
-    'product.website': 'Web sitesini aç',
+    'product.website': 'Web sitesini incele',
     'product.ctaStoreTitle': 'Uygulamayı deneyin',
     'product.ctaStoreText': 'Ücretsiz indirin, kendiniz görün.',
     'product.ctaContactTitle': 'Benzer bir ürün mü düşünüyorsunuz?',
@@ -83,9 +81,7 @@ export const ui = {
     'product.status.beta': 'Beta',
     'product.status.development': 'In development',
     'product.features': 'What it does',
-    'product.screenshots': 'Inside the app',
     'product.testimonials': 'What people say',
-    'product.pricing': 'Pricing',
     'product.faq': 'Frequently asked questions',
     'product.ratingAria': 'Rated {value} out of 5, based on {count} ratings.',
     'product.ratingUnit': 'rating',

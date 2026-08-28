@@ -42,8 +42,12 @@ dil yapı olarak ayrışmasın diye.
 **Ürün / vaka çalışması:** `src/content/projects/tr/urun-adi.md` — aynı akış,
 ama frontmatter çok daha dolu. Ürün sayfası şu sırayla render edilir:
 
-> hero → kanıt şeridi → özellikler → ekran görüntüleri → anlatı (gövde) →
-> yorumlar → fiyat → SSS → kapanış çağrısı
+> hero → kanıt şeridi → özellikler → anlatı (gövde) → yorumlar → SSS →
+> kapanış çağrısı
+
+Ayrı bir ekran görüntüsü galerisi yok: her ekran, anlattığı özelliğin yanında
+duruyor. Fiyatın da ayrı bölümü yok; `pricing.label` hero'daki künye rozetinde
+görünüyor.
 
 Her bölüm kendi alanından beslenir ve **boş bıraktığınız alanın bölümü hiç
 görünmez**. Alanların tek tek ne yaptığı `src/content/projects/tr/ornek-proje.md`

@@ -39,23 +39,6 @@ const projects = defineCollection({
       logo: image().optional(),
       // Liste kartında gösterilen tanıtım görseli.
       cover: image().optional(),
-      // Grid üç sütunlu: dördüncü görsel tek başına alt satıra düşüp hizayı
-      // bozduğu için sınır üçte tutuluyor.
-      //
-      // caption görselin altında görünen kısa ekran adı ("Namaz vakitleri"),
-      // alt ise ekran okuyucunun duyduğu tam tarif. İkisi ayrı: başlık olarak
-      // okunabilir uzunlukta bir etiket ile erişilebilirlik için gereken
-      // ayrıntı aynı cümlede toplanamıyor.
-      screenshots: z
-        .array(
-          z.object({
-            src: image(),
-            alt: z.string(),
-            caption: z.string().optional(),
-          })
-        )
-        .max(3)
-        .default([]),
       // Vaka çalışması kartlarında gösterilen ölçülebilir sonuçlar
       // (ör. { value: '10.000+', label: 'indirme' }). Şerit üç sütun.
       results: z
@@ -107,10 +90,10 @@ const projects = defineCollection({
           })
         )
         .default([]),
-      // Fiyat modeli (ör. { label: 'Ücretsiz', note: 'Reklamsız kullanım için premium' }).
-      pricing: z
-        .object({ label: z.string(), note: z.string().optional() })
-        .optional(),
+      // Fiyat modeli etiketi (ör. { label: 'Ücretsiz' }). Ayrı bir fiyat
+      // bölümü yok; bu etiket hero'daki künye rozetinde görünüyor ve
+      // şemadaki offers.price'ın sayfada karşılığı oluyor.
+      pricing: z.object({ label: z.string() }).optional(),
       faq: z.array(z.object({ q: z.string(), a: z.string() })).default([]),
       // Ürünün sosyal medya hesapları; başlığın altında ikon olarak çıkar.
       social: z

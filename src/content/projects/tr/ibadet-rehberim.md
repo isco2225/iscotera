@@ -34,16 +34,6 @@ features:
     text: "Günün duası, hadisi ve ayeti tek ekranda. Her gönderide bilginin alındığı kaynak yazıyor; okuduğunuz şeyin nereye dayandığını görüyorsunuz."
     image: "../_images/ibadet-rehberim/screen-discover-feed.png"
     alt: "İbadet Rehberim keşfet akışı: günün duası, hadisi ve ayeti, her biri kaynağıyla birlikte"
-screenshots:
-  - src: "../_images/ibadet-rehberim/screen-prayer-times.png"
-    alt: "İbadet Rehberim ezan vakitleri ekranı: şehre göre günlük namaz vakitleri ve vakit girdiğinde gelen bildirim"
-    caption: "Namaz vakitleri"
-  - src: "../_images/ibadet-rehberim/screen-dhikr-tracking.png"
-    alt: "İbadet Rehberim zikir ekranı: günlük zikir hedefleri ve tamamlanma oranları"
-    caption: "Zikirmatik"
-  - src: "../_images/ibadet-rehberim/screen-assistant.png"
-    alt: "İbadet Rehberim islami asistan ekranı: kullanıcının sorduğu dinî soruya verilen kaynaklı yanıt"
-    caption: "İslami asistan"
 # ÖRNEK VERİ — düzeni görmek için konuldu, gerçek değil.
 # Google Play'deki gerçek puan ve değerlendirme sayısı gelince burası
 # güncellenecek ve aşağıdaki placeholderData listesinden 'rating' çıkarılacak.
@@ -58,7 +48,6 @@ results:
     label: "Google Play'den indirme"
 pricing:
   label: "Ücretsiz"
-  note: "Uygulama ücretsiz indiriliyor ve temel özelliklerin tamamı ücretsiz. Reklam görmek istemeyenler için haftalık ya da yıllık premium seçeneği var."
 faq:
   - q: "Uygulama ücretli mi?"
     a: "Hayır. Uygulama ücretsiz indiriliyor ve temel özelliklerin tamamı ücretsiz. Yalnızca reklamları kaldırmak isteyenler için haftalık ya da yıllık premium aboneliği bulunuyor."

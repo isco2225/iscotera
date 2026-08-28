@@ -2,10 +2,14 @@
 # Ürün sayfası şablonu. Yayında görünmez, silinmez: yeni ürün eklerken
 # hangi alanın ne işe yaradığını buradan okuyun.
 #
-# Sayfadaki bölüm sırası: hero → kanıt şeridi → özellikler → ekran
-# görüntüleri → anlatı (bu dosyanın gövdesi) → yorumlar → fiyat → SSS →
-# kapanış çağrısı. Boş bıraktığınız alanın bölümü hiç render edilmez;
-# yani doldurmadığınız hiçbir yer sayfada boşluk olarak görünmez.
+# Sayfadaki bölüm sırası: hero → kanıt şeridi → özellikler → anlatı (bu
+# dosyanın gövdesi) → yorumlar → SSS → kapanış çağrısı. Boş bıraktığınız
+# alanın bölümü hiç render edilmez; yani doldurmadığınız hiçbir yer
+# sayfada boşluk olarak görünmez.
+#
+# Ekran görüntüleri her özellik bloğunun kendi görseli olarak giriyor;
+# ayrıca bir galeri bölümü yok. Fiyatın da ayrı bölümü yok, aşağıdaki
+# pricing.label hero'daki künye rozetinde görünüyor.
 
 title: "Örnek Proje"
 description: "Ürün sayfası şablonu — hangi alanın nereye düştüğünü gösterir. Yayında görünmez."
@@ -69,13 +73,6 @@ features:
     # image: "../_images/ornek-proje/screen-feature.png"
     # alt: "Ekranın ne gösterdiğini tarif eden cümle"
 
-# En fazla 3 (grid üç sütunlu). alt ekran okuyucu için tam tarif,
-# caption görselin altında görünen kısa ekran adı.
-screenshots: []
-  # - src: "../_images/ornek-proje/screen-home.png"
-  #   alt: "Ana ekran: günlük özet ve kısayollar"
-  #   caption: "Ana ekran"
-
 # Gerçek, izin alınmış yorumlar. Geçici örnek yorum koyacaksanız
 # placeholderData listesine 'testimonials' ekleyin.
 testimonials: []
@@ -83,9 +80,9 @@ testimonials: []
   #   author: "Ad Soyad"
   #   role: "Şirket, görev"
 
+# Hero'daki künye rozetinde görünen fiyat etiketi.
 pricing:
   label: "Ücretsiz"
-  note: "Fiyat modelini bir cümlede açıklayın."
 
 # Gerçekten sorulan sorular. Buradaki metin FAQPage yapılandırılmış
 # verisine de girer, o yüzden sayfadaki yanıtla birebir aynıdır.

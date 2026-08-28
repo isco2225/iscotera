@@ -34,16 +34,6 @@ features:
     text: "The prayer, hadith and verse of the day on one screen. Every post names the source its text comes from, so you can see what you are reading is based on."
     image: "../_images/ibadet-rehberim/screen-discover-feed.png"
     alt: "İbadet Rehberim discover feed: the prayer, hadith and verse of the day, each with its source"
-screenshots:
-  - src: "../_images/ibadet-rehberim/screen-prayer-times.png"
-    alt: "İbadet Rehberim prayer times screen: daily prayer times for the user's city and the notification sent when a prayer time begins"
-    caption: "Prayer times"
-  - src: "../_images/ibadet-rehberim/screen-dhikr-tracking.png"
-    alt: "İbadet Rehberim dhikr screen: daily dhikr goals and their completion progress"
-    caption: "Dhikr counter"
-  - src: "../_images/ibadet-rehberim/screen-assistant.png"
-    alt: "İbadet Rehberim assistant screen: an answer to a religious question with its source cited"
-    caption: "Islamic assistant"
 # ÖRNEK VERİ — düzeni görmek için konuldu, gerçek değil. Gerçek puan ve
 # değerlendirme sayısı gelince burası güncellenecek ve aşağıdaki
 # placeholderData listesinden 'rating' çıkarılacak. O zamana kadar puan
@@ -58,7 +48,6 @@ results:
     label: "Google Play downloads"
 pricing:
   label: "Free"
-  note: "The app is free to download and every core feature is free. There is a weekly or yearly premium option for people who would rather not see ads."
 faq:
   - q: "Does the app cost anything?"
     a: "No. The app is free to download and every core feature is free. There is only a weekly or yearly premium subscription for people who want to remove the ads."

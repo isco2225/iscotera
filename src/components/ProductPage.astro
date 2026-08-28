@@ -50,7 +50,6 @@ const {
   rating,
   results,
   features,
-  screenshots,
   testimonials,
   pricing,
   faq,
@@ -75,11 +74,16 @@ const absolute = (path: string) => new URL(path, Astro.site).toString();
 // aynı getImage çağrısından geldikleri için şemadaki adres sayfada gerçekten
 // yayınlanan dosyayı gösteriyor. Kaynak dosyanın kendi yolunu (logo.src)
 // şemaya yazmak, o dosya derlemede yayınlanmayabildiği için güvenli değil.
-const shots = await Promise.all(
-  screenshots.map(async (shot) => ({
-    ...shot,
-    rendered: await getImage({ src: shot.src, width: PRODUCT_IMAGE_WIDTH }),
-  }))
+//
+// Şemadaki screenshot listesi özellik bloklarının görsellerinden geliyor:
+// ayrı bir ekran görüntüsü galerisi yok, ama o görseller sayfada duruyor;
+// yani şema yine yalnızca ziyaretçinin gördüğü dosyaları bildiriyor.
+// FeatureRow da aynı genişliği kullandığı için adresler birebir aynı.
+const featureShots = await Promise.all(
+  features
+    .map((feature) => feature.image)
+    .filter((image) => Boolean(image))
+    .map((image) => getImage({ src: image!, width: PRODUCT_IMAGE_WIDTH }))
 );
 const renderedLogo = logo ? await getImage({ src: logo, width: 128 }) : null;
 
@@ -109,8 +113,8 @@ const appSchema = app
         priceCurrency: app.priceCurrency,
       },
       ...(renderedLogo ? { image: absolute(renderedLogo.src) } : {}),
-      ...(shots.length > 0
-        ? { screenshot: shots.map((shot) => absolute(shot.rendered.src)) }
+      ...(featureShots.length > 0
+        ? { screenshot: featureShots.map((shot) => absolute(shot.src)) }
         : {}),
       ...(hasStoreBadge
         ? {
@@ -300,61 +304,14 @@ const faqSchema =
     )
   }
 
-  {/* 4 — Ekran görüntüleri */}
-  {
-    shots.length > 0 && (
-      <section class="mx-auto max-w-5xl px-4 pb-16">
-        <h2 class="text-2xl font-bold text-ink-strong">{t('product.screenshots')}</h2>
-        {/* Telefonda üç sütun, ekran görüntüsü başına ~104px demek: o boyutta
-            görselin içinde hiçbir şey seçilemiyordu. Mobilde bu yüzden yatay
-            kaydırmaya dönüyor (mağazaların ekran görüntüsü galerileri gibi),
-            sm'den itibaren üç sütunlu grid'e geçiyor. Kaydırma tarayıcının
-            kendi işi, JavaScript yok; kutuya tabindex verildi ki klavyeyle de
-            kaydırılabilsin. -mx-4/px-4 ikilisi şeridin ekran kenarına kadar
-            uzanmasını ama ilk görselin metinle hizalı kalmasını sağlıyor. */}
-        <div
-          class="mt-8 -mx-4 snap-x snap-mandatory overflow-x-auto px-4 pb-2 sm:mx-0 sm:snap-none sm:overflow-visible sm:px-0 sm:pb-0"
-          tabindex="0"
-          role="group"
-          aria-label={t('product.screenshots')}
-        >
-          <ul class="flex gap-4 sm:grid sm:grid-cols-3 sm:gap-6">
-            {shots.map((shot) => (
-              <li class="w-[62%] shrink-0 snap-start sm:w-auto">
-                <figure>
-                  <img
-                    src={shot.rendered.src}
-                    alt={shot.alt}
-                    width={PRODUCT_IMAGE_WIDTH}
-                    height={Math.round(
-                      (PRODUCT_IMAGE_WIDTH * shot.src.height) / shot.src.width
-                    )}
-                    loading="lazy"
-                    decoding="async"
-                    class="w-full rounded-xl border border-line"
-                  />
-                  {shot.caption && (
-                    <figcaption class="mt-3 text-sm text-ink-subtle">
-                      {shot.caption}
-                    </figcaption>
-                  )}
-                </figure>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-    )
-  }
-
-  {/* 5 — Anlatı: neden yaptık, nasıl geliştirdik */}
+  {/* 4 — Anlatı: neden yaptık, nasıl geliştirdik */}
   <section class="mx-auto max-w-3xl px-4 pb-16">
     <div class="prose prose-neutral max-w-none dark:prose-invert">
       <Content />
     </div>
   </section>
 
-  {/* 6 — Yorumlar */}
+  {/* 5 — Yorumlar */}
   {
     testimonials.length > 0 && (
       <section class="border-t border-line bg-surface-muted">
@@ -382,20 +339,7 @@ const faqSchema =
     )
   }
 
-  {/* 7 — Fiyat */}
-  {
-    pricing && (
-      <section class="mx-auto max-w-5xl px-4 py-16">
-        <h2 class="text-2xl font-bold text-ink-strong">{t('product.pricing')}</h2>
-        <div class="mt-6 rounded-2xl border border-line p-8">
-          <p class="text-2xl font-bold text-ink-strong">{pricing.label}</p>
-          {pricing.note && <p class="mt-2 text-ink-muted">{pricing.note}</p>}
-        </div>
-      </section>
-    )
-  }
-
-  {/* 8 — SSS */}
+  {/* 6 — SSS */}
   {
     faq.length > 0 && (
       <section class="mx-auto max-w-3xl px-4 pb-16">
@@ -405,7 +349,7 @@ const faqSchema =
     )
   }
 
-  {/* 9 — Kapanış: ürün mağazadaysa indirme çağrısı, değilse iletişim */}
+  {/* 7 — Kapanış: ürün mağazadaysa indirme çağrısı, değilse iletişim */}
   <section class="mx-auto max-w-5xl px-4 pb-20">
     <div class="rounded-2xl border border-line bg-surface-muted p-8 text-center sm:p-12">
       {

@@ -19,11 +19,9 @@ results:
 features:
   - title: "Name of the feature"
     text: "Two sentences on what this feature means for the person using it."
-screenshots: []
 testimonials: []
 pricing:
   label: "Free"
-  note: "Explain the pricing model in one sentence."
 faq:
   - q: "A question people actually ask"
     a: "A direct, honest answer."
