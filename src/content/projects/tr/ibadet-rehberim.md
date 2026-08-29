@@ -61,32 +61,60 @@ sitesinde duruyor: [ibadetrehberim.com](https://ibadetrehberim.com/). Bu sayfa
 
 ## Nasıl geliştirdik
 
+### Arayüz: öğrenmek gerektirmeyen bir yapı
+
 Arayüzü baştan her yaştan kullanıcıyı düşünerek tasarladık: büyük ve okunaklı
-yazılar, az sayıda ama net buton, öğrenmek gerektirmeyen bir gezinme. Kullanıcı
-telefonunun yazı boyutunu büyütmüşse uygulama da ona uyum sağlıyor. Ayarı bir
-kez yapmış olan kişi burada yeniden uğraşmıyor.
+yazılar, az sayıda ama net buton, beş sabit sekmeden oluşan bir gezinme.
+Kullanıcı hangi ekranda olduğunu her an biliyor, aradığı şeyi menülerin
+arasında aramıyor. Telefonunun yazı boyutunu büyütmüş biri uygulamayı
+açtığında metinler de ona göre ölçekleniyor; ayarı bir kez yapmış olan kişi
+burada yeniden uğraşmıyor.
 
-Uygulamayı tek bir kaynaktan hem iPhone hem Android için geliştirdik. Bu,
-müşterilerimiz açısından şu anlama geliyor: iki ayrı uygulama yaptırmanız
-gerekmiyor, yeni bir özellik iki telefona da aynı anda geliyor ve bakım
-maliyeti ikiye katlanmıyor.
+### Tek kod tabanı, iki platform
 
-Verileri önce telefonda saklayacak, buluta ise yalnızca yedek olarak
-gönderecek şekilde kurguladık. Bunun sonucu: uygulama internet olmadan da
-eksiksiz çalışıyor, açılışı hızlı ve kullanıcı hesap açmaya zorlanmıyor.
+Uygulamayı Flutter ile, tek bir kaynaktan hem iPhone hem Android için
+geliştirdik. Müşterilerimiz açısından bu şu anlama geliyor: iki ayrı uygulama
+yaptırmanız gerekmiyor, yeni bir özellik iki platforma da aynı anda geliyor ve
+bakım maliyeti ikiye katlanmıyor.
 
-Sunucu tarafında hazır bulut altyapısı kullandık. Böylece küçük bir ekiple
-sürdürülebilir, kullanıcı sayısı arttığında da sorun çıkarmayacak bir sistem
-kurmuş olduk.
+### Veri önce cihazda, bulut yedekte
 
-Perde arkasındaki mimari kararları merak ediyorsanız,
+Zikirler, tercihler ve indirilen namaz vakitleri telefonun kendi veritabanında
+tutuluyor; bulut yalnızca yedekleme ve cihaz değiştirildiğinde eşitleme için
+devreye giriyor. Kullanıcı bunu şurada hissediyor: uygulama saniyeler içinde
+açılıyor, zikir sayacı ve namaz vakitleri bağlantı olmadan da çalışıyor,
+hatırlatmalar sunucuya değil cihazın kendi saatine bağlı olduğu için şebeke
+çekmediğinde bile zamanında geliyor.
+
+### Sunucu tarafı: hazır bulut altyapısı
+
+Giriş, içerik ve sunucu tarafı işlemler için Firebase'i kullandık; asistan
+Google'ın Gemini modeliyle çalışıyor. Böylece küçük bir ekiple sürdürülebilir,
+kullanıcı sayısı arttığında da sorun çıkarmayacak bir sistem kurmuş olduk.
+Hesap silme gibi hassas işlemleri telefona bırakmadık: kullanıcı hesabını
+sildiğinde ilgili bütün kayıtlar sunucu tarafında tek bir işlemle temizleniyor.
+
+### Kod tarafı: değişime hazır bir yapı
+
+Uygulamayı katmanlı bir mimariyle yazdık; arayüz, iş kuralları ve veri erişimi
+birbirinden ayrı duruyor. Bunun pratik karşılığı şu: bir ekranın verisini
+nereden aldığı tek bir yerden değişiyor, yeni bir özellik mevcut ekranları
+bozma riski taşımıyor ve projeye sonradan katılan bir geliştirici nereye
+bakacağını biliyor. Perde arkasındaki mimari kararları merak ediyorsanız,
 [Clean Architecture yazımızda](/blog/clean-architecture-ne-zaman-deger/)
 bu yaklaşımı ayrıntılı anlatmıştık.
 
 ## Bugün
 
-Uygulama yayında ve düzenli güncelleniyor. Kasım 2025'ten bu yana kesintisiz
-geliştiriliyor; her sürümde yeni özellikler ekleniyor.
+Uygulama Google Play'de yayında ve ücretsiz indiriliyor; App Store sürümü
+yolda. Namaz vakitleri, akıllı zikirmatik, dua–hadis–ayet akışı ve yapay zekâ
+destekli asistan bugün kullanıcıların elinde; isteyen destek paketiyle
+reklamsız kullanabiliyor.
 
-Aklınızda bir mobil uygulama fikri varsa [bize ulaşın](/iletisim/).
-Nasıl hayata geçireceğimizi birlikte konuşalım.
+İlk satırı Kasım 2025'te yazdık; proje o günden bu yana düzenli olarak
+geliştiriliyor.
+
+Aklınızda bir mobil uygulama fikri varsa [bize ulaşın](/iletisim/). İki
+platform, çevrimdışı çalışan bir veri katmanı ve yapay zekâ destekli bir
+asistan — hepsini tek bir ekiple hayata geçirdik. Sizinkini nasıl hayata
+geçireceğimizi birlikte konuşalım.

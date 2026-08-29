@@ -61,27 +61,56 @@ sell the app; it is there to explain how we built it.
 
 ## How we built it
 
+### An interface that needs no learning
+
 We designed the interface for every age from the start: large, legible type,
-few but unambiguous buttons, and navigation that needs no learning. If someone
-has increased the text size on their phone, the app follows that setting.
-A person who set it once does not have to set it again here.
+few but unambiguous buttons, and navigation built on five fixed tabs. People
+always know which screen they are on and never hunt for things through menus.
+If someone has increased the text size on their phone, the app scales its text
+to match; a person who set it once does not have to set it again here.
 
-We built the app for both iPhone and Android from a single source. For our
-clients that means something concrete: you do not commission two separate
-apps, a new feature reaches both phones at the same time, and maintenance
-does not cost twice as much.
+### One codebase, two platforms
 
-We set the data up to live on the phone first and go to the cloud only as a
-backup. The result: the app works fully without an internet connection, it
-opens fast, and nobody is forced to create an account.
+We built the app with Flutter, from a single source, for both iPhone and
+Android. For our clients that means something concrete: you do not commission
+two separate apps, a new feature reaches both platforms at the same time, and
+maintenance does not cost twice as much.
 
-On the server side we used managed cloud infrastructure. That gave us a system
-a small team can sustain and that will not buckle as the user count grows.
+### Data on the device first, the cloud as backup
+
+Dhikr records, preferences and downloaded prayer times live in the phone's own
+database; the cloud steps in only for backup and for syncing when someone
+changes device. Users feel that in three places: the app opens in seconds, the
+dhikr counter and prayer times work with no connection, and because reminders
+depend on the device clock rather than a server, they arrive on time even
+where there is no signal.
+
+### Managed cloud on the server side
+
+We used Firebase for sign-in, content and server-side operations, and the
+assistant runs on Google's Gemini model. That gave us a system a small team
+can sustain and that will not buckle as the user count grows. We did not leave
+sensitive operations to the phone: when someone deletes their account, every
+related record is cleared server-side in a single operation.
+
+### A codebase ready to change
+
+We wrote the app with a layered architecture: the interface, the business
+rules and data access stay separate from one another. In practice that means
+where a screen gets its data is changed in one place, a new feature carries no
+risk of breaking existing screens, and a developer joining later knows where
+to look.
 
 ## Where it is today
 
-The app is live and updated regularly. It has been in continuous development
-since November 2025, with new features in every release.
+The app is live on Google Play and free to download; the App Store version is
+on its way. Prayer times, the dhikr counter, the prayer–hadith–verse feed and
+the AI-powered assistant are in users' hands today, and anyone who wants it
+ad-free can move to the support plan.
 
-If you have a mobile app in mind, [get in touch](/en/contact/). Let's talk
-about how to make it real.
+We wrote the first line in November 2025, and the project has been developed
+steadily ever since.
+
+If you have a mobile app in mind, [get in touch](/en/contact/). Two platforms,
+a data layer that works offline and an AI-powered assistant — we delivered all
+of it with a single team. Let's talk about how to make yours real.
