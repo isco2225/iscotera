@@ -20,13 +20,13 @@ export const services: Service[] = [
       slug: 'web-uygulama-gelistirme',
       title: 'Web Uygulama Geliştirme',
       summary:
-        'Kurumsal web siteleri ve modern web tabanlı uygulamalar geliştiriyoruz.',
+        'Kurumsal siteler ve web uygulamaları. Hızlı açılan, arama motorlarında görünen ve içeriğini kendi ekibinizin girebildiği sistemler kuruyoruz.',
     },
     en: {
       slug: 'web-application-development',
       title: 'Web Application Development',
       summary:
-        'We build corporate websites and modern web-based applications.',
+        'Corporate sites and web applications. We build systems that load fast, show up in search results and let your own team handle the content.',
     },
   },
   {
@@ -34,12 +34,14 @@ export const services: Service[] = [
     tr: {
       slug: 'mobil-uygulama-gelistirme',
       title: 'Mobil Uygulama Geliştirme',
-      summary: 'iOS ve Android için performanslı mobil uygulamalar geliştiriyoruz.',
+      summary:
+        'iOS ve Android uygulamaları. Tek kaynaktan geliştirdiğimiz için yeni özellik iki platforma aynı anda gelir, bakım maliyeti ikiye katlanmaz.',
     },
     en: {
       slug: 'mobile-app-development',
       title: 'Mobile App Development',
-      summary: 'We develop high-performance mobile apps for iOS and Android.',
+      summary:
+        'iOS and Android apps. We build from a single source, so a new feature reaches both platforms at once and maintenance does not cost twice as much.',
     },
   },
   {
@@ -48,13 +50,13 @@ export const services: Service[] = [
       slug: 'ozel-yazilim-cozumleri',
       title: 'Özel Yazılım Çözümleri',
       summary:
-        'İşletmenize özel otomasyon, entegrasyon ve kurumsal yazılım çözümleri üretiyoruz.',
+        'İşinizin kendi akışına göre otomasyon ve entegrasyon. Hazır bir paket ihtiyacınızı karşılıyorsa, yazılım geliştirmeden önce bunu söyleriz.',
     },
     en: {
       slug: 'custom-software-solutions',
       title: 'Custom Software Solutions',
       summary:
-        'We deliver tailor-made automation, integration and enterprise software solutions.',
+        'Automation and integration shaped around how your business already works. If an off-the-shelf product covers your need, we say so before building anything.',
     },
   },
   {
@@ -63,13 +65,13 @@ export const services: Service[] = [
       slug: 'yazilim-danismanligi',
       title: 'Yazılım Danışmanlığı',
       summary:
-        'Teknik danışmanlık, mimari tasarım ve ekip desteği sağlıyoruz.',
+        'Mimari kararlar, teknoloji seçimi ve ekibinize teknik destek. Devraldığımız bir sistem varsa, önce nerede durduğunu yazılı olarak çıkarırız.',
     },
     en: {
       slug: 'software-consulting',
       title: 'Software Consulting',
       summary:
-        'We provide technical consulting, architecture design and team support.',
+        'Architecture decisions, technology choices and support for your team. If we are taking over an existing system, we first put its current state in writing.',
     },
   },
 ];

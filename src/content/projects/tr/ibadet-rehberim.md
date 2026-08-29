@@ -22,58 +22,18 @@ features:
     text: "Vakitler Diyanet'in hesaplama yöntemiyle ve konumunuza göre hesaplanır. Vakit girdiğinde bildirim gelir, telefon çevrimdışıyken bile. Ne saate bakmanız gerekir ne de internete."
     image: "../_images/ibadet-rehberim/screen-prayer-times.png"
     alt: "İbadet Rehberim ezan vakitleri ekranı: şehre göre günlük namaz vakitleri ve vakit girdiğinde gelen bildirim"
-  - title: "Nerede kaldığınızı hatırlayan zikirmatik"
-    text: "Hazır zikir setlerinden birini seçin ya da kendi tesbihatınızı oluşturun. Günlük hedefinizi belirleyin; saymayı ve nerede kaldığınızı uygulama üstlensin."
-    image: "../_images/ibadet-rehberim/screen-dhikr-tracking.png"
-    alt: "İbadet Rehberim zikir ekranı: günlük zikir hedefleri ve tamamlanma oranları"
   - title: "Sorabileceğiniz bir İslami asistan"
     text: "Aklınıza takılan dinî soruyu yazın, yapay zekâ destekli asistan yanıtlasın. Yanıtın hangi kaynağa dayandığı da yazılı, yani okuduğunuzu doğrulayabilirsiniz."
     image: "../_images/ibadet-rehberim/screen-assistant.png"
     alt: "İbadet Rehberim islami asistan ekranı: kullanıcının sorduğu dinî soruya verilen kaynaklı yanıt"
-  - title: "Her gün yenilenen kısa bir akış"
-    text: "Günün duası, hadisi ve ayeti tek ekranda. Her gönderide bilginin alındığı kaynak yazıyor; okuduğunuz şeyin nereye dayandığını görüyorsunuz."
-    image: "../_images/ibadet-rehberim/screen-discover-feed.png"
-    alt: "İbadet Rehberim keşfet akışı: günün duası, hadisi ve ayeti, her biri kaynağıyla birlikte"
-# ÖRNEK VERİ — düzeni görmek için konuldu, gerçek değil.
-# Google Play'deki gerçek puan ve değerlendirme sayısı gelince burası
-# güncellenecek ve aşağıdaki placeholderData listesinden 'rating' çıkarılacak.
-# O zamana kadar bu puan sayfada görünür ama yapılandırılmış veriye girmez.
-rating:
-  value: 4.6
-  count: 128
-# Puan artık rating alanından geliyor; şeritte iki kez görünmesin diye
-# buradaki "kullanıcı puanı" maddesi kaldırıldı.
+# Mağaza puanı bilerek yok: uydurma bir puan yerine ölçülebilir tek gerçek
+# veri (indirme sayısı) duruyor. Google Play'deki gerçek puan elimize
+# geçtiğinde rating: { value, count } olarak buraya eklenebilir.
 results:
   - value: "1.000+"
     label: "indirme"
 pricing:
   label: "Ücretsiz"
-faq:
-  - q: "Uygulama ücretli mi?"
-    a: "Hayır. Uygulama ücretsiz indiriliyor ve temel özelliklerin tamamı ücretsiz. Yalnızca reklamları kaldırmak isteyenler için haftalık ya da yıllık premium aboneliği bulunuyor."
-  - q: "İnternet olmadan çalışır mı?"
-    a: "Evet. Veriler önce telefonda saklandığı için namaz vakitleri, zikirmatik ve kayıtlarınız çevrimdışı da çalışır; vakit bildirimleri telefon çevrimdışıyken de gelir. Yalnızca İslami asistan ve günlük akış internet bağlantısı ister."
-  - q: "Telefonumu değiştirirsem kayıtlarım kaybolur mu?"
-    a: "Hesabınızla giriş yaptıysanız hayır. Zikir ilerlemeniz yedeklenir, yeni cihazınızda giriş yaptığınızda kaldığınız yerden devam edersiniz. Hesap açmak zorunlu değil, ama yedekleme için gerekiyor."
-  - q: "Namaz vakitleri hangi yönteme göre hesaplanıyor?"
-    a: "Diyanet İşleri Başkanlığı'nın hesaplama yöntemine göre ve bulunduğunuz konum esas alınarak."
-  - q: "iPhone sürümü var mı?"
-    a: "Evet. Uygulama tek bir kaynaktan hem iPhone hem Android için geliştirildi; iki platformda da aynı özellikler var ve yeni özellikler ikisine aynı anda geliyor."
-# ÖRNEK VERİ — düzeni görmek için konuldu, gerçek yorum değil.
-# "Ad Soyad" bilerek yer tutucu olarak bırakıldı ki gerçek sanılmasın.
-testimonials:
-  - quote: "Vakit bildirimleri tam zamanında geliyor, artık saate bakma ihtiyacı duymuyorum. Yazılar da büyük olduğu için annem bile rahatça kullanıyor."
-    author: "Ad Soyad"
-    role: "Google Play yorumu"
-  - quote: "Zikir hedeflerimi tutturup tutturmadığımı görebilmek beni gerçekten düzenli hâle getirdi. Telefonumu değiştirdiğimde de kayıtlarım duruyordu."
-    author: "Ad Soyad"
-    role: "Google Play yorumu"
-  - quote: "Sorduğum soruların cevabının hangi kaynaktan geldiğini yazması güven veriyor. Reklamsız sürüme geçtim, tamamen sade bir uygulama oldu."
-    author: "Ad Soyad"
-    role: "Google Play yorumu"
-  - quote: "İnternet çekmediği yerlerde bile vakitler ve zikirmatik sorunsuz çalışıyor. Her sabah günün duasını okumak için de açıyorum, kısa ve kaynağı yazılı."
-    author: "Ad Soyad"
-    role: "Google Play yorumu"
 social:
   - platform: instagram
     href: "https://www.instagram.com/ibadetrehberim.app/"
@@ -87,11 +47,6 @@ app:
   operatingSystem: "ANDROID, IOS"
   price: "0"
   priceCurrency: "TRY"
-# Aşağıdaki alanlar gerçek veriyle değiştirilene kadar yapılandırılmış
-# veriden hariç tutulur ve her derlemede uyarı basılır.
-placeholderData:
-  - rating
-  - testimonials
 order: 1
 draft: true
 ---
@@ -99,6 +54,10 @@ draft: true
 **İbadet Rehberim**, günlük ibadetleri takip etmeyi kolaylaştıran bir mobil
 uygulama. Fikri, tasarımı ve yazılımı bize ait; baştan sona İscotera'da
 geliştirdik.
+
+Uygulamanın bütün özellikleri, ekran görüntüleri ve sık sorulan sorular kendi
+sitesinde duruyor: [ibadetrehberim.com](https://ibadetrehberim.com/). Bu sayfa
+ürünü tanıtmak için değil, nasıl geliştirdiğimizi anlatmak için var.
 
 ## Nasıl geliştirdik
 

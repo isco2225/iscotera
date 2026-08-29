@@ -22,58 +22,18 @@ features:
     text: "Times are calculated for your location using the method of the Turkish Directorate of Religious Affairs. A notification arrives the moment a prayer time begins, even when the phone is offline. You need neither a clock nor a connection."
     image: "../_images/ibadet-rehberim/screen-prayer-times.png"
     alt: "İbadet Rehberim prayer times screen: daily prayer times for the user's city and the notification sent when a prayer time begins"
-  - title: "A dhikr counter that remembers where you stopped"
-    text: "Pick one of the ready-made dhikr sets or build your own. Set a daily goal and let the app do the counting and the remembering."
-    image: "../_images/ibadet-rehberim/screen-dhikr-tracking.png"
-    alt: "İbadet Rehberim dhikr screen: daily dhikr goals and their completion progress"
   - title: "An Islamic assistant you can ask"
     text: "Type the religious question on your mind and the AI-powered assistant answers it. Each answer states the source it rests on, so you can check what you just read."
     image: "../_images/ibadet-rehberim/screen-assistant.png"
     alt: "İbadet Rehberim assistant screen: an answer to a religious question with its source cited"
-  - title: "A short feed that refreshes every day"
-    text: "The prayer, hadith and verse of the day on one screen. Every post names the source its text comes from, so you can see what you are reading is based on."
-    image: "../_images/ibadet-rehberim/screen-discover-feed.png"
-    alt: "İbadet Rehberim discover feed: the prayer, hadith and verse of the day, each with its source"
-# ÖRNEK VERİ — düzeni görmek için konuldu, gerçek değil. Gerçek puan ve
-# değerlendirme sayısı gelince burası güncellenecek ve aşağıdaki
-# placeholderData listesinden 'rating' çıkarılacak. O zamana kadar puan
-# sayfada görünür ama yapılandırılmış veriye girmez.
-rating:
-  value: 4.6
-  count: 128
-# Puan artık rating alanından geliyor; şeritte iki kez görünmesin diye
-# buradaki "user rating" maddesi kaldırıldı.
+# Mağaza puanı bilerek yok: uydurma bir puan yerine ölçülebilir tek gerçek
+# veri (indirme sayısı) duruyor. Google Play'deki gerçek puan elimize
+# geçtiğinde rating: { value, count } olarak buraya eklenebilir.
 results:
   - value: "1,000+"
     label: "downloads"
 pricing:
   label: "Free"
-faq:
-  - q: "Does the app cost anything?"
-    a: "No. The app is free to download and every core feature is free. There is only a weekly or yearly premium subscription for people who want to remove the ads."
-  - q: "Does it work without an internet connection?"
-    a: "Yes. Because data lives on the phone first, prayer times, the dhikr counter and your records all work offline, and prayer time notifications arrive even when the phone has no connection. Only the Islamic assistant and the daily feed need to be online."
-  - q: "Do I lose my records if I change phones?"
-    a: "Not if you have signed in. Your dhikr progress is backed up, so signing in on the new device picks up where you left off. An account is not required to use the app, but it is what makes the backup possible."
-  - q: "How are the prayer times calculated?"
-    a: "Using the calculation method of the Turkish Directorate of Religious Affairs, based on your current location."
-  - q: "Is there an iPhone version?"
-    a: "Yes. The app was built for both iPhone and Android from a single source; both platforms have the same features, and new features reach them at the same time."
-# ÖRNEK VERİ — düzeni görmek için konuldu, gerçek yorum değil.
-# "Name Surname" bilerek yer tutucu olarak bırakıldı ki gerçek sanılmasın.
-testimonials:
-  - quote: "The prayer time notifications arrive exactly on time, so I no longer keep checking the clock. The type is large enough that even my mother uses it comfortably."
-    author: "Name Surname"
-    role: "Google Play review"
-  - quote: "Being able to see whether I hit my dhikr goals is what actually made me consistent. My records were still there when I switched phones."
-    author: "Name Surname"
-    role: "Google Play review"
-  - quote: "It tells you which source an answer comes from, which builds trust. I moved to the ad-free version and the app became completely calm."
-    author: "Name Surname"
-    role: "Google Play review"
-  - quote: "Prayer times and the dhikr counter keep working even where there is no signal. I also open it every morning for the prayer of the day, short and with its source written underneath."
-    author: "Name Surname"
-    role: "Google Play review"
 social:
   - platform: instagram
     href: "https://www.instagram.com/ibadetrehberim.app/"
@@ -87,11 +47,6 @@ app:
   operatingSystem: "ANDROID, IOS"
   price: "0"
   priceCurrency: "TRY"
-# Aşağıdaki alanlar gerçek veriyle değiştirilene kadar yapılandırılmış
-# veriden hariç tutulur ve her derlemede uyarı basılır.
-placeholderData:
-  - rating
-  - testimonials
 order: 1
 draft: true
 ---
@@ -99,6 +54,10 @@ draft: true
 **İbadet Rehberim** is a mobile app that makes it easier to keep up with daily
 worship. The idea, the design and the software are all ours; we built it
 end to end at İscotera.
+
+Every feature, screen and common question about the app lives on its own site:
+[ibadetrehberim.com](https://ibadetrehberim.com/). This page is not there to
+sell the app; it is there to explain how we built it.
 
 ## How we built it
 

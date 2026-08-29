@@ -94,22 +94,20 @@ otomatik oluşur.
 
 ### İbadet Rehberim ürün sayfası
 
-Sayfa hazır ama `draft: true`; içindeki üç şey gerçek veriyle değişmeden
-yayınlanmamalı. İlk ikisi `npm run build` sırasında uyarı bastığı için
-gözden kaçmaz.
+Sayfa, ürünü tanıtan bir satış sayfası değil; ürünün kendi sitesi
+([ibadetrehberim.com](https://ibadetrehberim.com/)) o işi zaten yapıyor.
+Buradaki sayfanın işi, hizmet alacak müşteriye "bunu biz yaptık, nasıl
+yaptık" demek. Bu yüzden tüketiciye dönük bölümler (SSS, mağaza yorumları,
+dört özelliğin tamamı) bilerek burada değil; kalanlar ölçülebilir sonuç,
+anlatı ve iki teknik özellik.
 
-- [ ] **Puanı gerçeğiyle değiştir.** Şu an `rating: 4.6 / 128` yer tutucu.
-      Google Play'deki gerçek puanı ve değerlendirme sayısını yaz, sonra
-      `placeholderData` listesinden `rating` satırını sil. Ancak o zaman
-      `aggregateRating` yapılandırılmış veriye girer — uydurma puan bildirmek
-      Google'da manuel işleme yol açıyor, o yüzden şu an bilerek dışarıda.
-- [ ] **Yorumları gerçeğiyle değiştir.** Dört yorum yer tutucu, imzaları
-      "Ad Soyad" / "Name Surname". Gerçek yorumları (izin alarak) koyup
-      `placeholderData` listesinden `testimonials` satırını sil.
 - [ ] **App Store bağlantısını ekle.** `stores.appStore` alanına adresi yaz ve
       `stores.pending` listesini sil; rozet o an tıklanabilir hâle gelir.
-      Resmî rozet görselleri için `public/badges/README.md`.
-- [ ] Yukarıdaki üçü bitince iki dilde de `draft: true` satırını `false` yap.
+      Resmî rozet görselleri için `public/badges/README.md`. Derleme bu alan
+      dolu kaldığı sürece uyarı basıyor.
+- [ ] Bu bitince iki dilde de `draft: true` satırını `false` yap.
+- [ ] İsteğe bağlı: Google Play'deki gerçek puan gelince `rating` alanı geri
+      eklenebilir (uydurma puan yerine şu an yalnızca indirme sayısı duruyor).
 
 ### Site geneli
 
