@@ -1,8 +1,10 @@
 ---
 import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ProjectCard from '../../components/ProjectCard.astro';
 import { services } from '../../data/services';
+import teamImg from '../../assets/home/team.jpg';
 
 // At most two products and two posts on the home page; the rest live in their
 // own listings. Drafts only render in development.
@@ -140,23 +142,75 @@ const steps = [
     )
   }
 
-  <section class="mx-auto max-w-5xl px-4 pb-16">
-    <h2 class="text-2xl font-bold text-ink-strong">How we work</h2>
-    <p class="mt-3 max-w-2xl text-ink-muted">
-      At every stage you know what happens and what we decide together.
-    </p>
-    <ol class="mt-6 grid gap-4 sm:grid-cols-2">
-      {
-        steps.map((step, i) => (
-          <li class="rounded-lg border border-line p-5">
-            <span class="text-xs font-bold text-brand">0{i + 1}</span>
-            <h3 class="mt-1.5 font-semibold text-ink-strong">{step.title}</h3>
-            <p class="mt-1.5 text-sm font-medium text-ink">{step.thesis}</p>
-            <p class="mt-1.5 text-sm text-ink-muted">{step.text}</p>
-          </li>
-        ))
-      }
-    </ol>
+  {/* Süreç bölümü: solda sabit kalan tanıtım sütunu (etiket + başlık + çağrı +
+      ekip fotoğrafı), sağda kırmızı numaralı dikey çizelge. Düzen ilhamı
+      kullanıcının beğendiği bir ajans sitesinden (2026-08-29); renkler,
+      yazı ve içerik tamamen bizim. */}
+  <section class="mx-auto max-w-5xl px-4 pb-20">
+    <div class="grid gap-12 md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-16">
+      <div class="md:sticky md:top-24 md:self-start">
+        <p class="text-xs font-bold tracking-[0.14em] text-ink-subtle uppercase">
+          How we work
+        </p>
+        <h2 class="mt-3 text-4xl font-bold text-ink-strong sm:text-5xl sm:leading-[1.15]">
+          You know what happens at every stage
+        </h2>
+        <p class="mt-5 text-lg text-ink-muted">
+          What we decide together, and what each step delivers, is put in
+          writing at the very start.
+        </p>
+        <a
+          href="/en/contact/"
+          class="mt-6 inline-block rounded-lg bg-action px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-action-dark"
+        >
+          Get in Touch
+        </a>
+        <Image
+          src={teamImg}
+          alt="A three-person team working together at laptops"
+          width={980}
+          class="mt-8 h-64 w-full rounded-xl border border-line object-cover sm:h-80"
+        />
+      </div>
+      <ol class="relative">
+        {/* Gri kılavuz çizgi + kaydırdıkça dolan kırmızı ilerleme (process-fill,
+            global.css). Desteklemeyen tarayıcıda yalnızca gri çizgi kalır. */}
+        <div
+          class="absolute top-2 bottom-2 left-[7px] w-px bg-line"
+          aria-hidden="true"
+        >
+          <div class="process-fill h-full w-full bg-brand"></div>
+        </div>
+        {
+          steps.map((step, i) => (
+            <li class="relative pb-16 pl-10 last:pb-0 sm:pl-14 md:pb-24">
+              <span
+                class="absolute top-2 left-0 flex h-[15px] w-[15px] items-center justify-center rounded-full border border-line-strong bg-surface"
+                aria-hidden="true"
+              >
+                <span class="h-[5px] w-[5px] rounded-full bg-ink-subtle" />
+              </span>
+              <div class="flex items-start gap-5">
+                {/* Görsel numara dekoratif; sıralamayı zaten <ol> veriyor */}
+                <span
+                  class="text-6xl leading-none font-extrabold text-brand md:text-7xl"
+                  aria-hidden="true"
+                >
+                  {i + 1}
+                </span>
+                <div class="pt-1.5">
+                  <h3 class="text-2xl font-bold text-ink-strong">{step.title}</h3>
+                  <p class="mt-2.5 text-lg font-medium text-ink">{step.thesis}</p>
+                  <p class="mt-2 text-lg leading-relaxed text-ink-muted">
+                    {step.text}
+                  </p>
+                </div>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
   </section>
 
   {

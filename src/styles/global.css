@@ -72,6 +72,48 @@
   --color-action-ink: #60a5fa; /*  7.5:1 */
 }
 
+/* Ana sayfadaki süreç çizelgesinin kaydırmayla dolan kırmızı çizgisi
+   (kullanıcı isteği, 2026-08-29). Hareket kaydırmaya bağlı olduğu için
+   kendiliğinden oynayan bir animasyon değildir: sayfa dururken çizgi de
+   durur. animation-timeline'ı desteklemeyen tarayıcı (ör. Firefox) ve
+   hareket azaltma tercihi, scaleY(0) taban değeri sayesinde bugünkü gri
+   çizgiyi görür — kırmızı dolgu hiç çıkmaz.
+   Kural burada, bileşende değil: bileşene özel <style> derlemeye girmiyor. */
+@keyframes process-fill {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+/* DİKKAT: animation kısayolu ile animation-timeline aynı blokta olmamalı —
+   küçültücü ikisini tek kısayolda birleştiriyor ve Chrome o sözdizimini
+   geçersiz sayıp animasyonu tümüyle düşürüyor (yaşandı, 2026-08-29).
+   Bu yüzden taban blok "paused" başlar (0% karesi = görünmez çizgi) ve
+   yalnızca destekleyen tarayıcı, @supports arkasındaki longhand'lerle
+   zaman çizelgesini bağlayıp "running"e çevirir. */
+.process-fill {
+  transform: scaleY(0);
+  transform-origin: top;
+  animation-name: process-fill;
+  animation-duration: 1ms; /* kaydırma çizelgesinde süre yok sayılır */
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+  animation-play-state: paused;
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .process-fill {
+      animation-timeline: view();
+      animation-range: entry 30% exit 50%;
+      animation-play-state: running;
+    }
+  }
+}
+
 /* SSS akordeonundaki <summary> öğesinin kendi işareti. Tailwind'in list-none
    sınıfı Chrome ve Firefox'a yetiyor ama Safari üçgeni ayrı bir sözde öğede
    tutuyor, o yüzden ayrıca gizleniyor.
