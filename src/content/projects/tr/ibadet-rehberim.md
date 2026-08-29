@@ -10,6 +10,9 @@ year: 2026
 tags: ["mobil", "flutter", "firebase", "ios", "android"]
 logo: "../_images/ibadet-rehberim/logo.png"
 cover: "../_images/ibadet-rehberim/screen-discover-feed.png"
+video:
+  src: "/media/ibadet-rehberim/tanitim.mp4"
+  uploadDate: 2026-08-29
 stores:
   googlePlay: "https://play.google.com/store/apps/details?id=com.omran.huzur_islamda"
   web: "https://ibadetrehberim.com/"

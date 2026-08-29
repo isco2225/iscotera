@@ -39,6 +39,13 @@ const projects = defineCollection({
       logo: image().optional(),
       // Liste kartında gösterilen tanıtım görseli.
       cover: image().optional(),
+      // Dikey tanıtım videosu: hero'da kapağın yerine oynar (kapak poster
+      // olarak kalır). src, public/ altındaki mutlak yoldur — Astro videoyu
+      // işlemez, dosya olduğu gibi yayınlanır. uploadDate VideoObject şeması
+      // için gerekli (Google zengin sonuç koşulu).
+      video: z
+        .object({ src: z.string(), uploadDate: z.coerce.date() })
+        .optional(),
       // Vaka çalışması kartlarında gösterilen ölçülebilir sonuçlar
       // (ör. { value: '10.000+', label: 'indirme' }). Şerit üç sütun.
       results: z

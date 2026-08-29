@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import ProjectCard from '../../components/ProjectCard.astro';
+import ProductStrip from '../../components/ProductStrip.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PagePlaceholder from '../../components/PagePlaceholder.astro';
 import { useTranslations } from '../../i18n/ui';
@@ -23,33 +23,36 @@ const projects = (
   alternate="/en/products/"
   back={{ href: '/', label: 'Ana Sayfa' }}
 >
-  <section class="mx-auto max-w-5xl px-4 py-16">
+  <section class="mx-auto max-w-5xl px-4 pt-16 pb-10">
     <h1 class="text-3xl font-bold text-ink-strong">Ürünlerimiz</h1>
     <p class="mt-3 max-w-2xl text-ink-muted">
       Geliştirdiğimiz ürünler ve elde edilen sonuçlar.
     </p>
-
-    <div class="mt-8">
-      {
-        projects.length === 0 ? (
+    {
+      projects.length === 0 && (
+        <div class="mt-8">
           <PagePlaceholder note={t('projects.empty')} />
-        ) : (
-          <div class="flex flex-col gap-8">
-            {projects.map((project) => (
-              <ProjectCard
-                project={project}
-                href={`/urunler/${project.id.replace('tr/', '')}/`}
-                linkLabel="İncele"
-                lang="tr"
-                as="h2"
-              />
-            ))}
-          </div>
-        )
-      }
-    </div>
+        </div>
+      )
+    }
+  </section>
 
-    <section class="mt-16 rounded-2xl border border-line bg-surface-muted p-8 text-center sm:p-12">
+  {/* Vitrin şeritleri tam genişlik; zemin ve görsel yönü dönüşümlü */}
+  {
+    projects.map((project, i) => (
+      <ProductStrip
+        project={project}
+        href={`/urunler/${project.id.replace('tr/', '')}/`}
+        linkLabel="Ürünü incele"
+        lang="tr"
+        as="h2"
+        index={i}
+      />
+    ))
+  }
+
+  <section class="mx-auto max-w-5xl px-4 py-14">
+    <section class="rounded-2xl border border-line bg-surface-muted p-8 text-center sm:p-12">
       <h2 class="text-2xl font-bold text-ink-strong">Sıradaki ürün sizinki olsun</h2>
       <p class="mx-auto mt-3 max-w-xl text-ink-muted">Aklınızdaki fikri birlikte konuşalım; size dürüst bir yol haritası ve net bir bütçe çıkaralım.</p>
       <a

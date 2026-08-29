@@ -66,6 +66,14 @@ içinde yazılı; şablonu kopyalayıp doldurmak en hızlısı.
 - **Özellikler gövdeye madde madde yazılmaz**, `features` alanına girer. Gövdede
   yalnızca anlatı kalır: neden yaptık, nasıl geliştirdik, bugün neredeyiz.
 
+**Tanıtım videosu:** Ürünün dikey tanıtım videosu `public/media/<urun>/` altına
+konur ve frontmatter'a `video: { src, uploadDate }` olarak yazılır. Hero'da
+kapağın yerine oynar: kapak poster olarak kalır (ilk boyama değişmez), video
+görünür olana kadar indirilmez, sesi kapalı döngüde oynar; hareket azaltma
+tercihi olan ziyaretçide kendiliğinden oynamaz, kontroller açılır. Video
+sayfada gerçekten oynadığı için VideoObject şemasına da bildirilir. Hedef
+boyut: ~540p, 2–6 MB.
+
 **Mağaza rozetleri:** App Store ve Google Play rozetlerinin resmî görselleri
 `public/badges/` altına konur (adresler ve marka kuralları oradaki
 `README.md` dosyasında). Dosyalar yokken site bozulmaz, bileşen kendi metin

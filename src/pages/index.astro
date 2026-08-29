@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ProjectCard from '../components/ProjectCard.astro';
+import ProductStrip from '../components/ProductStrip.astro';
 import { services } from '../data/services';
 import teamImg from '../assets/home/team.jpg';
 
@@ -117,8 +117,8 @@ const steps = [
 
   {
     products.length > 0 && (
-      <section class="mx-auto max-w-5xl px-4 pb-16">
-        <div class="flex items-baseline justify-between gap-4">
+      <section class="pb-16">
+        <div class="mx-auto flex max-w-5xl items-baseline justify-between gap-4 px-4 pb-6">
           <h2 class="text-2xl font-bold text-ink-strong">Ürünlerimiz</h2>
           <a
             href="/urunler/"
@@ -127,16 +127,15 @@ const steps = [
             Tümünü gör
           </a>
         </div>
-        <div class="mt-6 flex flex-col gap-8">
-          {products.map((product) => (
-            <ProjectCard
-              project={product}
-              href={`/urunler/${product.id.replace('tr/', '')}/`}
-              linkLabel="İncele"
-              lang="tr"
-            />
-          ))}
-        </div>
+        {products.map((product, i) => (
+          <ProductStrip
+            project={product}
+            href={`/urunler/${product.id.replace('tr/', '')}/`}
+            linkLabel="Ürünü incele"
+            lang="tr"
+            index={i}
+          />
+        ))}
       </section>
     )
   }

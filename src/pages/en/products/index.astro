@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import ProjectCard from '../../../components/ProjectCard.astro';
+import ProductStrip from '../../../components/ProductStrip.astro';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import PagePlaceholder from '../../../components/PagePlaceholder.astro';
 import { useTranslations } from '../../../i18n/ui';
@@ -23,33 +23,36 @@ const projects = (
   alternate="/urunler/"
   back={{ href: '/en/', label: 'Home' }}
 >
-  <section class="mx-auto max-w-5xl px-4 py-16">
+  <section class="mx-auto max-w-5xl px-4 pt-16 pb-10">
     <h1 class="text-3xl font-bold text-ink-strong">Our Products</h1>
     <p class="mt-3 max-w-2xl text-ink-muted">
       Products we built and the results they achieved.
     </p>
-
-    <div class="mt-8">
-      {
-        projects.length === 0 ? (
+    {
+      projects.length === 0 && (
+        <div class="mt-8">
           <PagePlaceholder note={t('projects.empty')} />
-        ) : (
-          <div class="flex flex-col gap-8">
-            {projects.map((project) => (
-              <ProjectCard
-                project={project}
-                href={`/en/products/${project.id.replace('en/', '')}/`}
-                linkLabel="View case study"
-                lang="en"
-                as="h2"
-              />
-            ))}
-          </div>
-        )
-      }
-    </div>
+        </div>
+      )
+    }
+  </section>
 
-    <section class="mt-16 rounded-2xl border border-line bg-surface-muted p-8 text-center sm:p-12">
+  {/* Vitrin şeritleri tam genişlik; zemin ve görsel yönü dönüşümlü */}
+  {
+    projects.map((project, i) => (
+      <ProductStrip
+        project={project}
+        href={`/en/products/${project.id.replace('en/', '')}/`}
+        linkLabel="View the product"
+        lang="en"
+        as="h2"
+        index={i}
+      />
+    ))
+  }
+
+  <section class="mx-auto max-w-5xl px-4 py-14">
+    <section class="rounded-2xl border border-line bg-surface-muted p-8 text-center sm:p-12">
       <h2 class="text-2xl font-bold text-ink-strong">Your product could be next</h2>
       <p class="mx-auto mt-3 max-w-xl text-ink-muted">Tell us what you have in mind and we'll map out an honest plan and a clear budget.</p>
       <a

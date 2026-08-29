@@ -46,6 +46,7 @@ const {
   category,
   logo,
   cover,
+  video,
   stores,
   rating,
   results,
@@ -86,6 +87,28 @@ const featureShots = await Promise.all(
     .map((image) => getImage({ src: image!, width: PRODUCT_IMAGE_WIDTH }))
 );
 const renderedLogo = logo ? await getImage({ src: logo, width: 128 }) : null;
+
+// Video varken kapak poster olarak kullanılır: sayfa ilk boyandığında yine
+// optimize görsel görünür (LCP değişmez), video görünür olana kadar tek bayt
+// inmez (preload="none" + aşağıdaki görünürlük script'i).
+const renderedCover =
+  video && cover
+    ? await getImage({ src: cover, width: PRODUCT_IMAGE_WIDTH })
+    : null;
+
+// VideoObject şeması: video gerçekten sayfada oynadığı için bildirilebilir.
+const videoSchema =
+  video && renderedCover
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'VideoObject',
+        name: title,
+        description: promise,
+        thumbnailUrl: absolute(renderedCover.src),
+        contentUrl: absolute(video.src),
+        uploadDate: video.uploadDate.toISOString().split('T')[0],
+      }
+    : null;
 
 // SoftwareApplication şeması.
 //
@@ -169,6 +192,11 @@ const faqSchema =
         <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
       )
     }
+    {
+      videoSchema && (
+        <script type="application/ld+json" set:html={JSON.stringify(videoSchema)} />
+      )
+    }
   </Fragment>
 
   {/* 1 — Hero */}
@@ -244,20 +272,43 @@ const faqSchema =
       </div>
 
       {
-        cover && (
+        video && renderedCover ? (
           <div class="flex justify-center">
-            {/* Sayfanın en üstündeki büyük görsel, yani LCP öğesi. Astro'nun
-                varsayılanı lazy; burada bırakılırsa tarayıcı bu görseli
-                keşfetmek için düzen hesabını bekler ve LCP gecikir. */}
-            <Image
-              src={cover}
-              alt=""
-              width={PRODUCT_IMAGE_WIDTH}
-              loading="eager"
-              fetchpriority="high"
+            {/* Tanıtım videosu. preload="none": görünürlük script'i oynatana
+                kadar video inmez; ziyaretçi o âna dek poster'ı (optimize
+                kapak görseli) görür. muted + playsinline mobilde kendiliğinden
+                oynamanın önkoşulu; hareket azaltma tercihinde script oynatmaz,
+                kontrolleri açar. */}
+            <video
+              data-hero-video
+              poster={renderedCover.src}
+              preload="none"
+              muted
+              loop
+              playsinline
+              width={renderedCover.attributes.width}
+              height={renderedCover.attributes.height}
               class="w-full max-w-[300px] rounded-3xl border border-line shadow-lg"
-            />
+            >
+              <source src={video.src} type="video/mp4" />
+            </video>
           </div>
+        ) : (
+          cover && (
+            <div class="flex justify-center">
+              {/* Sayfanın en üstündeki büyük görsel, yani LCP öğesi. Astro'nun
+                  varsayılanı lazy; burada bırakılırsa tarayıcı bu görseli
+                  keşfetmek için düzen hesabını bekler ve LCP gecikir. */}
+              <Image
+                src={cover}
+                alt=""
+                width={PRODUCT_IMAGE_WIDTH}
+                loading="eager"
+                fetchpriority="high"
+                class="w-full max-w-[300px] rounded-3xl border border-line shadow-lg"
+              />
+            </div>
+          )
         )
       }
     </div>
@@ -383,3 +434,31 @@ const faqSchema =
     </div>
   </section>
 </BaseLayout>
+
+<script>
+  // Tanıtım videosu: hero görünür olunca oynat — o âna kadar preload="none"
+  // sayesinde video hiç inmez, ziyaretçi poster'ı görür. Hareket azaltma
+  // tercihinde kendiliğinden oynatma yok; kontroller açılır, karar
+  // ziyaretçinin olur. Oynatma engellenirse de aynı çıkışa düşülür.
+  const video = document.querySelector('[data-hero-video]');
+  if (video instanceof HTMLVideoElement) {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      video.controls = true;
+    } else {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (!entry.isIntersecting) continue;
+            observer.disconnect();
+            video.muted = true;
+            video.play().catch(() => {
+              video.controls = true;
+            });
+          }
+        },
+        { threshold: 0.4 }
+      );
+      observer.observe(video);
+    }
+  }
+</script>
