@@ -1,6 +1,7 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-import PagePlaceholder from '../../../components/PagePlaceholder.astro';
+// İnce rota: sayfanın tamamı ServicePage bileşeninde. İki dilin rotası da aynı
+// bileşeni çağırır; bölüm sırası orada tek yerden yönetilir.
+import ServicePage from '../../../components/ServicePage.astro';
 import { services } from '../../../data/services';
 
 export function getStaticPaths() {
@@ -13,28 +14,4 @@ export function getStaticPaths() {
 const { service } = Astro.props;
 ---
 
-<BaseLayout
-  title={service.en.title}
-  description={service.en.summary}
-  lang="en"
-  alternate={`/hizmetler/${service.tr.slug}/`}
-  back={{ href: '/en/services/', label: 'Services' }}
->
-  <section class="mx-auto max-w-3xl px-4 py-16">
-    <h1 class="text-3xl font-bold text-ink-strong">{service.en.title}</h1>
-    <p class="mt-3 text-lg text-ink-muted">{service.en.summary}</p>
-    <div class="mt-8 space-y-6">
-      <PagePlaceholder note="Detailed description: scope, process, technologies used..." />
-      <PagePlaceholder note="Related projects / references" />
-      <PagePlaceholder note="Frequently asked questions (valuable for SEO)" />
-    </div>
-    <div class="mt-10">
-      <a
-        href="/en/contact/"
-        class="inline-block rounded-lg bg-action px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-action-dark"
-      >
-        Let's Talk About Your Project
-      </a>
-    </div>
-  </section>
-</BaseLayout>
+<ServicePage service={service} lang="en" />

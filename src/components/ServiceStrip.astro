@@ -1,0 +1,90 @@
+---
+// Hizmet listesindeki tek şerit: bir yanda anlatı, diğer yanda hizmeti
+// anlatan gerçek fotoğraf (tuvalde onaylanan "Yön D — Fotoğraflı Vitrin",
+// 2026-08-29). Şeritler dönüşümlü olarak zemin rengi değiştirir ve fotoğraf
+// yön değiştirir; sayfa böylece yazı yığını gibi durmaz.
+//
+// Fotoğraflar src/assets/services/<id>.jpg dosyalarından gelir (Pexels,
+// ücretsiz ticari lisans, atıf gerekmez); alt metin services.ts'te dil başına
+// durur. id'si burada eşleşmeyen hizmet fotoğrafsız kalır ve tek sütuna düşer.
+
+import { Image } from 'astro:assets';
+import { useTranslations, type Lang } from '../i18n/ui';
+import type { Service } from '../data/services';
+import webImg from '../assets/services/web.jpg';
+import mobileImg from '../assets/services/mobile.jpg';
+import customImg from '../assets/services/custom-software.jpg';
+import consultingImg from '../assets/services/consulting.jpg';
+
+interface Props {
+  service: Service;
+  lang: Lang;
+  /** Sıra numarası (0'dan): şerit zeminini ve fotoğrafın yönünü belirler. */
+  index: number;
+}
+
+const { service, lang, index } = Astro.props;
+const t = useTranslations(lang);
+const content = service[lang];
+const href =
+  lang === 'tr'
+    ? `/hizmetler/${service.tr.slug}/`
+    : `/en/services/${service.en.slug}/`;
+
+const images: Record<string, ImageMetadata> = {
+  web: webImg,
+  mobile: mobileImg,
+  'custom-software': customImg,
+  consulting: consultingImg,
+};
+const image = images[service.id];
+
+// Çift sıradakiler (1. ve 3. şerit) soluk zemin alır; tek sıradakilerde
+// fotoğraf sola geçer. Görüntülenen en geniş hâli ~490px olduğundan fotoğraf
+// 2x ekranlar için 980 genişlikte üretilir.
+const muted = index % 2 === 0;
+const reverse = index % 2 === 1;
+---
+
+<div class:list={[muted && 'border-y border-line bg-surface-muted']}>
+  <div
+    class="mx-auto grid max-w-5xl items-center gap-8 px-4 py-12 md:grid-cols-2 md:gap-14 md:py-14"
+  >
+    <div class:list={[reverse && 'md:order-2']}>
+      <p class="text-sm font-extrabold text-brand">0{index + 1}</p>
+      <h2 class="mt-2 text-2xl font-bold text-ink-strong">{content.title}</h2>
+      <p class="mt-3 leading-relaxed text-ink-muted">{content.summary}</p>
+      <a
+        href={href}
+        class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-action-ink transition-opacity hover:opacity-80"
+      >
+        {t('services.detail')}
+        <svg
+          viewBox="0 0 24 24"
+          class="h-4 w-4"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M5 12h14m-6-6 6 6-6 6"></path>
+        </svg>
+      </a>
+    </div>
+    {
+      image && (
+        <Image
+          src={image}
+          alt={content.imageAlt}
+          width={980}
+          class:list={[
+            'h-64 w-full rounded-xl border border-line object-cover sm:h-72',
+            reverse && 'md:order-1',
+          ]}
+        />
+      )
+    }
+  </div>
+</div>

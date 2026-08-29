@@ -1,0 +1,180 @@
+---
+// Hizmet detay sayfasının tamamı. /hizmetler/[slug] ve /en/services/[slug]
+// rotalarının ikisi de bu tek bileşeni çağırır — ProductPage ile aynı gerekçe:
+// bölüm sırası (hero → kapsam → yaklaşım → vaka → SSS → çağrı) hizmetin satış
+// argümanıdır ve iki kopya sessizce ayrışırdı. İçerik services.ts'ten, arayüz
+// metinleri ui.ts'ten gelir.
+
+import { getEntry } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Faq from './Faq.astro';
+import { routes, useTranslations, type Lang } from '../i18n/ui';
+import { services, type Service } from '../data/services';
+
+interface Props {
+  service: Service;
+  lang: Lang;
+}
+
+const { service, lang } = Astro.props;
+const t = useTranslations(lang);
+const content = service[lang];
+// Liste sayfasındaki sıra numarası burada da hero'nun üstünde görünür;
+// iki sayfa aynı dizinin parçası gibi okunsun diye.
+const number = String(services.findIndex(({ id }) => id === service.id) + 1).padStart(2, '0');
+const other: Lang = lang === 'tr' ? 'en' : 'tr';
+const alternate =
+  other === 'en'
+    ? `/en/services/${service.en.slug}/`
+    : `/hizmetler/${service.tr.slug}/`;
+
+// Vaka çalışması: bağlı ürün yayında değilse bölüm hiç çıkmaz, üretimde kırık
+// link olmasın. Taslaklar yalnızca geliştirme ortamında görünür.
+const caseEntry = service.caseStudy
+  ? await getEntry('projects', `${lang}/${service.caseStudy}`)
+  : undefined;
+const caseStudy =
+  caseEntry && (import.meta.env.DEV || !caseEntry.data.draft)
+    ? caseEntry
+    : undefined;
+const caseHref = caseStudy
+  ? `${routes[lang].projects}${service.caseStudy}/`
+  : undefined;
+
+// Sorular gerçek içerik olduğu için FAQPage şeması bildirilebilir
+// (ProductPage'deki kalıbın aynısı).
+const faqSchema =
+  content.faq.length > 0
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: content.faq.map((item) => ({
+          '@type': 'Question',
+          name: item.q,
+          acceptedAnswer: { '@type': 'Answer', text: item.a },
+        })),
+      }
+    : null;
+---
+
+<BaseLayout
+  title={content.title}
+  description={content.summary}
+  lang={lang}
+  alternate={alternate}
+  back={{ href: routes[lang].services, label: t('nav.services') }}
+>
+  <Fragment slot="head">
+    {
+      faqSchema && (
+        <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+      )
+    }
+  </Fragment>
+
+  {/* 1 — Hero: kırmızı sıra numarası + anlatı ("Yön D" tuval detayı, 2026-08-29) */}
+  <section class="mx-auto max-w-5xl px-4 py-12 sm:py-16">
+    <div class="max-w-3xl">
+      <p class="text-sm font-extrabold text-brand">{number}</p>
+      <h1 class="mt-2 text-3xl font-bold text-ink-strong sm:text-4xl">
+        {content.title}
+      </h1>
+      {content.intro.map((p) => <p class="mt-5 text-lg text-ink-muted">{p}</p>)}
+      <div class="mt-8 flex flex-wrap items-center gap-4">
+        <a
+          href={routes[lang].contact}
+          class="inline-block rounded-lg bg-action px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-action-dark"
+        >
+          {t('service.ctaButton')}
+        </a>
+        <a
+          href={routes[lang].projects}
+          class="inline-block rounded-lg border border-line-strong px-6 py-3 text-sm font-semibold text-ink-soft transition-colors hover:border-ink-subtle"
+        >
+          {t('service.ctaSecondary')}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {/* 2 — Kapsam: bu hizmetin somut çıktıları, üst çizgili sütunlar hâlinde */}
+  <section class="mx-auto max-w-5xl px-4 pb-16">
+    <h2 class="text-2xl font-bold text-ink-strong">{t('service.scope')}</h2>
+    <div class="mt-6 grid gap-8 md:grid-cols-3 md:gap-10">
+      {
+        content.scope.map((item) => (
+          <div class="border-t-2 border-line-strong pt-4">
+            <h3 class="font-semibold text-ink-strong">{item.title}</h3>
+            <p class="mt-1.5 text-sm leading-relaxed text-ink-muted">{item.text}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  {/* 3 — Yaklaşım: tez + açıklama, soluk zeminli tam genişlik bantta.
+      Kırmızı numaralar ana sayfadaki süreç adımlarıyla aynı dekorasyon dili. */}
+  <section class="border-y border-line bg-surface-muted">
+    <div class="mx-auto max-w-5xl px-4 py-14">
+      <h2 class="text-2xl font-bold text-ink-strong">{t('service.approach')}</h2>
+      <div class="mt-6 grid gap-8 md:grid-cols-3 md:gap-10">
+        {
+          content.approach.map((item, i) => (
+            <div>
+              <p class="text-sm font-extrabold text-brand">{i + 1}</p>
+              <h3 class="mt-1.5 font-semibold text-ink-strong">{item.title}</h3>
+              <p class="mt-1.5 text-sm leading-relaxed text-ink-muted">{item.text}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  {/* 4 — Vaka çalışması: yalnızca bağlı ürün yayındaysa */}
+  {
+    caseStudy && (
+      <section class="mx-auto max-w-5xl px-4 pt-14">
+        <a
+          href={caseHref}
+          class="group block rounded-2xl border border-line bg-surface-muted p-8 transition hover:border-brand/40 hover:shadow-md"
+        >
+          <p class="text-xs font-bold tracking-wide text-ink-subtle uppercase">
+            {t('service.caseTitle')}
+          </p>
+          <h2 class="mt-2 text-xl font-bold text-ink-strong transition-colors group-hover:text-action-ink">
+            {caseStudy.data.title}
+          </h2>
+          <p class="mt-2 max-w-2xl text-ink-muted">
+            {caseStudy.data.description}
+          </p>
+          <span class="mt-4 inline-block text-sm font-semibold text-action-ink">
+            {t('services.caseStudy')} →
+          </span>
+        </a>
+      </section>
+    )
+  }
+
+  {/* 5 — SSS: içerik gerçek, şeması yukarıda bildiriliyor */}
+  <section class="mx-auto max-w-5xl px-4 pt-14 pb-16">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl font-bold text-ink-strong">{t('service.faq')}</h2>
+      <Faq items={content.faq} class="mt-6" />
+    </div>
+  </section>
+
+  {/* 6 — Kapanış çağrısı (ana sayfadaki kutunun aynısı) */}
+  <section class="mx-auto max-w-5xl px-4 pb-20">
+    <div class="rounded-2xl border border-line bg-surface-muted p-8 text-center sm:p-12">
+      <h2 class="text-2xl font-bold text-ink-strong">{t('service.ctaTitle')}</h2>
+      <p class="mx-auto mt-3 max-w-xl text-ink-muted">{t('service.ctaText')}</p>
+      <a
+        href={routes[lang].contact}
+        class="mt-6 inline-block rounded-lg bg-action px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-action-dark"
+      >
+        {t('service.ctaButton')}
+      </a>
+    </div>
+  </section>
+</BaseLayout>

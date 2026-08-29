@@ -39,6 +39,22 @@ export const ui = {
     'blog.readMore': 'Devamını oku',
     'blog.empty': 'Henüz yayınlanmış yazı yok.',
     'projects.empty': 'Ürün detayları yakında eklenecek.',
+    'services.caseStudy': 'Bu hizmetle yaptığımız işe bakın',
+    'services.detail': 'Detaylı incele',
+    'services.ctaTitle': 'Hangisinin size uyduğundan emin değil misiniz?',
+    'services.ctaText':
+      'İhtiyacınızı anlatın; size dürüst bir değerlendirme çıkaralım.',
+
+    // Hizmet detay sayfasının bölüm başlıkları (ServicePage.astro)
+    'service.scope': 'Neler yapıyoruz?',
+    'service.approach': 'Yaklaşımımız',
+    'service.faq': 'Sıkça sorulan sorular',
+    'service.caseTitle': 'Bu hizmetle yaptığımız iş',
+    'service.ctaTitle': 'Projenizi konuşalım',
+    'service.ctaText':
+      'İhtiyacınızı anlatın; size dürüst bir değerlendirme, net bir süre ve bütçe çıkaralım.',
+    'service.ctaButton': 'Bize ulaşın',
+    'service.ctaSecondary': 'Ürünlerimize bakın',
     'meta.siteName': 'İscotera',
 
     // Ürün sayfası
@@ -74,6 +90,21 @@ export const ui = {
     'blog.readMore': 'Read more',
     'blog.empty': 'No posts published yet.',
     'projects.empty': 'Product details coming soon.',
+    'services.caseStudy': 'See the work we built with it',
+    'services.detail': 'See details',
+    'services.ctaTitle': 'Not sure which one fits?',
+    'services.ctaText':
+      "Tell us what you need and we'll give you an honest assessment.",
+
+    'service.scope': 'What we do',
+    'service.approach': 'How we approach it',
+    'service.faq': 'Frequently asked questions',
+    'service.caseTitle': 'Work we built with this service',
+    'service.ctaTitle': "Let's talk about your project",
+    'service.ctaText':
+      "Tell us what you need and we'll give you an honest assessment with a clear timeline and budget.",
+    'service.ctaButton': 'Get in touch',
+    'service.ctaSecondary': 'See our products',
     'meta.siteName': 'İscotera',
 
     // Product page

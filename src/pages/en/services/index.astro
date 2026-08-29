@@ -1,6 +1,13 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ServiceStrip from '../../../components/ServiceStrip.astro';
 import { services } from '../../../data/services';
+import { useTranslations } from '../../../i18n/ui';
+
+// "Yön D — Fotoğraflı Vitrin" düzeni (tuvalde 2026-08-29'da onaylandı):
+// tam genişlik dönüşümlü şeritler, her hizmetin yanında gerçek fotoğraf.
+// Şeridin kendisi ServiceStrip'te; sonda tek bir iletişim çağrısı durur.
+const t = useTranslations('en');
 ---
 
 <BaseLayout
@@ -10,23 +17,29 @@ import { services } from '../../../data/services';
   alternate="/hizmetler/"
   back={{ href: '/en/', label: 'Home' }}
 >
-  <section class="mx-auto max-w-5xl px-4 py-16">
+  <section class="mx-auto max-w-5xl px-4 pt-16 pb-12">
     <h1 class="text-3xl font-bold text-ink-strong">Our Services</h1>
     <p class="mt-3 max-w-2xl text-ink-muted">
       End-to-end software services tailored to your needs.
     </p>
-    <div class="mt-8 grid gap-6 sm:grid-cols-2">
-      {
-        services.map((service) => (
-          <a
-            href={`/en/services/${service.en.slug}/`}
-            class="rounded-lg border border-line p-6 transition hover:border-brand/40 hover:shadow-md"
-          >
-            <h2 class="font-semibold text-ink-strong">{service.en.title}</h2>
-            <p class="mt-2 text-sm text-ink-muted">{service.en.summary}</p>
-          </a>
-        ))
-      }
+  </section>
+
+  {services.map((service, i) => <ServiceStrip service={service} lang="en" index={i} />)}
+
+  <section class="mx-auto max-w-5xl px-4 py-14">
+    <div
+      class="flex flex-col items-start justify-between gap-6 rounded-2xl border border-line bg-surface-muted p-8 sm:flex-row sm:items-center sm:gap-8 sm:p-10"
+    >
+      <div>
+        <h2 class="text-xl font-bold text-ink-strong">{t('services.ctaTitle')}</h2>
+        <p class="mt-1.5 text-ink-muted">{t('services.ctaText')}</p>
+      </div>
+      <a
+        href="/en/contact/"
+        class="inline-block shrink-0 rounded-lg bg-action px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-action-dark"
+      >
+        {t('service.ctaButton')}
+      </a>
     </div>
   </section>
 </BaseLayout>

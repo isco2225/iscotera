@@ -72,7 +72,13 @@ içinde yazılı; şablonu kopyalayıp doldurmak en hızlısı.
 butonuna düşer; dosyalar konduğunda bir sonraki derlemede rozete geçer.
 
 **Hizmet:** `src/data/services.ts` dosyasına yeni kayıt ekle; TR ve EN sayfaları
-otomatik oluşur.
+otomatik oluşur. Kayıt yalnızca başlık/özet değil, detay sayfasının tamamını
+taşır: `intro` paragrafları, `scope` (neler yapıyoruz sütunları), `approach`
+(yaklaşım maddeleri), `faq` ve fotoğrafın `imageAlt` metni. SSS gerçek
+içeriktir — sayfada göründüğü gibi FAQPage şemasına da girer, uydurma soru
+yazılmaz. Liste sayfası her hizmeti fotoğraflı şerit olarak gösterir; yeni
+hizmetin fotoğrafı `src/assets/services/<id>.jpg` olarak eklenir (kaynak ve
+lisans kuralları o klasördeki README'de).
 
 `draft: true` olan içerikler sadece `npm run dev`'de görünür, yayına çıkmaz.
 
