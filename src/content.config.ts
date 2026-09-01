@@ -99,6 +99,12 @@ const projects = defineCollection({
           })
         )
         .default([]),
+      // Ekran görüntülerindeki isimler/rakamlar gerçek değilse açılır: kapak
+      // ve özellik görsellerinin altına "veriler temsilidir" notu basılır
+      // (metin ui.ts'te, iki dilde). Vaka çalışmalarında müşteri verisini
+      // göstermemek için ekranlar örnek kayıtlarla çekiliyor; bunu söylemek
+      // gerekiyor, yoksa rakamlar gerçek sanılır.
+      screenshotsIllustrative: z.boolean().default(false),
       // Fiyat modeli etiketi (ör. { label: 'Ücretsiz' }). Ayrı bir fiyat
       // bölümü yok; bu etiket hero'daki künye rozetinde görünüyor ve
       // şemadaki offers.price'ın sayfada karşılığı oluyor.

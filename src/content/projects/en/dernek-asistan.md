@@ -9,6 +9,9 @@ client: "Vefa Yolu Derneği"
 year: 2026
 tags: ["web", "mobile", "custom software", "supabase"]
 cover: "../_images/dernek-asistan/screen-performance-report.png"
+# Ekranlar örnek kayıtlarla çekildi (gerçek bağışçı verisi gösterilmiyor);
+# görsellerin altında "veriler temsilidir" notu çıkar.
+screenshotsIllustrative: true
 # No store links: the app is open only to the charity's own staff, not a
 # public product. For the same reason there is deliberately no app
 # (SoftwareApplication) block; reporting a price and an install URL for an

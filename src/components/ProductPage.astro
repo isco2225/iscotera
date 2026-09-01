@@ -58,7 +58,12 @@ const {
   social,
   links,
   app,
+  screenshotsIllustrative,
 } = project.data;
+
+// Kapak ve özellik görsellerinin altına basılan not; yalnızca ekranlar örnek
+// veriyle çekilmişse (frontmatter'da screenshotsIllustrative) vardır.
+const imageCaption = screenshotsIllustrative ? t('product.illustrative') : undefined;
 
 const platforms = platformLabels(project.data);
 warnUnfinishedData(title, project.data);
@@ -304,7 +309,7 @@ const faqSchema =
           </div>
         ) : (
           cover && (
-            <div class="flex justify-center">
+            <figure class="flex flex-col items-center">
               {/* Sayfanın en üstündeki büyük görsel, yani LCP öğesi. Astro'nun
                   varsayılanı lazy; burada bırakılırsa tarayıcı bu görseli
                   keşfetmek için düzen hesabını bekler ve LCP gecikir. */}
@@ -319,7 +324,12 @@ const faqSchema =
                   isLandscape(cover) ? 'rounded-2xl' : 'max-w-[300px] rounded-3xl',
                 ]}
               />
-            </div>
+              {imageCaption && (
+                <figcaption class="mt-2 text-center text-xs text-ink-subtle">
+                  {imageCaption}
+                </figcaption>
+              )}
+            </figure>
           )
         )
       }
@@ -360,6 +370,7 @@ const faqSchema =
               image={feature.image}
               alt={feature.alt}
               reverse={i % 2 === 1}
+              caption={feature.image ? imageCaption : undefined}
             />
           ))}
         </div>

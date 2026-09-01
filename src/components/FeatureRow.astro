@@ -17,9 +17,11 @@ interface Props {
   alt?: string;
   /** Görseli sola, metni sağa alır. */
   reverse?: boolean;
+  /** Görselin altına basılan kısa not (ör. "veriler temsilidir"). */
+  caption?: string;
 }
 
-const { title, text, image, alt, reverse = false } = Astro.props;
+const { title, text, image, alt, reverse = false, caption } = Astro.props;
 // Yatay (masaüstü) görüntü yarım sütunda okunmuyor; metnin altına tam
 // genişlikte iner ve sağ/sol dönüşümü uygulanmaz.
 const wide = image ? isLandscape(image) : false;
@@ -37,7 +39,9 @@ const wide = image ? isLandscape(image) : false;
   </div>
   {
     image && (
-      <div class:list={['flex justify-center', !wide && reverse && 'md:order-1']}>
+      <figure
+        class:list={['flex flex-col items-center', !wide && reverse && 'md:order-1']}
+      >
         <Image
           src={image}
           alt={alt ?? ''}
@@ -47,7 +51,10 @@ const wide = image ? isLandscape(image) : false;
             !wide && 'max-w-[320px]',
           ]}
         />
-      </div>
+        {caption && (
+          <figcaption class="mt-2 text-center text-xs text-ink-subtle">{caption}</figcaption>
+        )}
+      </figure>
     )
   }
 </div>

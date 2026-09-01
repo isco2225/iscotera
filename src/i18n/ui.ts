@@ -62,6 +62,8 @@ export const ui = {
     'product.status.beta': 'Beta',
     'product.status.development': 'Geliştiriliyor',
     'product.features': 'Öne çıkan özellikler',
+    // Görsellerin altındaki not; screenshotsIllustrative açık olan üründe basılır.
+    'product.illustrative': 'Görüntüdeki veriler temsilidir.',
     'product.testimonials': 'Kullanıcılar ne diyor?',
     'product.faq': 'Sıkça sorulan sorular',
     // {value} ve {count} bileşende gerçek değerlerle değiştirilir.
@@ -112,6 +114,7 @@ export const ui = {
     'product.status.beta': 'Beta',
     'product.status.development': 'In development',
     'product.features': 'What it does',
+    'product.illustrative': 'Data shown in the screenshot is illustrative.',
     'product.testimonials': 'What people say',
     'product.faq': 'Frequently asked questions',
     'product.ratingAria': 'Rated {value} out of 5, based on {count} ratings.',
