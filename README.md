@@ -50,8 +50,9 @@ duruyor. Fiyatın da ayrı bölümü yok; `pricing.label` hero'daki künye rozet
 görünüyor.
 
 Her bölüm kendi alanından beslenir ve **boş bıraktığınız alanın bölümü hiç
-görünmez**. Alanların tek tek ne yaptığı `src/content/projects/tr/ornek-proje.md`
-içinde yazılı; şablonu kopyalayıp doldurmak en hızlısı.
+görünmez**. Alanların tek tek ne yaptığı `src/content.config.ts` içindeki şema
+yorumlarında yazılı; yayındaki `dernek-asistan.md` / `ibadet-rehberim.md`
+dosyaları da dolu birer örnek.
 
 Üç kural içeriği yazarken önemli:
 
