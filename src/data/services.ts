@@ -279,6 +279,7 @@ export const services: Service[] = [
   },
   {
     id: 'custom-software',
+    caseStudy: 'dernek-asistan',
     tr: {
       slug: 'ozel-yazilim-cozumleri',
       title: 'Özel Yazılım Çözümleri',

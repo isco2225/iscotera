@@ -12,7 +12,7 @@
 import type { CollectionEntry } from 'astro:content';
 import { Image } from 'astro:assets';
 import Rating from './Rating.astro';
-import { PRODUCT_IMAGE_WIDTH, platformLabels } from '../utils/product';
+import { isLandscape, platformLabels, productImageOptions } from '../utils/product';
 import { useTranslations, type Lang } from '../i18n/ui';
 
 interface Props {
@@ -46,6 +46,9 @@ const metaLine = [category, ...platformLabels(project.data)]
 
 const muted = index % 2 === 0;
 const reverse = index % 2 === 1;
+// Telefon ekranı dar sütunda dikey kırpılır; yatay bir masaüstü görüntüsü
+// kırpılmadan sığsın diye sütunlar eşitlenir ve yükseklik serbest kalır.
+const wide = cover ? isLandscape(cover) : false;
 ---
 
 <a
@@ -56,7 +59,10 @@ const reverse = index % 2 === 1;
   ]}
 >
   <div
-    class="mx-auto grid max-w-5xl items-center gap-10 px-4 py-12 md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] md:gap-16 md:py-14"
+    class:list={[
+      'mx-auto grid max-w-5xl items-center gap-10 px-4 py-12 md:gap-16 md:py-14',
+      wide ? 'md:grid-cols-2' : 'md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]',
+    ]}
   >
     <div class:list={[reverse && 'md:order-2']}>
       <div class="flex items-center gap-4">
@@ -127,9 +133,12 @@ const reverse = index % 2 === 1;
         <Image
           src={cover}
           alt=""
-          width={PRODUCT_IMAGE_WIDTH}
+          {...productImageOptions(cover)}
           class:list={[
-            'h-96 w-full max-w-[340px] justify-self-center rounded-2xl object-cover object-top shadow-xl sm:h-[26rem]',
+            'w-full rounded-2xl shadow-xl',
+            wide
+              ? 'border border-line'
+              : 'h-96 max-w-[340px] justify-self-center object-cover object-top sm:h-[26rem]',
             reverse && 'md:order-1',
           ]}
         />

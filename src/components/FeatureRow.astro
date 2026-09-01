@@ -8,7 +8,7 @@
 // nasıl göründüğünü görüyor, hayal etmek zorunda kalmıyor.
 
 import { Image } from 'astro:assets';
-import { PRODUCT_IMAGE_WIDTH } from '../utils/product';
+import { isLandscape, productImageOptions } from '../utils/product';
 
 interface Props {
   title: string;
@@ -20,21 +20,32 @@ interface Props {
 }
 
 const { title, text, image, alt, reverse = false } = Astro.props;
+// Yatay (masaüstü) görüntü yarım sütunda okunmuyor; metnin altına tam
+// genişlikte iner ve sağ/sol dönüşümü uygulanmaz.
+const wide = image ? isLandscape(image) : false;
 ---
 
-<div class="grid items-center gap-8 md:grid-cols-2 md:gap-12">
-  <div class:list={[!image && 'md:col-span-2', reverse && 'md:order-2']}>
+<div
+  class:list={[
+    'grid items-center gap-8 md:gap-12',
+    !wide && 'md:grid-cols-2',
+  ]}
+>
+  <div class:list={[!image && 'md:col-span-2', !wide && reverse && 'md:order-2']}>
     <h3 class="text-xl font-bold text-ink-strong">{title}</h3>
     <p class="mt-3 text-ink-muted">{text}</p>
   </div>
   {
     image && (
-      <div class:list={['flex justify-center', reverse && 'md:order-1']}>
+      <div class:list={['flex justify-center', !wide && reverse && 'md:order-1']}>
         <Image
           src={image}
           alt={alt ?? ''}
-          width={PRODUCT_IMAGE_WIDTH}
-          class="w-full max-w-[320px] rounded-2xl border border-line shadow-sm"
+          {...productImageOptions(image)}
+          class:list={[
+            'w-full rounded-2xl border border-line shadow-sm',
+            !wide && 'max-w-[320px]',
+          ]}
         />
       </div>
     )

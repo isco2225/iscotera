@@ -1,3 +1,4 @@
+import type { ImageMetadata } from 'astro';
 import type { CollectionEntry } from 'astro:content';
 
 type ProjectData = CollectionEntry<'projects'>['data'];
@@ -26,6 +27,40 @@ type ProjectData = CollectionEntry<'projects'>['data'];
  *   grid (mobil)     ~213px ekranda -> 1,50x
  */
 export const PRODUCT_IMAGE_WIDTH = 640;
+
+/**
+ * Yatay ekran görüntüleri (masaüstü/web uygulaması, ör. Dernek Asistan) için
+ * genişlik. Dikey telefon ekranı en fazla ~320px yer kaplarken yatay görsel
+ * ürün sayfasında kapsayıcının tamamına (1024 − 2×16 = 992px) yayılıyor;
+ * 2x ekran için 1984 gerekiyor. Kaynak bundan küçükse Astro büyütmez, kaynak
+ * genişliğinde üretir — yani 1x çekilmiş bir görüntü 2x ekranda yine bulanık
+ * kalır; ekran görüntüleri 2x (DPR 2) alınmalı.
+ *
+ * Aynı kaynak yine tek genişlikte üretiliyor, kural bozulmuyor: seçim
+ * görselin kendisine göre yapılıyor ve her bileşen productImageOptions'ı
+ * kullanıyor, sayfadaki adres ile şemadaki adres böylece aynı kalıyor.
+ */
+export const PRODUCT_WIDE_IMAGE_WIDTH = 1984;
+
+export function isLandscape(image: ImageMetadata): boolean {
+  return image.width > image.height;
+}
+
+/**
+ * <Image> ve getImage için ortak seçenekler. Yatay arayüz görüntülerinde
+ * sıkıştırma en yükseğe çekilir: varsayılan WebP kalitesi fotoğrafta fark
+ * edilmezken ince arayüz yazılarını yayıyor. Sayfadaki <img> ile şemadaki
+ * screenshot adresi aynı dosyayı göstersin diye her çağrı bunu kullanır;
+ * seçenekler ayrışırsa Astro ikinci bir dosya üretir.
+ */
+export function productImageOptions(image: ImageMetadata): {
+  width: number;
+  quality?: 'max';
+} {
+  return isLandscape(image)
+    ? { width: PRODUCT_WIDE_IMAGE_WIDTH, quality: 'max' }
+    : { width: PRODUCT_IMAGE_WIDTH };
+}
 
 const OS_LABELS: Record<string, string> = {
   ios: 'iOS',

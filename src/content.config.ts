@@ -66,7 +66,9 @@ const projects = defineCollection({
           // dolu kaldığı her derlemede uyarı basılır.
           pending: z.array(z.enum(['appStore', 'googlePlay'])).default([]),
         })
-        .default({}),
+        // stores alanı hiç yazılmamışsa dış varsayılan olduğu gibi döner,
+        // içteki pending varsayılanı uygulanmaz; boş liste burada da verilir.
+        .default({ pending: [] }),
       // Mağaza puanı. Yalnızca doğrulanmış gerçek değer yazılır: sayfada
       // gösterilmeyen ya da uydurulmuş bir puanı yapılandırılmış veride
       // bildirmek Google'ın kurallarını ihlal eder ve manuel işleme yol açar.
