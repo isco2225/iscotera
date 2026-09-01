@@ -5,6 +5,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import ProductStrip from '../components/ProductStrip.astro';
 import { services } from '../data/services';
 import teamImg from '../assets/home/team.jpg';
+import roomImg from '../assets/home/meeting-room.jpg';
 
 // Ana sayfada en fazla iki ürün ve iki yazı gösterilir; gerisi kendi
 // listelerinde. Taslaklar yalnızca geliştirme ortamında görünür.
@@ -58,27 +59,52 @@ const steps = [
   lang="tr"
   alternate="/en/"
 >
-  <section class="mx-auto max-w-5xl px-4 py-20 text-center">
-    <h1 class="text-4xl font-bold tracking-tight text-ink-strong sm:text-5xl">
-      Web, mobil ve özel yazılım geliştiriyoruz
-    </h1>
-    <p class="mx-auto mt-4 max-w-2xl text-lg text-ink-muted">
-      Süreyi ve maliyeti tek satır kod yazılmadan yazılı veririz; ilerlemeyi
-      iki haftada bir çalışan sürümde görürsünüz.
-    </p>
-    <div class="mt-8 flex justify-center gap-4">
-      <a
-        href="/iletisim/"
-        class="rounded-lg bg-action px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-action-dark"
-      >
-        Bize Ulaşın
-      </a>
-      <a
-        href="/urunler/"
-        class="rounded-lg border border-line-strong px-6 py-3 text-sm font-semibold text-ink-soft transition-colors hover:border-ink-subtle"
-      >
-        Ürünlerimiz
-      </a>
+  {/* Hero. Arka plandaki üç katman (nokta dokusu, spot, grain) yalnızca
+      süs: kurallar global.css'te (.hero-*), tuvalde seçilen "Yön H". */}
+  <section class="relative overflow-hidden">
+    <div class="hero-dots absolute inset-0" aria-hidden="true"></div>
+    <div
+      class="hero-spot absolute -top-20 left-1/2 h-[560px] w-full max-w-[700px] -translate-x-1/2"
+      aria-hidden="true"
+    >
+    </div>
+    <div class="hero-grain absolute inset-0" aria-hidden="true"></div>
+    <div
+      class="relative mx-auto grid max-w-5xl items-center gap-10 px-4 py-16 md:grid-cols-2 md:gap-14 md:py-20"
+    >
+      <div>
+        <h1 class="text-4xl font-bold tracking-tight text-ink-strong sm:text-5xl">
+          Web, mobil ve özel yazılım geliştiriyoruz
+        </h1>
+        <p class="mt-4 max-w-xl text-lg text-ink-muted">
+          Süreyi ve maliyeti tek satır kod yazılmadan yazılı veririz; ilerlemeyi
+          iki haftada bir çalışan sürümde görürsünüz.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a
+            href="/iletisim/"
+            class="rounded-lg bg-action px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-action-dark"
+          >
+            Bize Ulaşın
+          </a>
+          <a
+            href="/urunler/"
+            class="rounded-lg border border-line-strong px-6 py-3 text-sm font-semibold text-ink-soft transition-colors hover:border-ink-subtle"
+          >
+            Ürünlerimiz
+          </a>
+        </div>
+      </div>
+      {/* Sağdaki kart: hero görseli, yani LCP adayı — lazy bırakılmaz. 2x ekran
+          için genişlik, kartın en geniş hâlinin (~480px) iki katı. */}
+      <Image
+        src={roomImg}
+        alt="Cam bölmeli modern bir toplantı odası: koyu masada açık bir dizüstü bilgisayar, duvarda ekran"
+        width={960}
+        loading="eager"
+        fetchpriority="high"
+        class="aspect-[4/3] w-full rounded-2xl border border-line object-cover shadow-xl md:justify-self-end md:max-w-[480px]"
+      />
     </div>
   </section>
 

@@ -5,6 +5,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import ProductStrip from '../../components/ProductStrip.astro';
 import { services } from '../../data/services';
 import teamImg from '../../assets/home/team.jpg';
+import roomImg from '../../assets/home/meeting-room.jpg';
 
 // At most two products and two posts on the home page; the rest live in their
 // own listings. Drafts only render in development.
@@ -58,27 +59,52 @@ const steps = [
   lang="en"
   alternate="/"
 >
-  <section class="mx-auto max-w-5xl px-4 py-20 text-center">
-    <h1 class="text-4xl font-bold tracking-tight text-ink-strong sm:text-5xl">
-      We build web, mobile and custom software
-    </h1>
-    <p class="mx-auto mt-4 max-w-2xl text-lg text-ink-muted">
-      You get the timeline and the cost in writing before a line of code, and a
-      working version every two weeks.
-    </p>
-    <div class="mt-8 flex justify-center gap-4">
-      <a
-        href="/en/contact/"
-        class="rounded-lg bg-action px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-action-dark"
-      >
-        Get in Touch
-      </a>
-      <a
-        href="/en/products/"
-        class="rounded-lg border border-line-strong px-6 py-3 text-sm font-semibold text-ink-soft transition-colors hover:border-ink-subtle"
-      >
-        Our Products
-      </a>
+  {/* Hero. Arka plandaki üç katman (nokta dokusu, spot, grain) yalnızca
+      süs: kurallar global.css'te (.hero-*), tuvalde seçilen "Yön H". */}
+  <section class="relative overflow-hidden">
+    <div class="hero-dots absolute inset-0" aria-hidden="true"></div>
+    <div
+      class="hero-spot absolute -top-20 left-1/2 h-[560px] w-full max-w-[700px] -translate-x-1/2"
+      aria-hidden="true"
+    >
+    </div>
+    <div class="hero-grain absolute inset-0" aria-hidden="true"></div>
+    <div
+      class="relative mx-auto grid max-w-5xl items-center gap-10 px-4 py-16 md:grid-cols-2 md:gap-14 md:py-20"
+    >
+      <div>
+        <h1 class="text-4xl font-bold tracking-tight text-ink-strong sm:text-5xl">
+          We build web, mobile and custom software
+        </h1>
+        <p class="mt-4 max-w-xl text-lg text-ink-muted">
+          You get the timeline and the cost in writing before a line of code, and a
+          working version every two weeks.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a
+            href="/en/contact/"
+            class="rounded-lg bg-action px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-action-dark"
+          >
+            Get in Touch
+          </a>
+          <a
+            href="/en/products/"
+            class="rounded-lg border border-line-strong px-6 py-3 text-sm font-semibold text-ink-soft transition-colors hover:border-ink-subtle"
+          >
+            Our Products
+          </a>
+        </div>
+      </div>
+      {/* Sağdaki kart: hero görseli, yani LCP adayı — lazy bırakılmaz. 2x ekran
+          için genişlik, kartın en geniş hâlinin (~480px) iki katı. */}
+      <Image
+        src={roomImg}
+        alt="A modern glass-walled meeting room: an open laptop on a dark table, a screen on the wall"
+        width={960}
+        loading="eager"
+        fetchpriority="high"
+        class="aspect-[4/3] w-full rounded-2xl border border-line object-cover shadow-xl md:justify-self-end md:max-w-[480px]"
+      />
     </div>
   </section>
 
