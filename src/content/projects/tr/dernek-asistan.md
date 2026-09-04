@@ -47,9 +47,8 @@ draft: false
 ---
 
 **Dernek Asistan**, Vefa Yolu Derneği'nin bütün bağış işlerini tek bir yerden
-yönetmesi için geliştirdiğimiz bir uygulama. Bağış kaydı, hisseli projeler,
-fiyatlar ve raporlar aynı yerde; çalışan ister ofisteki bilgisayardan ister
-sahada telefonundan giriyor.
+yönetmesi için geliştirdiğimiz bir uygulama. Çalışan ister ofisten ister
+sahada telefonundan aynı sisteme giriyor.
 
 ## Derneklerin yaşadığı sorun
 
@@ -60,39 +59,33 @@ notlara dağıldığında hep aynı sıkıntılar çıkıyor:
 - Bir bağışın ne zaman, kim tarafından, hangi ülke için alındığı sonradan
   bulunamıyor.
 - Fiyatlar ayrı bir listede durduğu için tutarlar elle hesaplanıyor.
-- Su kuyusu gibi hisseli projelerde kaç hissenin dolduğu elle sayılıyor.
+- Hisseli projelerde kaç hissenin dolduğu elle sayılıyor.
 - "Bu ay kaç bağış aldık?" sorusunun cevabı saatler süren bir toplama işi.
 
 ## Ne değişti
 
-**Bağış kaydı dakikalardan saniyelere indi.** Çalışan fiyat aramıyor, tutar
-hesaplamıyor, sıra numarası vermiyor; bunları sistem yapıyor. Bir bağışçı beş
-kişi adına bağış yaptığında form yine bir kez dolduruluyor.
+Eskiden bir bağış kaydı almak fiyat listesine bakmayı, tutarı hesaplamayı ve
+tabloya elle yazmayı gerektiriyordu. Şimdi çalışan bağışçının adını ve bağış
+türünü giriyor, gerisini sistem yapıyor. Her kayıt kendi numarasını alıyor;
+makbuz keserken de bağışçı sonradan arayıp sorduğunda da aranan referans o.
 
-**Her bağışın takibi yapılabiliyor.** Hangi kaydın kim tarafından, ne zaman,
-hangi ülke için girildiği duruyor. Bağışçı arayıp sorduğunda cevap ekranda.
+Asıl fark yönetim tarafında. "Hangi kanal daha çok bağış getiriyor?",
+"Bangladeş kuyusunda kaç hisse kaldı?", "Hangi çalışan ne kadar kayıt girdi?"
+— cevap için artık kimse tablo birleştirmiyor; tarih aralığı seçiliyor, rapor
+PDF olarak iniyor. Yönetim kurulu toplantısının rakamları dakikalar içinde
+hazır.
 
-**Ay sonu raporu saatler değil dakikalar alıyor.** Tarih aralığı seçiliyor,
-rakamlar grafiklerle çıkıyor, PDF olarak indiriliyor. Yönetim kurulu
-toplantısına gidecek rapor hazır.
+Bağışçıya ve denetime karşı da durum değişti: her bağışın ne zaman, kim
+tarafından alındığı kayıtlı. Dernek Asistan bugün Vefa Yolu Derneği'nde
+kullanımda; dernek zamanını tabloları birleştirmeye değil, yardımın kendisine
+ayırıyor.
 
-**Personel performansı görünür oldu.** Her kayıt onu girene bağlı olduğu için
-yöneticiler hangi çalışanın ne kadar kayıt girdiğini ve ne kadar bağış
-getirdiğini ay ay takip edebiliyor.
+## Derneğiniz için de yapabilir miyiz
 
-**Dernek hesap verebilir hale geldi.** Yetkiler baştan tanımlı, değişiklikler
-kayıtlı. Bağışçıya da denetime de "şu bağış şu tarihte şu kişi tarafından
-alındı" diyebilmek artık mümkün.
+Her derneğin yardım türleri, fiyatları ve çalışma düzeni farklı; bu yüzden
+Dernek Asistan'ı olduğu gibi kopyalamıyoruz, derneğin kendi işleyişine göre
+kuruyoruz. Nasıl çalıştığınızı anlatın; önce hazır bir çözümün işinizi görüp
+görmeyeceğini birlikte konuşalım.
 
-## Bugün
-
-Dernek Asistan, Vefa Yolu Derneği'nde kullanımda. "Bu ay kaç bağış aldık?",
-"Hangi kanal daha çok getiriyor?", "Bangladeş kuyusunda kaç hisse kaldı?"
-sorularının cevabı artık aramadan ekranda duruyor.
-
-Dernek zamanını tabloları birleştirmeye değil, yardımın kendisine ayırıyor.
-
-Derneğinizin ya da işinizin de tablolar arasında yürüyen bir tarafı varsa
-[özel yazılım çözümlerimize](/hizmetler/ozel-yazilim-cozumleri/) bakın ya da
-doğrudan [bize ulaşın](/iletisim/); önce hazır bir çözümün yetip
-yetmeyeceğini birlikte konuşalım.
+[Bize ulaşın](/iletisim/) ya da
+[özel yazılım çözümlerimize](/hizmetler/ozel-yazilim-cozumleri/) bakın.

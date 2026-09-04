@@ -47,9 +47,8 @@ draft: false
 ---
 
 **Dernek Asistan** is an app we built so that Vefa Yolu Derneği, a Turkish
-charity, can run all of its donation work from one place. Donation records,
-share-based projects, prices and reports live together; staff use it from the
-office computer or from a phone out in the field.
+charity, can run all of its donation work from one place. Staff use the same
+system from the office or from a phone out in the field.
 
 ## The problem charities face
 
@@ -60,43 +59,35 @@ groups and personal notes, the same difficulties turn up every time:
 - When a donation was taken, by whom, and for which country cannot be found
   afterwards.
 - Prices sit in a separate list, so amounts are worked out by hand.
-- For share-based projects such as water wells, filled shares are counted
-  manually.
+- For share-based projects, filled shares are counted manually.
 - Answering "how many donations did we take this month?" means hours of
   adding up.
 
 ## What changed
 
-**Recording a donation went from minutes to seconds.** Staff no longer look up
-prices, calculate amounts or assign sequence numbers — the system does that.
-When a donor gives on behalf of five people, the form is still filled in once.
+Recording a donation used to mean looking up the price list, working out the
+amount and writing it into a spreadsheet by hand. Now the staff member enters
+the donor's name and the type of donation, and the system does the rest. Every
+record gets its own number — the one reference used when a receipt is issued
+and when a donor calls back to ask about their donation.
 
-**Every donation can be traced.** Which record was entered by whom, when, and
-for which country is all kept. When a donor calls to ask, the answer is on
-screen.
+The real difference shows on the management side. "Which channel brings in the
+most?", "How many shares are left in the Bangladesh well?", "How much did each
+staff member record?" — nobody merges spreadsheets to answer these any more;
+you pick a date range and the report downloads as a PDF. The figures for a
+board meeting are ready in minutes.
 
-**The month-end report takes minutes, not hours.** Pick a date range, the
-figures come out as charts, and it downloads as a PDF. The report for the
-board meeting is ready.
+The charity's footing with its donors and with auditors changed too: when each
+donation was taken, and by whom, is on record. Dernek Asistan is in use at
+Vefa Yolu Derneği today, and the charity spends its time on the aid itself
+rather than on merging spreadsheets.
 
-**Staff performance became visible.** Because every record is tied to the
-person who entered it, managers can follow month by month how much each staff
-member recorded and how much they brought in.
+## Could we build one for your charity
 
-**The charity became accountable.** Permissions are defined up front and
-changes are logged. Telling a donor — or an auditor — that a given donation
-was taken on a given date by a given person is now possible.
+Every charity has its own kinds of aid, its own prices and its own way of
+working, so we would not copy Dernek Asistan as it stands — we would set it up
+around how your charity actually runs. Tell us how you work; we will start by
+talking through whether an off-the-shelf tool would already do the job.
 
-## Where it is today
-
-Dernek Asistan is in use at Vefa Yolu Derneği. "How many donations did we
-take this month?", "Which channel brings in the most?", "How many shares are
-left in the Bangladesh well?" are answered on screen, without a search.
-
-The charity now spends its time on the aid itself, rather than on merging
-spreadsheets.
-
-If part of your charity's or your business's work still runs on spreadsheets,
-have a look at our [custom software work](/en/services/custom-software-solutions/)
-or simply [get in touch](/en/contact/); we will start by talking through
-whether an off-the-shelf tool would do.
+[Get in touch](/en/contact/) or have a look at our
+[custom software work](/en/services/custom-software-solutions/).
