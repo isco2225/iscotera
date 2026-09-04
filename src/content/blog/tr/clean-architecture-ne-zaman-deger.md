@@ -1,7 +1,7 @@
 ---
 title: "Clean Architecture: Ne Zaman Değer, Ne Zaman Yük?"
 description: "Clean Architecture'ın gerçekte ne vaat ettiği, projelerde nerede işe yaradığı ve hangi durumlarda düpedüz aşırı mühendislik olduğu üzerine dürüst bir değerlendirme."
-pubDate: 2026-08-25
+pubDate: 2026-07-28
 tags: ["yazılım mimarisi", "clean architecture", "mühendislik"]
 ---
 

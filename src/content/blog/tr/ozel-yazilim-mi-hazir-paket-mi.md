@@ -1,7 +1,7 @@
 ---
 title: "Özel Yazılım mı, Hazır Paket mi? Doğru Kararı Vermenin Yolu"
 description: "İşletmeniz için özel yazılım geliştirmek ile hazır paket kullanmak arasında karar verirken sormanız gereken sorular ve her iki yolun gerçek maliyetleri."
-pubDate: 2026-08-25
+pubDate: 2026-07-14
 tags: ["özel yazılım", "işletme", "karar rehberi"]
 ---
 
