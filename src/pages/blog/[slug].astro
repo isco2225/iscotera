@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { blogPostingSchema } from '../../utils/schema';
 import { readingTimeMinutes } from '../../utils/readingTime';
 
 export async function getStaticPaths() {
@@ -28,6 +29,16 @@ const otherPosts = (
 )
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 3);
+
+// Yazının BlogPosting şeması: sayfada görünen başlık, tarih ve
+// etiketlerin yapılandırılmış karşılığı. Firma bilgisi BaseLayout'taki
+// Organization düğümünden @id ile geliyor.
+const postSchema = blogPostingSchema({
+  post,
+  canonical: new URL(Astro.url.pathname, Astro.site),
+  site: Astro.site,
+  lang: 'tr',
+});
 ---
 
 <BaseLayout
@@ -37,6 +48,10 @@ const otherPosts = (
   ogType="article"
   back={{ href: '/blog/', label: 'Blog' }}
 >
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(postSchema)} />
+  </Fragment>
+
   <article class="mx-auto max-w-3xl px-4 py-16">
     <div class="flex items-center gap-2 text-sm text-ink-subtle">
       <time datetime={post.data.pubDate.toISOString()}>

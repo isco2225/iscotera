@@ -2,8 +2,9 @@
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { defaultLang, type Lang } from '../i18n/ui';
+import { defaultLang, routes, useTranslations, type Lang } from '../i18n/ui';
 import { contact } from '../data/contact';
+import { localeTag, organizationId, websiteId } from '../utils/schema';
 
 interface Props {
   title: string;
@@ -31,16 +32,66 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 const alternateUrl = alternate ? new URL(alternate, Astro.site) : undefined;
 const otherLang: Lang = lang === 'tr' ? 'en' : 'tr';
 
+const t = useTranslations(lang);
+const orgId = organizationId(Astro.site);
+
 const organizationSchema = {
-  '@context': 'https://schema.org',
   '@type': 'Organization',
+  '@id': orgId,
   name: siteName,
   url: Astro.site?.toString(),
   logo: new URL('/favicon.svg', Astro.site).toString(),
   email: contact.email,
   telephone: contact.phoneE164,
+  // TODO: adres bilgisi netleşince PostalAddress eklenecek — yerel aramada
+  // en çok işe yarayan alan bu.
   // TODO: LinkedIn / GitHub profilleri açılınca buraya eklenecek
   sameAs: [contact.instagramUrl],
+};
+
+// WebSite yalnızca ana sayfalarda: Google'a sitenin adını ve dilini bildiren
+// düğüm bu. Her sayfada tekrarlamak aynı varlığı çoğaltmak olurdu.
+const websiteSchema =
+  canonical.pathname === routes[lang].home
+    ? {
+        '@type': 'WebSite',
+        '@id': websiteId(Astro.site),
+        name: siteName,
+        url: new URL(routes[lang].home, Astro.site).toString(),
+        inLanguage: localeTag(lang),
+        publisher: { '@id': orgId },
+      }
+    : null;
+
+// Breadcrumb, `back` prop'undan üretiliyor: iç sayfalar zaten üst sayfalarını
+// oraya yazıyor, ikinci bir kaynak tutmaya gerek yok. Üst sayfası ana sayfa
+// olan bir sayfada iki kez "Ana Sayfa" çıkmasın diye başlangıç ayıklanıyor.
+const crumbs = back
+  ? [
+      { name: t('nav.home'), href: routes[lang].home },
+      ...(back.href === routes[lang].home ? [] : [{ name: back.label, href: back.href }]),
+      { name: title, href: canonical.pathname },
+    ]
+  : [];
+
+const breadcrumbSchema =
+  crumbs.length > 1
+    ? {
+        '@type': 'BreadcrumbList',
+        itemListElement: crumbs.map((crumb, i) => ({
+          '@type': 'ListItem',
+          position: i + 1,
+          name: crumb.name,
+          item: new URL(crumb.href, Astro.site).toString(),
+        })),
+      }
+    : null;
+
+// Tek bir @graph: düğümler birbirini @id ile gösterebilsin ve sayfada tek
+// script dursun.
+const siteSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [organizationSchema, websiteSchema, breadcrumbSchema].filter(Boolean),
 };
 ---
 
@@ -118,7 +169,7 @@ const organizationSchema = {
     {/* TODO: og:image — sosyal paylaşım görseli hazırlanınca eklenecek */}
     <meta name="twitter:card" content="summary" />
 
-    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(siteSchema)} />
 
     {/* Sayfaya özel yapılandırılmış veri buraya girer (ör. ürün sayfasının
         SoftwareApplication ve FAQPage şemaları). */}
