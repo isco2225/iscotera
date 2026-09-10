@@ -35,20 +35,23 @@ export function localeTag(lang: Lang): string {
  * değil, sayfada "İscotera Ekibi" yazıyor. Sayfada görünmeyen bir yazar adı
  * uydurmak yerine görünen neyse o bildiriliyor.
  *
- * `image` bilerek yok: Article zengin sonucu için görsel önerilir ama
- * elimizde henüz og:image yok ve olmayan bir adresi bildirmek hata verir.
- * Görsel geldiğinde buraya eklenecek.
+ * `image`, yazının kapak fotoğrafı varsa sayfada basılan görselin mutlak
+ * adresidir; kapağı olmayan yazıda alan hiç yazılmaz. Olmayan bir adresi
+ * bildirmek hata verir, o yüzden değer sayfadaki <img> ile aynı üretimden
+ * gelir.
  */
 export function blogPostingSchema({
   post,
   canonical,
   site,
   lang,
+  image,
 }: {
   post: CollectionEntry<'blog'>;
   canonical: URL;
   site: URL | undefined;
   lang: Lang;
+  image?: string;
 }): Record<string, unknown> {
   const { title, description, pubDate, updatedDate, tags } = post.data;
   const org = { '@id': organizationId(site) };
@@ -66,6 +69,7 @@ export function blogPostingSchema({
     author: org,
     publisher: org,
     mainEntityOfPage: { '@type': 'WebPage', '@id': canonical.toString() },
+    ...(image ? { image } : {}),
     ...(tags.length > 0 ? { keywords: tags.join(', ') } : {}),
   };
 }

@@ -1,8 +1,10 @@
 ---
 import { getCollection, render } from 'astro:content';
+import { getImage } from 'astro:assets';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { blogPostingSchema } from '../../../utils/schema';
 import { readingTimeMinutes } from '../../../utils/readingTime';
+import { blogCoverOptions } from '../../../utils/blog';
 
 export async function getStaticPaths() {
   const posts = await getCollection(
@@ -33,11 +35,21 @@ const otherPosts = (
 // Yazının BlogPosting şeması: sayfada görünen başlık, tarih ve
 // etiketlerin yapılandırılmış karşılığı. Firma bilgisi BaseLayout'taki
 // Organization düğümünden @id ile geliyor.
+// Kapak bir kez üretilir: aynı dosya hem sayfadaki <img> hem de şemadaki
+// `image` olur; ikinci bir üretim tarayıcıya ikinci bir dosya indirtirdi.
+const cover = post.data.cover
+  ? await getImage({ src: post.data.cover, ...blogCoverOptions })
+  : undefined;
+// getImage'ın hazır nitelikleri loading="lazy" taşır; kapak sayfanın üstündeki
+// en büyük görsel (LCP) olduğu için o değer aşağıda eager ile değiştiriliyor.
+const { loading: _lazy, ...coverAttrs } = cover?.attributes ?? {};
+
 const postSchema = blogPostingSchema({
   post,
   canonical: new URL(Astro.url.pathname, Astro.site),
   site: Astro.site,
   lang: 'en',
+  image: cover ? new URL(cover.src, Astro.site).toString() : undefined,
 });
 ---
 
@@ -104,6 +116,20 @@ const postSchema = blogPostingSchema({
       </svg>
       <span class="text-sm font-semibold text-ink">İscotera Team</span>
     </div>
+
+    {
+      cover && (
+        <img
+          src={cover.src}
+          srcset={cover.srcSet.attribute || undefined}
+          {...coverAttrs}
+          alt={post.data.coverAlt ?? ''}
+          loading="eager"
+          fetchpriority="high"
+          class="mt-8 w-full rounded-2xl border border-line"
+        />
+      )
+    }
 
     <div class="prose prose-neutral mt-8 max-w-none dark:prose-invert">
       <Content />

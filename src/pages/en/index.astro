@@ -4,6 +4,7 @@ import { Image } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ProductStrip from '../../components/ProductStrip.astro';
 import { services } from '../../data/services';
+import { BLOG_HOME_SIZES, blogThumbOptions } from '../../utils/blog';
 import teamImg from '../../assets/home/team.jpg';
 import roomImg from '../../assets/home/meeting-room.jpg';
 
@@ -256,6 +257,15 @@ const steps = [
               href={`/en/blog/${post.id.replace('en/', '')}/`}
               class="group rounded-lg border border-line p-6 transition hover:border-brand/40 hover:shadow-md"
             >
+              {post.data.cover && (
+                <Image
+                  src={post.data.cover}
+                  alt=""
+                  {...blogThumbOptions}
+                  sizes={BLOG_HOME_SIZES}
+                  class="mb-4 aspect-[21/9] w-full rounded-lg object-cover"
+                />
+              )}
               <time
                 datetime={post.data.pubDate.toISOString()}
                 class="text-sm text-ink-subtle"

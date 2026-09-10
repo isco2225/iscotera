@@ -3,6 +3,8 @@ title: "Excel'den Yazılıma Ne Zaman Geçilir?"
 description: "Tablolarla yürüyen bir işin taştığını gösteren belirtiler, Excel'i bırakmanın neden 'her şeyi yeniden kurmak' anlamına gelmediği ve geçişin adım adım nasıl yapıldığı."
 pubDate: 2026-08-11
 tags: ["özel yazılım", "işletme", "excel"]
+cover: "../_images/excelden-yazilima-ne-zaman-gecilir/cover.jpg"
+coverAlt: "Bir kişi elindeki basılı tabloyu ve grafikleri inceliyor"
 ---
 
 Bize gelen işlerin önemli bir kısmı şu cümleyle başlıyor: "Şu an her şeyi

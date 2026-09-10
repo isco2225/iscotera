@@ -3,6 +3,8 @@ title: "Küçük İşletme İçin Sunucu Seçimi: Kendi Sunucu mu, Bulut mu, Haz
 description: "Yazılımınızın nerede çalışacağına karar verirken bakılacak üç şey: aylık maliyet, bakım yükü ve verinin kime ait olduğu. Teknik bilgi gerekmeden, seçeneklerin dürüst bir karşılaştırması."
 pubDate: 2026-08-25
 tags: ["altyapı", "işletme", "karar rehberi"]
+cover: "../_images/kucuk-isletme-icin-sunucu-secimi/cover.jpg"
+coverAlt: "Bir veri merkezinde sıra sıra dizilmiş sunucu kabinleri"
 ---
 
 Bir yazılım yaptırdığınızda, en sonda biri size şu soruyu soruyor: "Nerede

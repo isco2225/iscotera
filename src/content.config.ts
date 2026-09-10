@@ -5,19 +5,28 @@ import { glob } from 'astro/loaders';
 // Entry id'si "tr/yazi-adi" biçiminde gelir; sayfalar dile göre filtreler.
 
 const blog = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    pubDate: z.coerce.date(),
-    updatedDate: z.coerce.date().optional(),
-    tags: z.array(z.string()).default([]),
-    draft: z.boolean().default(false),
-  }),
+  // _images altındaki README de .md; koleksiyon girdisi sanılmasın diye dışarıda.
+  loader: glob({ pattern: ['**/*.md', '!_images/**'], base: './src/content/blog' }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      pubDate: z.coerce.date(),
+      updatedDate: z.coerce.date().optional(),
+      tags: z.array(z.string()).default([]),
+      // Kapak fotoğrafı: liste kartında küçük, yazı sayfasında başlığın
+      // altında geniş görünür ve BlogPosting şemasına `image` olarak girer.
+      // Dosya src/content/blog/_images/<yazi-adi>/ altında durur, yol markdown
+      // dosyasına göre görecelidir (kaynaklar o klasördeki README'de).
+      cover: image().optional(),
+      // Kapağın alt metni: fotoğrafta ne göründüğü, yazının başlığı değil.
+      coverAlt: z.string().optional(),
+      draft: z.boolean().default(false),
+    }),
 });
 
 const projects = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/projects' }),
+  loader: glob({ pattern: ['**/*.md', '!_images/**'], base: './src/content/projects' }),
   // image() Astro'nun görsel optimizasyonunu açar: yollar markdown dosyasına
   // göre görecelidir, görseller src/content/projects/_images/ altında durur.
   schema: ({ image }) =>

@@ -37,7 +37,10 @@ dil yapı olarak ayrışmasın diye.
 
 **Blog yazısı:** `src/content/blog/tr/yazi-adi.md` oluştur, frontmatter'ı doldur
 (`title`, `description`, `pubDate`), yayınlamak için `draft` satırını kaldır.
-Örnek: `src/content/blog/tr/ornek-yazi.md`
+Örnek: `src/content/blog/tr/ornek-yazi.md`. Kapak fotoğrafı isteğe bağlı:
+dosyayı `src/content/blog/_images/yazi-adi/cover.jpg` olarak koy, frontmatter'a
+`cover` ve `coverAlt` yaz; listede küçük, yazıda geniş görünür ve yapılandırılmış
+veriye girer. Kaynak ve marka kuralı o klasördeki README'de.
 
 **Ürün / vaka çalışması:** `src/content/projects/tr/urun-adi.md` — aynı akış,
 ama frontmatter çok daha dolu. Ürün sayfası şu sırayla render edilir:

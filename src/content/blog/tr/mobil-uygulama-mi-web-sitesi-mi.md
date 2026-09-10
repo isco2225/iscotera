@@ -3,6 +3,8 @@ title: "Mobil Uygulama mı, Mobil Uyumlu Web Sitesi mi?"
 description: "Mağazada bir uygulamanız olsun mu, yoksa telefonda iyi çalışan bir web sitesi yeter mi? İki kendi projemizde verdiğimiz kararlar üzerinden, hangisinin ne zaman doğru olduğunu anlatıyoruz."
 pubDate: 2026-09-01
 tags: ["mobil", "web", "karar rehberi"]
+cover: "../_images/mobil-uygulama-mi-web-sitesi-mi/cover.jpg"
+coverAlt: "Pencere önündeki masada açık bir dizüstü bilgisayar ve yanında bir akıllı telefon"
 ---
 
 İlk görüşmelerde en sık duyduğumuz cümlelerden biri: "Bir de uygulamamız
