@@ -1,5 +1,5 @@
 ---
-title: "Küçük İşletme İçin Sunucu Seçimi: Kendi Sunucu mu, Bulut mu, Hazır Servis mi?"
+title: "Küçük İşletme İçin Sunucu Seçimi: Bulut mu, Kendi Sunucu mu?"
 description: "Yazılımınızın nerede çalışacağına karar verirken bakılacak üç şey: aylık maliyet, bakım yükü ve verinin kime ait olduğu. Teknik bilgi gerekmeden, seçeneklerin dürüst bir karşılaştırması."
 pubDate: 2026-08-25
 tags: ["altyapı", "işletme", "karar rehberi"]

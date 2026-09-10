@@ -17,6 +17,9 @@ Kaynaklar — hepsi Pexels, ücretsiz ticari lisans, atıf gerekmez
 | `excelden-yazilima-ne-zaman-gecilir` | https://www.pexels.com/photo/7735769/ |
 | `kucuk-isletme-icin-sunucu-secimi` | https://www.pexels.com/photo/4508751/ |
 | `mobil-uygulama-mi-web-sitesi-mi` | https://www.pexels.com/photo/7054521/ |
+| `ozel-yazilim-ne-kadar-surer` | https://www.pexels.com/photo/11363590/ |
+| `yazilim-sozlesmesinde-ne-olmali` | https://www.pexels.com/photo/7054502/ |
+| `web-sitesi-yaptirma-maliyeti` | https://www.pexels.com/photo/196645/ |
 
 Seçim kuralı `src/assets/services/README.md` ile aynı: markası okunan
 ekran/cihaz içeren kareler kullanılmaz (Windows tuşlu klavye, logolu telefon
