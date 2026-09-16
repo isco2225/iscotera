@@ -82,12 +82,11 @@ donation was taken, and by whom, is on record. Dernek Asistan is in use at
 Vefa Yolu Derneği today, and the charity spends its time on the aid itself
 rather than on merging spreadsheets.
 
-## Could we build one for your charity
+## A system built for your organisation
 
-Every charity has its own kinds of aid, its own prices and its own way of
-working, so we would not copy Dernek Asistan as it stands — we would set it up
-around how your charity actually runs. Tell us how you work; we will start by
-talking through whether an off-the-shelf tool would already do the job.
+Every charity has its own kinds of aid, its own pricing and its own workflow.
+Each project therefore begins with a review of how the organisation currently
+operates, and the system is designed around that.
 
-[Get in touch](/en/contact/) or have a look at our
-[custom software work](/en/services/custom-software-solutions/).
+To discuss your requirements, please [contact us](/en/contact/) or review our
+[custom software solutions](/en/services/custom-software-solutions/).

@@ -80,12 +80,12 @@ tarafından alındığı kayıtlı. Dernek Asistan bugün Vefa Yolu Derneği'nde
 kullanımda; dernek zamanını tabloları birleştirmeye değil, yardımın kendisine
 ayırıyor.
 
-## Derneğiniz için de yapabilir miyiz
+## Derneğinize özel bir sistem
 
-Her derneğin yardım türleri, fiyatları ve çalışma düzeni farklı; bu yüzden
-Dernek Asistan'ı olduğu gibi kopyalamıyoruz, derneğin kendi işleyişine göre
-kuruyoruz. Nasıl çalıştığınızı anlatın; önce hazır bir çözümün işinizi görüp
-görmeyeceğini birlikte konuşalım.
+Her derneğin yardım türleri, fiyatlandırması ve iş akışı kendine özgüdür. Bu
+nedenle her projeye derneğin mevcut işleyişini inceleyerek başlıyor, sistemi
+bu işleyişe göre tasarlıyoruz.
 
-[Bize ulaşın](/iletisim/) ya da
-[özel yazılım çözümlerimize](/hizmetler/ozel-yazilim-cozumleri/) bakın.
+İhtiyaçlarınızı değerlendirmek için [bizimle iletişime geçebilir](/iletisim/)
+ya da [özel yazılım çözümlerimizi](/hizmetler/ozel-yazilim-cozumleri/)
+inceleyebilirsiniz.
