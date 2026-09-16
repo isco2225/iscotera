@@ -87,7 +87,12 @@ const wide = cover ? isLandscape(cover) : false;
         <span
           class="inline-flex items-center gap-2 rounded-full border border-line-strong px-3 py-1 text-xs font-bold text-ink-strong"
         >
-          <span class="h-1.5 w-1.5 rounded-full bg-brand" aria-hidden="true"
+          <span
+            class:list={[
+              'h-1.5 w-1.5 rounded-full',
+              status === 'live' ? 'bg-status-live' : 'bg-ink-faint',
+            ]}
+            aria-hidden="true"
           ></span>
           {statusLabel}
         </span>
