@@ -41,7 +41,12 @@ const projects = defineCollection({
       status: z.enum(['live', 'beta', 'development']).default('live'),
       // Künye rozetinde görünen tür (ör. "Mobil uygulama").
       category: z.string().optional(),
+      // Künye: müşteri ve sektörü hero'da basılır (bkz. ProductPage). Yıl
+      // bilerek basılmaz: her kaydın altında aynı yılın yazması şirketin
+      // yaşını konuşturur, projeyi değil. Şirket geneli sayılar (proje/
+      // müşteri adedi) hiç yok; doğrulanabilir tek ölçüm results'ta durur.
       client: z.string().optional(),
+      sector: z.string().optional(),
       year: z.number().optional(),
       tags: z.array(z.string()).default([]),
       // Ürünün kendi logosu/uygulama ikonu; başlığın yanında gösterilir.

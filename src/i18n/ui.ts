@@ -65,6 +65,9 @@ export const ui = {
     // Görsellerin altındaki not; screenshotsIllustrative açık olan üründe basılır.
     'product.illustrative': 'Görüntüdeki veriler temsilidir.',
     'product.testimonials': 'Kullanıcılar ne diyor?',
+    'product.client': 'Müşteri',
+    'product.sector': 'Sektör',
+    'product.services': 'Bu projede kullandığımız hizmetler',
     'product.faq': 'Sıkça sorulan sorular',
     // {value} ve {count} bileşende gerçek değerlerle değiştirilir.
     'product.ratingAria': '5 üzerinden {value} puan, {count} değerlendirmeye göre.',
@@ -120,6 +123,9 @@ export const ui = {
     'product.ratingAria': 'Rated {value} out of 5, based on {count} ratings.',
     'product.ratingUnit': 'rating',
     'product.ratingUnitPlural': 'ratings',
+    'product.client': 'Client',
+    'product.sector': 'Sector',
+    'product.services': 'Services we used on this project',
     'product.appStore': 'Download on the App Store',
     'product.googlePlay': 'Get it on Google Play',
     'product.website': 'Visit the website',

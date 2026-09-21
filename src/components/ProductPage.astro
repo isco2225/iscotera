@@ -7,8 +7,9 @@
 // var: bölüm sırası satış akışının kendisi, iki dilde ayrışırsa bir taraf
 // sessizce eksik kalır. Değişen her şey (metinler) zaten ui.ts'te.
 //
-// Bölüm sırası: hero → kanıt → özellikler → ekranlar → anlatı → yorumlar →
-// fiyat → SSS → kapanış. Boş bırakılan alanın bölümü hiç render edilmiyor.
+// Bölüm sırası: hero (künye dahil) → kanıt → özellikler → anlatı → yorumlar →
+// SSS → ilgili hizmetler → kapanış. Boş bırakılan alanın bölümü hiç render
+// edilmiyor.
 
 import type { CollectionEntry } from 'astro:content';
 import { render } from 'astro:content';
@@ -28,6 +29,7 @@ import {
   warnUnfinishedData,
 } from '../utils/product';
 import { routes, useTranslations, type Lang } from '../i18n/ui';
+import { services } from '../data/services';
 
 interface Props {
   project: CollectionEntry<'projects'>;
@@ -45,6 +47,8 @@ const {
   tagline,
   status,
   category,
+  client,
+  sector,
   logo,
   cover,
   video,
@@ -67,6 +71,18 @@ const imageCaption = screenshotsIllustrative ? t('product.illustrative') : undef
 
 const platforms = platformLabels(project.data);
 warnUnfinishedData(title, project.data);
+
+// Künye: müşteri ve sektör. Yıl bilerek yok (bkz. content.config.ts).
+const facts = [
+  client && { label: t('product.client'), value: client },
+  sector && { label: t('product.sector'), value: sector },
+].filter(Boolean) as { label: string; value: string }[];
+
+// Bu ürünü vaka olarak gösteren hizmetler: services.ts'teki caseStudy
+// eşlemesinin tersi. Hizmet sayfası zaten ürüne bağlanıyor; bu bölüm halkayı
+// diğer yönde kapatıyor, ayrı bir veri alanı gerektirmiyor.
+const slug = project.id.replace(/^(tr|en)\//, '');
+const relatedServices = services.filter((service) => service.caseStudy === slug);
 
 // tagline hero'daki kısa vaat cümlesi, description ise arama sonucunda
 // görünen tam açıklama. İkisi ayrı: tagline'ı meta description olarak
@@ -242,6 +258,21 @@ const faqSchema =
         />
 
         <p class="mt-5 text-lg text-ink-muted">{promise}</p>
+
+        {
+          facts.length > 0 && (
+            <dl class="mt-6 grid max-w-md grid-cols-2 gap-x-8 gap-y-3 border-t border-line pt-5">
+              {facts.map((fact) => (
+                <div>
+                  <dt class="text-xs font-bold tracking-wide text-ink-subtle uppercase">
+                    {fact.label}
+                  </dt>
+                  <dd class="mt-1 text-sm font-medium text-ink-strong">{fact.value}</dd>
+                </div>
+              ))}
+            </dl>
+          )
+        }
 
         <StoreBadges stores={stores} lang={lang} class="mt-7" />
 
@@ -423,7 +454,33 @@ const faqSchema =
     )
   }
 
-  {/* 7 — Kapanış: ürün mağazadaysa indirme çağrısı, değilse iletişim */}
+  {/* 7 — Bu projede kullanılan hizmetler: yalnızca services.ts'te bu ürünü
+      vaka olarak gösteren hizmet varsa */}
+  {
+    relatedServices.length > 0 && (
+      <section class="mx-auto max-w-5xl px-4 pb-16">
+        <h2 class="text-2xl font-bold text-ink-strong">{t('product.services')}</h2>
+        <div class="mt-6 grid gap-6 sm:grid-cols-2">
+          {relatedServices.map((service) => (
+            <a
+              href={`${routes[lang].services}${service[lang].slug}/`}
+              class="group rounded-lg border border-line p-6 transition hover:border-brand/40 hover:shadow-md"
+            >
+              <h3 class="font-semibold text-ink-strong transition-colors group-hover:text-action-ink">
+                {service[lang].title}
+              </h3>
+              <p class="mt-2 text-sm text-ink-muted">{service[lang].summary}</p>
+              <span class="mt-4 inline-block text-sm font-semibold text-action-ink">
+                {t('services.detail')} &rarr;
+              </span>
+            </a>
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  {/* 8 — Kapanış: ürün mağazadaysa indirme çağrısı, değilse iletişim */}
   <section class="mx-auto max-w-5xl px-4 pb-20">
     <div class="rounded-2xl border border-line bg-surface-muted p-8 text-center sm:p-12">
       {
