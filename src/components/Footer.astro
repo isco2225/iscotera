@@ -1,53 +1,166 @@
 ---
-import { routes, useTranslations, type Lang } from '../i18n/ui';
+// Site altbilgisi: dört sütun + telif satırı (kullanıcının 2026-09-21'de
+// gösterdiği referansa göre). Soldan sağa: marka (logo, bir cümlelik tanım,
+// sosyal ikon), sayfalar, hizmetler, iletişim. Hizmet sütunu services.ts'ten
+// gelir; böylece her sayfadan dört hizmet sayfasına da iç bağlantı çıkar.
+//
+// Alt satırın sağında yasal bağlantı yok: sitede çerez ve form olmadığı için
+// gizlilik/KVKK sayfası da yok. Analitik ya da iletişim formu geldiğinde o
+// sayfalar açılır ve buraya bağlanır (README yayın öncesi listesi). Yerine
+// diğer dilin bağlantısı duruyor; Header'daki değiştiriciyle aynı hedef.
+
+import { languages, routes, useTranslations, type Lang } from '../i18n/ui';
 import { contact } from '../data/contact';
+import { services } from '../data/services';
+import Logo from './Logo.astro';
+import ContactIcon from './ContactIcon.astro';
 
 interface Props {
   lang: Lang;
+  /** Aynı sayfanın diğer dildeki yolu; yoksa diğer dilin ana sayfası. */
+  alternate?: string;
 }
 
-const { lang } = Astro.props;
+const { lang, alternate } = Astro.props;
 const t = useTranslations(lang);
 const r = routes[lang];
 const year = new Date().getFullYear();
+
+const otherLang: Lang = lang === 'tr' ? 'en' : 'tr';
+const switchHref = alternate ?? routes[otherLang].home;
+
+const pages = [
+  { href: r.home, label: t('nav.home') },
+  { href: r.about, label: t('nav.about') },
+  { href: r.projects, label: t('nav.projects') },
+  { href: r.blog, label: t('nav.blog') },
+  { href: r.contact, label: t('nav.contact') },
+];
+
+// İletişim sütunu: e-posta ve telefon. WhatsApp ve Instagram marka
+// sütununda yuvarlak ikon olarak durur (kullanıcının isteği, 2026-09-21).
+const channels = [
+  { icon: 'mail', label: contact.email, href: `mailto:${contact.email}` },
+  { icon: 'phone', label: contact.phoneDisplay, href: `tel:${contact.phoneE164}` },
+] as const;
+
+const social = [
+  { icon: 'instagram', label: 'Instagram', href: contact.instagramUrl },
+  { icon: 'whatsapp', label: 'WhatsApp', href: contact.whatsappUrl },
+] as const;
+
+const socialClass =
+  'flex h-11 w-11 items-center justify-center rounded-full border border-line-strong text-ink-muted transition-colors hover:border-brand/40 hover:text-brand';
+
+const linkClass =
+  'inline-flex min-h-9 items-center text-sm text-ink-muted transition-colors hover:text-ink-strong';
+const headingClass = 'text-sm font-semibold text-ink-strong';
 ---
 
 <footer class="border-t border-line bg-surface-muted">
-  <div class="mx-auto max-w-5xl px-4 py-8 text-sm text-ink-subtle">
-    <div class="flex flex-col items-center justify-between gap-4 sm:flex-row">
-      <ul
-        class="flex flex-wrap items-center justify-center gap-4"
-        aria-label={lang === 'tr' ? 'İletişim kanalları' : 'Contact channels'}
-      >
-        <li>
-          <a href={`mailto:${contact.email}`} class="hover:text-ink">
-            {contact.email}
-          </a>
-        </li>
-        <li>
-          <a href={`tel:${contact.phoneE164}`} class="hover:text-ink">
-            {contact.phoneDisplay}
-          </a>
-        </li>
-        <li>
-          <a
-            href={contact.instagramUrl}
-            target="_blank"
-            rel="noopener"
-            class="hover:text-ink"
+  <div class="mx-auto max-w-5xl px-4 pt-14 pb-8">
+    <div class="grid gap-10 sm:grid-cols-2 md:grid-cols-[minmax(0,1.5fr)_repeat(3,minmax(0,1fr))] md:gap-8">
+      {/* 1 — Marka */}
+      <div class="sm:col-span-2 md:col-span-1">
+        <a
+          href={r.home}
+          class="inline-flex items-center gap-3 text-2xl font-bold tracking-tight text-ink-strong"
+        >
+          <Logo class="h-9 w-9" />
+          {/* Header'daki optik hizalamanın aynısı. */}
+          <span class="leading-none translate-y-[0.09em]"
+            ><span class="text-brand">İSCO</span>TERA</span
           >
-            {contact.instagramHandle}
-          </a>
-        </li>
-      </ul>
-      <nav aria-label={lang === 'tr' ? 'Alt menü' : 'Footer menu'}>
-        <ul class="flex items-center gap-4">
-          <li><a href={r.about} class="hover:text-ink">{t('nav.about')}</a></li>
-          <li><a href={r.services} class="hover:text-ink">{t('nav.services')}</a></li>
-          <li><a href={r.contact} class="hover:text-ink">{t('nav.contact')}</a></li>
+        </a>
+        <p class="mt-4 max-w-xs text-sm leading-relaxed text-ink-muted">
+          {t('footer.tagline')}
+        </p>
+        <ul class="mt-5 flex items-center gap-3" aria-label={t('footer.social')}>
+          {
+            social.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener"
+                  aria-label={item.label}
+                  class={socialClass}
+                >
+                  <ContactIcon icon={item.icon} class="h-5 w-5" />
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      {/* 2 — Sayfalar */}
+      <nav aria-label={t('footer.pages')}>
+        <h2 class={headingClass}>{t('footer.pages')}</h2>
+        <ul class="mt-3 flex flex-col">
+          {
+            pages.map((page) => (
+              <li>
+                <a href={page.href} class={linkClass}>
+                  {page.label}
+                </a>
+              </li>
+            ))
+          }
         </ul>
       </nav>
+
+      {/* 3 — Hizmetler: services.ts'teki her kayıt, kendi detay sayfasına */}
+      <nav aria-label={t('nav.services')}>
+        <h2 class={headingClass}>
+          <a href={r.services} class="transition-colors hover:text-action-ink">
+            {t('nav.services')}
+          </a>
+        </h2>
+        <ul class="mt-3 flex flex-col">
+          {
+            services.map((service) => (
+              <li>
+                <a href={`${r.services}${service[lang].slug}/`} class={linkClass}>
+                  {service[lang].title}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+
+      {/* 4 — İletişim: ikon kırmızı, çünkü süs; metin normal bağlantı rengi */}
+      <div>
+        <h2 class={headingClass}>{t('nav.contact')}</h2>
+        <ul class="mt-3 flex flex-col">
+          {
+            channels.map((channel) => (
+              <li>
+                <a href={channel.href} class:list={[linkClass, 'gap-3']}>
+                  <ContactIcon icon={channel.icon} class="h-4 w-4 shrink-0 text-brand" />
+                  <span class="truncate">{channel.label}</span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
     </div>
-    <p class="mt-6 text-center sm:text-left">© {year} İscotera. {t('footer.rights')}</p>
+
+    {/* Telif satırı */}
+    <div
+      class="mt-12 flex flex-col gap-3 border-t border-line pt-6 text-sm text-ink-subtle sm:flex-row sm:items-center sm:justify-between"
+    >
+      <p>© {year} İscotera. {t('footer.rights')}</p>
+      <a
+        href={switchHref}
+        hreflang={otherLang}
+        lang={otherLang}
+        class="inline-flex min-h-9 items-center transition-colors hover:text-ink-strong"
+      >
+        {languages[otherLang]}
+      </a>
+    </div>
   </div>
 </footer>
