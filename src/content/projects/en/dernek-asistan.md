@@ -1,16 +1,18 @@
 ---
 title: "Dernek Asistan"
-description: "A donation tracking system we built for Vefa Yolu Derneği, a Turkish charity. Recording a donation takes seconds, remaining shares are visible at a glance, and the month-end report is one click away."
+description: "A donation tracking system we built for Vefa Yolu Derneği, a Turkish charity. Every donation in one place, recorded in seconds, with the management report one click away."
 type: case-study
-tagline: "A charity's entire donation workflow, on one screen in the office and in the field."
+tagline: "A charity's every donation in one system: less effort, more control."
 status: live
 category: "Web and mobile app"
 client: "Vefa Yolu Derneği"
+sector: "Charity"
 year: 2026
 tags: ["web", "mobile", "custom software", "charity"]
-cover: "../_images/dernek-asistan/screen-performance-report.png"
-# Ekranlar örnek kayıtlarla çekildi (gerçek bağışçı verisi gösterilmiyor);
-# görsellerin altında "veriler temsilidir" notu çıkar.
+cover: "../_images/dernek-asistan/cover.png"
+# Sayfadaki tek görsel kapaktaki tanıtım kompozisyonu; özelliklerin ayrı
+# ekran görüntüsü yok (kullanıcının kararı, 2026-09-21). Görseldeki rakamlar
+# örnek veri, o yüzden altında "veriler temsilidir" notu çıkar.
 screenshotsIllustrative: true
 # No store links: the app is open only to the charity's own staff, not a
 # public product. For the same reason there is deliberately no app
@@ -20,67 +22,49 @@ screenshotsIllustrative: true
 # results is deliberately empty: we have no verified usage figures. If real
 # numbers arrive (monthly record counts etc.) they go here, three at most.
 results: []
-# Metinler bilerek kısa ve teknik terimsiz: bu sayfayı okuyan dernek
-# yöneticisi, yazılımın nasıl kurulduğunu değil işini nasıl kolaylaştırdığını
-# öğrenmek istiyor.
+# Bu sayfayı dernek yöneticisi okuyor. Her özelliğin başlığı bir fayda
+# (zaman, takip, tutarlılık, rapor, ekip), metni en fazla iki cümle; ekran
+# adımı, alan adı ve arayüz ayrıntısı yazılmaz (kullanıcının kararı,
+# 2026-09-21).
 features:
-  - title: "Recording a donation takes seconds"
-    text: "The staff member enters the donor's name and the type of donation; the system supplies the price, the amount and the sequence number. If one donor gives on behalf of several people, the form is filled in once and a separate record is created for each name."
-    image: "../_images/dernek-asistan/screen-donation-form.png"
-    alt: "Dernek Asistan form for adding a qurbani donation: single-record and bulk-record tabs at the top, unit price filled in automatically; fields for donor name, on whose behalf, animal type, intention, phone and donation source"
-  - title: "Every kind of aid has its own screen"
-    text: "Food distribution, bread distribution, qurbani, Qur'an donations, water wells and the Gaza water tanker each have their own section. Each one follows its own rules, so staff never have to work out which fields apply."
-    image: "../_images/dernek-asistan/screen-donation-types.png"
-    alt: "Dernek Asistan donation type screen: cards for food distribution, bread distribution, qurbani, Qur'an, water wells and the Gaza water tanker, each listing the countries it serves"
-  - title: "Remaining shares at a glance"
-    text: "For water well and water tanker projects, filled and remaining shares are visible on screen. When a project fills up it moves itself to the completed list."
-  - title: "Prices live inside the system"
-    text: "Prices per country and type sit in the app, not in a separate spreadsheet. Only authorised people can change a price, and every change is logged."
-  - title: "The month-end report is one click"
-    text: "Pick a date range and see how many donations came in, through which channel, and how much each staff member recorded — presented as charts. Download it as a PDF and take it to the board meeting."
-    image: "../_images/dernek-asistan/report-pdf.png"
-    alt: "The PDF performance report Dernek Asistan generates: period, summary figures, tables by donation type and by source"
-  - title: "Every donation leaves a trail"
-    text: "Who entered which record, and when, is kept. Who may delete a record or change a price is defined up front, so the charity can account for itself to its donors and to auditors."
+  - title: "Saves time"
+    text: "Recording a donation takes seconds. The system supplies the amount and the reference number itself; staff do no arithmetic and consult no price list."
+  - title: "Every donation on record"
+    text: "Food, bread, qurbani, Qur'an, water wells; whatever the type, every donation sits in its own place. Who gave, when and for what: nothing to search for, just open and look."
+  - title: "Easier to track"
+    text: "For share-based projects, filled and remaining shares are visible on screen. A project that fills up moves itself to the completed list; no more counting by hand."
+  - title: "Consistent data"
+    text: "Prices are updated in one place, by authorised people only, so everyone works with the same figure. Who entered each record and when is known; scattered spreadsheets and conflicting numbers disappear."
+  - title: "Reports in one click"
+    text: "Pick a date range and the period's donation report is ready as a PDF. No more hours of merging spreadsheets before a board meeting."
+  - title: "More donations, same team"
+    text: "Office and field work in the same system, so the busy season is absorbed by the software rather than by extra staff. The team spends its time on donors and on the aid itself, not on record-keeping."
 order: 2
 draft: false
 ---
 
-**Dernek Asistan** is an app we built so that Vefa Yolu Derneği, a Turkish
-charity, can run all of its donation work from one place. Staff use the same
-system from the office or from a phone out in the field.
+**Dernek Asistan** is the system we built so that Vefa Yolu Derneği, a Turkish
+charity, can run all of its donation work from one place. Staff in the office
+and volunteers in the field use the same screen.
 
-## The problem charities face
+## The problem
 
-Charities take in hundreds of donations in a short time, especially around
-Qurban and Ramadan. Once records are scattered across spreadsheets, messaging
-groups and personal notes, the same difficulties turn up every time:
+Hundreds of donations arrive in a short time around Qurban and Ramadan. Once
+records are scattered across spreadsheets, messaging groups and notebooks, the
+same difficulties turn up every time:
 
-- When a donation was taken, by whom, and for which country cannot be found
-  afterwards.
-- Prices sit in a separate list, so amounts are worked out by hand.
-- For share-based projects, filled shares are counted manually.
+- Who gave a donation, when and for what cannot be found afterwards.
+- Amounts are worked out by hand, so errors and conflicting figures are
+  inevitable.
 - Answering "how many donations did we take this month?" means hours of
   adding up.
+- Getting through the busy season takes extra people.
 
-## What changed
+## Today
 
-Recording a donation used to mean looking up the price list, working out the
-amount and writing it into a spreadsheet by hand. Now the staff member enters
-the donor's name and the type of donation, and the system does the rest. Every
-record gets its own number — the one reference used when a receipt is issued
-and when a donor calls back to ask about their donation.
-
-The real difference shows on the management side. "Which channel brings in the
-most?", "How many shares are left in the Bangladesh well?", "How much did each
-staff member record?" — nobody merges spreadsheets to answer these any more;
-you pick a date range and the report downloads as a PDF. The figures for a
-board meeting are ready in minutes.
-
-The charity's footing with its donors and with auditors changed too: when each
-donation was taken, and by whom, is on record. Dernek Asistan is in use at
-Vefa Yolu Derneği today, and the charity spends its time on the aid itself
-rather than on merging spreadsheets.
+Dernek Asistan is in use at Vefa Yolu Derneği. Donations sit in one system,
+amounts and reports are ready, and every record has a trail. The charity spends
+its time on the aid itself rather than on merging spreadsheets.
 
 ## A system built for your organisation
 

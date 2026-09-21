@@ -1,16 +1,18 @@
 ---
 title: "Dernek Asistan"
-description: "Vefa Yolu Derneği için geliştirdiğimiz bağış takip sistemi. Bağış kaydı saniyeler sürüyor, hisseli projelerde kalan hisse anlık görünüyor, ay sonu raporu tek tıkla çıkıyor."
+description: "Vefa Yolu Derneği için geliştirdiğimiz bağış takip sistemi. Bütün bağışlar tek yerde, kayıt saniyeler sürüyor, yönetim raporu tek tıkla hazır."
 type: case-study
-tagline: "Bir yardım derneğinin bütün bağış işleri, ofiste ve sahada aynı ekranda."
+tagline: "Derneğin bütün bağışları tek sistemde: daha az uğraş, daha çok kontrol."
 status: live
 category: "Web ve mobil uygulama"
 client: "Vefa Yolu Derneği"
+sector: "Yardım derneği"
 year: 2026
 tags: ["web", "mobil", "özel yazılım", "dernek"]
-cover: "../_images/dernek-asistan/screen-performance-report.png"
-# Ekranlar örnek kayıtlarla çekildi (gerçek bağışçı verisi gösterilmiyor);
-# görsellerin altında "veriler temsilidir" notu çıkar.
+cover: "../_images/dernek-asistan/cover.png"
+# Sayfadaki tek görsel kapaktaki tanıtım kompozisyonu; özelliklerin ayrı
+# ekran görüntüsü yok (kullanıcının kararı, 2026-09-21). Görseldeki rakamlar
+# örnek veri, o yüzden altında "veriler temsilidir" notu çıkar.
 screenshotsIllustrative: true
 # Mağaza bağlantısı yok: uygulama derneğin kendi personeline açık, herkese
 # sunulan bir ürün değil. Aynı sebeple app (SoftwareApplication) şeması da
@@ -20,65 +22,46 @@ screenshotsIllustrative: true
 # results bilerek boş: elimizde doğrulanmış kullanım verisi yok. Rakam
 # (aylık kayıt sayısı vb.) gelirse buraya en fazla üç madde olarak girer.
 results: []
-# Metinler bilerek kısa ve teknik terimsiz: bu sayfayı okuyan dernek
-# yöneticisi, yazılımın nasıl kurulduğunu değil işini nasıl kolaylaştırdığını
-# öğrenmek istiyor.
+# Bu sayfayı dernek yöneticisi okuyor. Her özelliğin başlığı bir fayda
+# (zaman, takip, tutarlılık, rapor, ekip), metni en fazla iki cümle; ekran
+# adımı, alan adı ve arayüz ayrıntısı yazılmaz (kullanıcının kararı,
+# 2026-09-21).
 features:
-  - title: "Bağış kaydı saniyeler sürüyor"
-    text: "Çalışan bağışçının adını ve bağış türünü giriyor; fiyatı, tutarı ve sıra numarasını sistem kendisi veriyor. Aynı bağışçı birden fazla kişi adına bağış yapıyorsa form bir kez dolduruluyor, her isim için ayrı kayıt açılıyor."
-    image: "../_images/dernek-asistan/screen-donation-form.png"
-    alt: "Dernek Asistan kurban bağışı ekleme formu: üstte tek kayıt ve toplu kayıt sekmeleri, birim fiyat otomatik gelmiş; bağışçı adı, kimin adına, hayvan türü, niyet, telefon ve bağış kaynağı alanları"
-  - title: "Her yardım türü kendi ekranında"
-    text: "Yemek dağıtımı, ekmek dağıtımı, kurban, Kuran, su kuyusu ve Gazze su tankeri ayrı bölümlerde duruyor. Her biri kendi kurallarıyla çalıştığı için çalışan hangi alanı dolduracağını düşünmüyor."
-    image: "../_images/dernek-asistan/screen-donation-types.png"
-    alt: "Dernek Asistan bağış türü seçme ekranı: yemek dağıtımı, ekmek dağıtımı, kurban, Kuran, su kuyusu ve Gazze su tankeri kartları, her kartta hizmet verilen ülkeler"
-  - title: "Hisseli projelerde kaç hisse kaldı, tek bakışta"
-    text: "Su kuyusu ve su tankeri projelerinde dolan ve kalan hisseler ekranda görünüyor. Proje tamamlandığında kendiliğinden tamamlananlar listesine geçiyor."
-  - title: "Fiyatlar sistemin içinde"
-    text: "Ülkeye ve türe göre fiyatlar uygulamanın içinde duruyor, ayrı bir tabloda değil. Fiyatı yalnızca yetkili kişiler değiştirebiliyor ve her değişiklik kayda geçiyor."
-  - title: "Ay sonu raporu tek tıkla"
-    text: "Tarih aralığını seçiyorsunuz; kaç bağış alındığı, hangi kanaldan geldiği ve hangi çalışanın ne kadar kayıt girdiği grafiklerle çıkıyor. PDF olarak indirip yönetim kuruluna götürebiliyorsunuz."
-    image: "../_images/dernek-asistan/report-pdf.png"
-    alt: "Dernek Asistan'ın ürettiği PDF performans raporu: dönem, özet rakamlar, bağış türüne ve kaynağa göre tablolar"
-  - title: "Her bağışın izi kayıtlı"
-    text: "Hangi kaydı kimin, ne zaman girdiği saklanıyor. Kimin kayıt silebileceği ve fiyat değiştirebileceği baştan tanımlı; dernek bağışçısına ve denetime karşı hesap verebilir durumda."
+  - title: "Zaman kazandırıyor"
+    text: "Bağış kaydı saniyeler sürüyor. Tutarı ve sıra numarasını sistem kendisi veriyor; çalışan hesap yapmıyor, fiyat listesine bakmıyor."
+  - title: "Her bağış kayıt altında"
+    text: "Yemek, ekmek, kurban, Kuran, su kuyusu; türü ne olsun, her bağış kendi yerinde duruyor. Kim, ne zaman, ne için bağış yaptı: aramak yok, açıp bakmak var."
+  - title: "Takip kolaylaşıyor"
+    text: "Hisseli projelerde kaç hissenin dolduğu ve kaç hissenin kaldığı ekranda görünüyor. Dolan proje kendiliğinden tamamlananlara geçiyor; elle sayım bitti."
+  - title: "Veriler tutarlı"
+    text: "Fiyatlar tek yerden ve yalnızca yetkili kişi tarafından güncelleniyor; herkes aynı rakamla çalışıyor. Her kaydın kim tarafından, ne zaman girildiği belli; dağınık tablo ve çelişen rakam sorunu ortadan kalkıyor."
+  - title: "Raporlar tek tıkla"
+    text: "Tarih aralığını seçin, dönemin bağış raporu PDF olarak hazır. Yönetim kurulu toplantısı için saatlerce tablo birleştirmek yok."
+  - title: "Aynı ekiple daha çok iş"
+    text: "Ofis ve saha aynı sistemde çalışıyor; yoğun dönemi ek personel değil sistem karşılıyor. Ekip vaktini kayıt tutmaya değil bağışçıya ve yardımın kendisine ayırıyor."
 order: 2
 draft: false
 ---
 
-**Dernek Asistan**, Vefa Yolu Derneği'nin bütün bağış işlerini tek bir yerden
-yönetmesi için geliştirdiğimiz bir uygulama. Çalışan ister ofisten ister
-sahada telefonundan aynı sisteme giriyor.
+**Dernek Asistan**, Vefa Yolu Derneği'nin bütün bağış işlerini tek yerden
+yönetmesi için geliştirdiğimiz sistem. Ofisteki çalışan da sahadaki gönüllü
+de aynı ekrana giriyor.
 
-## Derneklerin yaşadığı sorun
+## Sorun neydi
 
-Yardım dernekleri, özellikle kurban ve Ramazan dönemlerinde kısa sürede
-yüzlerce bağış alıyor. Kayıtlar tablolara, mesajlaşma gruplarına ve kişisel
-notlara dağıldığında hep aynı sıkıntılar çıkıyor:
+Kurban ve Ramazan dönemlerinde kısa sürede yüzlerce bağış geliyor. Kayıtlar
+tablolara, mesaj gruplarına ve deftere dağılınca hep aynı sıkıntılar çıkıyor:
 
-- Bir bağışın ne zaman, kim tarafından, hangi ülke için alındığı sonradan
-  bulunamıyor.
-- Fiyatlar ayrı bir listede durduğu için tutarlar elle hesaplanıyor.
-- Hisseli projelerde kaç hissenin dolduğu elle sayılıyor.
-- "Bu ay kaç bağış aldık?" sorusunun cevabı saatler süren bir toplama işi.
+- Bir bağışın kimden, ne zaman, ne için alındığı sonradan bulunamıyor.
+- Tutarlar elle hesaplanıyor; hata ve çelişen rakam kaçınılmaz oluyor.
+- "Bu ay kaç bağış aldık?" sorusu saatler süren bir toplama işi.
+- Yoğun dönemi kaldırmak için fazladan insan gerekiyor.
 
-## Ne değişti
+## Bugün
 
-Eskiden bir bağış kaydı almak fiyat listesine bakmayı, tutarı hesaplamayı ve
-tabloya elle yazmayı gerektiriyordu. Şimdi çalışan bağışçının adını ve bağış
-türünü giriyor, gerisini sistem yapıyor. Her kayıt kendi numarasını alıyor;
-makbuz keserken de bağışçı sonradan arayıp sorduğunda da aranan referans o.
-
-Asıl fark yönetim tarafında. "Hangi kanal daha çok bağış getiriyor?",
-"Bangladeş kuyusunda kaç hisse kaldı?", "Hangi çalışan ne kadar kayıt girdi?"
-— cevap için artık kimse tablo birleştirmiyor; tarih aralığı seçiliyor, rapor
-PDF olarak iniyor. Yönetim kurulu toplantısının rakamları dakikalar içinde
-hazır.
-
-Bağışçıya ve denetime karşı da durum değişti: her bağışın ne zaman, kim
-tarafından alındığı kayıtlı. Dernek Asistan bugün Vefa Yolu Derneği'nde
-kullanımda; dernek zamanını tabloları birleştirmeye değil, yardımın kendisine
-ayırıyor.
+Dernek Asistan, Vefa Yolu Derneği'nde kullanımda. Bağışlar tek sistemde,
+tutarlar ve raporlar hazır, her kaydın izi belli. Dernek zamanını tablo
+birleştirmeye değil yardımın kendisine ayırıyor.
 
 ## Derneğinize özel bir sistem
 
