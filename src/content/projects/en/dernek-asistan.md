@@ -10,6 +10,9 @@ sector: "Charity"
 year: 2026
 tags: ["web", "mobile", "custom software", "charity"]
 cover: "../_images/dernek-asistan/cover.png"
+# Vitrin panelinin zemini (ProductPanel): koyu petrol mavisi, İbadet
+# Rehberim'in yeşilinden ayrışsın diye.
+color: "#0f3a40"
 # Sayfadaki tek görsel kapaktaki tanıtım kompozisyonu; özelliklerin ayrı
 # ekran görüntüsü yok (kullanıcının kararı, 2026-09-21). Görseldeki rakamlar
 # örnek veri, o yüzden altında "veriler temsilidir" notu çıkar.

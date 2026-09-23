@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import ProductStrip from '../../../components/ProductStrip.astro';
+import ProductPanel from '../../../components/ProductPanel.astro';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import PagePlaceholder from '../../../components/PagePlaceholder.astro';
 import { useTranslations } from '../../../i18n/ui';
@@ -37,18 +37,23 @@ const projects = (
     }
   </section>
 
-  {/* Vitrin şeritleri tam genişlik; zemin ve görsel yönü dönüşümlü */}
+  {/* Her ürün kendi renginde bir panel (ProductPanel). İlk panel sayfanın ilk
+      ekranında durduğu için görseli ertelenmeden yüklenir. */}
   {
-    projects.map((project, i) => (
-      <ProductStrip
-        project={project}
-        href={`/en/products/${project.id.replace('en/', '')}/`}
-        linkLabel="View the product"
-        lang="en"
-        as="h2"
-        index={i}
-      />
-    ))
+    projects.length > 0 && (
+      <div class="mx-auto flex max-w-5xl flex-col gap-7 px-4">
+        {projects.map((project, i) => (
+          <ProductPanel
+            project={project}
+            href={`/en/products/${project.id.replace('en/', '')}/`}
+            linkLabel="View the product"
+            lang="en"
+            as="h2"
+            eager={i === 0}
+          />
+        ))}
+      </div>
+    )
   }
 
   <section class="mx-auto max-w-5xl px-4 py-14">

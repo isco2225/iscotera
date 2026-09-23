@@ -9,6 +9,9 @@
 // Yıldızlar dekoratif, o yüzden marka kırmızısını kullanabiliyorlar; okunacak
 // bilgi yanlarındaki metinde. Ekran okuyucu yıldızları hiç duymuyor, tek bir
 // tam cümle duyuyor.
+//
+// tone="inverse": ürün vitrini paneli gibi modla değişmeyen koyu bir zeminde
+// yıldızlar ve metin beyaz tonlarına geçer.
 
 import { useTranslations, type Lang } from '../i18n/ui';
 
@@ -16,10 +19,12 @@ interface Props {
   value: number;
   count: number;
   lang: Lang;
+  tone?: 'default' | 'inverse';
   class?: string;
 }
 
-const { value, count, lang, class: className } = Astro.props;
+const { value, count, lang, tone = 'default', class: className } = Astro.props;
+const inverse = tone === 'inverse';
 
 const t = useTranslations(lang);
 const locale = lang === 'tr' ? 'tr-TR' : 'en-US';
@@ -46,7 +51,7 @@ const stars = [0, 1, 2, 3, 4];
 
 <div class:list={['flex items-center gap-2', className]} role="img" aria-label={ariaLabel}>
   <div class="relative inline-flex" aria-hidden="true">
-    <div class="flex text-line-strong">
+    <div class:list={['flex', inverse ? 'text-white/30' : 'text-line-strong']}>
       {
         stars.map(() => (
           <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0" fill="currentColor">
@@ -56,7 +61,10 @@ const stars = [0, 1, 2, 3, 4];
       }
     </div>
     <div
-      class="absolute inset-y-0 left-0 flex overflow-hidden text-brand"
+      class:list={[
+        'absolute inset-y-0 left-0 flex overflow-hidden',
+        inverse ? 'text-white' : 'text-brand',
+      ]}
       style={`width: ${fillPercent}%`}
     >
       {
@@ -68,5 +76,7 @@ const stars = [0, 1, 2, 3, 4];
       }
     </div>
   </div>
-  <span class="text-sm text-ink-muted">{valueText} &middot; {countText} {unit}</span>
+  <span class:list={['text-sm', inverse ? 'text-white/80' : 'text-ink-muted']}>
+    {valueText} &middot; {countText} {unit}
+  </span>
 </div>

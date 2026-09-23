@@ -10,6 +10,8 @@ year: 2026
 tags: ["mobil", "flutter", "firebase", "ios", "android"]
 logo: "../_images/ibadet-rehberim/logo.png"
 cover: "../_images/ibadet-rehberim/screen-discover-feed.png"
+# Vitrin panelinin zemini (ProductPanel): tanıtım görsellerinin koyu yeşili.
+color: "#253e22"
 video:
   src: "/media/ibadet-rehberim/tanitim.mp4"
   uploadDate: 2026-08-29

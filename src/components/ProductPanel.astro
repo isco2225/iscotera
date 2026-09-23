@@ -1,0 +1,196 @@
+---
+// Ürün vitrini paneli: ana sayfada ve ürün listesinde her ürün kendi renginde
+// büyük bir panel olarak durur. Ürünler tuvalinde seçilen "H — Ürün renginde
+// panel" (2026-09-23): solda beyaz yazılar ve beyaz hap buton, sağda ürünün
+// görselleri panelin kenarından taşar. Yerini aldığı tam genişlik şerit
+// tıklanabilir görünmüyordu; burada bütün panel tek bir bağlantıdır.
+//
+// Zemin ürünün kendi rengidir (frontmatter'daki `color`) ve açık/koyu modda
+// değişmez. Bu yüzden paneldeki beyaz yazı, beyaz buton ve yeşil durum noktası
+// token değil sabit renk: token'lar modla birlikte değişir, bu zemin değişmez.
+// Rengin beyaz yazıyla kontrastı içerik şemasında denetlenir.
+//
+// Görsel: dikey kapak (telefon ekranı) telefon olarak durur; geniş ekranda
+// arkasına ürünün ilk dikey özellik görseli ikinci telefon olarak eklenir.
+// Yatay kapak (masaüstü ekranı) sağ kenardan taşar. Görseller
+// productImageOptions ile üretilir; ürün sayfası aynı dosyaları kullandığı
+// için tarayıcı ikinci bir kopya indirmez.
+
+import type { CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+import Rating from './Rating.astro';
+import { isLandscape, platformLabels, productImageOptions } from '../utils/product';
+import { useTranslations, type Lang } from '../i18n/ui';
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+  href: string;
+  /** Buton metni (ör. "Ürünü incele"). */
+  linkLabel: string;
+  lang: Lang;
+  /** Başlık seviyesi: listede h2, ana sayfada bölüm başlığının altında h3. */
+  as?: 'h2' | 'h3';
+  /** Sayfanın ilk ekranındaki panel: görseli ertelenmeden yüklenir (LCP adayı). */
+  eager?: boolean;
+}
+
+const {
+  project,
+  href,
+  linkLabel,
+  lang,
+  as: Heading = 'h3',
+  eager = false,
+} = Astro.props;
+const { title, description, tagline, status, category, rating, cover, results, features, color } =
+  project.data;
+
+const t = useTranslations(lang);
+const statusLabel = t(`product.status.${status}`);
+const metaLine = [category, ...platformLabels(project.data)].filter(Boolean).join(' · ');
+
+// Renk yazılmamışsa nötr koyu gri (neutral-800): beyaz yazıyla 15:1.
+const background = color ?? '#262626';
+
+const wide = cover ? isLandscape(cover) : false;
+// Arkadaki ikinci telefon yalnızca kapak da dikeyse anlamlı.
+const backShot =
+  cover && !wide
+    ? features.map((feature) => feature.image).find((image) => image && !isLandscape(image))
+    : undefined;
+
+const imageLoading = eager ? 'eager' : 'lazy';
+const imagePriority = eager ? 'high' : undefined;
+
+// Görseller üzerine gelince hafifçe yükselir; hareket azaltma tercihinde durur.
+const lift =
+  'motion-safe:transition-transform motion-safe:duration-500 motion-safe:group-hover:-translate-y-2.5';
+const shadow = 'shadow-[0_30px_60px_-20px_rgba(0,0,0,0.6)]';
+---
+
+<a
+  href={href}
+  class="group relative block overflow-hidden rounded-3xl text-white hover:shadow-2xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-action-ink md:grid md:min-h-[440px] md:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] motion-safe:transition motion-safe:duration-200 motion-safe:hover:-translate-y-1"
+  style={`background-color: ${background}`}
+>
+  <div class="relative z-10 flex flex-col p-7 sm:p-10 md:py-[52px] md:pr-6 md:pl-[52px]">
+    <div class="flex flex-wrap items-center gap-3">
+      <span
+        class="inline-flex items-center gap-2 rounded-full border border-white/30 px-3 py-1 text-xs font-bold"
+      >
+        <span
+          class:list={[
+            'h-1.5 w-1.5 rounded-full',
+            status === 'live' ? 'bg-green-400' : 'bg-white/50',
+          ]}
+          aria-hidden="true"
+        ></span>
+        {statusLabel}
+      </span>
+      {metaLine && <span class="text-sm text-white/80">{metaLine}</span>}
+    </div>
+
+    <Heading class="mt-5 text-3xl leading-[1.1] font-bold sm:text-4xl lg:text-[44px]">
+      {title}
+    </Heading>
+
+    <p class="mt-4 max-w-md text-lg leading-relaxed text-white/85">{tagline ?? description}</p>
+
+    {
+      rating && (
+        <Rating
+          value={rating.value}
+          count={rating.count}
+          lang={lang}
+          tone="inverse"
+          class="mt-5"
+        />
+      )
+    }
+
+    {
+      results.length > 0 && (
+        <dl class="mt-6 flex flex-wrap gap-x-8 gap-y-3">
+          {results.map((result) => (
+            <div class="flex items-baseline gap-2">
+              <dt class="text-[28px] leading-8 font-bold">{result.value}</dt>
+              <dd class="text-sm text-white/80">{result.label}</dd>
+            </div>
+          ))}
+        </dl>
+      )
+    }
+
+    {/* Buton geniş ekranda panelin dibine iner; içerik uzarsa üstünde yine
+        en az 32px boşluk kalır. */}
+    <div class="mt-8 md:mt-auto md:pt-8">
+      <span
+        class="inline-flex min-h-12 items-center gap-2.5 rounded-full bg-white px-6 text-[15px] font-semibold text-neutral-900 transition-colors group-hover:bg-neutral-200 group-focus-visible:bg-neutral-200"
+      >
+        {linkLabel}
+        <svg
+          viewBox="0 0 24 24"
+          class="h-[18px] w-[18px] motion-safe:transition-transform motion-safe:group-hover:translate-x-1"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.25"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M5 12h14"></path>
+          <path d="m13 6 6 6-6 6"></path>
+        </svg>
+      </span>
+    </div>
+  </div>
+
+  {
+    cover && (
+      <div class="relative h-72 md:h-auto">
+        {wide ? (
+          <Image
+            src={cover}
+            alt=""
+            {...productImageOptions(cover)}
+            loading={imageLoading}
+            fetchpriority={imagePriority}
+            class:list={[
+              'absolute top-6 left-6 w-[520px] max-w-none rounded-2xl md:top-[72px] md:left-2 md:w-[640px]',
+              shadow,
+              lift,
+            ]}
+          />
+        ) : (
+          <>
+            {backShot && (
+              <Image
+                src={backShot}
+                alt=""
+                {...productImageOptions(backShot)}
+                loading={imageLoading}
+                class:list={[
+                  'absolute top-24 right-[250px] hidden h-[440px] w-[220px] max-w-none rounded-[22px] object-cover object-top lg:block',
+                  shadow,
+                  lift,
+                ]}
+              />
+            )}
+            <Image
+              src={cover}
+              alt=""
+              {...productImageOptions(cover)}
+              loading={imageLoading}
+              fetchpriority={imagePriority}
+              class:list={[
+                'absolute top-6 right-0 left-0 mx-auto h-96 w-48 max-w-none rounded-[22px] object-cover object-top md:top-12 md:right-14 md:left-auto md:mx-0 md:h-[480px] md:w-60',
+                shadow,
+                lift,
+              ]}
+            />
+          </>
+        )}
+      </div>
+    )
+  }
+</a>

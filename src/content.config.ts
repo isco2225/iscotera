@@ -1,5 +1,6 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
+import { HEX_COLOR, contrastWithWhite } from './utils/color';
 
 // İçerikler dil klasörlerinde tutulur: src/content/blog/tr/... ve /en/...
 // Entry id'si "tr/yazi-adi" biçiminde gelir; sayfalar dile göre filtreler.
@@ -53,6 +54,21 @@ const projects = defineCollection({
       logo: image().optional(),
       // Liste kartında gösterilen tanıtım görseli.
       cover: image().optional(),
+      // Ürün vitrini panelinin zemin rengi (#rrggbb): ana sayfada ve ürün
+      // listesinde ürün bu renkte bir panelde durur (ProductPanel). Ürünün
+      // kendi görsellerinden seçilir ve açık/koyu modda değişmez. Paneldeki
+      // yazılar beyaz olduğu için beyazla en az 7:1 kontrast şartı burada
+      // denetlenir; bu, %80 opak ikincil yazılara da pay bırakır. Açık bir
+      // renk derlemeyi durdurur. Boşsa nötr koyu gri kullanılır.
+      color: z
+        .string()
+        .regex(HEX_COLOR, 'color "#rrggbb" biçiminde olmalı')
+        // Biçimi bozuk renk yalnızca yukarıdaki hatayı versin, bunu değil.
+        .refine(
+          (hex) => !HEX_COLOR.test(hex) || contrastWithWhite(hex) >= 7,
+          'color beyaz yazı için fazla açık: beyazla en az 7:1 kontrast gerekir'
+        )
+        .optional(),
       // Dikey tanıtım videosu: hero'da kapağın yerine oynar (kapak poster
       // olarak kalır). src, public/ altındaki mutlak yoldur — Astro videoyu
       // işlemez, dosya olduğu gibi yayınlanır. uploadDate VideoObject şeması
