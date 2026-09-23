@@ -28,8 +28,9 @@ const posts = (
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 2);
 
-// Process steps. NOTE: the commitments here (two-week build cadence,
-// ongoing support) have to be promises the team can keep.
+// Process steps. NOTE: the commitments here (timeline and cost in writing,
+// ongoing support) have to be promises the team can keep. No fixed demo or
+// release interval is promised: the team does not work to one (2026-09-23).
 const steps = [
   {
     title: 'Discovery',
@@ -38,13 +39,13 @@ const steps = [
   },
   {
     title: 'Planning',
-    thesis: 'Timeline and cost, in writing, before a line of code.',
+    thesis: 'Timeline and cost are set in writing before development begins.',
     text: 'We break the scope into items and put a duration and a price on each. The document you approve stays our shared reference to the end.',
   },
   {
     title: 'Building',
-    thesis: 'You see progress along the way, not at the end.',
-    text: 'We show a working version every two weeks. Correcting course early always costs less than discovering a surprise at the finish.',
+    thesis: 'You see the progress for yourself.',
+    text: 'At this stage we share progress with you and build your feedback into the work. Making changes early reduces both cost and risk.',
   },
   {
     title: 'Launch and after',
@@ -56,7 +57,7 @@ const steps = [
 
 <BaseLayout
   title="İscotera — Software Solutions"
-  description="A software company building web, mobile and custom software. Timeline and cost in writing up front, and a working version every two weeks."
+  description="A software company building web, mobile and custom software. Scope, timeline and cost in writing before work begins, and progress you can follow throughout."
   lang="en"
   alternate="/"
 >
@@ -78,8 +79,8 @@ const steps = [
           We build web, mobile and custom software
         </h1>
         <p class="mt-4 max-w-xl text-lg text-ink-muted">
-          You get the timeline and the cost in writing before a line of code, and a
-          working version every two weeks.
+          We set out the scope, timeline and cost in writing before work begins,
+          and you can follow the progress closely throughout the project.
         </p>
         <div class="mt-8 flex flex-wrap gap-4">
           <a

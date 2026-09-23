@@ -46,10 +46,10 @@ değildir. Bir entegrasyon, bazen ana yazılımın kendisinden uzun sürer.
 ama ona bağlanmak takvime yazılmalıdır.
 
 **3. Karar hızı: sizin tarafınızdaki süre.** Projelerde en çok görmezden
-gelinen etken bu. İki haftada bir çalışan sürüm gösteririz; o sürüme
-bakılıp "şurası böyle olsun" denmesi bir gün sürerse proje akar, üç hafta
-sürerse durur. Takvimde kendi kararlarınız için de süre ayırın ve karar
-verecek kişiyi baştan belirleyin.
+gelinen etken bu. Geliştirme boyunca ilerlemeyi sizinle paylaşır, sizden
+onay ve geri bildirim bekleriz; "şurası böyle olsun" kararı bir gün
+sürerse proje akar, üç hafta sürerse durur. Takvimde kendi kararlarınız
+için de süre ayırın ve karar verecek kişiyi baştan belirleyin.
 
 **4. Veri ve içerik: eski kayıtların taşınması.** Excel'de biriken yılların
 verisi yeni sisteme "aktarılıverir" sanılır; oysa her tabloda kendine özgü

@@ -28,8 +28,9 @@ const posts = (
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 2);
 
-// Süreç adımları. NOT: Metindeki taahhütler (iki haftalık sürüm aralığı,
-// bakım desteği) gerçekten tutulabilecek sözler olmalı.
+// Süreç adımları. NOT: Metindeki taahhütler (yazılı süre ve maliyet, bakım
+// desteği) gerçekten tutulabilecek sözler olmalı. Belirli aralıklarla sürüm
+// gösterme sözü verilmez; böyle bir uygulama yok (2026-09-23).
 const steps = [
   {
     title: 'Keşif',
@@ -38,13 +39,13 @@ const steps = [
   },
   {
     title: 'Planlama',
-    thesis: 'Süre ve maliyet, tek satır kod yazılmadan yazılı olur.',
+    thesis: 'Süre ve maliyet, geliştirme başlamadan yazılı olarak belirlenir.',
     text: 'Kapsamı maddelere ayırır, her maddenin süresini ve fiyatını netleştiririz. Onayladığınız belge işin sonuna kadar ortak referansımız olur.',
   },
   {
     title: 'Geliştirme',
-    thesis: 'İlerlemeyi sonunda değil, yol boyunca görürsünüz.',
-    text: 'İki haftada bir çalışan sürüm gösteririz. Yönü erkenden düzeltmek, en sonda sürprizle karşılaşmaktan her zaman ucuzdur.',
+    thesis: 'İlerlemeye siz de şahit olursunuz.',
+    text: 'Bu aşamada ilerlemeyi sizinle paylaşır, geri bildirimlerinizi sürece dahil ederiz. Değişikliklerin erken yapılması hem maliyeti hem de riski azaltır.',
   },
   {
     title: 'Yayın ve sonrası',
@@ -56,7 +57,7 @@ const steps = [
 
 <BaseLayout
   title="İscotera — Yazılım Çözümleri"
-  description="Web, mobil ve özel yazılım geliştiren bir yazılım firması. Süre ve maliyet baştan yazılı olur, ilerlemeyi iki haftada bir çalışan sürümde görürsünüz."
+  description="Web, mobil ve özel yazılım geliştiren bir yazılım firması. Kapsam, süre ve maliyet baştan yazılı olarak netleşir; ilerlemeyi siz de takip edebilirsiniz."
   lang="tr"
   alternate="/en/"
 >
@@ -78,8 +79,9 @@ const steps = [
           Web, mobil ve özel yazılım geliştiriyoruz
         </h1>
         <p class="mt-4 max-w-xl text-lg text-ink-muted">
-          Süreyi ve maliyeti tek satır kod yazılmadan yazılı veririz; ilerlemeyi
-          iki haftada bir çalışan sürümde görürsünüz.
+          Kapsamı, süreyi ve maliyeti işe başlamadan önce yazılı olarak
+          netleştiriyoruz. Proje boyunca ilerlemeyi yakından takip
+          edebilirsiniz.
         </p>
         <div class="mt-8 flex flex-wrap gap-4">
           <a
@@ -113,7 +115,7 @@ const steps = [
     <h2 class="text-2xl font-bold text-ink-strong">Biz kimiz?</h2>
     <div class="mt-4 max-w-3xl space-y-4">
       <p class="text-lg text-ink-soft">
-        İscotera, işletmeler için web ve mobil yazılım geliştiriyor. Yazılımı
+        İscotera, müşterileri için web ve mobil yazılım geliştiriyor. Yazılımı
         bir amaç olarak değil, işinizi kolaylaştıran bir araç olarak görüyoruz.
       </p>
       <p class="text-ink-muted">
