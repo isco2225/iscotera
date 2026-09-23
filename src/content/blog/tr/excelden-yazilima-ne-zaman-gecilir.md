@@ -50,7 +50,7 @@ düzenleyerek yol alınabilir ve bunu söylemek bizim de işimiz.
 
 ## Dernek Asistan'ın öncesi tam olarak buydu
 
-Vefa Yolu Derneği için geliştirdiğimiz [Dernek Asistan](/urunler/dernek-asistan/)
+Dernekler için geliştirdiğimiz [Dernek Asistan](/urunler/dernek-asistan/)
 bu durumun ders kitabı gibi bir örneği. Kurban ve Ramazan döneminde kısa
 sürede yüzlerce bağış kaydı alınıyordu ve bu kayıtlar tablolarda,
 mesajlaşma uygulamalarında ve kişisel notlarda dağınık duruyordu. Fiyat

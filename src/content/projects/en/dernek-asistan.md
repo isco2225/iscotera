@@ -1,11 +1,13 @@
 ---
 title: "Dernek Asistan"
-description: "A donation tracking system we built for Vefa Yolu Derneği, a Turkish charity. Every donation in one place, recorded in seconds, with the management report one click away."
+description: "A donation tracking system we built for charities. Every donation in one place, recorded in seconds, with the management report one click away."
 type: case-study
 tagline: "A charity's every donation in one system: less effort, more control."
 status: live
 category: "Web and mobile app"
-client: "Vefa Yolu Derneği"
+# No client name on purpose: the user asked that the organisation not be
+# named anywhere in the project (2026-09-23). The copy only says the system
+# is used by charities.
 sector: "Charity"
 year: 2026
 tags: ["web", "mobile", "custom software", "charity"]
@@ -17,10 +19,10 @@ color: "#0f3a40"
 # ekran görüntüsü yok (kullanıcının kararı, 2026-09-21). Görseldeki rakamlar
 # örnek veri, o yüzden altında "veriler temsilidir" notu çıkar.
 screenshotsIllustrative: true
-# No store links: the app is open only to the charity's own staff, not a
-# public product. For the same reason there is deliberately no app
-# (SoftwareApplication) block; reporting a price and an install URL for an
-# app nobody can download would be wrong.
+# No store links: the app is open only to the staff of the charities that
+# use it, not a public product. For the same reason there is deliberately
+# no app (SoftwareApplication) block; reporting a price and an install URL
+# for an app nobody can download would be wrong.
 #
 # results is deliberately empty: we have no verified usage figures. If real
 # numbers arrive (monthly record counts etc.) they go here, three at most.
@@ -46,9 +48,9 @@ order: 2
 draft: false
 ---
 
-**Dernek Asistan** is the system we built so that Vefa Yolu Derneği, a Turkish
-charity, can run all of its donation work from one place. Staff in the office
-and volunteers in the field use the same screen.
+**Dernek Asistan** is the system we built so that charities can run all of
+their donation work from one place. Staff in the office and volunteers in the
+field use the same screen.
 
 ## The problem
 
@@ -65,9 +67,9 @@ same difficulties turn up every time:
 
 ## Today
 
-Dernek Asistan is in use at Vefa Yolu Derneği. Donations sit in one system,
-amounts and reports are ready, and every record has a trail. The charity spends
-its time on the aid itself rather than on merging spreadsheets.
+Dernek Asistan is in use at charities today. Donations sit in one system,
+amounts and reports are ready, and every record has a trail. Charities can put
+the time they used to spend on records and reporting into the aid itself.
 
 ## A system built for your organisation
 

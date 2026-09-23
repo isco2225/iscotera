@@ -1,11 +1,13 @@
 ---
 title: "Dernek Asistan"
-description: "Vefa Yolu Derneği için geliştirdiğimiz bağış takip sistemi. Bütün bağışlar tek yerde, kayıt saniyeler sürüyor, yönetim raporu tek tıkla hazır."
+description: "Dernekler için geliştirdiğimiz bağış takip sistemi. Bütün bağışlar tek yerde, kayıt saniyeler sürüyor, yönetim raporu tek tıkla hazır."
 type: case-study
 tagline: "Derneğin bütün bağışları tek sistemde: daha az uğraş, daha çok kontrol."
 status: live
 category: "Web ve mobil uygulama"
-client: "Vefa Yolu Derneği"
+# Müşteri adı bilerek yok: kullanıcı kurumun adının projede geçmesini
+# istemedi (2026-09-23). Metin yalnızca sistemin dernekler tarafından
+# kullanıldığını söyler.
 sector: "Yardım derneği"
 year: 2026
 tags: ["web", "mobil", "özel yazılım", "dernek"]
@@ -17,10 +19,10 @@ color: "#0f3a40"
 # ekran görüntüsü yok (kullanıcının kararı, 2026-09-21). Görseldeki rakamlar
 # örnek veri, o yüzden altında "veriler temsilidir" notu çıkar.
 screenshotsIllustrative: true
-# Mağaza bağlantısı yok: uygulama derneğin kendi personeline açık, herkese
-# sunulan bir ürün değil. Aynı sebeple app (SoftwareApplication) şeması da
-# bilerek yok; indirilemeyen bir uygulama için fiyat ve kurulum adresi
-# bildirmek doğru olmazdı.
+# Mağaza bağlantısı yok: uygulama yalnızca onu kullanan derneklerin
+# personeline açık, herkese sunulan bir ürün değil. Aynı sebeple app
+# (SoftwareApplication) şeması da bilerek yok; indirilemeyen bir uygulama
+# için fiyat ve kurulum adresi bildirmek doğru olmazdı.
 #
 # results bilerek boş: elimizde doğrulanmış kullanım verisi yok. Rakam
 # (aylık kayıt sayısı vb.) gelirse buraya en fazla üç madde olarak girer.
@@ -46,9 +48,9 @@ order: 2
 draft: false
 ---
 
-**Dernek Asistan**, Vefa Yolu Derneği'nin bütün bağış işlerini tek yerden
-yönetmesi için geliştirdiğimiz sistem. Ofisteki çalışan da sahadaki gönüllü
-de aynı ekrana giriyor.
+**Dernek Asistan**, derneklerin bütün bağış işlerini tek yerden yönetmesi
+için geliştirdiğimiz sistem. Ofisteki çalışan da sahadaki gönüllü de aynı
+ekrana giriyor.
 
 ## Sorun neydi
 
@@ -62,9 +64,9 @@ tablolara, mesaj gruplarına ve deftere dağılınca hep aynı sıkıntılar ç�
 
 ## Bugün
 
-Dernek Asistan, Vefa Yolu Derneği'nde kullanımda. Bağışlar tek sistemde,
-tutarlar ve raporlar hazır, her kaydın izi belli. Dernek zamanını tablo
-birleştirmeye değil yardımın kendisine ayırıyor.
+Dernek Asistan bugün dernekler tarafından kullanılıyor. Bağışlar tek
+sistemde, tutarlar ve raporlar hazır, her kaydın izi belli. Dernekler, kayıt
+ve raporlamaya harcadıkları zamanı yardım faaliyetlerine ayırabiliyor.
 
 ## Derneğinize özel bir sistem
 
