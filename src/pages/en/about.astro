@@ -1,21 +1,234 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PagePlaceholder from '../../components/PagePlaceholder.astro';
+import { services } from '../../data/services';
+import { localeTag, organizationId } from '../../utils/schema';
+import planningImg from '../../assets/about/planning.jpg';
+
+// İlkeler, ana sayfadaki süreç adımlarının tekrarı değil: orası bir projede
+// SIRAYLA NE OLDUĞUNU anlatıyor, burası NEDEN böyle çalıştığımızı. Türkçe
+// sayfadaki liste ile aynı sırada durmalı (statik sayfaların metni dil başına
+// yazılıyor, bu yüzden değişiklik iki dosyada birden yapılır).
+const principles = [
+  {
+    title: 'We first assess whether software is needed',
+    text: 'Not every need calls for new software. If an existing product or an improvement to your current system is sufficient, we say so clearly. Our priority is a long-term business relationship built on trust.',
+  },
+  {
+    title: 'We take responsibility for uncertainty',
+    text: 'Providing a clear estimate of timeline and cost is our responsibility; we do not leave the uncertainty with you through vague answers. The written document approved at the start remains the shared reference for both parties until the project is complete.',
+  },
+  {
+    title: 'We choose technology to fit the need',
+    text: 'We do not apply the same solution to every project. The scale of the project, your budget and who will operate the system in future determine the choice; current trends alone are not a justification.',
+  },
+  {
+    title: 'You work directly with the team building your project',
+    text: 'There is no intermediary layer between you and the development team. You put technical questions directly to the person who will answer them, so requests are understood correctly and misunderstandings are resolved early.',
+  },
+  {
+    title: 'We do not create dependency',
+    text: 'The source code, data and accounts belong to you; store and server accounts are opened in your name. Should you decide to continue with another team, you retain a working system and all access credentials.',
+  },
+  {
+    title: 'We continue to support you after handover',
+    text: 'Launch marks the beginning of real use for the product. The same team continues to provide support for needs that arise in real use, for maintenance and for new development.',
+  },
+];
+
+// Sayfaya özel şema: AboutPage düğümü, BaseLayout'un her sayfada bastığı
+// Organization'ı @id ile gösterir — firma bilgisi ikinci kez yazılmaz
+// (gerekçe src/utils/schema.ts'te).
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const aboutSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  name: 'About Us',
+  url: canonical.toString(),
+  inLanguage: localeTag('en'),
+  mainEntity: { '@id': organizationId(Astro.site) },
+};
 ---
 
 <BaseLayout
   title="About"
-  description="İscotera's story, vision and way of working."
+  description="İscotera's working principles: scope, timeline and cost in writing, accounts in the client's name and support after handover. We also build our own products."
   lang="en"
   alternate="/hakkimizda/"
   back={{ href: '/en/', label: 'Home' }}
 >
-  <section class="mx-auto max-w-3xl px-4 py-16">
-    <h1 class="text-3xl font-bold text-ink-strong">About Us</h1>
-    <div class="mt-8 space-y-6">
-      <PagePlaceholder note="Company story: how İscotera started, what it does, who it serves" />
-      <PagePlaceholder note="Vision and way of working" />
-      <PagePlaceholder note="Team / founder introduction (optional)" />
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(aboutSchema)} />
+  </Fragment>
+
+  {/* 1 — Hero. İç sayfalar yazıyla açılır (fotoğraflı hero ana sayfaya ait);
+      üstteki kırmızı etiket, hizmet sayfalarındaki kırmızı sıra numarasının
+      karşılığı. */}
+  <section class="mx-auto max-w-5xl px-4 py-12 sm:py-16">
+    <div class="max-w-3xl">
+      <p class="text-xs font-bold tracking-[0.14em] text-brand uppercase">
+        About us
+      </p>
+      <h1 class="mt-3 text-3xl font-bold text-ink-strong sm:text-4xl">
+        We develop software that simplifies your business processes
+      </h1>
+      <p class="mt-5 text-lg text-ink-muted">
+        İscotera is a software company developing web applications, mobile
+        apps and custom software for businesses and institutions. Alongside
+        client projects, we develop and publish products of our own.
+      </p>
+      <p class="mt-4 text-lg text-ink-muted">
+        The two complement each other: the experience we gain on client
+        projects informs our own products, and the experience of running our
+        own products informs our client work.
+      </p>
+      <div class="mt-8 flex flex-wrap items-center gap-4">
+        <a
+          href="/en/contact/"
+          class="inline-block rounded-lg bg-action px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-action-dark"
+        >
+          Get in touch
+        </a>
+        <a
+          href="/en/services/"
+          class="inline-block rounded-lg border border-line-strong px-6 py-3 text-sm font-semibold text-ink-soft transition-colors hover:border-ink-subtle"
+        >
+          Our services
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {/* 2 — Öngörülebilirlik: hizmet listesindeki şeritle aynı düzen (yazı +
+      gerçek fotoğraf). Tek seferlik olduğu için bileşene çıkarılmadı. */}
+  <section class="mx-auto max-w-5xl px-4 pb-14">
+    <div class="grid items-center gap-8 md:grid-cols-2 md:gap-14">
+      <div>
+        <h2 class="text-2xl font-bold text-ink-strong">
+          Predictable projects
+        </h2>
+        <p class="mt-4 leading-relaxed text-ink-muted">
+          Many of the problems in software projects stem from how the process
+          is managed: timelines slip, costs exceed the original estimate, and
+          once the project is complete, knowledge of how the system works
+          remains with the developer alone.
+        </p>
+        <p class="mt-4 leading-relaxed text-ink-muted">
+          To minimise these risks, we base every project on a written framework
+          from the outset. Scope, timeline and cost are documented before
+          development begins, and you can follow the progress closely
+          throughout the project. Store and server accounts are opened in your
+          name, and your data always remains yours. As a result, the process
+          stays predictable from start to finish.
+        </p>
+      </div>
+      <Image
+        src={planningImg}
+        alt="Hands working together over printed documents on a desk, pens in hand"
+        width={980}
+        class="h-64 w-full rounded-xl border border-line object-cover sm:h-72"
+      />
+    </div>
+  </section>
+
+  {/* 3 — İlkeler: soluk zeminli tam genişlik bant + kırmızı numaralar; hizmet
+      detayındaki "Yaklaşımımız" bölümüyle aynı dil. */}
+  <section class="border-y border-line bg-surface-muted">
+    <div class="mx-auto max-w-5xl px-4 py-14">
+      <h2 class="text-2xl font-bold text-ink-strong">Our working principles</h2>
+      <p class="mt-3 max-w-2xl text-ink-muted">
+        The following principles are commitments we put in writing at the
+        proposal stage.
+      </p>
+      <div class="mt-8 grid gap-8 md:grid-cols-3 md:gap-x-10 md:gap-y-10">
+        {
+          principles.map((item, i) => (
+            <div>
+              <p class="text-sm font-extrabold text-brand">{i + 1}</p>
+              <h3 class="mt-1.5 font-semibold text-ink-strong">{item.title}</h3>
+              <p class="mt-1.5 text-sm leading-relaxed text-ink-muted">
+                {item.text}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  {/* 4 — Kendi ürünlerimiz: genç bir firmanın sayı vermeden gösterebileceği en
+      somut kanıt. Sayfa sayı/yıl/proje adedi iddia etmez (bilinçli karar).
+      İngilizce blogda yazı olmadığı için Türkçe sayfadaki blog bağlantısı
+      burada yok — boş bir listeye göndermek kanıt olmaz. */}
+  <section class="mx-auto max-w-5xl px-4 pt-14 pb-14">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl font-bold text-ink-strong">
+        Our own products
+      </h2>
+      <p class="mt-4 leading-relaxed text-ink-muted">
+        Alongside the projects we develop to order, we build and operate
+        products of our own. They give us direct experience of store review
+        processes, user feedback and the maintenance of a live application,
+        and our timeline and maintenance estimates draw on that experience.
+      </p>
+      <p class="mt-4 leading-relaxed text-ink-muted">
+        Our work can be examined through concrete examples: our products and
+        case studies are on the Products page, and this site itself was built
+        on the same infrastructure we set up for our clients.
+      </p>
+      <a
+        href="/en/products/"
+        class="mt-5 inline-block text-sm font-semibold text-action-ink hover:underline"
+      >
+        Explore our products →
+      </a>
+    </div>
+  </section>
+
+  {/* 5 — Hizmetler: ana sayfadaki kart dizisinin aynısı, iç bağlantı için. */}
+  <section class="mx-auto max-w-5xl px-4 pb-16">
+    <div class="flex items-baseline justify-between gap-4">
+      <h2 class="text-2xl font-bold text-ink-strong">Our services</h2>
+      <a
+        href="/en/services/"
+        class="shrink-0 text-sm font-semibold text-action-ink hover:underline"
+      >
+        All services
+      </a>
+    </div>
+    <div class="mt-6 grid gap-6 sm:grid-cols-2">
+      {
+        services.map((service) => (
+          <a
+            href={`/en/services/${service.en.slug}/`}
+            class="rounded-lg border border-line p-6 transition hover:border-brand/40 hover:shadow-md"
+          >
+            <h3 class="font-semibold text-ink-strong">{service.en.title}</h3>
+            <p class="mt-2 text-sm text-ink-muted">{service.en.summary}</p>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  {/* 6 — Kapanış çağrısı (site genelindeki kutunun aynısı) */}
+  <section class="mx-auto max-w-5xl px-4 pb-20">
+    <div
+      class="rounded-2xl border border-line bg-surface-muted p-8 text-center sm:p-12"
+    >
+      <h2 class="text-2xl font-bold text-ink-strong">
+        Let's discuss your project
+      </h2>
+      <p class="mx-auto mt-3 max-w-xl text-ink-muted">
+        Share your requirements with us and we will provide an assessment with
+        a clear timeline and budget.
+      </p>
+      <a
+        href="/en/contact/"
+        class="mt-6 inline-block rounded-lg bg-action px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-action-dark"
+      >
+        Get in touch
+      </a>
     </div>
   </section>
 </BaseLayout>
