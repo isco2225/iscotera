@@ -72,7 +72,7 @@ sonrası kayıtlar tarafında.
    şeridi `alt=""` ile çıkıyor. Blog listesindeki sekiz kapak da boş alt
    taşıyor (başlıkla aynı bağlantıda oldukları için kabul edilebilir, ama
    görsel aramada kaybettiriyor). `content.config.ts`'e `coverAlt` eklenip
-   `ProductPage`, `ProductStrip` ve blog listesi onu kullanmalı.
+   `ProductPage`, `ProductPanel` ve blog listesi onu kullanmalı.
 3. **RSS beslemesi yok.** Sekiz yazı var; `@astrojs/rss` ile kısa bir iş,
    `<link rel="alternate" type="application/rss+xml">` ile birlikte.
 4. **Organization şeması zayıf.** Adres, `areaServed`, `description` ve
@@ -126,7 +126,7 @@ Teknik puan tavanda; bundan sonrasını sıralamada şunlar belirler:
 - **Uzmanlık sinyalleri (E-E-A-T).** Gerçek bir Hakkımızda sayfası, kurucu
   ve ekip tanıtımı, blogda "İscotera Ekibi" yerine isimli yazar satırı
   (BlogPosting `author` da o zaman `Person` olur), alan adı e-postası.
-- **Geri bağlantılar.** Vefa Yolu Derneği'nin sitesinden, ibadetrehberim.com'dan
+- **Geri bağlantılar.** Müşteri sitelerinden, ibadetrehberim.com'dan
   ve mağaza geliştirici sayfasından iscotera.com'a bağlantı. LinkedIn şirket
   sayfası ve GitHub profili hem bağlantı hem `sameAs` girdisi olur.
 - **İngilizce taraf.** Yurt dışı müşteri hedefi yoksa yatırım yapmaya değmez.
