@@ -18,10 +18,6 @@ video:
 stores:
   googlePlay: "https://play.google.com/store/apps/details?id=com.omran.huzur_islamda"
   web: "https://ibadetrehberim.com/"
-  # App Store bağlantısı elimize geçince appStore alanı doldurulup bu iki
-  # satır silinecek; rozet o an tıklanabilir hâle gelir.
-  pending:
-    - appStore
 features:
   - title: "Prayer times for where you are"
     text: "Times are calculated for your location using the method of the Turkish Directorate of Religious Affairs. A notification arrives the moment a prayer time begins, even when the phone is offline. You need neither a clock nor a connection."
@@ -53,7 +49,7 @@ app:
   price: "0"
   priceCurrency: "TRY"
 order: 1
-draft: true
+draft: false
 ---
 
 **İbadet Rehberim** is a mobile app that makes it easier to keep up with daily

@@ -131,11 +131,11 @@ yaptık" demek. Bu yüzden tüketiciye dönük bölümler (SSS, mağaza yorumlar
 dört özelliğin tamamı) bilerek burada değil; kalanlar ölçülebilir sonuç,
 anlatı ve iki teknik özellik.
 
-- [ ] **App Store bağlantısını ekle.** `stores.appStore` alanına adresi yaz ve
-      `stores.pending` listesini sil; rozet o an tıklanabilir hâle gelir.
-      Resmî rozet görselleri için `public/badges/README.md`. Derleme bu alan
-      dolu kaldığı sürece uyarı basıyor.
-- [ ] Bu bitince iki dilde de `draft: true` satırını `false` yap.
+- [x] Yayına alındı (2026-09-25), App Store bağlantısı olmadan: uygulama
+      henüz App Store'da değil, sayfada Google Play ve web bağlantıları var.
+- [ ] **App Store bağlantısını ekle.** Uygulama App Store'a çıkınca
+      `stores.appStore` alanına adresi yaz; rozet o an görünür hâle gelir.
+      Resmî rozet görselleri için `public/badges/README.md`.
 - [ ] İsteğe bağlı: Google Play'deki gerçek puan gelince `rating` alanı geri
       eklenebilir (uydurma puan yerine şu an yalnızca indirme sayısı duruyor).
 
