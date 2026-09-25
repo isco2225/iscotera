@@ -71,7 +71,7 @@ export const services: Service[] = [
       approach: [
         {
           title: 'Hız sonradan eklenmez',
-          text: "Sayfalarınız statik üretilir: sunucu beklemez, ziyaretçi beklemez. Google hızı sıralama kriteri olarak kullandığı için bu doğrudan görünürlük demektir.",
+          text: 'Tanıtım sitelerinde sayfalar önceden üretilir ve sunucu beklemeden açılır; web uygulamalarında sayfa hızı tasarım aşamasından itibaren gözetilir. Google hızı sıralama ölçütü olarak kullandığı için bu, doğrudan görünürlüğe yansır.',
         },
         {
           title: 'SEO kurulumla gelir',
@@ -128,7 +128,7 @@ export const services: Service[] = [
       approach: [
         {
           title: 'Speed is not an add-on',
-          text: 'Your pages are statically generated: no server round-trip, no waiting. Google uses speed as a ranking signal, so this is visibility, not vanity.',
+          text: 'Corporate sites are generated ahead of time and open without waiting on a server; in web applications, page speed is considered from the design stage onwards. Google uses speed as a ranking signal, so it translates directly into visibility.',
         },
         {
           title: 'SEO ships with the site',
@@ -170,7 +170,7 @@ export const services: Service[] = [
       imageAlt: 'Elindeki akıllı telefonu kullanan bir kişi',
       intro: [
         'iOS ve Android için tek kod tabanından uygulama geliştiriyoruz: bir özellik iki platforma aynı anda gelir, bakım maliyeti ikiye katlanmaz.',
-        'Kendi uygulamamızı geliştirip mağazalarda yayınladığımız için başvuru, inceleme ve yayın sonrası sürecin tamamını kendi tecrübemizden biliyoruz.',
+        "Kendi uygulamamızı geliştirip Google Play'de yayınladığımız için mağaza başvurusu, inceleme ve yayın sonrası süreç kendi deneyimimize dayanarak yönetilir.",
       ],
       scope: [
         {
@@ -211,7 +211,7 @@ export const services: Service[] = [
         },
         {
           q: 'Uygulamam ne kadara mal olur?',
-          a: 'Kapsama göre değişir; bu yüzden önce kapsamı maddelere ayırır, her maddenin süresini ve fiyatını yazılı veririz. Tek satır kod yazılmadan toplam maliyeti bilirsiniz.',
+          a: 'Kapsama göre değişir; bu yüzden önce kapsamı maddelere ayırır, her maddenin süresi ve bedeli yazılı olarak belirlenir. Toplam maliyet, geliştirme başlamadan bellidir.',
         },
         {
           q: 'Yayından sonra güncellemeleri kim yapar?',
@@ -227,7 +227,7 @@ export const services: Service[] = [
       imageAlt: 'A person using the smartphone in their hands',
       intro: [
         "We build iOS and Android apps from a single codebase: a new feature reaches both platforms at once, and maintenance doesn't cost twice.",
-        'We have built and shipped our own app to both stores, so we know the submission, review and post-launch process from first-hand experience.',
+        'We built our own app and published it on Google Play, so the store submission, review and post-launch process is run from first-hand experience.',
       ],
       scope: [
         {
@@ -268,7 +268,7 @@ export const services: Service[] = [
         },
         {
           q: 'How much will my app cost?',
-          a: 'It depends on scope — which is why we break the scope into items and put a duration and price on each, in writing. You know the total before a line of code is written.',
+          a: 'It depends on scope — which is why we break the scope into items and put a duration and price on each, in writing. The total cost is known before development begins.',
         },
         {
           q: 'Who handles updates after launch?',
@@ -307,11 +307,11 @@ export const services: Service[] = [
       approach: [
         {
           title: 'Önce hazır çözüm ararız',
-          text: 'Piyasada işinizi gören bir paket varsa onu öneririz. Özel yazılımı ancak gerçekten gerektiğinde yazarız; bu dürüstlük iki tarafın da zamanını korur.',
+          text: 'Piyasada işinizi gören bir paket varsa onu öneririz. Özel yazılım yalnızca gerçek bir ihtiyaç olduğunda geliştirilir; bu yaklaşım iki tarafın da zamanını ve bütçesini korur.',
         },
         {
           title: 'En ağrılı süreçten başlarız',
-          text: 'Her şeyi kapsayan dev bir proje yerine, en çok vakit yakan işi önce otomatikleştiririz. Kazancı ilk aydan görürsünüz; sonraki adıma birlikte karar veririz.',
+          text: 'Her şeyi kapsayan dev bir proje yerine, en çok vakit yakan işi önce otomatikleştiririz. İlk adımın sonuçları değerlendirildikten sonra sonraki adıma birlikte karar veririz.',
         },
         {
           title: 'Veriniz rehin kalmaz',
@@ -321,7 +321,7 @@ export const services: Service[] = [
       faq: [
         {
           q: 'Kullandığımız hazır programı bırakmamız mı gerekir?',
-          a: 'Hayır — çoğu projede tam tersi: hazır programınız kalır, biz eksik parçayı yazar ve ona bağlarız. Entegrasyon, işimizin en büyük kısmıdır.',
+          a: 'Hayır — çoğu projede tam tersi: hazır programınız kalır, biz eksik parçayı yazar ve ona bağlarız.',
         },
         {
           q: "Süreçlerimizi Excel'le yönetiyoruz, sorun mu?",
@@ -329,7 +329,7 @@ export const services: Service[] = [
         },
         {
           q: 'Fiyat neye göre belirlenir?',
-          a: 'Kapsama göre. İhtiyacı maddelere ayırır, her maddenin süresini ve fiyatını yazılı veririz; onayladığınız belge projenin sonuna kadar ortak referansımızdır.',
+          a: 'Kapsama göre. İhtiyaç maddelere ayrılır, her maddenin süresi ve bedeli yazılı olarak belirlenir; onayladığınız belge projenin sonuna kadar ortak referansımızdır.',
         },
         {
           q: 'Sistem kurulduktan sonra bakımını kim yapar?',
@@ -364,11 +364,11 @@ export const services: Service[] = [
       approach: [
         {
           title: 'We look for an existing product first',
-          text: "If a package on the market does the job, we recommend it. We only build custom software when it's genuinely needed — that honesty saves everyone's time.",
+          text: "If a package on the market does the job, we recommend it. Custom software is built only when there is a genuine need; this approach protects both sides' time and budget.",
         },
         {
           title: 'We start with the biggest pain',
-          text: 'Instead of one giant project, we automate the task that wastes the most time first. You see the gain in the first month, and we decide the next step together.',
+          text: 'Instead of one giant project, we automate the task that wastes the most time first. Once the results of that first step have been reviewed, we decide the next one together.',
         },
         {
           title: 'Your data is never hostage',
@@ -378,7 +378,7 @@ export const services: Service[] = [
       faq: [
         {
           q: 'Do we have to abandon the software we already use?',
-          a: 'No — in most projects the opposite: your existing software stays, and we build the missing piece and connect it. Integration is the biggest part of what we do.',
+          a: 'No — in most projects the opposite: your existing software stays, and we build the missing piece and connect it.',
         },
         {
           q: 'We run everything on Excel — is that a problem?',

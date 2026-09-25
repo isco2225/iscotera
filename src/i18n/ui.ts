@@ -46,7 +46,7 @@ export const ui = {
     'services.detail': 'Detaylı incele',
     'services.ctaTitle': 'Hangisinin size uyduğundan emin değil misiniz?',
     'services.ctaText':
-      'İhtiyacınızı anlatın; size dürüst bir değerlendirme çıkaralım.',
+      'İhtiyacınızı iletin; size uygun hizmeti ve kapsamı birlikte değerlendirelim.',
 
     // Hizmet detay sayfasının bölüm başlıkları (ServicePage.astro)
     'service.scope': 'Neler yapıyoruz?',
@@ -55,7 +55,7 @@ export const ui = {
     'service.caseTitle': 'Bu hizmetle yaptığımız iş',
     'service.ctaTitle': 'Projenizi konuşalım',
     'service.ctaText':
-      'İhtiyacınızı anlatın; size dürüst bir değerlendirme, net bir süre ve bütçe çıkaralım.',
+      'İhtiyacınızı iletin; değerlendirmemizi öngörülen süre ve bütçeyle birlikte yazılı olarak paylaşalım.',
     'service.ctaButton': 'Bize ulaşın',
     'service.ctaSecondary': 'Ürünlerimize bakın',
     'meta.siteName': 'İscotera',
@@ -84,7 +84,7 @@ export const ui = {
     'product.ctaStoreText': 'Ücretsiz indirin, kendiniz görün.',
     'product.ctaContactTitle': 'Benzer bir ürün mü düşünüyorsunuz?',
     'product.ctaContactText':
-      'Aklınızdaki fikri birlikte konuşalım; size dürüst bir yol haritası ve net bir bütçe çıkaralım.',
+      'Aklınızdaki fikri birlikte değerlendirelim; yol haritasını ve bütçeyi yazılı olarak paylaşalım.',
     'product.ctaContactLink': 'Bize ulaşın',
   },
   en: {
@@ -105,7 +105,7 @@ export const ui = {
     'services.detail': 'See details',
     'services.ctaTitle': 'Not sure which one fits?',
     'services.ctaText':
-      "Tell us what you need and we'll give you an honest assessment.",
+      "Tell us what you need and we'll assess together which service and scope fit.",
 
     'service.scope': 'What we do',
     'service.approach': 'How we approach it',
@@ -113,7 +113,7 @@ export const ui = {
     'service.caseTitle': 'Work we built with this service',
     'service.ctaTitle': "Let's talk about your project",
     'service.ctaText':
-      "Tell us what you need and we'll give you an honest assessment with a clear timeline and budget.",
+      "Tell us what you need and we'll share our assessment in writing, with an estimated timeline and budget.",
     'service.ctaButton': 'Get in touch',
     'service.ctaSecondary': 'See our products',
     'meta.siteName': 'İscotera',
@@ -139,7 +139,7 @@ export const ui = {
     'product.ctaStoreText': 'Download it for free and see for yourself.',
     'product.ctaContactTitle': 'Thinking about a product like this?',
     'product.ctaContactText':
-      "Tell us what you have in mind and we'll map out an honest plan and a clear budget.",
+      "Tell us what you have in mind; we'll assess it together and share the roadmap and budget in writing.",
     'product.ctaContactLink': 'Get in touch',
   },
 } as const;
