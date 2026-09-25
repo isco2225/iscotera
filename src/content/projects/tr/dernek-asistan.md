@@ -4,7 +4,7 @@ description: "Dernekler için geliştirdiğimiz bağış takip sistemi. Bütün 
 type: case-study
 tagline: "Derneğin bütün bağışları tek sistemde: daha az uğraş, daha çok kontrol."
 status: live
-category: "Web ve mobil uygulama"
+category: "Web uygulaması"
 # Müşteri adı bilerek yok: kullanıcı kurumun adının projede geçmesini
 # istemedi (2026-09-23). Metin yalnızca sistemin dernekler tarafından
 # kullanıldığını söyler.
