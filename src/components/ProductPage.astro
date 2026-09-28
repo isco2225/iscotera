@@ -23,6 +23,7 @@ import Faq from './Faq.astro';
 import SocialLinks from './SocialLinks.astro';
 import {
   isLandscape,
+  isScreenshot,
   isPlaceholder,
   platformLabels,
   productImageOptions,
@@ -225,11 +226,14 @@ const faqSchema =
   <section class="mx-auto max-w-5xl px-4 py-12 sm:py-16">
     {/* Telefon ekranı metnin yanında dar bir sütunda durur. Yatay bir
         masaüstü görüntüsü yarım sütuna sığdırılınca okunmaz hâle geliyordu
-        (2026-09-01); o yüzden metnin altına, tam genişlikte iner. */}
+        (2026-09-01); o yüzden metnin altına, tam genişlikte iner. Yatay bir
+        fotoğrafta okunacak arayüz yok; o metnin yanında, sütun genişliğinde
+        kalır — tam genişlikte sayfayı kaplıyordu (kullanıcının kararı,
+        2026-09-28). */}
     <div
       class:list={[
         'grid items-center gap-10',
-        !(cover && isLandscape(cover)) && 'md:grid-cols-2',
+        !(cover && isLandscape(cover) && isScreenshot(cover)) && 'md:grid-cols-2',
       ]}
     >
       <div>

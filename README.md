@@ -139,6 +139,17 @@ anlatı ve iki teknik özellik.
 - [ ] İsteğe bağlı: Google Play'deki gerçek puan gelince `rating` alanı geri
       eklenebilir (uydurma puan yerine şu an yalnızca indirme sayısı duruyor).
 
+### QR Menü ürün sayfası
+
+Logo webmenu.info'daki 97 px PNG'den vektöre çizildi, kapak Pexels'ten bir
+kafe masası fotoğrafı (kaynaklar `src/content/projects/_images/README.md`).
+
+- [ ] İsteğe bağlı: yayındaki bir menünün telefon ekran görüntüleri (dikey,
+      DPR 2, müşteri adı görünmeyen) `features[].image` olarak eklenebilir;
+      kontrol paneli ekranı eklenecekse yatay ve DPR 2.
+- [ ] İsteğe bağlı: webmenu.info'daki müşteri yorumları gerçek ve onaylıysa
+      `testimonials` alanına girer; doğrulanmamış yorum şemaya bildirilmez.
+
 ### Site geneli
 
 - [x] Logo + favicon (İ monogramı: siyah zemin, beyaz gövde, kırmızı nokta)

@@ -47,9 +47,22 @@ export function isLandscape(image: ImageMetadata): boolean {
 }
 
 /**
- * <Image> ve getImage için ortak seçenekler. Yatay arayüz görüntülerinde
+ * Ekran görüntüsü mü, fotoğraf mı? Ekran görüntüleri PNG olarak kaydedilir
+ * (ince arayüz yazıları JPEG'de bozulur), fotoğraflar JPEG gelir; dosya
+ * biçimi bu ayrımı taşıyor. Karar iki yerde kullanılıyor: sıkıştırma
+ * kalitesi (aşağıda) ve yatay kapağın hero'daki yeri (ProductPage) —
+ * ikisi de "okunacak arayüz var mı" sorusuna bağlı.
+ */
+export function isScreenshot(image: ImageMetadata): boolean {
+  return image.format === 'png';
+}
+
+/**
+ * <Image> ve getImage için ortak seçenekler. Yatay ekran görüntülerinde
  * sıkıştırma en yükseğe çekilir: varsayılan WebP kalitesi fotoğrafta fark
- * edilmezken ince arayüz yazılarını yayıyor. Sayfadaki <img> ile şemadaki
+ * edilmezken ince arayüz yazılarını yayıyor. Yatay bir fotoğraf (ör. QR
+ * Menü kapağı) ise varsayılan kalitede kalır; 'max' aynı kareyi 700 KB'lık
+ * bir WebP'ye çeviriyordu (2026-09-28). Sayfadaki <img> ile şemadaki
  * screenshot adresi aynı dosyayı göstersin diye her çağrı bunu kullanır;
  * seçenekler ayrışırsa Astro ikinci bir dosya üretir.
  */
@@ -57,9 +70,10 @@ export function productImageOptions(image: ImageMetadata): {
   width: number;
   quality?: 'max';
 } {
-  return isLandscape(image)
+  if (!isLandscape(image)) return { width: PRODUCT_IMAGE_WIDTH };
+  return isScreenshot(image)
     ? { width: PRODUCT_WIDE_IMAGE_WIDTH, quality: 'max' }
-    : { width: PRODUCT_IMAGE_WIDTH };
+    : { width: PRODUCT_WIDE_IMAGE_WIDTH };
 }
 
 const OS_LABELS: Record<string, string> = {
