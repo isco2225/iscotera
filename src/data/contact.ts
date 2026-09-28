@@ -2,7 +2,7 @@
 // Organization JSON-LD buradan beslenir.
 
 export const contact = {
-  email: 'omran.haj202@gmail.com',
+  email: 'iletisim@iscotera.com',
   phoneDisplay: '0537 977 73 49',
   phoneE164: '+905379777349',
   whatsappUrl: 'https://wa.me/905379777349',
