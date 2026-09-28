@@ -149,7 +149,8 @@ Teknik puan tavanda; bundan sonrasını sıralamada şunlar belirler:
 - [ ] Organization şemasını zenginleştir (adres, `sameAs`, açıklama)
 - [ ] Meta açıklamaları düzelt (yukarıdaki tablo)
 - [ ] 404: `noindex`, canonical yok
-- [ ] Favicon PNG yedekleri ve `apple-touch-icon`
+- [x] Favicon PNG yedekleri ve `apple-touch-icon` (2026-09-28: `favicon.ico`
+      16/32/48, `favicon-96x96.png`, `apple-touch-icon.png`; `npm run icons`)
 - [ ] Sitemap: `lastmod` ve farklı slug'lı çiftler için hreflang
 - [ ] Ürün, ekip ve hero görsellerine `widths`/`sizes`
 - [ ] Hakkımızda sayfasını yaz (o zamana kadar `noindex`)

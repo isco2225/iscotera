@@ -139,7 +139,14 @@ const siteSchema = {
       })();
     </script>
 
+    {/* Google Arama SVG favicon okumaz (ICO/PNG ister) ve bulamayınca gri bir
+        yer tutucu gösterir; ICO ve PNG o yüzden var. Tarayıcılar SVG'yi seçer,
+        iOS ana ekran simgesi apple-touch-icon'u. Üçü de `npm run icons` ile
+        brand/logo.svg'den üretilir. */}
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <meta name="generator" content={Astro.generator} />
 
     <title>{fullTitle}</title>
