@@ -15,11 +15,29 @@
 // Yatay kapak (masaüstü ekranı) sağ kenardan taşar. Görseller
 // productImageOptions ile üretilir; ürün sayfası aynı dosyaları kullandığı
 // için tarayıcı ikinci bir kopya indirmez.
+//
+// Dar ekran (md altı): panel bir telefon ekranını dolduruyordu (2026-09-28,
+// kullanıcının şikâyeti). Artık yazı ölçüleri bir kademe küçük ve görsel
+// ayrı bir bant yerine son satırı butonla paylaşır: telefon, buton satırının
+// sağından panelin alt kenarından taşarak "göz atar". Yatay kapak ise butonun
+// altında kısa bir bant olarak sağ-alt köşeden taşar (yatay bir görselin
+// köşede yeri yoktur). Ekran görüntüsü üstten kırpılır ki başlık okunsun,
+// fotoğraf ortadan ki konu (ör. QR kartı) görünsün.
+//
+// Bunun için yazı sütunu dar ekranda `contents`: çocukları doğrudan panelin
+// iki sütunlu ızgarasına girer; yalnızca sonuç+buton bloğu ilk sütunda kalır,
+// telefon ikinci sütunda aynı satıra oturur. md'den itibaren yazı sütunu
+// eskisi gibi tek bir dikey flex sütunudur ve panel iki sütunlu ızgaradır.
 
 import type { CollectionEntry } from 'astro:content';
 import { Image } from 'astro:assets';
 import Rating from './Rating.astro';
-import { isLandscape, platformLabels, productImageOptions } from '../utils/product';
+import {
+  isLandscape,
+  isScreenshot,
+  platformLabels,
+  productImageOptions,
+} from '../utils/product';
 import { useTranslations, type Lang } from '../i18n/ui';
 
 interface Props {
@@ -70,11 +88,11 @@ const shadow = 'shadow-[0_30px_60px_-20px_rgba(0,0,0,0.6)]';
 
 <a
   href={href}
-  class="group relative block overflow-hidden rounded-3xl text-white hover:shadow-2xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-action-ink md:grid md:min-h-[440px] md:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] motion-safe:transition motion-safe:duration-200 motion-safe:hover:-translate-y-1"
+  class="group relative grid grid-cols-[minmax(0,1fr)_auto] gap-x-3 overflow-hidden rounded-3xl p-6 text-white hover:shadow-2xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-action-ink sm:p-10 md:min-h-[440px] md:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] md:gap-0 md:p-0 motion-safe:transition motion-safe:duration-200 motion-safe:hover:-translate-y-1"
   style={`background-color: ${background}`}
 >
-  <div class="relative z-10 flex flex-col p-7 sm:p-10 md:py-[52px] md:pr-6 md:pl-[52px]">
-    <div class="flex flex-wrap items-center gap-3">
+  <div class="contents md:relative md:z-10 md:flex md:flex-col md:py-[52px] md:pr-6 md:pl-[52px]">
+    <div class="col-span-2 flex flex-wrap items-center gap-3">
       <span
         class="inline-flex items-center gap-2 rounded-full border border-white/30 px-3 py-1 text-xs font-bold"
       >
@@ -90,11 +108,15 @@ const shadow = 'shadow-[0_30px_60px_-20px_rgba(0,0,0,0.6)]';
       {metaLine && <span class="text-sm text-white/80">{metaLine}</span>}
     </div>
 
-    <Heading class="mt-5 text-3xl leading-[1.1] font-bold sm:text-4xl lg:text-[44px]">
+    <Heading
+      class="col-span-2 mt-4 text-[26px] leading-[1.1] font-bold sm:text-4xl md:mt-5 lg:text-[44px]"
+    >
       {title}
     </Heading>
 
-    <p class="mt-4 max-w-md text-lg leading-relaxed text-white/85">{tagline ?? description}</p>
+    <p class="col-span-2 mt-3 max-w-md text-base leading-relaxed text-white/85 md:mt-4 md:text-lg">
+      {tagline ?? description}
+    </p>
 
     {
       rating && (
@@ -103,29 +125,30 @@ const shadow = 'shadow-[0_30px_60px_-20px_rgba(0,0,0,0.6)]';
           count={rating.count}
           lang={lang}
           tone="inverse"
-          class="mt-5"
+          class="col-span-2 mt-4 md:mt-5"
         />
       )
     }
 
-    {
-      results.length > 0 && (
-        <dl class="mt-6 flex flex-wrap gap-x-8 gap-y-3">
-          {results.map((result) => (
-            <div class="flex items-baseline gap-2">
-              <dt class="text-[28px] leading-8 font-bold">{result.value}</dt>
-              <dd class="text-sm text-white/80">{result.label}</dd>
-            </div>
-          ))}
-        </dl>
-      )
-    }
-
-    {/* Buton geniş ekranda panelin dibine iner; içerik uzarsa üstünde yine
-        en az 32px boşluk kalır. */}
-    <div class="mt-8 md:mt-auto md:pt-8">
+    {/* Sonuçlar ve buton birlikte panelin dibine iner: geniş ekranda mt-auto
+        ile (içerik uzarsa üstünde yine en az 32px boşluk kalır), dar ekranda
+        telefonun yanındaki son satırın dibine. self-end yalnızca ızgarada:
+        flex sütununda yatay eksene işler ve bloğu sağa yaslardı. */}
+    <div class="col-start-1 mt-5 self-end md:mt-auto md:self-stretch md:pt-8">
+      {
+        results.length > 0 && (
+          <dl class="mb-5 flex flex-wrap gap-x-8 gap-y-3 md:mb-8">
+            {results.map((result) => (
+              <div class="flex items-baseline gap-2">
+                <dt class="text-2xl leading-8 font-bold md:text-[28px]">{result.value}</dt>
+                <dd class="text-sm text-white/80">{result.label}</dd>
+              </div>
+            ))}
+          </dl>
+        )
+      }
       <span
-        class="inline-flex min-h-12 items-center gap-2.5 rounded-full bg-white px-6 text-[15px] font-semibold text-neutral-900 transition-colors group-hover:bg-neutral-200 group-focus-visible:bg-neutral-200"
+        class="inline-flex min-h-12 items-center gap-2.5 rounded-full bg-white px-6 text-[15px] font-semibold whitespace-nowrap text-neutral-900 transition-colors group-hover:bg-neutral-200 group-focus-visible:bg-neutral-200"
       >
         {linkLabel}
         <svg
@@ -146,9 +169,11 @@ const shadow = 'shadow-[0_30px_60px_-20px_rgba(0,0,0,0.6)]';
   </div>
 
   {
-    cover && (
-      <div class="relative h-72 md:h-auto">
-        {wide ? (
+    cover &&
+      (wide ? (
+        <div
+          class="relative col-span-2 -mx-6 -mb-6 mt-5 h-40 sm:-mx-10 sm:-mb-10 md:col-auto md:m-0 md:h-auto"
+        >
           <Image
             src={cover}
             alt=""
@@ -156,41 +181,43 @@ const shadow = 'shadow-[0_30px_60px_-20px_rgba(0,0,0,0.6)]';
             loading={imageLoading}
             fetchpriority={imagePriority}
             class:list={[
-              'absolute top-6 left-6 w-[520px] max-w-none rounded-2xl md:top-[72px] md:left-2 md:w-[640px]',
+              'absolute top-4 left-6 h-full w-full rounded-tl-2xl object-cover sm:left-10 md:top-[72px] md:left-2 md:h-auto md:w-[640px] md:max-w-none md:rounded-2xl',
+              isScreenshot(cover) ? 'object-top' : 'object-center',
               shadow,
               lift,
             ]}
           />
-        ) : (
-          <>
-            {backShot && (
-              <Image
-                src={backShot}
-                alt=""
-                {...productImageOptions(backShot)}
-                loading={imageLoading}
-                class:list={[
-                  'absolute top-24 right-[250px] hidden h-[440px] w-[220px] max-w-none rounded-[22px] object-cover object-top lg:block',
-                  shadow,
-                  lift,
-                ]}
-              />
-            )}
+        </div>
+      ) : (
+        <div
+          class="relative col-start-2 min-h-36 w-28 sm:min-h-44 sm:w-40 md:col-auto md:min-h-0 md:w-auto"
+        >
+          {backShot && (
             <Image
-              src={cover}
+              src={backShot}
               alt=""
-              {...productImageOptions(cover)}
+              {...productImageOptions(backShot)}
               loading={imageLoading}
-              fetchpriority={imagePriority}
               class:list={[
-                'absolute top-6 right-0 left-0 mx-auto h-96 w-48 max-w-none rounded-[22px] object-cover object-top md:top-12 md:right-14 md:left-auto md:mx-0 md:h-[480px] md:w-60',
+                'absolute top-24 right-[250px] hidden h-[440px] w-[220px] max-w-none rounded-[22px] object-cover object-top lg:block',
                 shadow,
                 lift,
               ]}
             />
-          </>
-        )}
-      </div>
-    )
+          )}
+          <Image
+            src={cover}
+            alt=""
+            {...productImageOptions(cover)}
+            loading={imageLoading}
+            fetchpriority={imagePriority}
+            class:list={[
+              'absolute top-0 right-0 h-56 w-28 max-w-none rounded-[18px] object-cover object-top sm:h-80 sm:w-40 md:top-12 md:right-14 md:h-[480px] md:w-60 md:rounded-[22px]',
+              shadow,
+              lift,
+            ]}
+          />
+        </div>
+      ))
   }
 </a>
