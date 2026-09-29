@@ -6,6 +6,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Corporate marketing site for İscotera (a software company), served at https://iscotera.com. Fully static Astro 7 + Tailwind CSS 4 build. The primary goals are SEO/brand visibility, so preserving the SEO plumbing (canonical, hreflang, sitemap, JSON-LD) on every page matters more than usual.
 
+It is hosted on Vercel (project `iscotera`). The apex `iscotera.com` is the production domain, and `www.iscotera.com` and `iscotera.vercel.app` 308-redirect to it. **The Vercel primary domain and `site` in `astro.config.mjs` must name the same host**, because every canonical, the sitemap, `robots.txt` and the JSON-LD `@id`s are built from `site`. Until 2026-09-29 Vercel redirected the apex to `www` while all of those pointed at the apex, so every canonical led to a redirect. That was fixed in the Vercel dashboard, not in code. Check with `curl -sI https://www.iscotera.com/`, which should answer with a 308 to the apex.
+
 Repository: https://github.com/isco2225/iscotera. Site content is written in Turkish and English; **commit messages must be in English**, and code comments inside `src/` are written in Turkish to match the existing files.
 
 `CLAUDE.md` is a symlink to this file (`AGENTS.md`), so both agent tools read the same guidance — edit `AGENTS.md`, never replace the symlink with a copy.

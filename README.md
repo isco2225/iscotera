@@ -156,7 +156,8 @@ kafe masası fotoğrafı (kaynaklar `src/content/projects/_images/README.md`).
 - [ ] `og:image` sosyal paylaşım görseli
 - [x] İletişim sayfası: e-posta, telefon, WhatsApp ve Instagram bilgileri
 - [ ] İletişim formu: statik form servisi bağlantısı (ör. Formspree / Cloudflare Worker)
-- [ ] Cloudflare Pages / Vercel'e bağla, `iscotera.com` DNS ayarları
+- [x] Vercel'de yayında. Asıl adres `iscotera.com`; `www.iscotera.com` ve
+      `iscotera.vercel.app` 308 ile ona yönlenir (2026-09-29)
 - [ ] Google Search Console kaydı + sitemap gönderimi
 - [ ] Analitik (Plausible / Umami) — geldiğinde çerez/onay konusunu yeniden aç;
       tema tercihi için geçerli olan muafiyet analitiği kapsamıyor
