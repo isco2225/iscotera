@@ -120,6 +120,8 @@ const renderedCover =
     : null;
 
 // VideoObject şeması: video gerçekten sayfada oynadığı için bildirilebilir.
+// uploadDate saat ve zaman dilimiyle yazılır: Search Console yalnız tarihi
+// ("2026-08-29") "zaman dilimi eksik / geçersiz datetime" diye işaretliyor.
 const videoSchema =
   video && renderedCover
     ? {
@@ -129,7 +131,7 @@ const videoSchema =
         description: promise,
         thumbnailUrl: absolute(renderedCover.src),
         contentUrl: absolute(video.src),
-        uploadDate: video.uploadDate.toISOString().split('T')[0],
+        uploadDate: video.uploadDate.toISOString(),
       }
     : null;
 
