@@ -20,7 +20,19 @@ Kaynaklar — hepsi Pexels, ücretsiz ticari lisans, atıf gerekmez
 | `ozel-yazilim-ne-kadar-surer` | https://www.pexels.com/photo/11363590/ |
 | `yazilim-sozlesmesinde-ne-olmali` | https://www.pexels.com/photo/7054502/ |
 | `web-sitesi-yaptirma-maliyeti` | https://www.pexels.com/photo/196645/ |
+| `mobil-uygulama-yaptirmak-istiyorum` | https://www.pexels.com/photo/6373088/ |
+| `web-sitesi-yaptirmak-istiyorum` | https://www.pexels.com/photo/8092461/ |
+| `yazilim-yaptirmak-istiyorum` | https://www.pexels.com/photo/8133809/ |
+| `mobil-uygulama-yaptirma-maliyeti` | https://www.pexels.com/photo/8250947/ |
+| `yazilim-yaptirma-maliyeti` | https://www.pexels.com/photo/6963847/ |
+| `e-ticaret-sitesi-kurmak-istiyorum` | https://www.pexels.com/photo/7857523/ |
+| `e-ticaret-sitesi-maliyeti` | https://www.pexels.com/photo/9594423/ |
+| `en-iyi-yazilim-firmalari` | https://www.pexels.com/photo/8850713/ |
 
 Seçim kuralı `src/assets/services/README.md` ile aynı: markası okunan
 ekran/cihaz içeren kareler kullanılmaz (Windows tuşlu klavye, logolu telefon
 ve yazılı beyaz tahta içeren adaylar bu yüzden elendi).
+
+`mobil-uygulama-yaptirma-maliyeti` kapağı kaynağın alt 1600×900 bölümüdür:
+hesap makinesinin üst kenarındaki model etiketi kadrajın dışında kalsın diye
+üstten kırpıldı. Vurgulayıcı kalemin etiketi okunan 6368847 bu yüzden elendi.
