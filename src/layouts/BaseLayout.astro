@@ -27,6 +27,7 @@ const {
 } = Astro.props;
 
 const siteName = 'İscotera';
+const siteNameAscii = 'Iscotera';
 const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const alternateUrl = alternate ? new URL(alternate, Astro.site) : undefined;
@@ -39,6 +40,10 @@ const organizationSchema = {
   '@type': 'Organization',
   '@id': orgId,
   name: siteName,
+  // Marka noktalı İ ile yazılıyor, aramalar çoğunlukla "iscotera" diye yapılıyor.
+  // Türkçe dışı kurallarda "İ" küçültülünce "i" değil "i̇" olur; noktasız
+  // yazımı ayrıca bildirmek, marka aramasının bu siteyle eşleşmesine yardım eder.
+  alternateName: siteNameAscii,
   url: Astro.site?.toString(),
   logo: new URL('/favicon.svg', Astro.site).toString(),
   email: contact.email,
@@ -57,6 +62,7 @@ const websiteSchema =
         '@type': 'WebSite',
         '@id': websiteId(Astro.site),
         name: siteName,
+        alternateName: siteNameAscii,
         url: new URL(routes[lang].home, Astro.site).toString(),
         inLanguage: localeTag(lang),
         publisher: { '@id': orgId },
