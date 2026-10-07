@@ -1,3 +1,7 @@
+// Blog listesinde bir sayfada gösterilen yazı sayısı. Birinci sayfa /blog/,
+// sonrakiler /blog/2/, /blog/3/ ... olarak üretilir.
+export const BLOG_PAGE_SIZE = 10;
+
 // Blog kapak görsellerinin üretim ölçüleri. Her genişlik, o biçimin sayfada
 // gösterildiği en geniş yerin 2 katıdır; 2x ekranlar büyütme yapmaz.
 
@@ -20,7 +24,7 @@ export const blogCoverOptions = {
 // Liste ve ana sayfa kartlarındaki kapak: kartın üstünde tam genişlikte, 21:9
 // (16:9 kartı fazla uzatıyordu; kullanıcının isteğiyle alçak bant, 2026-09-10).
 // En geniş yeri liste kartı (max-w-3xl eksi iç boşluk ≈ 704px); ana sayfadaki
-// iki sütunlu kart daha dar. Liste beş kapağı birden yüklediği için aynı
+// iki sütunlu kart daha dar. Liste bir sayfada on kapak gösterdiği için aynı
 // kırpma ve kalite burada da uygulanır.
 export const BLOG_THUMB_WIDTH = 1408;
 export const blogThumbOptions = {
@@ -37,3 +41,10 @@ export const blogThumbOptions = {
 // sayfada max-w-5xl'in yarısı eksi boşluklar; ikisinin altında viewport.
 export const BLOG_LIST_SIZES = '(min-width: 800px) 704px, calc(100vw - 2rem - 2.5rem)';
 export const BLOG_HOME_SIZES = '(min-width: 1056px) 436px, (min-width: 640px) calc(50vw - 4.5rem), calc(100vw - 2rem - 3rem)';
+
+// Blog listesinin n. sayfasının adresi; base dil kökündeki liste ("/blog/"
+// veya "/en/blog/"). Gezinme bağlantıları ve rel="prev/next" aynı yerden
+// üretilsin diye tek fonksiyon.
+export function blogPageUrl(base: string, page: number): string {
+  return page === 1 ? base : `${base}${page}/`;
+}

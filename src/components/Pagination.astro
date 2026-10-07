@@ -1,0 +1,56 @@
+---
+// Blog listesinin sayfa gezinmesi: önceki/sonraki bağlantıları ve sayfa
+// numaraları. Tek sayfa varsa hiçbir şey basılmaz.
+import { useTranslations, type Lang } from '../i18n/ui';
+import { blogPageUrl } from '../utils/blog';
+
+interface Props {
+  lang: Lang;
+  /** Listenin birinci sayfasının yolu (ör. "/blog/"). */
+  base: string;
+  current: number;
+  last: number;
+}
+
+const { lang, base, current, last } = Astro.props;
+const t = useTranslations(lang);
+const pages = Array.from({ length: last }, (_, i) => i + 1);
+
+const linkClass =
+  'rounded-lg px-3 py-2 text-sm font-semibold text-action-ink transition hover:bg-surface-muted';
+---
+
+{
+  last > 1 && (
+    <nav aria-label={t('pagination.label')} class="mt-12 flex flex-wrap items-center justify-center gap-1">
+      {current > 1 && (
+        <a href={blogPageUrl(base, current - 1)} rel="prev" class={linkClass}>
+          ← {t('pagination.prev')}
+        </a>
+      )}
+      {pages.map((page) =>
+        page === current ? (
+          <span
+            aria-current="page"
+            class="min-w-10 rounded-lg border border-line-strong px-3 py-2 text-center text-sm font-semibold text-ink-strong"
+          >
+            {page}
+          </span>
+        ) : (
+          <a
+            href={blogPageUrl(base, page)}
+            aria-label={`${t('blog.page')} ${page}`}
+            class:list={[linkClass, 'min-w-10 text-center']}
+          >
+            {page}
+          </a>
+        )
+      )}
+      {current < last && (
+        <a href={blogPageUrl(base, current + 1)} rel="next" class={linkClass}>
+          {t('pagination.next')} →
+        </a>
+      )}
+    </nav>
+  )
+}
