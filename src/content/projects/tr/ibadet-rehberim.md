@@ -16,6 +16,7 @@ video:
   src: "/media/ibadet-rehberim/tanitim.mp4"
   uploadDate: 2026-08-29
 stores:
+  appStore: "https://apps.apple.com/tr/app/i-badet-rehberim/id6759827771"
   googlePlay: "https://play.google.com/store/apps/details?id=com.omran.huzur_islamda"
   web: "https://ibadetrehberim.com/"
 features:
@@ -107,8 +108,8 @@ bu yaklaşımı ayrıntılı anlatmıştık.
 
 ## Bugün
 
-Uygulama Google Play'de yayında ve ücretsiz indiriliyor; App Store sürümü
-yolda. Namaz vakitleri, akıllı zikirmatik, dua–hadis–ayet akışı ve yapay zekâ
+Uygulama App Store'da ve Google Play'de yayında, ücretsiz indirilebiliyor.
+Namaz vakitleri, akıllı zikirmatik, dua–hadis–ayet akışı ve yapay zekâ
 destekli asistan bugün kullanıcıların elinde; isteyen destek paketiyle
 reklamsız kullanabiliyor.
 

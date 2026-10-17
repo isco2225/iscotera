@@ -133,8 +133,7 @@ anlatı ve iki teknik özellik.
 
 - [x] Yayına alındı (2026-09-25), App Store bağlantısı olmadan: uygulama
       henüz App Store'da değil, sayfada Google Play ve web bağlantıları var.
-- [ ] **App Store bağlantısını ekle.** Uygulama App Store'a çıkınca
-      `stores.appStore` alanına adresi yaz; rozet o an görünür hâle gelir.
+- [x] App Store bağlantısı eklendi (2026-10-17), iOS sürümü yayına çıkınca.
       Resmî rozet görselleri için `public/badges/README.md`.
 - [ ] İsteğe bağlı: Google Play'deki gerçek puan gelince `rating` alanı geri
       eklenebilir (uydurma puan yerine şu an yalnızca indirme sayısı duruyor).

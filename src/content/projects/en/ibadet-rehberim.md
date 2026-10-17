@@ -16,6 +16,7 @@ video:
   src: "/media/ibadet-rehberim/tanitim.mp4"
   uploadDate: 2026-08-29
 stores:
+  appStore: "https://apps.apple.com/tr/app/i-badet-rehberim/id6759827771"
   googlePlay: "https://play.google.com/store/apps/details?id=com.omran.huzur_islamda"
   web: "https://ibadetrehberim.com/"
 features:
@@ -104,8 +105,8 @@ to look.
 
 ## Where it is today
 
-The app is live on Google Play and free to download; the App Store version is
-on its way. Prayer times, the dhikr counter, the prayer–hadith–verse feed and
+The app is live on the App Store and Google Play and free to download.
+Prayer times, the dhikr counter, the prayer–hadith–verse feed and
 the AI-powered assistant are in users' hands today, and anyone who wants it
 ad-free can move to the support plan.
 

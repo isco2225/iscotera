@@ -21,7 +21,7 @@ This file holds the reasoning behind specific pages, products and layouts: what 
 
 ### İbadet Rehberim
 
-**The İbadet Rehberim entry is deliberately thin.** It is not a sales page for the app (ibadetrehberim.com already is one); its job is to show a prospective client "we built this, this is how". So it intentionally has no `faq`, no `testimonials`, no `rating` (only the verifiable download count in `results`) and only two of the app's features — the ones that show engineering decisions. Don't fill those sections in to make the page "complete"; it was published on 2026-09-25 without an App Store link (the app is not on the App Store yet, so `stores` carries only Google Play and web, with no `pending` placeholder); add `stores.appStore` when it ships.
+**The İbadet Rehberim entry is deliberately thin.** It is not a sales page for the app (ibadetrehberim.com already is one); its job is to show a prospective client "we built this, this is how". So it intentionally has no `faq`, no `testimonials`, no `rating` (only the verifiable download count in `results`) and only two of the app's features — the ones that show engineering decisions. Don't fill those sections in to make the page "complete"; it was published on 2026-09-25 with only Google Play and web links, and `stores.appStore` was added on 2026-10-17 when the iOS version shipped.
 
 ### QR Menü
 
