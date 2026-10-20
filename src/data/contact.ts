@@ -6,6 +6,6 @@ export const contact = {
   phoneDisplay: '0537 977 73 49',
   phoneE164: '+905379777349',
   whatsappUrl: 'https://wa.me/905379777349',
-  instagramHandle: '@iscoteraa',
-  instagramUrl: 'https://www.instagram.com/iscoteraa/',
+  instagramHandle: '@iscotera.tr',
+  instagramUrl: 'https://www.instagram.com/iscotera.tr/',
 } as const;
