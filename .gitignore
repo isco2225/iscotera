@@ -22,3 +22,8 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# sosyal medya çalışmaları ve araştırma notları (repoya girmez)
+social/
+reports/
+research_notes/
