@@ -84,9 +84,9 @@ const steps = [
           Web, mobil ve özel yazılım geliştiriyoruz
         </h1>
         <p class="mt-4 max-w-xl text-lg text-ink-muted">
-          Kapsamı, süreyi ve maliyeti işe başlamadan önce yazılı olarak
-          netleştiriyoruz. Proje boyunca ilerlemeyi yakından takip
-          edebilirsiniz.
+          İşe başlamadan önce kapsamı, süreyi ve maliyeti sizinle birlikte
+          yazılı olarak netleştiriyoruz. Proje boyunca da ilerlemeyi sizlerle
+          şeffaf bir şekilde paylaşıyoruz.
         </p>
         <div class="mt-8 flex flex-wrap gap-4">
           <a
@@ -129,23 +129,6 @@ const steps = [
         öneriyoruz. Kendi ürünlerimizi de geliştirip yayınladığımız için bir
         projenin yayına alındıktan sonra neler getirdiğini de biliyoruz.
       </p>
-    </div>
-  </section>
-
-  <section class="mx-auto max-w-5xl px-4 pb-16">
-    <h2 class="text-2xl font-bold text-ink-strong">Hizmetlerimiz</h2>
-    <div class="mt-6 grid gap-6 sm:grid-cols-2">
-      {
-        services.map((service) => (
-          <a
-            href={`/hizmetler/${service.tr.slug}/`}
-            class="rounded-lg border border-line p-6 transition hover:border-brand/40 hover:shadow-md"
-          >
-            <h3 class="font-semibold text-ink-strong">{service.tr.title}</h3>
-            <p class="mt-2 text-sm text-ink-muted">{service.tr.summary}</p>
-          </a>
-        ))
-      }
     </div>
   </section>
 
@@ -271,6 +254,23 @@ const steps = [
           ))
         }
       </ol>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-5xl px-4 pb-16">
+    <h2 class="text-2xl font-bold text-ink-strong">Hizmetlerimiz</h2>
+    <div class="mt-6 grid gap-6 sm:grid-cols-2">
+      {
+        services.map((service) => (
+          <a
+            href={`/hizmetler/${service.tr.slug}/`}
+            class="rounded-lg border border-line p-6 transition hover:border-brand/40 hover:shadow-md"
+          >
+            <h3 class="font-semibold text-ink-strong">{service.tr.title}</h3>
+            <p class="mt-2 text-sm text-ink-muted">{service.tr.summary}</p>
+          </a>
+        ))
+      }
     </div>
   </section>
 

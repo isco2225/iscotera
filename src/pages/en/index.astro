@@ -84,8 +84,9 @@ const steps = [
           We build web, mobile and custom software
         </h1>
         <p class="mt-4 max-w-xl text-lg text-ink-muted">
-          We set out the scope, timeline and cost in writing before work begins,
-          and you can follow the progress closely throughout the project.
+          Before work begins, we agree the scope, timeline and cost with you in
+          writing, and we share our progress with you openly throughout the
+          project.
         </p>
         <div class="mt-8 flex flex-wrap gap-4">
           <a
@@ -129,23 +130,6 @@ const steps = [
         own products too, we know what a project brings after launch, not just
         during development.
       </p>
-    </div>
-  </section>
-
-  <section class="mx-auto max-w-5xl px-4 pb-16">
-    <h2 class="text-2xl font-bold text-ink-strong">Our Services</h2>
-    <div class="mt-6 grid gap-6 sm:grid-cols-2">
-      {
-        services.map((service) => (
-          <a
-            href={`/en/services/${service.en.slug}/`}
-            class="rounded-lg border border-line p-6 transition hover:border-brand/40 hover:shadow-md"
-          >
-            <h3 class="font-semibold text-ink-strong">{service.en.title}</h3>
-            <p class="mt-2 text-sm text-ink-muted">{service.en.summary}</p>
-          </a>
-        ))
-      }
     </div>
   </section>
 
@@ -271,6 +255,23 @@ const steps = [
           ))
         }
       </ol>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-5xl px-4 pb-16">
+    <h2 class="text-2xl font-bold text-ink-strong">Our Services</h2>
+    <div class="mt-6 grid gap-6 sm:grid-cols-2">
+      {
+        services.map((service) => (
+          <a
+            href={`/en/services/${service.en.slug}/`}
+            class="rounded-lg border border-line p-6 transition hover:border-brand/40 hover:shadow-md"
+          >
+            <h3 class="font-semibold text-ink-strong">{service.en.title}</h3>
+            <p class="mt-2 text-sm text-ink-muted">{service.en.summary}</p>
+          </a>
+        ))
+      }
     </div>
   </section>
 
