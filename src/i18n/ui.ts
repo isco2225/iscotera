@@ -36,7 +36,7 @@ export const ui = {
     'nav.blog': 'Blog',
     'nav.contact': 'İletişim',
     'footer.rights': 'Tüm hakları saklıdır.',
-    'footer.tagline': 'Web, mobil ve özel yazılım geliştiren bir yazılım firması.',
+    'footer.tagline': 'Web siteleri, mobil uygulamalar ve işe özel yazılımlar geliştiriyoruz.',
     'footer.pages': 'Sayfalar',
     'footer.social': 'Sosyal medya',
     'blog.readMore': 'Devamını oku',
@@ -45,23 +45,23 @@ export const ui = {
     'pagination.label': 'Blog sayfaları',
     'pagination.prev': 'Önceki',
     'pagination.next': 'Sonraki',
-    'projects.empty': 'Ürün detayları yakında eklenecek.',
-    'services.caseStudy': 'Bu hizmetle yaptığımız işe bakın',
-    'services.detail': 'Detaylı incele',
+    'projects.empty': 'Ürünlerimizi yakında burada paylaşacağız.',
+    'services.caseStudy': 'Ürünü inceleyin',
+    'services.detail': 'Hizmeti inceleyin',
     'services.ctaTitle': 'Hangisinin size uyduğundan emin değil misiniz?',
     'services.ctaText':
-      'İhtiyacınızı iletin; size uygun hizmeti ve kapsamı birlikte değerlendirelim.',
+      'Ne yapmak istediğinizi anlatın, size uyan hizmeti ve kapsamı birlikte belirleyelim.',
 
     // Hizmet detay sayfasının bölüm başlıkları (ServicePage.astro)
-    'service.scope': 'Neler yapıyoruz?',
+    'service.scope': 'Yaptığımız işler',
     'service.approach': 'Yaklaşımımız',
     'service.faq': 'Sıkça sorulan sorular',
     'service.caseTitle': 'Bu hizmetle yaptığımız iş',
     'service.ctaTitle': 'Projenizi konuşalım',
     'service.ctaText':
-      'İhtiyacınızı iletin; değerlendirmemizi öngörülen süre ve bütçeyle birlikte yazılı olarak paylaşalım.',
+      'Ne yapmak istediğinizi anlatın, size tahmini süre ve bütçeyle birlikte yazılı bir değerlendirme gönderelim.',
     'service.ctaButton': 'Bize ulaşın',
-    'service.ctaSecondary': 'Ürünlerimize bakın',
+    'service.ctaSecondary': 'Ürünlerimize göz atın',
     'meta.siteName': 'İscotera',
 
     // Ürün sayfası
@@ -83,12 +83,12 @@ export const ui = {
     // "App Store" ve "Google Play" marka adı; çevrilmez.
     'product.appStore': "App Store",
     'product.googlePlay': "Google Play",
-    'product.website': 'Web sitesini incele',
+    'product.website': 'Web sitesini inceleyin',
     'product.ctaStoreTitle': 'Uygulamayı deneyin',
     'product.ctaStoreText': 'Ücretsiz indirin, kendiniz görün.',
     'product.ctaContactTitle': 'Benzer bir ürün mü düşünüyorsunuz?',
     'product.ctaContactText':
-      'Aklınızdaki fikri birlikte değerlendirelim; yol haritasını ve bütçeyi yazılı olarak paylaşalım.',
+      'Aklınızdaki fikri birlikte değerlendirelim, ardından yol haritasını ve bütçeyi size yazılı olarak gönderelim.',
     'product.ctaContactLink': 'Bize ulaşın',
   },
   en: {
@@ -99,7 +99,7 @@ export const ui = {
     'nav.blog': 'Blog',
     'nav.contact': 'Contact',
     'footer.rights': 'All rights reserved.',
-    'footer.tagline': 'A software company building web, mobile and custom software.',
+    'footer.tagline': 'We build websites, mobile apps and custom software.',
     'footer.pages': 'Pages',
     'footer.social': 'Social media',
     'blog.readMore': 'Read more',
@@ -108,12 +108,12 @@ export const ui = {
     'pagination.label': 'Blog pages',
     'pagination.prev': 'Previous',
     'pagination.next': 'Next',
-    'projects.empty': 'Product details coming soon.',
-    'services.caseStudy': 'See the work we built with it',
+    'projects.empty': "We'll share our products here soon.",
+    'services.caseStudy': 'View the product',
     'services.detail': 'See details',
     'services.ctaTitle': 'Not sure which one fits?',
     'services.ctaText':
-      "Tell us what you need and we'll assess together which service and scope fit.",
+      "Tell us what you're planning and we'll work out the right service and scope together.",
 
     'service.scope': 'What we do',
     'service.approach': 'How we approach it',
@@ -121,7 +121,7 @@ export const ui = {
     'service.caseTitle': 'Work we built with this service',
     'service.ctaTitle': "Let's talk about your project",
     'service.ctaText':
-      "Tell us what you need and we'll share our assessment in writing, with an estimated timeline and budget.",
+      "Tell us what you're planning and we'll send you a written assessment with an estimated timeline and budget.",
     'service.ctaButton': 'Get in touch',
     'service.ctaSecondary': 'See our products',
     'meta.siteName': 'İscotera',
@@ -147,7 +147,7 @@ export const ui = {
     'product.ctaStoreText': 'Download it for free and see for yourself.',
     'product.ctaContactTitle': 'Thinking about a product like this?',
     'product.ctaContactText':
-      "Tell us what you have in mind; we'll assess it together and share the roadmap and budget in writing.",
+      "Tell us what you have in mind. We'll look at it together, then send you the roadmap and budget in writing.",
     'product.ctaContactLink': 'Get in touch',
   },
 } as const;

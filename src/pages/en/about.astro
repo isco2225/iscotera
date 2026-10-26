@@ -11,28 +11,28 @@ import planningImg from '../../assets/about/planning.jpg';
 // yazılıyor, bu yüzden değişiklik iki dosyada birden yapılır).
 const principles = [
   {
-    title: 'We first assess whether software is needed',
-    text: 'Not every need calls for new software. If an existing product or an improvement to your current system is sufficient, we say so clearly. Our priority is a long-term business relationship built on trust.',
+    title: 'First, we check whether software is needed',
+    text: "Not every need calls for new software. If an existing product or an improvement to your current system will do the job, we'll tell you. What matters to us is a working relationship we can keep for years.",
   },
   {
-    title: 'We take responsibility for uncertainty',
-    text: 'Providing a clear estimate of timeline and cost is our responsibility; we do not leave the uncertainty with you through vague answers. The written document approved at the start remains the shared reference for both parties until the project is complete.',
+    title: 'Giving you a clear estimate is our job',
+    text: 'We treat pinning down the timeline and cost as our responsibility, and we do not gloss over open questions with vague answers. The written document you approve at the start is what we both work from until the project is finished.',
   },
   {
     title: 'We choose technology to fit the need',
-    text: 'We do not apply the same solution to every project. The scale of the project, your budget and who will operate the system in future determine the choice; current trends alone are not a justification.',
+    text: 'We do not apply the same approach to every project. We choose based on the scale of the project, your budget and who will run the system later. A technology being popular is not, on its own, a reason to use it.',
   },
   {
     title: 'You work directly with the team building your project',
-    text: 'There is no intermediary layer between you and the development team. You put technical questions directly to the person who will answer them, so requests are understood correctly and misunderstandings are resolved early.',
+    text: 'There is no one in between you and the development team. You put your questions straight to the person who will answer them, so your requests are understood and misunderstandings come to light early.',
   },
   {
-    title: 'We do not create dependency',
-    text: 'The source code, data and accounts belong to you; store and server accounts are opened in your name. Should you decide to continue with another team, you retain a working system and all access credentials.',
+    title: "We don't lock you in",
+    text: 'The source code, data and accounts belong to you, and we open store and server accounts in your name. If you later decide to continue with another team, you keep a working system and all the access details.',
   },
   {
-    title: 'We continue to support you after handover',
-    text: 'Launch marks the beginning of real use for the product. The same team continues to provide support for needs that arise in real use, for maintenance and for new development.',
+    title: 'We keep supporting you after launch',
+    text: 'A product only starts being really used once it goes live. The same team keeps working with you on the needs that come up in use, on maintenance and on new features.',
   },
 ];
 
@@ -52,7 +52,7 @@ const aboutSchema = {
 
 <BaseLayout
   title="About"
-  description="İscotera's working principles: scope, timeline and cost in writing, accounts in the client's name and support after handover. We also build our own products."
+  description="How İscotera works: scope, timeline and cost agreed in writing, accounts opened in your name and support after launch. We build our own products too."
   lang="en"
   alternate="/hakkimizda/"
   back={{ href: '/en/', label: 'Home' }}
@@ -70,17 +70,17 @@ const aboutSchema = {
         About us
       </p>
       <h1 class="mt-3 text-3xl font-bold text-ink-strong sm:text-4xl">
-        We develop software that simplifies your business processes
+        We build software that makes your business processes easier
       </h1>
       <p class="mt-5 text-lg text-ink-muted">
-        İscotera is a software company developing web applications, mobile
-        apps and custom software for businesses and institutions. Alongside
-        client projects, we develop and publish products of our own.
+        İscotera is a software company. We build web applications, mobile apps
+        and custom software for businesses and organisations, and alongside
+        client work we publish products of our own.
       </p>
       <p class="mt-4 text-lg text-ink-muted">
-        The two complement each other: the experience we gain on client
-        projects informs our own products, and the experience of running our
-        own products informs our client work.
+        Each feeds the other: what we learn on client projects goes into our
+        own products, and what we learn running our own products goes back
+        into client work.
       </p>
       <div class="mt-8 flex flex-wrap items-center gap-4">
         <a
@@ -108,18 +108,18 @@ const aboutSchema = {
           Predictable projects
         </h2>
         <p class="mt-4 leading-relaxed text-ink-muted">
-          Many of the problems in software projects stem from how the process
-          is managed: timelines slip, costs exceed the original estimate, and
-          once the project is complete, knowledge of how the system works
-          remains with the developer alone.
+          Many of the problems in software projects come from how the work is
+          run. Timelines slip and costs overrun the original estimate. And once
+          the project is finished, only the developer knows how the system
+          works.
         </p>
         <p class="mt-4 leading-relaxed text-ink-muted">
-          To minimise these risks, we base every project on a written framework
-          from the outset. Scope, timeline and cost are documented before
-          development begins, and you can follow the progress closely
-          throughout the project. Store and server accounts are opened in your
-          name, and your data always remains yours. As a result, the process
-          stays predictable from start to finish.
+          To reduce these risks, we start every project with a written
+          framework. We document the scope, timeline and cost before
+          development begins, and we share our progress with you openly
+          throughout the project. We open store and server accounts in your
+          name, and your data always stays yours. That keeps the process
+          predictable from start to finish.
         </p>
       </div>
       <Image
@@ -137,8 +137,8 @@ const aboutSchema = {
     <div class="mx-auto max-w-5xl px-4 py-14">
       <h2 class="text-2xl font-bold text-ink-strong">Our working principles</h2>
       <p class="mt-3 max-w-2xl text-ink-muted">
-        The following principles are commitments we put in writing at the
-        proposal stage.
+        These principles are commitments we put in writing when we prepare a
+        proposal.
       </p>
       <div class="mt-8 grid gap-8 md:grid-cols-3 md:gap-x-10 md:gap-y-10">
         {
@@ -166,15 +166,15 @@ const aboutSchema = {
         Our own products
       </h2>
       <p class="mt-4 leading-relaxed text-ink-muted">
-        Alongside the projects we develop to order, we build and operate
-        products of our own. They give us direct experience of store review
-        processes, user feedback and the maintenance of a live application,
-        and our timeline and maintenance estimates draw on that experience.
+        We do not just build our own products, we also keep them live and run
+        them. That gives us first-hand experience of store reviews, user
+        feedback and maintaining a live app. Our timeline and maintenance
+        estimates draw on that experience.
       </p>
       <p class="mt-4 leading-relaxed text-ink-muted">
-        Our work can be examined through concrete examples: our products and
-        case studies are on the Products page, and this site itself was built
-        on the same infrastructure we set up for our clients.
+        If you'd like to see our work in practice, our products and case
+        studies are on the Products page. This site itself is built on the
+        same foundations we set up for our clients.
       </p>
       <a
         href="/en/products/"
@@ -217,11 +217,11 @@ const aboutSchema = {
       class="rounded-2xl border border-line bg-surface-muted p-8 text-center sm:p-12"
     >
       <h2 class="text-2xl font-bold text-ink-strong">
-        Let's discuss your project
+        Let's talk about your project
       </h2>
       <p class="mx-auto mt-3 max-w-xl text-ink-muted">
-        Share your requirements with us and we will provide an assessment with
-        a clear timeline and budget.
+        Tell us what you need and we'll come back to you with an assessment
+        that sets out a clear timeline and budget.
       </p>
       <a
         href="/en/contact/"

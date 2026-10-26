@@ -1,8 +1,8 @@
 ---
 title: "QR Menü"
-description: "Restoran ve kafeler için işletmeye özel tasarlanan QR menü sistemi. Müşteri masadaki kodu okutup menüye ulaşır; fiyat ve ürün değişiklikleri kontrol panelinden anında yansır."
+description: "Restoran ve kafeler için QR menü sistemi. Müşteriniz masadaki kodu okutarak menüyü açıyor, fiyat ve ürün değişiklikleriniz kontrol panelinden anında menüye yansıyor."
 type: product
-tagline: "Restoranınız ve kafeniz için, markanıza göre tasarlanmış dijital menü."
+tagline: "Restoranınız ya da kafeniz için, markanıza göre tasarlanan dijital menü."
 status: live
 category: "Web uygulaması"
 client: "Kendi ürünümüz"
@@ -34,22 +34,23 @@ results: []
 # kurulum adımları yazılmaz.
 features:
   - title: "İşletmenize özel tasarım"
-    text: "Menü, işletmenizin konseptine ve marka kimliğine göre tasarlanır. Müşteriniz herkesin kullandığı bir arayüzü değil, sizin menünüzü görür."
+    text: "İsterseniz menüyü işletmenizin konseptine ve marka kimliğine göre tasarlıyoruz. Müşteriniz herkesin kullandığı hazır bir arayüz yerine sizin menünüzü görüyor."
   - title: "Değişiklikler anında menüde"
-    text: "Fiyat, ürün ve açıklamalar kontrol panelinden güncellenir ve o anda yayınlanır. Yeniden baskı yok."
+    text: "Fiyatları, ürünleri ve açıklamaları kontrol panelinden güncelliyorsunuz, değişiklik o anda menüde görünüyor. Menüyü yeniden bastırmanız gerekmiyor."
   - title: "Uygulama indirmeden, temassız"
-    text: "Müşteri masadaki QR kodu telefonunun kamerasıyla okutur, menü tarayıcıda açılır. Kurulum ya da kayıt gerekmez."
+    text: "Müşteriniz masadaki QR kodu telefonunun kamerasıyla okutuyor, menü tarayıcıda açılıyor. Uygulama kurmasına ya da üye olmasına gerek yok."
 order: 3
 draft: false
 ---
 
 **QR Menü**, restoran ve kafelerin menüsünü masadaki bir QR kodla
-müşteriye sunan dijital menü sistemi. Fikri, tasarımı ve yazılımı bize ait;
-her işletme için ayrıca kurulur ve istenirse işletmenin kimliğine göre
-tasarlanır.
+müşteriye ulaştıran dijital menü sistemi. Fikri, tasarımı ve yazılımı bize
+ait. Sistemi her işletme için ayrıca kuruyor, isterseniz işletmenizin
+kimliğine göre tasarlıyoruz.
 
-Müşteri kodu telefonuyla okutur, menü tarayıcıda açılır; fiyat ve ürün
-değişiklikleri kontrol panelinden anında yansır. Panel eğitimi ve
-sonrasındaki destek kuruluma dahildir.
+Müşteriniz kodu telefonuyla okutuyor, menü tarayıcıda açılıyor. Fiyat ve ürün
+değişiklikleri kontrol panelinden anında menüye yansıyor. Panel eğitimi ve
+sonrasındaki destek kuruluma dahil.
 
-Özellikler, paketler ve teklif için: [webmenu.info](https://webmenu.info/).
+Özellikleri ve paketleri [webmenu.info](https://webmenu.info/) sitesinde
+inceleyebilir, teklifinizi oradan isteyebilirsiniz.

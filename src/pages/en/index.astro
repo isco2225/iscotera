@@ -44,25 +44,25 @@ const steps = [
   },
   {
     title: 'Planning',
-    thesis: 'Timeline and cost are set in writing before development begins.',
-    text: 'We break the scope into items and put a duration and a price on each. The document you approve stays our shared reference to the end.',
+    thesis: 'We set the timeline and cost in writing before development begins.',
+    text: 'We break the scope into items and put a timeline and a price on each. The document you approve is what we both work from until the job is done.',
   },
   {
     title: 'Building',
     thesis: 'You see the progress for yourself.',
-    text: 'At this stage we share progress with you and build your feedback into the work. Making changes early reduces both cost and risk.',
+    text: 'At this stage we share progress with you and build your feedback into the work. A change made early costs less and carries less risk.',
   },
   {
     title: 'Launch and after',
-    thesis: 'Our responsibility does not end at handover.',
-    text: 'We take the product live and hand it over to your team. After that we stay on for maintenance and new features.',
+    thesis: 'We keep supporting you after launch.',
+    text: 'We take the product live and hand it over to your team. After that, we keep working with you on maintenance and new features.',
   },
 ];
 ---
 
 <BaseLayout
-  title="İscotera — Software Solutions"
-  description="A software company building web, mobile and custom software. Scope, timeline and cost in writing before work begins, and progress you can follow throughout."
+  title="İscotera — Web, Mobile and Custom Software Development"
+  description="We are a software company building web, mobile and custom software. We agree scope, timeline and cost with you in writing and share our progress throughout."
   lang="en"
   alternate="/"
 >
@@ -93,13 +93,13 @@ const steps = [
             href="/en/contact/"
             class="rounded-lg bg-action px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-action-dark"
           >
-            Get in Touch
+            Get in touch
           </a>
           <a
             href="/en/products/"
             class="rounded-lg border border-line-strong px-6 py-3 text-sm font-semibold text-ink-soft transition-colors hover:border-ink-subtle"
           >
-            Our Products
+            Our products
           </a>
         </div>
       </div>
@@ -120,15 +120,14 @@ const steps = [
     <h2 class="text-2xl font-bold text-ink-strong">Who we are</h2>
     <div class="mt-4 max-w-3xl space-y-4">
       <p class="text-lg text-ink-soft">
-        İscotera builds web and mobile software for businesses. We see software
-        as a tool that makes your work easier, not as an end in itself.
+        At İscotera, we build web and mobile software for businesses and
+        organisations. For us, software is a tool for making your work easier.
       </p>
       <p class="text-ink-muted">
-        We pick the technology to fit what the project needs. Instead of
-        applying the same solution to every job, we suggest what fits your
+        We choose the technology to suit what the project needs. Rather than
+        applying the same approach to every job, we suggest what fits your
         budget and the size of the work. And because we build and publish our
-        own products too, we know what a project brings after launch, not just
-        during development.
+        own products too, we know what an app needs once it's live.
       </p>
     </div>
   </section>
@@ -140,7 +139,7 @@ const steps = [
           <p class="text-xs font-bold tracking-[0.14em] text-brand uppercase">
             Our products
           </p>
-          <h2 class="mt-3 text-3xl font-bold text-ink-strong">Products we have built</h2>
+          <h2 class="mt-3 text-3xl font-bold text-ink-strong">Products we've built</h2>
         </div>
         <div class="mt-9 flex flex-col gap-7">
           {products.map((product) => (
@@ -201,14 +200,14 @@ const steps = [
           You know what happens at every stage
         </h2>
         <p class="mt-5 text-lg text-ink-muted">
-          What we decide together, and what each step delivers, is put in
-          writing at the very start.
+          At the very start, we write down what we'll decide together and what
+          you'll have at the end of each step.
         </p>
         <a
           href="/en/contact/"
           class="mt-6 inline-block rounded-lg bg-action px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-action-dark"
         >
-          Get in Touch
+          Get in touch
         </a>
         <Image
           src={teamImg}
@@ -259,7 +258,7 @@ const steps = [
   </section>
 
   <section class="mx-auto max-w-5xl px-4 pb-16">
-    <h2 class="text-2xl font-bold text-ink-strong">Our Services</h2>
+    <h2 class="text-2xl font-bold text-ink-strong">Our services</h2>
     <div class="mt-6 grid gap-6 sm:grid-cols-2">
       {
         services.map((service) => (
@@ -329,8 +328,8 @@ const steps = [
     >
       <h2 class="text-2xl font-bold text-ink-strong">Have something in mind?</h2>
       <p class="mx-auto mt-3 max-w-xl text-ink-muted">
-        Tell us what you want to build and we'll share our assessment in
-        writing, with an estimated timeline and budget.
+        Tell us what you'd like to build and we'll send you a written
+        assessment with an estimated timeline and budget.
       </p>
       <a
         href="/en/contact/"

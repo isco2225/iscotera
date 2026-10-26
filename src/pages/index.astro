@@ -44,25 +44,25 @@ const steps = [
   },
   {
     title: 'Planlama',
-    thesis: 'Süre ve maliyet, geliştirme başlamadan yazılı olarak belirlenir.',
-    text: 'Kapsamı maddelere ayırır, her maddenin süresini ve fiyatını netleştiririz. Onayladığınız belge işin sonuna kadar ortak referansımız olur.',
+    thesis: 'Süreyi ve maliyeti, geliştirmeye başlamadan yazılı olarak belirliyoruz.',
+    text: 'Kapsamı maddelere ayırıyor, her maddenin süresini ve fiyatını tek tek yazıyoruz. Onayladığınız belgeyi iş bitene kadar iki taraf da esas alır.',
   },
   {
     title: 'Geliştirme',
     thesis: 'İlerlemeye siz de şahit olursunuz.',
-    text: 'Bu aşamada ilerlemeyi sizinle paylaşır, geri bildirimlerinizi sürece dahil ederiz. Değişikliklerin erken yapılması hem maliyeti hem de riski azaltır.',
+    text: 'Bu aşamada ilerlemeyi sizinle paylaşıyor, geri bildirimlerinizi işe yansıtıyoruz. Bir değişikliği erken yapmak hem maliyeti hem de riski azaltır.',
   },
   {
     title: 'Yayın ve sonrası',
-    thesis: 'Teslimden sonra da sorumluluğumuz sürer.',
-    text: 'Ürünü yayına alır, ekibinize devrederiz. Sonrasında bakım ve yeni özellikler için yanınızda kalmaya devam ederiz.',
+    thesis: 'Teslimden sonra da yanınızdayız.',
+    text: 'Ürünü yayına alıp ekibinize devrediyoruz. Sonrasında da bakım ve yeni özellikler için sizinle çalışmayı sürdürüyoruz.',
   },
 ];
 ---
 
 <BaseLayout
-  title="İscotera — Yazılım Çözümleri"
-  description="Web, mobil ve özel yazılım geliştiren bir yazılım firması. Kapsam, süre ve maliyet baştan yazılı olarak netleşir; ilerlemeyi siz de takip edebilirsiniz."
+  title="İscotera — Web, Mobil ve Özel Yazılım Geliştirme"
+  description="Web, mobil ve özel yazılım geliştiren yazılım firmasıyız. Kapsamı, süreyi ve maliyeti baştan yazılı olarak netleştiriyor, ilerlemeyi sizinle paylaşıyoruz."
   lang="tr"
   alternate="/en/"
 >
@@ -93,7 +93,7 @@ const steps = [
             href="/iletisim/"
             class="rounded-lg bg-action px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-action-dark"
           >
-            Bize Ulaşın
+            Bize ulaşın
           </a>
           <a
             href="/urunler/"
@@ -120,14 +120,15 @@ const steps = [
     <h2 class="text-2xl font-bold text-ink-strong">Biz kimiz?</h2>
     <div class="mt-4 max-w-3xl space-y-4">
       <p class="text-lg text-ink-soft">
-        İscotera, müşterileri için web ve mobil yazılım geliştiriyor. Yazılımı
-        bir amaç olarak değil, işinizi kolaylaştıran bir araç olarak görüyoruz.
+        İscotera'da işletmeler ve kurumlar için web ve mobil yazılım
+        geliştiriyoruz. Bizim için yazılım, işinizi kolaylaştıran bir araç.
       </p>
       <p class="text-ink-muted">
-        Teknoloji seçimlerini projenin ihtiyacına göre belirliyoruz. Her işe
-        aynı çözümü uygulamak yerine bütçenize ve işin büyüklüğüne uyan yolu
-        öneriyoruz. Kendi ürünlerimizi de geliştirip yayınladığımız için bir
-        projenin yayına alındıktan sonra neler getirdiğini de biliyoruz.
+        Hangi teknolojiyi kullanacağımıza projenin ihtiyacına göre karar
+        veriyoruz. Her işe aynı kalıbı uygulamak yerine bütçenize ve işin
+        büyüklüğüne uyan yolu öneriyoruz. Kendi ürünlerimizi de geliştirip
+        yayına aldığımız için, bir uygulamanın yayından sonra nelere ihtiyaç
+        duyduğunu da biliyoruz.
       </p>
     </div>
   </section>
@@ -146,7 +147,7 @@ const steps = [
             <ProductPanel
               project={product}
               href={`/urunler/${product.id.replace('tr/', '')}/`}
-              linkLabel="Ürünü incele"
+              linkLabel="Ürünü inceleyin"
               lang="tr"
             />
           ))}
@@ -200,14 +201,14 @@ const steps = [
           Her aşamada ne olacağını baştan bilirsiniz
         </h2>
         <p class="mt-5 text-lg text-ink-muted">
-          Neyi birlikte karara bağlayacağımız ve her adımın hangi çıktıyla
-          biteceği, işin en başında yazılı olur.
+          Neye birlikte karar vereceğimizi ve her adımın sonunda elinize ne
+          geçeceğini işin en başında yazıya döküyoruz.
         </p>
         <a
           href="/iletisim/"
           class="mt-6 inline-block rounded-lg bg-action px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-action-dark"
         >
-          Bize Ulaşın
+          Bize ulaşın
         </a>
         <Image
           src={teamImg}
@@ -328,8 +329,8 @@ const steps = [
     >
       <h2 class="text-2xl font-bold text-ink-strong">Bir fikriniz mi var?</h2>
       <p class="mx-auto mt-3 max-w-xl text-ink-muted">
-        Ne yapmak istediğinizi iletin; değerlendirmemizi öngörülen süre ve
-        bütçeyle birlikte yazılı olarak paylaşalım.
+        Ne yapmak istediğinizi anlatın, size tahmini süre ve bütçeyle
+        birlikte yazılı bir değerlendirme gönderelim.
       </p>
       <a
         href="/iletisim/"

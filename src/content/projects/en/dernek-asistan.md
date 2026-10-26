@@ -2,9 +2,9 @@
 title: "Dernek Asistan"
 description: "A donation tracking system we built for charities. Every donation in one place, recorded in seconds, with the management report one click away."
 type: case-study
-tagline: "A charity's every donation in one system: less effort, more control."
+tagline: "All of a charity's donations in one system, with recording and tracking made easier."
 status: live
-category: "Web and mobile app"
+category: "Web app"
 # No client name on purpose: the user asked that the organisation not be
 # named anywhere in the project (2026-09-23). The copy only says the system
 # is used by charities.
@@ -33,49 +33,51 @@ results: []
 # 2026-09-21).
 features:
   - title: "Saves time"
-    text: "Recording a donation takes seconds. The system supplies the amount and the reference number itself; staff do no arithmetic and consult no price list."
+    text: "Recording a donation takes seconds, because the system fills in the amount and the reference number itself. Staff don't need to do sums or check a price list."
   - title: "Every donation on record"
-    text: "Food, bread, qurbani, Qur'an, water wells; whatever the type, every donation sits in its own place. Who gave, when and for what: nothing to search for, just open and look."
+    text: "Food, bread, qurbani, Qur'an or water wells: whatever the type, every donation has its own place. You can see who gave, when and for what without searching for it."
   - title: "Easier to track"
-    text: "For share-based projects, filled and remaining shares are visible on screen. A project that fills up moves itself to the completed list; no more counting by hand."
+    text: "For share-based projects, you can see at a glance how many shares are filled and how many remain. A project that fills up moves to the completed list by itself, so nobody has to count by hand."
   - title: "Consistent data"
-    text: "Prices are updated in one place, by authorised people only, so everyone works with the same figure. Who entered each record and when is known; scattered spreadsheets and conflicting numbers disappear."
+    text: "Only authorised people can update prices, and only in one place, so everyone works with the same figures. Because you can see who entered each record and when, there are no more scattered spreadsheets or conflicting numbers."
   - title: "Reports in one click"
-    text: "Pick a date range and the period's donation report is ready as a PDF. No more hours of merging spreadsheets before a board meeting."
+    text: "Pick a date range and the donation report for that period is ready as a PDF. You no longer spend hours merging spreadsheets before a board meeting."
   - title: "More donations, same team"
-    text: "Office and field work in the same system, so the busy season is absorbed by the software rather than by extra staff. The team spends its time on donors and on the aid itself, not on record-keeping."
+    text: "Office staff and field volunteers work in the same system, so you can get through the busy season without taking on extra staff. The team spends its time on donors and the aid itself rather than on record-keeping."
 order: 2
 draft: false
 ---
 
 **Dernek Asistan** is the system we built so that charities can run all of
 their donation work from one place. Staff in the office and volunteers in the
-field use the same screen.
+field use the same system.
 
 ## The problem
 
-Hundreds of donations arrive in a short time around Qurban and Ramadan. Once
-records are scattered across spreadsheets, messaging groups and notebooks, the
-same difficulties turn up every time:
+Around Qurban and Ramadan, hundreds of donations come in within a short time.
+Once records are spread across spreadsheets, messaging groups and notebooks,
+the same problems come up again and again:
 
-- Who gave a donation, when and for what cannot be found afterwards.
+- Nobody can find out afterwards who gave a donation, when or for what.
 - Amounts are worked out by hand, so errors and conflicting figures are
   inevitable.
-- Answering "how many donations did we take this month?" means hours of
+- Answering "how many donations did we receive this month?" means hours of
   adding up.
 - Getting through the busy season takes extra people.
 
 ## Today
 
-Dernek Asistan is in use at charities today. Donations sit in one system,
-amounts and reports are ready, and every record has a trail. Charities can put
-the time they used to spend on records and reporting into the aid itself.
+Charities use Dernek Asistan today. Donations are kept in one system, amounts
+and reports are ready when needed, and you can see who entered every record.
+Charities can now put the time they used to spend on records and reports into
+their aid work.
 
 ## A system built for your organisation
 
-Every charity has its own kinds of aid, its own pricing and its own workflow.
-Each project therefore begins with a review of how the organisation currently
-operates, and the system is designed around that.
+Every charity has its own kinds of aid, its own prices and its own way of
+working. So we start each project by looking at how your organisation works
+today, and we design the system around that.
 
-To discuss your requirements, please [contact us](/en/contact/) or review our
-[custom software solutions](/en/services/custom-software-solutions/).
+If you'd like to talk through what you need, [get in touch](/en/contact/). Our
+[Custom Software Solutions](/en/services/custom-software-solutions/) page
+explains how we approach projects like this.

@@ -1,6 +1,6 @@
 ---
 title: "İbadet Rehberim"
-description: "Namaz vakitleri, zikirmatik ve yapay zekâ destekli asistanı tek bir sade ekranda toplayan iOS ve Android uygulaması."
+description: "Namaz vakitlerini, zikirmatiği ve yapay zekâ destekli asistanı sade bir arayüzde bir araya getiren iOS ve Android uygulaması."
 type: product
 tagline: "Namaz vakti, zikir ve merak ettiğiniz dinî sorular için tek bir sade uygulama."
 status: live
@@ -16,18 +16,16 @@ video:
   src: "/media/ibadet-rehberim/tanitim.mp4"
   uploadDate: 2026-08-29
 stores:
-  appStore: "https://apps.apple.com/tr/app/i-badet-rehberim/id6759827771"
-  googlePlay: "https://play.google.com/store/apps/details?id=com.omran.huzur_islamda"
   web: "https://ibadetrehberim.com/"
 features:
   - title: "Namaz vakitleri, bulunduğunuz yere göre"
-    text: "Vakitler Diyanet'in hesaplama yöntemiyle ve konumunuza göre hesaplanır. Vakit girdiğinde bildirim gelir, telefon çevrimdışıyken bile. Ne saate bakmanız gerekir ne de internete."
+    text: "Uygulama vakitleri konumunuza göre, Diyanet'in hesaplama yöntemiyle hesaplıyor. Vakit girdiğinde telefon çevrimdışı olsa bile bildirim geliyor, saati sizin takip etmeniz gerekmiyor."
     image: "../_images/ibadet-rehberim/screen-prayer-times.png"
     alt: "İbadet Rehberim ezan vakitleri ekranı: şehre göre günlük namaz vakitleri ve vakit girdiğinde gelen bildirim"
-  - title: "Sorabileceğiniz bir İslami asistan"
-    text: "Aklınıza takılan dinî soruyu yazın, yapay zekâ destekli asistan yanıtlasın. Yanıtın hangi kaynağa dayandığı da yazılı, yani okuduğunuzu doğrulayabilirsiniz."
+  - title: "Dinî sorularınıza kaynaklı yanıt"
+    text: "Aklınıza takılan dinî soruyu yazıyorsunuz, yapay zekâ destekli asistan yanıtlıyor. Yanıtla birlikte dayandığı kaynak da gösteriliyor, böylece okuduğunuzu kendiniz kontrol edebiliyorsunuz."
     image: "../_images/ibadet-rehberim/screen-assistant.png"
-    alt: "İbadet Rehberim islami asistan ekranı: kullanıcının sorduğu dinî soruya verilen kaynaklı yanıt"
+    alt: "İbadet Rehberim İslami asistan ekranı: kullanıcının sorduğu dinî soruya verilen kaynaklı yanıt"
 # Mağaza puanı bilerek yok: uydurma bir puan yerine ölçülebilir tek gerçek
 # veri (indirme sayısı) duruyor. Google Play'deki gerçek puan elimize
 # geçtiğinde rating: { value, count } olarak buraya eklenebilir.
@@ -54,69 +52,68 @@ draft: false
 ---
 
 **İbadet Rehberim**, günlük ibadetleri takip etmeyi kolaylaştıran bir mobil
-uygulama. Fikri, tasarımı ve yazılımı bize ait; baştan sona İscotera'da
-geliştirdik.
+uygulama. Fikri, tasarımı ve yazılımı bize ait. Uygulamayı baştan sona
+İscotera'da geliştirdik.
 
-Uygulamanın bütün özellikleri, ekran görüntüleri ve sık sorulan sorular kendi
-sitesinde duruyor: [ibadetrehberim.com](https://ibadetrehberim.com/). Bu sayfa
-ürünü tanıtmak için değil, nasıl geliştirdiğimizi anlatmak için var.
+Uygulamanın bütün özelliklerini, ekran görüntülerini ve sık sorulan soruları
+kendi sitesinde bulabilirsiniz: [ibadetrehberim.com](https://ibadetrehberim.com/).
+Bu sayfada ise uygulamayı nasıl geliştirdiğimizi anlatıyoruz.
 
 ## Nasıl geliştirdik
 
-### Arayüz: öğrenmek gerektirmeyen bir yapı
+### Öğrenmeye gerek kalmayan bir arayüz
 
-Arayüzü baştan her yaştan kullanıcıyı düşünerek tasarladık: büyük ve okunaklı
-yazılar, az sayıda ama net buton, beş sabit sekmeden oluşan bir gezinme.
-Kullanıcı hangi ekranda olduğunu her an biliyor, aradığı şeyi menülerin
-arasında aramıyor. Telefonunun yazı boyutunu büyütmüş biri uygulamayı
-açtığında metinler de ona göre ölçekleniyor; ayarı bir kez yapmış olan kişi
-burada yeniden uğraşmıyor.
+Arayüzü en baştan her yaştan kullanıcıyı düşünerek tasarladık. Yazılar büyük
+ve okunaklı, butonlar az ama net, gezinme de beş sabit sekmeden oluşuyor.
+Kullanıcı hangi ekranda olduğunu her an biliyor, aradığını menülerin arasında
+aramıyor. Telefonunda yazı boyutunu büyütmüş biri uygulamayı açtığında
+metinler de ona göre büyüyor, aynı ayarı burada bir kez daha yapmak zorunda
+kalmıyor.
 
 ### Tek kod tabanı, iki platform
 
 Uygulamayı Flutter ile, tek bir kaynaktan hem iPhone hem Android için
-geliştirdik. Müşterilerimiz açısından bu şu anlama geliyor: iki ayrı uygulama
+geliştirdik. Sizin açınızdan bu şu anlama geliyor: iki ayrı uygulama
 yaptırmanız gerekmiyor, yeni bir özellik iki platforma da aynı anda geliyor ve
 bakım maliyeti ikiye katlanmıyor.
 
 ### Veri önce cihazda, bulut yedekte
 
-Zikirler, tercihler ve indirilen namaz vakitleri telefonun kendi veritabanında
-tutuluyor; bulut yalnızca yedekleme ve cihaz değiştirildiğinde eşitleme için
-devreye giriyor. Kullanıcı bunu şurada hissediyor: uygulama saniyeler içinde
-açılıyor, zikir sayacı ve namaz vakitleri bağlantı olmadan da çalışıyor,
-hatırlatmalar sunucuya değil cihazın kendi saatine bağlı olduğu için şebeke
-çekmediğinde bile zamanında geliyor.
+Zikirleri, tercihleri ve indirilen namaz vakitlerini telefonun kendi
+hafızasında tutuyoruz. Bulut yalnızca yedek almak ve telefon değiştiğinde
+verileri yeni cihaza taşımak için devreye giriyor. Kullanıcı bunun farkını
+günlük kullanımda görüyor: uygulama saniyeler içinde açılıyor, zikir sayacı ve
+namaz vakitleri internet olmadan da çalışıyor. Hatırlatmalar sunucuya değil
+telefonun kendi saatine bağlı olduğu için şebeke çekmediğinde bile zamanında
+geliyor.
 
-### Sunucu tarafı: hazır bulut altyapısı
+### Sunucu tarafında hazır bir bulut altyapısı
 
-Giriş, içerik ve sunucu tarafı işlemler için Firebase'i kullandık; asistan
-Google'ın Gemini modeliyle çalışıyor. Böylece küçük bir ekiple sürdürülebilir,
-kullanıcı sayısı arttığında da sorun çıkarmayacak bir sistem kurmuş olduk.
-Hesap silme gibi hassas işlemleri telefona bırakmadık: kullanıcı hesabını
-sildiğinde ilgili bütün kayıtlar sunucu tarafında tek bir işlemle temizleniyor.
+Kullanıcı girişi, içerik ve sunucu tarafındaki işlemler için Firebase'i
+kullandık. Asistan da Google'ın Gemini modeliyle çalışıyor. Böylece küçük bir
+ekibin bakımını yapabileceği, kullanıcı sayısı arttığında da sorun
+çıkarmayacak bir sistem kurduk. Hesap silme gibi hassas işlemleri ise telefona
+bırakmadık: kullanıcı hesabını sildiğinde ona ait bütün kayıtlar sunucuda tek
+seferde siliniyor.
 
-### Kod tarafı: değişime hazır bir yapı
+### Değişime hazır bir kod yapısı
 
-Uygulamayı katmanlı bir mimariyle yazdık; arayüz, iş kuralları ve veri erişimi
-birbirinden ayrı duruyor. Bunun pratik karşılığı şu: bir ekranın verisini
-nereden aldığı tek bir yerden değişiyor, yeni bir özellik mevcut ekranları
-bozma riski taşımıyor ve projeye sonradan katılan bir geliştirici nereye
-bakacağını biliyor. Perde arkasındaki mimari kararları merak ediyorsanız,
+Uygulamayı katmanlı bir mimariyle yazdık: arayüz, iş kuralları ve veri erişimi
+birbirinden ayrı duruyor. Böylece bir ekranın verisini nereden aldığını tek
+bir yerden değiştirebiliyoruz ve yeni bir özellik var olan ekranları bozma
+riski taşımıyor. Projeye sonradan katılan bir geliştirici de nereye bakacağını
+biliyor. Perde arkasındaki mimari kararları merak ediyorsanız, bu yaklaşımı
 [Clean Architecture yazımızda](/blog/clean-architecture-ne-zaman-deger/)
-bu yaklaşımı ayrıntılı anlatmıştık.
+ayrıntılı olarak anlattık.
 
 ## Bugün
 
-Uygulama App Store'da ve Google Play'de yayında, ücretsiz indirilebiliyor.
-Namaz vakitleri, akıllı zikirmatik, dua–hadis–ayet akışı ve yapay zekâ
-destekli asistan bugün kullanıcıların elinde; isteyen destek paketiyle
-reklamsız kullanabiliyor.
+Uygulama App Store'da ve Google Play'de yayında, ücretsiz olarak
+indirilebiliyor. Namaz vakitleri, akıllı zikirmatik, dua, hadis ve ayet akışı
+ile yapay zekâ destekli asistan bugün kullanıcıların elinde. Reklamsız
+kullanmak isteyenler destek paketine geçebiliyor.
 
-İlk satırı Kasım 2025'te yazdık; proje o günden bu yana düzenli olarak
-geliştiriliyor.
-
-Aklınızda bir mobil uygulama fikri varsa [bize ulaşın](/iletisim/). İki
-platform, çevrimdışı çalışan bir veri katmanı ve yapay zekâ destekli bir
-asistan — hepsini tek bir ekiple hayata geçirdik. Sizinkini nasıl hayata
-geçireceğimizi birlikte konuşalım.
+İki platformdaki sürümü, internet olmadan da çalışan yapıyı ve yapay zekâ
+destekli asistanı tek bir ekiple geliştirdik. Aklınızda bir mobil
+uygulama fikri varsa [bize yazın](/iletisim/), nasıl hayata
+geçirebileceğimizi birlikte konuşalım.

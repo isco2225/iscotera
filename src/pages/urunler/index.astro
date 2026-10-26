@@ -18,7 +18,7 @@ const projects = (
 
 <BaseLayout
   title="Ürünler"
-  description="İscotera'nın geliştirdiği ürünler ve vaka çalışmaları."
+  description="İscotera'da geliştirdiğimiz kendi ürünlerimiz ve müşterilerimiz için yaptığımız projeler."
   lang="tr"
   alternate="/en/products/"
   back={{ href: '/', label: 'Ana Sayfa' }}
@@ -26,7 +26,7 @@ const projects = (
   <section class="mx-auto max-w-5xl px-4 pt-16 pb-10">
     <h1 class="text-3xl font-bold text-ink-strong">Ürünlerimiz</h1>
     <p class="mt-3 max-w-2xl text-ink-muted">
-      Geliştirdiğimiz ürünler ve elde edilen sonuçlar.
+      Kendi ürünlerimiz ve müşterilerimiz için geliştirdiğimiz sistemler.
     </p>
     {
       projects.length === 0 && (
@@ -46,7 +46,7 @@ const projects = (
           <ProductPanel
             project={project}
             href={`/urunler/${project.id.replace('tr/', '')}/`}
-            linkLabel="Ürünü incele"
+            linkLabel="Ürünü inceleyin"
             lang="tr"
             as="h2"
             eager={i === 0}
@@ -58,13 +58,13 @@ const projects = (
 
   <section class="mx-auto max-w-5xl px-4 py-14">
     <section class="rounded-2xl border border-line bg-surface-muted p-8 text-center sm:p-12">
-      <h2 class="text-2xl font-bold text-ink-strong">Sıradaki ürün sizinki olsun</h2>
-      <p class="mx-auto mt-3 max-w-xl text-ink-muted">Aklınızdaki fikri birlikte değerlendirelim; yol haritasını ve bütçeyi yazılı olarak paylaşalım.</p>
+      <h2 class="text-2xl font-bold text-ink-strong">Projenizi konuşalım</h2>
+      <p class="mx-auto mt-3 max-w-xl text-ink-muted">Ne yapmak istediğinizi anlatın, birlikte değerlendirelim ve yol haritasını bütçesiyle birlikte size yazılı olarak gönderelim.</p>
       <a
         href="/iletisim/"
         class="mt-6 inline-block rounded-lg bg-action px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-action-dark"
       >
-        Projenizi konuşalım
+        Bize ulaşın
       </a>
     </section>
   </section>

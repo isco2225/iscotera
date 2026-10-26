@@ -9,57 +9,59 @@ coverAlt: "Geniş pencereli bir toplantı odasında, masadaki dizüstü bilgisay
 
 İşletmeniz için bir yazılım yaptırmak istiyorsunuz: bir sipariş takip
 sistemi, bir müşteri paneli ya da tablolarla yürüyen bir işin yazılıma
-taşınması. Bu yazıda ihtiyacın tanımlanmasından teslime kadar sürecin nasıl
-işlediğini ve sizden hangi hazırlıkların beklendiğini anlatıyoruz.
+taşınması. Bu yazıda, ihtiyacı tanımlamaktan teslime kadar sürecin nasıl
+ilerlediğini ve sizin hangi hazırlıkları yapmanız gerektiğini anlatıyoruz.
 
 ## 1. Çözümü değil, sorunu tanımlayın
 
-Yazılım talepleri çoğunlukla bir çözümle gelir: "Bize bir CRM lazım."
-Görüşmeyi verimli kılan ise sorunun kendisidir: "Teklif verdiğimiz
+Yazılım talepleri çoğu zaman hazır bir çözümle gelir: "Bize bir CRM lazım."
+Oysa görüşmeyi verimli kılan, sorunun kendisidir: "Teklif verdiğimiz
 müşterileri takip edemiyoruz, kimin ne zaman arandığı kayıtlı değil."
 
-Sorun açık yazıldığında iki şey mümkün olur. Birincisi, yazılımın neyi
-düzelteceği ölçülebilir hâle gelir. İkincisi, belki de çok daha küçük bir
-çözümün yeterli olduğu görülür.
+Sorunu açıkça yazdığınızda iki şey kazanırsınız. Birincisi, yazılımın neyi
+düzelteceğini ölçebilirsiniz. İkincisi, belki çok daha küçük bir çözümün
+yeterli olduğunu görürsünüz.
 
 ## 2. Hazır bir paket işinizi görüyor mu?
 
-Özel yazılım, her ihtiyacın cevabı değildir. Muhasebe, e-fatura, standart
-stok takibi gibi alanlarda olgun hazır paketler vardır ve bunları yeniden
-yazdırmak çoğu zaman gereksizdir. Özel yazılım, işinizin hazır paketlere
-uymayan, size özgü kısmında değer üretir.
+Özel yazılım her ihtiyacın cevabı değil. Muhasebe, e-fatura ya da standart
+stok takibi gibi alanlarda olgun hazır paketler var ve bunları yeniden
+yazdırmak çoğu zaman gereksiz. Özel yazılım asıl faydasını, işinizin hazır
+paketlere uymayan ve size özgü olan kısmında gösterir.
 
-Bu kararın nasıl verileceğini
+Bu kararı nasıl vereceğinizi
 [özel yazılım mı, hazır paket mi](/blog/ozel-yazilim-mi-hazir-paket-mi/)
-yazısında, tablolardan yazılıma geçişin zamanını ise
+yazısında, tablolardan yazılıma ne zaman geçileceğini de
 [Excel'den yazılıma ne zaman geçilir](/blog/excelden-yazilima-ne-zaman-gecilir/)
-yazısında ele aldık.
+yazısında anlattık.
 
 ## 3. Bir sayfalık ihtiyaç belgesi hazırlayın
 
-Teknik bir doküman gerekmez. Şu soruların cevabı yeterlidir:
+Teknik bir doküman hazırlamanız gerekmiyor. Şu soruları cevaplamanız
+yeterli:
 
 - İş bugün nasıl yürüyor, nerede aksıyor?
 - Yazılımı kimler kullanacak? Kaç kişi, hangi görevlerde?
-- Yazılımın yapması gereken üç ila beş temel iş nedir?
-- Mevcut hangi sistemlerle veri alışverişi olacak? (muhasebe programı,
+- Yazılımın yapması gereken üç ila beş temel iş hangileri?
+- Elinizdeki hangi sistemlerle veri alışverişi olacak? (muhasebe programı,
   e-ticaret sitesi, tablolar)
 - Aktarılması gereken eski veri var mı?
 - Bir tarih ya da bütçe sınırı var mı?
 
-Bu belge her firmaya aynı şekilde gönderildiğinde, gelen teklifler
-birbiriyle karşılaştırılabilir olur.
+Bu belgeyi her firmaya aynı şekilde gönderirseniz gelen teklifleri
+birbiriyle karşılaştırabilirsiniz.
 
 ## 4. Kiminle çalışacağınıza karar verin
 
-Üç seçenek vardır:
+Önünüzde üç seçenek var:
 
 - **Serbest çalışan yazılımcı.** Küçük ve sınırları belli işler için
-  ekonomiktir. Risk, işin tek kişiye bağlı olmasıdır.
-- **Yazılım firması.** Tasarım, geliştirme ve test ayrı kişilerce yürütülür;
-  süreklilik ve sözleşme güvencesi vardır.
+  ekonomik bir seçenek. Riski, işin tek kişiye bağlı kalması.
+- **Yazılım firması.** Tasarımı, geliştirmeyi ve testi farklı kişiler
+  yürütür. Süreklilik ve sözleşme güvencesi vardır.
 - **Kendi ekibinizi kurmak.** Yazılım işinizin merkezindeyse ve sürekli
-  gelişecekse anlamlıdır; kurulması zaman alır ve sabit gider getirir.
+  gelişecekse mantıklı olur. Ancak ekibi kurmak zaman alır ve sabit gider
+  getirir.
 
 Hangisini seçerseniz seçin, şu soruları sorun: Benzer bir işi daha önce
 yaptınız mı ve görebilir miyim? Teklif maddelere ayrılmış mı? Kaynak kod
@@ -67,36 +69,38 @@ kime ait olacak? Yayından sonra bakımı kim, hangi koşullarla yapacak?
 
 ## 5. Geliştirme süreci
 
-1. **Analiz ve kapsam belgesi.** İhtiyaç maddelere ayrılır. Ne yapılacağı,
-   ne yapılmayacağı, süre ve maliyet yazılı olarak belirlenir. Sürecin en
-   önemli aşaması budur; sonraki anlaşmazlıkların çoğu burada önlenir.
+1. **Analiz ve kapsam belgesi.** İhtiyaç maddelere ayrılır; ne yapılacağı,
+   ne yapılmayacağı, süre ve maliyet yazıya dökülür. Sürecin en önemli
+   aşaması budur, çünkü sonradan çıkabilecek anlaşmazlıkların çoğu burada
+   önlenir.
 2. **Tasarım.** Ekranlar ve iş akışı çizilir. Kullanıcılar ekranları bu
-   aşamada görür ve değişiklikler kod yazılmadan önce yapılır.
-3. **Geliştirme.** Yazılım parça parça yazılır. Tamamlanan bölümleri
-   deneyebilmeniz, ilerlemeyi izlemenizi ve yanlış anlaşılmaların erken
-   fark edilmesini sağlar.
+   aşamada görür, değişiklikler de daha kod yazılmadan yapılır.
+3. **Geliştirme.** Yazılım parça parça geliştirilir. Tamamlanan bölümleri
+   denedikçe ilerlemeyi görürsünüz, yanlış anlaşılmalar da erken fark
+   edilir.
 4. **Test ve veri aktarımı.** Yazılım gerçek kullanım senaryolarıyla
    denenir, eski veriler aktarılır.
-5. **Yayın ve eğitim.** Yazılım kullanıma açılır, kullanıcılara gösterilir.
+5. **Yayın ve eğitim.** Yazılım kullanıma açılır ve kullanıcılara nasıl
+   kullanılacağı gösterilir.
 6. **Bakım.** Hata düzeltmeleri, güvenlik güncellemeleri ve yeni istekler
    için koşullar önceden belirlenir.
 
-Bu aşamaları nasıl yürüttüğümüzü
+Bu aşamaları bizim nasıl yürüttüğümüzü
 [özel yazılım çözümleri](/hizmetler/ozel-yazilim-cozumleri/) sayfasında
-bulabilirsiniz.
+anlattık.
 
 ## 6. Küçük başlayın
 
 Yazılım projelerinde en sık yapılan hata, her şeyi ilk sürüme sığdırmaya
-çalışmaktır. İlk sürüm en çok zaman kaybettiren tek bir işi çözdüğünde
-yazılım erken kullanıma girer, ekibiniz alışır ve sonraki adımlar gerçek
-kullanımdan gelen bilgiyle planlanır. Dernekler için geliştirdiğimiz
-[Dernek Asistan](/urunler/dernek-asistan/) projesinde de önce en çok zaman
-alan sorun çözüldü, diğer bölümler bunun üzerine eklendi.
+çalışmak. İlk sürüm size en çok zaman kaybettiren tek bir işi çözerse
+yazılım erken kullanıma girer, ekibiniz ona alışır ve sonraki adımları
+gerçek kullanımdan öğrendiklerinizle planlarsınız. Dernekler için
+geliştirdiğimiz [Dernek Asistan](/urunler/dernek-asistan/) projesinde de
+önce en çok zaman alan sorunu çözdük, diğer bölümleri onun üzerine ekledik.
 
 ## Süre, maliyet ve sözleşme
 
-Bu üç konu ayrı yazılarda:
+Bu üç konuyu ayrı yazılarda ele aldık:
 
 - [Özel yazılım ne kadar sürer?](/blog/ozel-yazilim-ne-kadar-surer/)
 - [Yazılım yaptırma maliyeti](/blog/yazilim-yaptirma-maliyeti/)
@@ -104,9 +108,8 @@ Bu üç konu ayrı yazılarda:
 
 ## Kısaca
 
-Yazılım yaptırmak, sorunu açık biçimde yazmakla başlar. Bir sayfalık ihtiyaç
-belgesi, maddelere ayrılmış bir teklif ve dar tutulmuş bir ilk sürüm,
-projenin öngörülebilir ilerlemesini sağlar.
+Yazılım yaptırmak, sorunu açıkça yazıya dökmekle başlar. Bir sayfalık
+ihtiyaç belgesi, maddelere ayrılmış bir teklif ve dar tutulmuş bir ilk
+sürüm, projenin nasıl ilerleyeceğini önceden görmenizi kolaylaştırır.
 
-İhtiyacınızı birlikte değerlendirmek isterseniz
-[iletişime geçebilirsiniz](/iletisim/).
+İhtiyacınızı birlikte değerlendirmek isterseniz [bize yazın](/iletisim/).

@@ -8,104 +8,107 @@ coverAlt: "Spiralli boş bir defterin üzerinde bir kalem ve yanında siyah bir 
 ---
 
 Mobil uygulama yaptırma maliyeti için aldığınız teklifler birbirinden çok
-farklı olabilir. Bunun nedeni çoğunlukla fiyat politikası değil, tekliflerin
-aynı işi tarif etmemesidir. Bu yazıda mobil uygulama maliyetini belirleyen
-kalemleri, yayından sonra devam eden giderleri ve bütçeyi düşürmenin
-yollarını anlatıyoruz. Rakam vermiyoruz; nedenini sonda açıklıyoruz.
+farklı çıkabilir. Bunun nedeni çoğu zaman fiyat politikası değil,
+tekliflerin aynı işi tarif etmemesi. Bu yazıda mobil uygulama maliyetini
+belirleyen kalemleri, yayından sonra süren giderleri ve bütçeyi düşürmenin
+yollarını anlatıyoruz. Rakam vermiyoruz, nedenini yazının sonunda
+açıklıyoruz.
 
 ## Mobil uygulama maliyetini belirleyen yedi kalem
 
 **1. Platform sayısı.** Uygulama yalnızca Android'de mi, yalnızca iOS'ta mı,
-yoksa ikisinde birden mi yayınlanacak? İki platform, her durumda tek
-platformdan fazla iş demektir: iki mağaza, iki test süreci, iki ayrı kural
-seti.
+yoksa ikisinde birden mi yayınlanacak? İki platform her durumda tek
+platformdan daha fazla iş demektir: iki mağaza, iki test süreci ve iki ayrı
+kural seti.
 
-**2. Geliştirme yöntemi.** Her platform için ayrı uygulama yazmak en yüksek
-maliyetli yoldur. Tek kod tabanından iki platforma çıkmak maliyeti belirgin
-biçimde düşürür ve çoğu iş uygulaması için yeterlidir. Yoğun grafik ya da
-cihaza özgü donanım kullanan uygulamalarda ayrı geliştirme gerekebilir.
+**2. Geliştirme yöntemi.** Her platform için ayrı bir uygulama yazmak en
+pahalı yoldur. Tek kod tabanıyla, yani aynı kodla iki platforma birden
+çıkmak maliyeti belirgin biçimde düşürür ve çoğu iş uygulaması için
+yeterlidir. Yoğun grafik ya da cihaza özgü donanım kullanan uygulamalarda
+ayrı geliştirme gerekebilir.
 
-**3. Ekran ve özellik sayısı.** Maliyetin ana belirleyicisi budur. Beş
+**3. Ekran ve özellik sayısı.** Maliyeti en çok belirleyen kalem budur. Beş
 ekranlı bir bilgi uygulaması ile sipariş alan, ödeme kabul eden ve kurye
-takibi yapan bir uygulama aynı kategoride değerlendirilemez. Tekliflerin
-ekran ve özellik listesi içermesi bu nedenle önemlidir.
+takibi yapan bir uygulama aynı iş değildir. Bu yüzden teklifte ekran ve
+özellik listesinin olması önemli.
 
 **4. Uygulamanın arkasındaki sistem.** Kullanıcı hesabı, sipariş ya da
 içerik barındıran her uygulamanın arkasında bir sunucu yazılımı ve çoğu
-zaman bir yönetim paneli bulunur. Bu bölüm kullanıcıya görünmez, ancak
-toplam işin yarısına yaklaşabilir. Teklifte yer almıyorsa mutlaka sorun.
+zaman bir yönetim paneli olur. Kullanıcı bu bölümü görmez, ama toplam işin
+yarısına yaklaşabilir. Teklifte yoksa mutlaka sorun.
 
 **5. Entegrasyonlar.** Online ödeme, harita ve konum, anlık bildirim, SMS
-doğrulama, sosyal medya ile giriş, muhasebe ya da stok sistemi bağlantısı.
-Her biri ayrı bir kalemdir ve karşı sistemin kurallarına bağlıdır.
+doğrulama, sosyal medya hesabıyla giriş, muhasebe ya da stok sistemi
+bağlantısı. Her biri ayrı bir kalemdir ve karşı sistemin kurallarına
+bağlıdır.
 
 **6. Tasarım.** Platformun standart bileşenleriyle kurulan bir arayüz ile
 markaya özel çizilmiş, animasyonlu bir arayüz arasında ciddi bir emek farkı
-vardır. Hangisinin gerektiği, uygulamanın kime hitap ettiğine bağlıdır:
-çalışanların kullandığı bir iç uygulama ile mağazada rakipleriyle yarışan
-bir uygulamanın ihtiyacı aynı değildir.
+var. Hangisinin gerektiği uygulamanın kime seslendiğine bağlı: Çalışanların
+kullandığı bir iç uygulama ile mağazada rakipleriyle yarışan bir uygulamanın
+ihtiyacı aynı değildir.
 
-**7. Çevrimdışı çalışma.** Uygulamanın internet olmadan da çalışması ve
-bağlantı geldiğinde veriyi eşitlemesi isteniyorsa bu, basit görünen ama
-maliyeti artıran bir gereksinimdir.
+**7. Çevrimdışı çalışma.** Uygulamanın internet olmadan da çalışmasını ve
+bağlantı gelince verileri eşitlemesini istiyorsanız, bu basit görünen ama
+maliyeti artıran bir ihtiyaçtır.
 
 ## Yayından sonra devam eden giderler
 
-Yapım bedeli toplam maliyetin yalnızca bir bölümüdür:
+Yapım bedeli toplam maliyetin yalnızca bir bölümü:
 
 - **Mağaza hesapları.** Apple geliştirici hesabı için yıllık, Google ise
-  tek seferlik bir ücret alır. Tutarlar küçüktür; hesapların sizin adınıza
-  açılması tutardan daha önemlidir.
-- **Sunucu.** Uygulamanın arkasındaki sistem aylık bir barındırma gideri
-  taşır ve bu gider kullanıcı sayısıyla birlikte artar. Seçenekleri
+  tek seferlik bir ücret alır. Tutarlar küçük. Asıl önemli olan, hesapların
+  sizin adınıza açılması.
+- **Sunucu.** Uygulamanın arkasındaki sistemin aylık bir barındırma gideri
+  vardır ve bu gider kullanıcı sayısıyla birlikte artar. Seçenekleri
   [sunucu seçimi](/blog/kucuk-isletme-icin-sunucu-secimi/) yazısında
   karşılaştırdık.
 - **İşletim sistemi güncellemeleri.** iOS ve Android her yıl yeni sürüm
-  çıkarır; mağazalar da kurallarını günceller. Uygulamanın yayında
-  kalabilmesi için düzenli bakım gerekir.
+  çıkarır, mağazalar da kurallarını günceller. Uygulamanın yayında kalması
+  için düzenli bakım gerekir.
 - **Mağaza komisyonu.** Uygulama içinde dijital içerik ya da abonelik
-  satılıyorsa mağaza, satıştan pay alır. Gelir modeli planlanırken hesaba
-  katılmalıdır.
+  satıyorsanız mağaza satıştan pay alır. Gelir modelini planlarken bunu
+  hesaba katın.
 - **Üçüncü taraf servisler.** SMS, harita ve bildirim servislerinin bir
   kısmı kullanıma göre ücretlendirilir.
 
-Teklifleri karşılaştırırken yapım bedelinin yanına en az iki yıllık bu
-giderleri de ekleyin.
+Teklifleri karşılaştırırken yapım bedelinin yanına bu giderlerin en az iki
+yıllık toplamını da ekleyin.
 
 ## Maliyeti düşürmenin yolları
 
 - **İlk sürümü dar tutun.** Olmazsa olmaz özelliklerle yayına girin,
-  diğerlerini kullanıcıların gerçek davranışına göre sıralayın. Hiç
-  kullanılmayacak bir özelliğe ödenen bedel, en pahalı kalemdir.
+  diğerlerini kullanıcıların gerçek davranışına göre sıralayın. En pahalı
+  kalem, hiç kullanılmayacak bir özelliğe ödenen bedeldir.
 - **Tek platformla başlayın.** Hedef kitlenizin çoğu aynı platformdaysa
-  ikinci platform sonraya bırakılabilir.
-- **Web ile başlamayı değerlendirin.** Bildirim, kamera ya da çevrimdışı
-  kullanım şart değilse telefonda iyi çalışan bir web uygulaması aynı işi
-  daha düşük maliyetle görebilir. Ayrıntılar
+  ikinci platformu sonraya bırakabilirsiniz.
+- **Web ile başlamayı düşünün.** Bildirim, kamera ya da çevrimdışı kullanım
+  şart değilse, telefonda iyi çalışan bir web uygulaması aynı işi daha
+  düşük maliyetle görebilir. Ayrıntılar
   [mobil uygulama mı, mobil uyumlu web sitesi mi](/blog/mobil-uygulama-mi-web-sitesi-mi/)
   yazısında.
 - **Hazır servisleri kullanın.** Ödeme, giriş ve bildirim için güvenilir
-  hazır servisler vardır; bunları baştan yazdırmak gereksizdir.
+  hazır servisler var. Bunları baştan yazdırmanıza gerek yok.
 
 ## Çok düşük teklif neyi dışarıda bırakır?
 
 Belirgin biçimde düşük bir teklifte genellikle şunlardan biri eksiktir:
 yönetim paneli, mağaza yayın süreci, test, yayın sonrası bakım ya da kaynak
-kodun teslimi. Tek rakamlık teklif neyin dahil olduğunu göstermez; teklifin
-maddelere ayrılmasını isteyin ve sahiplik koşullarını
+kodun teslimi. Tek rakamdan oluşan bir teklif neyin dahil olduğunu
+göstermez. Teklifin maddelere ayrılmasını isteyin ve sahiplik koşullarını
 [sözleşmeye](/blog/yazilim-sozlesmesinde-ne-olmali/) yazdırın.
 
 ## Neden rakam vermiyoruz?
 
-Kapsam bilinmeden verilen rakam yanıltıcı olur: düşük söylenirse proje
-sırasında artar, yüksek söylenirse gereksiz yere caydırır. Yöntemimiz,
-ihtiyacı maddelere ayırmak ve her maddenin süresi ile maliyetini yazılı
-olarak belirlemektir. Böylece hangi kalemin çıkarılabileceği ya da sonraya
-bırakılabileceği teklif aşamasında değerlendirilebilir.
+Kapsam bilinmeden verilen rakam yanıltır. Düşük söylenirse proje sırasında
+artar, yüksek söylenirse sizi boş yere caydırır. Bizim yöntemimiz, ihtiyacı
+maddelere ayırmak ve her maddenin süresini ve maliyetini yazılı olarak
+belirlemek. Böylece hangi kalemin çıkarılabileceğine ya da sonraya
+bırakılabileceğine daha teklif aşamasında birlikte bakabiliriz.
 
 Sürecin tamamı için
 [mobil uygulama yaptırmak istiyorum](/blog/mobil-uygulama-yaptirmak-istiyorum/)
 yazısına, hizmetin kapsamı için
 [mobil uygulama geliştirme](/hizmetler/mobil-uygulama-gelistirme/) sayfasına
-bakabilirsiniz. Uygulamanız için maddelere ayrılmış bir teklif almak
-isterseniz [iletişime geçebilirsiniz](/iletisim/).
+göz atabilirsiniz. Uygulamanız için maddelere ayrılmış bir teklif almak
+isterseniz [bize yazın](/iletisim/).

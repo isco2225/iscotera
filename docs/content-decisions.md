@@ -21,7 +21,7 @@ This file holds the reasoning behind specific pages, products and layouts: what 
 
 ### İbadet Rehberim
 
-**The İbadet Rehberim entry is deliberately thin.** It is not a sales page for the app (ibadetrehberim.com already is one); its job is to show a prospective client "we built this, this is how". So it intentionally has no `faq`, no `testimonials`, no `rating` (only the verifiable download count in `results`) and only two of the app's features — the ones that show engineering decisions. Don't fill those sections in to make the page "complete"; it was published on 2026-09-25 with only Google Play and web links, and `stores.appStore` was added on 2026-10-17 when the iOS version shipped.
+**The İbadet Rehberim entry is deliberately thin.** It is not a sales page for the app (ibadetrehberim.com already is one); its job is to show a prospective client "we built this, this is how". So it intentionally has no `faq`, no `testimonials`, no `rating` (only the verifiable download count in `results`) and only two of the app's features — the ones that show engineering decisions. Don't fill those sections in to make the page "complete"; it was published on 2026-09-25. **It has no store links on purpose** (the user's call, 2026-10-26): `stores` carries only `web`, so the page sends visitors to ibadetrehberim.com, which links to both stores, and the closing box is the contact CTA rather than the download one. The app is still on the App Store and Google Play (the story says so and `app.operatingSystem` keeps the iOS/Android labels); don't add `appStore`/`googlePlay` back. The story also no longer says when the first line of code was written: the user ruled it out on 2026-10-26, in line with the no-founding-year rule.
 
 ### QR Menü
 

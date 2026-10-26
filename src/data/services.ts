@@ -24,7 +24,7 @@ export interface ServiceContent {
   imageAlt: string;
   /** Hero paragrafları: özetten uzun, hizmetin derdini anlatan giriş. */
   intro: string[];
-  /** "Neler yapıyoruz?" kartları. */
+  /** "Yaptığımız işler" kartları. */
   scope: ServiceItem[];
   /** "Yaklaşımımız" maddeleri: tez + açıklama. */
   approach: ServiceItem[];
@@ -49,56 +49,56 @@ export const services: Service[] = [
       slug: 'web-uygulama-gelistirme',
       title: 'Web Uygulama Geliştirme',
       summary:
-        'Kurumsal siteler ve web uygulamaları. Hızlı açılan, arama motorlarında görünen ve içeriğini kendi ekibinizin girebildiği sistemler kuruyoruz.',
+        'Kurumsal siteler ve web uygulamaları geliştiriyoruz. Kurduğumuz siteler hızlı açılır, arama motorlarında görünür, içeriğini de kendi ekibiniz günceller.',
       imageAlt: 'Kod editörü açık bir dizüstü bilgisayarla çalışma masası',
       intro: [
-        'Kurumsal tanıtım sitelerinden yönetim panellerine kadar, tarayıcıda çalışan her ölçekte yazılım geliştiriyoruz. Bu site dahil: burada gördüğünüz hız ve yapı, müşterilerimize kurduğumuz altyapının aynısı.',
-        'Bir web sitesi bizim için tasarımdan ibaret değil. Arama motorunda bulunmak, saniyeler içinde açılmak ve içeriğini sizin ekibinizin güncelleyebilmesi, işin tanımına baştan dahil.',
+        'Kurumsal tanıtım sitelerinden yönetim panellerine kadar, tarayıcıda çalışan her ölçekte yazılım geliştiriyoruz. Şu an gezdiğiniz site de bunlardan biri. Burada gördüğünüz hız ve yapı, müşterilerimiz için kurduğumuz altyapının aynısı.',
+        'Bir web sitesinde tasarım, işin yalnızca bir parçası. Sitenin arama motorlarında bulunması, saniyeler içinde açılması ve içeriğini ekibinizin güncelleyebilmesi de baştan işin içinde.',
       ],
       scope: [
         {
           title: 'Kurumsal web siteleri',
-          text: 'Firmanızı anlatan, arama motorlarında görünen ve hızlı açılan tanıtım siteleri. İçerik altyapısını da kurarız; yeni sayfa eklemek için bize muhtaç kalmazsınız.',
+          text: 'Firmanızı anlatan, hızlı açılan ve arama motorlarında görünen tanıtım siteleri. İçerik yönetimini de biz kuruyoruz, böylece yeni bir sayfayı bizi beklemeden kendiniz ekleyebilirsiniz.',
         },
         {
           title: 'Web uygulamaları',
-          text: 'Müşteri panelleri, yönetim panoları, rezervasyon ve takip ekranları. Tarayıcıdan çalışır, kurulum gerektirmez, her cihazda aynı hesaba açılır.',
+          text: 'Müşteri panelleri, yönetim ekranları, rezervasyon ve takip sistemleri. Tarayıcıda çalışır, kurulum istemez. Hangi cihazdan girerseniz girin, karşınıza aynı hesap çıkar.',
         },
         {
-          title: 'Mevcut sitenin iyileştirilmesi',
-          text: 'Yavaş açılan ya da aramada görünmeyen siteniz için önce ölçer, sonra düzeltiriz. Sıfırdan yazmak çoğu zaman gerekmez; gerekiyorsa nedenini yazılı gösteririz.',
+          title: 'Elinizdeki sitenin iyileştirilmesi',
+          text: 'Siteniz yavaş açılıyor ya da aramalarda görünmüyorsa önce sorunu ölçer, sonra düzeltiriz. Çoğu zaman sıfırdan yazmak gerekmez. Gerekiyorsa da nedenini yazılı olarak gösteririz.',
         },
       ],
       approach: [
         {
-          title: 'Hız sonradan eklenmez',
-          text: 'Tanıtım sitelerinde sayfalar önceden üretilir ve sunucu beklemeden açılır; web uygulamalarında sayfa hızı tasarım aşamasından itibaren gözetilir. Google hızı sıralama ölçütü olarak kullandığı için bu, doğrudan görünürlüğe yansır.',
+          title: 'Hızı baştan planlıyoruz',
+          text: 'Tanıtım sitelerinde sayfaları önceden hazırlıyoruz, bu yüzden sunucuyu beklemeden açılıyorlar. Web uygulamalarında da sayfa hızını tasarım aşamasından başlayarak gözetiyoruz. Google hızı sıralamada dikkate aldığı için bu, sitenizin aramalardaki görünürlüğüne doğrudan yansır.',
         },
         {
-          title: 'SEO kurulumla gelir',
-          text: "Başlık, açıklama, canonical, site haritası ve yapılandırılmış veri her sayfada standart olarak kurulur — sonradan ayrı bir 'SEO çalışması' satın almazsınız.",
+          title: 'SEO ayarlarını baştan kuruyoruz',
+          text: "Arama motorlarının sayfalarınızı doğru okuması için gereken ayarları her sayfada baştan kuruyoruz. Sonradan ayrı bir 'SEO çalışması' satın almanız gerekmez.",
         },
         {
           title: 'İçerik sizde kalır',
-          text: 'Metinleri ve görselleri ekibiniz günceller; alan adı ve barındırma hesapları sizin adınıza açılır. Bize bağımlı kalmazsınız.',
+          text: 'Metinleri ve görselleri ekibiniz günceller. Alan adı ve barındırma hesaplarını da sizin adınıza açıyoruz. Böylece bize bağımlı kalmazsınız.',
         },
       ],
       faq: [
         {
           q: 'Kurumsal bir site ne kadar sürede yayına alınır?',
-          a: 'İçerik hazırsa birkaç hafta içinde. Süreyi uzatan genellikle kod değil, metin ve görsellerin toplanmasıdır; planlama aşamasında bunun için birlikte takvim çıkarırız.',
+          a: 'İçerik hazırsa birkaç hafta içinde. Süreyi uzatan çoğu zaman kod değil, metinlerin ve görsellerin toplanması oluyor. Bu yüzden planlama aşamasında bunun için de birlikte bir takvim çıkarırız.',
         },
         {
-          q: 'Mevcut sitemizi sıfırdan mı yazmak gerekir?',
-          a: 'Çoğu zaman hayır. Önce mevcut durumu ölçer, neyin tutulup neyin değişmesi gerektiğini yazılı raporlarız. Sıfırdan yazmayı ancak gerekçesini gösterebildiğimizde öneririz.',
+          q: 'Elimizdeki siteyi sıfırdan mı yazmak gerekir?',
+          a: 'Çoğu zaman hayır. Önce sitenin bugünkü durumunu ölçer, neyin kalıp neyin değişmesi gerektiğini yazılı bir raporla paylaşırız. Sıfırdan yazmayı ancak gerekçesini gösterebildiğimizde öneririz.',
         },
         {
           q: 'İçerikleri kendimiz güncelleyebilir miyiz?',
-          a: 'Evet. İçerik yönetim altyapısını kurup ekibinize teslim ederiz; kısa bir eğitimle yazı, görsel ve sayfa eklemeyi kendiniz yaparsınız.',
+          a: 'Evet. İçerik yönetim sistemini kurup ekibinize teslim ederiz. Kısa bir eğitimin ardından yazı, görsel ve sayfa eklemeyi kendiniz yaparsınız.',
         },
         {
           q: 'Alan adı ve barındırma kimin üzerine olur?',
-          a: 'Sizin. Hesapları sizin adınıza açar, kurulumu yapar, erişim bilgilerini teslim ederiz. Bizimle yollarınız ayrılsa bile siteniz size ait kalır.',
+          a: 'Sizin. Hesapları sizin adınıza açar, kurulumu yapar, erişim bilgilerini size teslim ederiz. Bizimle yollarınız ayrılsa bile siteniz size ait kalır.',
         },
       ],
     },
@@ -106,56 +106,56 @@ export const services: Service[] = [
       slug: 'web-application-development',
       title: 'Web Application Development',
       summary:
-        'Corporate sites and web applications. We build systems that load fast, show up in search results and let your own team handle the content.',
+        'We build company websites and web applications that load fast, show up in search results and let your own team update the content.',
       imageAlt: 'A desk with a laptop showing a code editor',
       intro: [
-        'From corporate sites to admin panels, we build software that runs in the browser — including this site: the speed and structure you see here are the same foundation we set up for clients.',
-        'For us a website is more than its design. Showing up in search results, opening in seconds and letting your own team update the content are part of the job description from day one.',
+        "From company websites to admin panels, we build software of every size that runs in the browser. This site is one of them: the speed and structure you see here are the same foundation we set up for our clients.",
+        'Design is only part of a website. Being found in search, opening in seconds and letting your own team update the content are part of the job from the start.',
       ],
       scope: [
         {
-          title: 'Corporate websites',
-          text: "Sites that tell your story, show up in search and open fast. We also set up the content infrastructure, so adding a new page doesn't require calling us.",
+          title: 'Company websites',
+          text: 'Sites that tell your story, open fast and show up in search. We also set up content management, so you can add a new page yourself without waiting for us.',
         },
         {
           title: 'Web applications',
-          text: 'Customer portals, dashboards, booking and tracking screens. They run in the browser, need no installation and open to the same account on every device.',
+          text: 'Customer portals, dashboards, booking and tracking systems. They run in the browser with nothing to install, and you see the same account on any device.',
         },
         {
           title: 'Improving an existing site',
-          text: 'If your site is slow or invisible in search, we measure first, then fix. A full rewrite is rarely necessary — and when it is, we show the reasoning in writing.',
+          text: "If your site is slow or doesn't show up in search, we measure first, then fix it. A full rewrite is rarely necessary, and when it is, we explain why in writing.",
         },
       ],
       approach: [
         {
-          title: 'Speed is not an add-on',
-          text: 'Corporate sites are generated ahead of time and open without waiting on a server; in web applications, page speed is considered from the design stage onwards. Google uses speed as a ranking signal, so it translates directly into visibility.',
+          title: 'We plan for speed from the start',
+          text: 'We generate company sites ahead of time, so their pages open without waiting on a server. In web applications, we keep page speed in mind from the design stage onwards. Google uses speed as a ranking signal, so it feeds directly into how visible you are.',
         },
         {
-          title: 'SEO ships with the site',
-          text: "Titles, descriptions, canonical URLs, the sitemap and structured data are wired into every page from the start — not sold to you later as a separate 'SEO project'.",
+          title: 'We set up SEO from day one',
+          text: "We set up everything search engines need to read your pages correctly, on every page, from the start. You won't be sold a separate 'SEO project' later.",
         },
         {
           title: 'The content stays yours',
-          text: 'Your team updates text and images; domain and hosting accounts are opened in your name. You are never locked in to us.',
+          text: "Your team updates the text and images, and we open the domain and hosting accounts in your name. You're not locked in to us.",
         },
       ],
       faq: [
         {
           q: 'How long does a corporate site take?',
-          a: 'A few weeks once the content is ready. What stretches the timeline is usually not code but collecting text and images — we plan a schedule for that together at the start.',
+          a: "A few weeks once the content is ready. What usually stretches the timeline isn't the code but gathering the text and images, so we plan a schedule for that together at the start.",
         },
         {
           q: 'Do we have to rewrite our current site from scratch?',
-          a: 'Usually not. We first assess what you have and report in writing what should stay and what should change. We only recommend a rewrite when we can show the reasoning.',
+          a: 'Usually not. We first assess what you have and tell you in writing what should stay and what should change. We only recommend a rewrite when we can show why.',
         },
         {
           q: 'Can we update the content ourselves?',
-          a: 'Yes. We set up the content management system and hand it over to your team; after a short training you add posts, images and pages yourself.',
+          a: 'Yes. We set up the content management system and hand it over to your team. After a short training session, you add posts, images and pages yourself.',
         },
         {
           q: 'Who owns the domain and hosting?',
-          a: 'You do. We open the accounts in your name, do the setup and hand over the credentials. Even if we part ways, the site remains yours.',
+          a: 'You do. We open the accounts in your name, do the setup and hand over the login details. Even if we part ways, the site stays yours.',
         },
       ],
     },
@@ -167,56 +167,56 @@ export const services: Service[] = [
       slug: 'mobil-uygulama-gelistirme',
       title: 'Mobil Uygulama Geliştirme',
       summary:
-        'iOS ve Android uygulamaları. Tek kaynaktan geliştirdiğimiz için yeni özellik iki platforma aynı anda gelir, bakım maliyeti ikiye katlanmaz.',
+        'iOS ve Android uygulamaları geliştiriyoruz. İki platform için aynı kodu yazdığımızdan yeni bir özellik ikisine aynı anda gelir, bakım maliyeti de ikiye katlanmaz.',
       imageAlt: 'Elindeki akıllı telefonu kullanan bir kişi',
       intro: [
-        'iOS ve Android için tek kod tabanından uygulama geliştiriyoruz: bir özellik iki platforma aynı anda gelir, bakım maliyeti ikiye katlanmaz.',
-        "Kendi uygulamamızı geliştirip Google Play'de yayınladığımız için mağaza başvurusu, inceleme ve yayın sonrası süreç kendi deneyimimize dayanarak yönetilir.",
+        'iOS ve Android uygulamalarını tek bir kod tabanından geliştiriyoruz, yani iki platform için aynı kodu yazıyoruz. Böylece yeni bir özellik iki platforma aynı anda gelir, bakım maliyeti de ikiye katlanmaz.',
+        "Kendi uygulamamızı geliştirip App Store'da ve Google Play'de yayınladık. Mağaza başvurusunu, inceleme sürecini ve yayından sonrasını bu deneyime dayanarak yürütüyoruz.",
       ],
       scope: [
         {
           title: 'iOS ve Android uygulamaları',
-          text: "Tek kod tabanından iki mağazaya. Tasarım her platformun kendi alışkanlıklarına uyar; kullanıcı 'çeviri uygulama' hissi almaz.",
+          text: 'Tek kod tabanından iki mağazaya. Tasarımı her platformun kendi alışkanlıklarına uyduruyoruz, böylece uygulama kullanıcıya başka bir platformdan aktarılmış gibi gelmez.',
         },
         {
           title: 'Mağaza süreci bizde',
-          text: 'App Store ve Google Play başvurularını, inceleme yazışmalarını ve sürüm yönetimini biz yürütürüz. Hesaplar sizin adınıza açılır.',
+          text: 'App Store ve Google Play başvurularını, inceleme sırasındaki yazışmaları ve yeni sürümlerin yayınını biz yürütürüz. Hesapları da sizin adınıza açıyoruz.',
         },
         {
           title: 'Bildirim ve entegrasyonlar',
-          text: 'Anlık bildirim, ödeme, harita, kamera ve mevcut sistemlerinizle bağlantı — uygulamanın işinize dokunan her ucunu birlikte planlarız.',
+          text: 'Anlık bildirim, ödeme, harita, kamera ve kullandığınız diğer sistemlerle bağlantı. Uygulamanın işinize dokunduğu her noktayı birlikte planlarız.',
         },
       ],
       approach: [
         {
-          title: 'Önce çekirdek işlev',
-          text: 'İlk sürüm, uygulamanın varlık sebebini eksiksiz yapar; listeyi kabartan özellikler sonraki sürümlere yazılır. Mağazaya erken çıkar, gerçek kullanıcı geri bildirimiyle ilerlersiniz.',
+          title: 'Önce temel işlev',
+          text: 'İlk sürüm, uygulamanın asıl işini eksiksiz yapar. Listeyi kabartan özellikleri sonraki sürümlere bırakırız. Böylece mağazaya erken çıkar, gerçek kullanıcıların geri bildirimiyle ilerlersiniz.',
         },
         {
-          title: 'Yayın günü iş bitmez',
-          text: 'Çökme raporlarını ve performansı yayından sonra da izleriz; işletim sistemi güncellemeleri uygulamanızı kırmadan yetişir.',
+          title: 'Yayından sonra da izliyoruz',
+          text: 'Çökme raporlarını ve performansı yayından sonra da izleriz. Yeni işletim sistemi sürümlerine de uygulamanızı sorun çıkmadan uyarlarız.',
         },
         {
           title: 'Gerektiğinde platforma özel kod',
-          text: 'Tek kaynak çoğu ihtiyacı karşılar; karşılamadığı yerde o bölümü platformun kendi diliyle yazarız. Araç seçimini dogma yapmayız.',
+          text: 'Tek kod tabanı çoğu ihtiyacı karşılar. Karşılamadığı yerde o bölümü platformun kendi diliyle yazarız. Hangi aracı kullanacağımıza her projede ayrıca karar veriyoruz.',
         },
       ],
       faq: [
         {
           q: 'Tek kod tabanı uygulamayı yavaşlatmaz mı?',
-          a: 'İş uygulamalarının büyük bölümünde fark ölçülemeyecek kadar küçüktür. Yoğun grafik ya da cihaza özel işlem gereken bölümler olursa, o bölümleri platforma özel yazarız.',
+          a: 'İş uygulamalarının çoğunda aradaki fark ölçülemeyecek kadar küçük. Yoğun grafik ya da cihaza özel işlem gereken bölümler varsa, o bölümleri her platform için ayrı yazarız.',
         },
         {
           q: 'Mağaza hesapları kimin üzerine açılır?',
-          a: 'Sizin adınıza. Apple ve Google geliştirici hesaplarını birlikte açar, uygulamayı sizin hesabınızdan yayınlarız; uygulamanın sahibi her aşamada sizsiniz.',
+          a: 'Sizin adınıza. Apple ve Google geliştirici hesaplarını birlikte açar, uygulamayı sizin hesabınızdan yayınlarız. Böylece uygulamanın sahibi her aşamada siz olursunuz.',
         },
         {
           q: 'Uygulamam ne kadara mal olur?',
-          a: 'Kapsama göre değişir; bu yüzden önce kapsamı maddelere ayırır, her maddenin süresi ve bedeli yazılı olarak belirlenir. Toplam maliyet, geliştirme başlamadan bellidir.',
+          a: 'Kapsama göre değişir. Bu yüzden önce kapsamı maddelere ayırır, her maddenin süresini ve bedelini yazılı olarak belirleriz. Toplam maliyeti geliştirmeye başlamadan bilirsiniz.',
         },
         {
           q: 'Yayından sonra güncellemeleri kim yapar?',
-          a: 'Tercih sizin: bakım anlaşmasıyla hata düzeltmeleri, işletim sistemi uyumu ve yeni özellikler bizden — ya da kodu ve dokümantasyonu ekibinize devrederiz.',
+          a: 'Bu sizin tercihiniz. Bakım anlaşması yaparsak hata düzeltmelerini, işletim sistemi uyumunu ve yeni özellikleri biz üstleniriz. İsterseniz kodu ve dokümantasyonu ekibinize devrederiz.',
         },
       ],
     },
@@ -224,56 +224,56 @@ export const services: Service[] = [
       slug: 'mobile-app-development',
       title: 'Mobile App Development',
       summary:
-        'iOS and Android apps. We build from a single source, so a new feature reaches both platforms at once and maintenance does not cost twice as much.',
+        "We build iOS and Android apps from a single codebase, so a new feature reaches both platforms at once and maintenance doesn't cost twice as much.",
       imageAlt: 'A person using the smartphone in their hands',
       intro: [
-        "We build iOS and Android apps from a single codebase: a new feature reaches both platforms at once, and maintenance doesn't cost twice.",
-        'We built our own app and published it on Google Play, so the store submission, review and post-launch process is run from first-hand experience.',
+        "We write one codebase that runs on both iOS and Android. In practice, a new feature reaches both platforms at once, and maintenance doesn't cost twice as much.",
+        "We've built our own app and published it on the App Store and Google Play, so we handle store submission, review and everything after launch from first-hand experience.",
       ],
       scope: [
         {
           title: 'iOS and Android apps',
-          text: "One codebase, two stores. The design follows each platform's own conventions, so the app never feels like a rough port.",
+          text: "One codebase, two stores. The design follows each platform's own conventions, so the app doesn't feel like a port from somewhere else.",
         },
         {
-          title: 'Store submission handled',
-          text: 'We run the App Store and Google Play submissions, the review correspondence and version management. The accounts are opened in your name.',
+          title: 'We handle the stores',
+          text: 'We run the App Store and Google Play submissions, the correspondence during review and new releases. We open the accounts in your name.',
         },
         {
           title: 'Notifications and integrations',
-          text: 'Push notifications, payments, maps, camera and connections to your existing systems — we plan every edge where the app touches your business.',
+          text: 'Push notifications, payments, maps, camera and connections to the systems you already use. We plan every point where the app meets your business together with you.',
         },
       ],
       approach: [
         {
-          title: 'Core function first',
-          text: "The first release does the app's reason for existing, completely; nice-to-haves go to later versions. You reach the store early and iterate on real user feedback.",
+          title: 'Core features first',
+          text: "The first release does the app's main job, and does it fully. Nice-to-haves go into later versions, so you reach the store early and build on feedback from real users.",
         },
         {
-          title: 'Launch day is not the finish line',
-          text: 'We keep watching crash reports and performance after release, and OS updates are handled before they break your app.',
+          title: 'We keep watching after launch',
+          text: 'We keep an eye on crash reports and performance after release, and adapt your app to new OS versions before they cause problems.',
         },
         {
-          title: 'Platform-specific code when it earns it',
-          text: "A single codebase covers most needs; where it doesn't, we write that part in the platform's own language. We don't treat tool choices as dogma.",
+          title: 'Platform-specific code where it is needed',
+          text: "A single codebase covers most needs. Where it doesn't, we write that part in the platform's own language. We choose the tools afresh for each project.",
         },
       ],
       faq: [
         {
           q: "Doesn't a single codebase make the app slower?",
-          a: 'For most business apps the difference is too small to measure. If a section needs heavy graphics or device-specific work, we write that section natively.',
+          a: 'For most business apps the difference is too small to measure. If a section needs heavy graphics or device-specific work, we write that section separately for each platform.',
         },
         {
           q: 'Whose name are the store accounts under?',
-          a: 'Yours. We open the Apple and Google developer accounts together and publish from your account; you own the app at every stage.',
+          a: 'Yours. We open the Apple and Google developer accounts together and publish from your account, so you own the app at every stage.',
         },
         {
           q: 'How much will my app cost?',
-          a: 'It depends on scope — which is why we break the scope into items and put a duration and price on each, in writing. The total cost is known before development begins.',
+          a: "It depends on scope. That's why we break the scope into items and put a timeline and price on each, in writing. You know the total cost before development begins.",
         },
         {
           q: 'Who handles updates after launch?',
-          a: 'Your choice: with a maintenance agreement we cover fixes, OS compatibility and new features — or we hand the code and documentation over to your team.',
+          a: "That's up to you. With a maintenance agreement, we take care of fixes, OS compatibility and new features. Or we hand the code and documentation over to your team.",
         },
       ],
     },
@@ -285,56 +285,56 @@ export const services: Service[] = [
       slug: 'ozel-yazilim-cozumleri',
       title: 'Özel Yazılım Çözümleri',
       summary:
-        'İşinizin kendi akışına göre otomasyon ve entegrasyon. Hazır bir paket ihtiyacınızı karşılıyorsa, yazılım geliştirmeden önce bunu söyleriz.',
+        'İşinizin kendi akışına göre otomasyon ve entegrasyon kuruyoruz. Hazır bir paket ihtiyacınızı karşılıyorsa, yazılım geliştirmeden önce bunu söyleriz.',
       imageAlt: 'Depoda elindeki tabletle stok kontrolü yapan çalışan',
       intro: [
-        'Elle yürüttüğünüz, tablolar arasında kopyaladığınız ya da iki programın birbirini anlamamasından doğan işleri yazılıma devrediyoruz.',
-        'Önce hazır bir çözüm var mı diye bakarız; varsa onu söyleriz. Özel yazılım, ihtiyacınızı hiçbir paketin karşılamadığı yerde başlar — ve tam da işinizin şekline göre yazılır.',
+        'Elle yürüttüğünüz işleri, tablolar arasında kopyaladığınız verileri ve iki program birbirini anlamadığı için çıkan ek işleri yazılıma devrediyoruz.',
+        'Önce hazır bir program var mı diye bakarız, varsa bunu size söyleriz. Hiçbir paket ihtiyacınızı karşılamıyorsa özel yazılıma geçer, onu da tam olarak işinizin işleyişine göre yazarız.',
       ],
       scope: [
         {
           title: 'Sistem entegrasyonları',
-          text: 'Muhasebe, e-ticaret, kargo, ödeme — birbirinden habersiz çalışan programlarınızı konuşturur, aynı veriyi iki kez girmeyi ortadan kaldırırız.',
+          text: 'Muhasebe, e-ticaret, kargo ve ödeme programlarınız birbirinden habersiz çalışıyorsa onları birbirine bağlarız. Böylece aynı veriyi iki kez girmek zorunda kalmazsınız.',
         },
         {
           title: 'Süreç otomasyonu',
-          text: 'Her gün elle tekrarlanan işler — rapor çıkarma, veri aktarma, sipariş takibi — kurallara bağlanır ve kendi kendine yürür; ekibiniz yalnızca istisnalarla ilgilenir.',
+          text: 'Rapor çıkarma, veri aktarma, sipariş takibi gibi her gün elle tekrarlanan işleri kurallara bağlarız, bu işler de kendi kendine yürür. Ekibiniz yalnızca istisnalarla ilgilenir.',
         },
         {
           title: 'İşe özel iç araçlar',
-          text: "Excel'den taşan süreçler için ekibinizin kullanacağı panel ve ekranlar: stok, saha, üretim takibi — işin gerektirdiği kadar, fazlası değil.",
+          text: "Stok, saha ve üretim takibi gibi Excel'e sığmayan süreçler için ekibinizin kullanacağı paneller ve ekranlar geliştiriyoruz. Yalnızca işin gerektirdiği kadarını yaparız.",
         },
       ],
       approach: [
         {
-          title: 'Önce hazır çözüm ararız',
-          text: 'Piyasada işinizi gören bir paket varsa onu öneririz. Özel yazılım yalnızca gerçek bir ihtiyaç olduğunda geliştirilir; bu yaklaşım iki tarafın da zamanını ve bütçesini korur.',
+          title: 'Önce hazır bir program ararız',
+          text: 'Piyasada işinizi gören bir paket varsa onu öneririz. Özel yazılımı yalnızca gerçekten ihtiyaç olduğunda geliştiririz. Böylece iki tarafın da zamanı ve bütçesi boşa gitmez.',
         },
         {
-          title: 'En ağrılı süreçten başlarız',
-          text: 'Her şeyi kapsayan dev bir proje yerine, en çok vakit yakan işi önce otomatikleştiririz. İlk adımın sonuçları değerlendirildikten sonra sonraki adıma birlikte karar veririz.',
+          title: 'En çok zaman alan işten başlarız',
+          text: 'Her şeyi kapsayan büyük bir proje yerine, size en çok zaman kaybettiren işi önce otomatikleştiririz. İlk adımın sonuçlarına baktıktan sonra bir sonraki adıma birlikte karar veririz.',
         },
         {
-          title: 'Veriniz rehin kalmaz',
-          text: 'Sistemdeki her veri dışa aktarılabilir olur ve dokümantasyonuyla teslim edilir. Yarın başka bir ekiple çalışmak isterseniz önünüzde engel olmayız.',
+          title: 'Verileriniz sizde kalır',
+          text: 'Sistemdeki bütün veriler dışa aktarılabilir, sistemi de dokümantasyonuyla birlikte teslim ederiz. İleride başka bir ekiple çalışmak isterseniz buna engel olmayız.',
         },
       ],
       faq: [
         {
           q: 'Kullandığımız hazır programı bırakmamız mı gerekir?',
-          a: 'Hayır — çoğu projede tam tersi: hazır programınız kalır, biz eksik parçayı yazar ve ona bağlarız.',
+          a: 'Hayır. Çoğu projede kullandığınız program yerinde kalır. Biz eksik parçayı yazar, onu programınıza bağlarız.',
         },
         {
           q: "Süreçlerimizi Excel'le yönetiyoruz, sorun mu?",
-          a: "Sorun değil, iyi bir başlangıç: Excel'iniz ihtiyacın ne olduğunu zaten belgelemiş demektir. Taşmaya başladığı noktada onu adım adım yazılıma taşırız.",
+          a: "Sorun değil, hatta iyi bir başlangıç. Excel dosyalarınız ihtiyacınızı zaten yazıya dökmüş demektir. Dosyalar işi kaldırmamaya başladığında süreci adım adım yazılıma taşırız.",
         },
         {
           q: 'Fiyat neye göre belirlenir?',
-          a: 'Kapsama göre. İhtiyaç maddelere ayrılır, her maddenin süresi ve bedeli yazılı olarak belirlenir; onayladığınız belge projenin sonuna kadar ortak referansımızdır.',
+          a: 'Kapsama göre. İhtiyacı maddelere ayırır, her maddenin süresini ve bedelini yazılı olarak belirleriz. Onayladığınız bu belge, proje bitene kadar ikimizin de başvurduğu ortak metin olur.',
         },
         {
           q: 'Sistem kurulduktan sonra bakımını kim yapar?',
-          a: 'Tercih sizin: bakım anlaşmasıyla biz üstleniriz ya da dokümantasyon ve eğitimiyle ekibinize devrederiz. İki durumda da kod ve veri sizde kalır.',
+          a: 'Bu sizin tercihiniz. Bakım anlaşmasıyla bu işi biz üstleniriz ya da sistemi dokümantasyonu ve eğitimiyle birlikte ekibinize devrederiz. İki durumda da kod ve veriler sizde kalır.',
         },
       ],
     },
@@ -342,56 +342,56 @@ export const services: Service[] = [
       slug: 'custom-software-solutions',
       title: 'Custom Software Solutions',
       summary:
-        'Automation and integration shaped around how your business already works. If an off-the-shelf product covers your need, we say so before building anything.',
+        'Automation and integration shaped around how your business already works. If an off-the-shelf product covers your need, we tell you before building anything.',
       imageAlt: 'A warehouse worker checking stock on a tablet',
       intro: [
-        "We take the work you run by hand — copied between spreadsheets, or stuck between two programs that won't talk to each other — and hand it over to software.",
-        'We look for an off-the-shelf solution first, and say so if one exists. Custom software starts where no package fits your need — and is then shaped exactly to how your business works.',
+        "We take the work you do by hand, the data you copy between spreadsheets and the extra work caused by two programs that won't talk to each other, and hand it over to software.",
+        'We look for an off-the-shelf product first, and tell you if one exists. When no package fits your need, we build custom software around how your business actually works.',
       ],
       scope: [
         {
           title: 'System integrations',
-          text: 'Accounting, e-commerce, shipping, payments — we make programs that ignore each other talk, and eliminate entering the same data twice.',
+          text: "If your accounting, e-commerce, shipping and payment programs don't know about each other, we connect them, so nobody has to enter the same data twice.",
         },
         {
           title: 'Process automation',
-          text: 'Daily manual work — reports, data transfers, order tracking — is turned into rules that run on their own; your team only handles the exceptions.',
+          text: 'Reports, data transfers, order tracking: we turn the work your team repeats by hand every day into rules that run on their own. Your team only deals with the exceptions.',
         },
         {
           title: 'Internal tools',
-          text: 'Panels and screens for processes that have outgrown Excel: stock, field work, production tracking — as much as the job needs, and no more.',
+          text: 'Panels and screens for processes that have outgrown Excel, such as stock, field work and production tracking. We build as much as the job needs, and no more.',
         },
       ],
       approach: [
         {
           title: 'We look for an existing product first',
-          text: "If a package on the market does the job, we recommend it. Custom software is built only when there is a genuine need; this approach protects both sides' time and budget.",
+          text: 'If a package on the market does the job, we recommend it. We only build custom software when there is a real need, so neither side wastes time or budget.',
         },
         {
-          title: 'We start with the biggest pain',
-          text: 'Instead of one giant project, we automate the task that wastes the most time first. Once the results of that first step have been reviewed, we decide the next one together.',
+          title: 'We start with what takes up the most time',
+          text: "Instead of one giant project, we first automate the task that costs you the most time. Once we've looked at the results of that first step, we decide on the next one together.",
         },
         {
-          title: 'Your data is never hostage',
-          text: 'Everything in the system stays exportable and is delivered with documentation. If you want to work with another team tomorrow, nothing stands in your way.',
+          title: 'Your data stays yours',
+          text: "Everything in the system can be exported, and we hand it over with documentation. If you want to work with another team later, we won't stand in your way.",
         },
       ],
       faq: [
         {
           q: 'Do we have to abandon the software we already use?',
-          a: 'No — in most projects the opposite: your existing software stays, and we build the missing piece and connect it.',
+          a: 'No. In most projects your existing software stays, and we build the missing piece and connect it.',
         },
         {
-          q: 'We run everything on Excel — is that a problem?',
-          a: "It's a good start: your spreadsheets have already documented what the need is. When they start to overflow, we move them into software step by step.",
+          q: 'We run everything on Excel. Is that a problem?',
+          a: "No, it's actually a good start: your spreadsheets have already written down what you need. When they can't keep up any more, we move the process into software step by step.",
         },
         {
           q: 'How is the price determined?',
-          a: 'By scope. We break the need into items and put a duration and price on each in writing; the document you approve is our shared reference to the end.',
+          a: 'By scope. We break the need into items and put a timeline and price on each, in writing. The document you approve stays our shared reference until the end of the project.',
         },
         {
           q: "Who maintains the system once it's built?",
-          a: 'Your choice: we take it on with a maintenance agreement, or hand it to your team with documentation and training. Either way, the code and the data stay with you.',
+          a: "That's up to you. We can take it on under a maintenance agreement, or hand it to your team with documentation and training. Either way, the code and the data stay with you.",
         },
       ],
     },
@@ -402,56 +402,56 @@ export const services: Service[] = [
       slug: 'yazilim-danismanligi',
       title: 'Yazılım Danışmanlığı',
       summary:
-        'Mimari kararlar, teknoloji seçimi ve ekibinize teknik destek. Devraldığımız bir sistem varsa, önce nerede durduğunu yazılı olarak çıkarırız.',
+        'Mimari kararlar, teknoloji seçimi ve ekibinize teknik destek. Devraldığımız bir sistem varsa önce bugünkü durumunu yazılı olarak ortaya koyarız.',
       imageAlt: 'Dizüstü bilgisayar ekranındaki kodu birlikte inceleyen iki kişi',
       intro: [
-        'Yazılım kararlarının en pahalısı, yanlış verilenidir. Mimari seçimlerde, teknoloji tercihlerinde ve devraldığınız sistemlerde, karar vermeden önce yanınızda oluruz.',
-        'Çalışmamızın ilk çıktısı her zaman yazılı bir değerlendirmedir: neredesiniz, riskler neler, seçenekler ne. Karar sizindir; bizim işimiz seçenekleri netleştirmektir.',
+        'Yazılımda en büyük maliyet çoğu zaman yanlış verilmiş bir karardan çıkıyor. Bu yüzden mimariyi ya da teknolojiyi seçerken ve bir sistemi devralırken, kararı vermeden önce yanınızda oluyoruz.',
+        'İlk teslim ettiğimiz şey her zaman yazılı bir değerlendirme olur: bugün neredesiniz, riskler neler, hangi seçenekleriniz var. Kararı siz verirsiniz, bizim işimiz seçenekleri netleştirmek.',
       ],
       scope: [
         {
-          title: 'Mevcut sistem denetimi',
-          text: 'Elinizdeki yazılımın durumunu inceler; teknik borcu, riskleri ve aciliyet sırasını yazılı raporlarız. Rapor, teknik olmayan yöneticinin okuyabileceği bir özetle başlar.',
+          title: 'Elinizdeki sistemin denetimi',
+          text: 'Elinizdeki yazılımı inceler; riskleri, ileride masraf çıkaracak eksikleri (teknik borcu) ve neyin önce ele alınması gerektiğini yazılı olarak raporlarız. Rapor, teknik olmayan bir yöneticinin de okuyabileceği bir özetle başlar.',
         },
         {
           title: 'Mimari ve teknoloji seçimi',
-          text: 'Yeni bir yatırımdan önce seçenekleri maliyet, ekip ve ölçek açısından karşılaştırır, gerekçeli bir öneri sunarız. Moda olan değil, işinize uyan kazanır.',
+          text: 'Yeni bir yatırımdan önce seçenekleri maliyet, ekip ve ölçek açısından karşılaştırırız. Sonra işinize uyan seçeneği gerekçesiyle birlikte öneririz.',
         },
         {
           title: 'Ekibinize teknik destek',
-          text: 'Kod inceleme, mimari eskiz, işe alımda teknik değerlendirme — kendi yazılım ekibi olan firmalara dışarıdan deneyimli bir göz.',
+          text: 'Kendi yazılım ekibi olan firmalara dışarıdan destek veriyoruz: kod incelemesi, mimari taslaklar ve işe alımda teknik değerlendirme.',
         },
       ],
       approach: [
         {
-          title: 'Her tespit yazılı olur',
-          text: 'Toplantıda söylenen kaybolur. Denetim de öneri de belge olarak teslim edilir; altı ay sonra da açıp bakabilir, bir sonraki ekiple paylaşabilirsiniz.',
+          title: 'Her tespiti yazıya dökeriz',
+          text: 'Toplantıda konuşulanlar zamanla unutulabiliyor. Bu yüzden denetimi de öneriyi de yazılı belge olarak teslim ediyoruz. Altı ay sonra açıp yeniden bakabilir, bir sonraki ekiple paylaşabilirsiniz.',
         },
         {
-          title: 'Öneri, satıştan bağımsızdır',
-          text: 'Danışmanlığın sonunda geliştirmeyi bize vermek zorunda değilsiniz. Rapor başka bir ekiple de uygulanabilir — bu yüzden önerimiz satmak istediğimiz şey değil, ihtiyacınız olan şeydir.',
+          title: 'Önerimiz satışa bağlı değil',
+          text: 'Danışmanlığın sonunda geliştirme işini bize vermek zorunda değilsiniz. Raporu başka bir ekiple de uygulayabilirsiniz. Bu yüzden size satmak istediğimiz şeyi değil, ihtiyacınız olanı öneririz.',
         },
         {
-          title: 'Üretimden konuşuruz',
-          text: 'Tavsiyelerimiz, kendi geliştirdiğimiz ve yayında tuttuğumuz ürünlerin tecrübesine dayanır; sunumdan değil, yazılımı işletmekten geliriz.',
+          title: 'Önerilerimiz kendi deneyimimize dayanır',
+          text: 'Önerilerimiz, kendi geliştirdiğimiz ve yayında tuttuğumuz ürünlerden edindiğimiz deneyime dayanır. Size önerdiklerimizi kendi ürünlerimizde de uyguluyoruz.',
         },
       ],
       faq: [
         {
-          q: 'Ekibimizde yazılımcı yok; rapordan bir şey anlar mıyız?',
-          a: 'Evet. Her rapor, teknik olmayan bir okuyucu için yazılmış özetle başlar: durum ne, risk ne, önerimiz ne. Teknik ayrıntı, ekibiniz ya da gelecekteki geliştiriciler için ayrıca yazılır.',
+          q: 'Ekibimizde yazılımcı yok. Raporu anlayabilir miyiz?',
+          a: 'Evet. Her rapor, teknik olmayan bir okur için yazdığımız bir özetle başlar: durum ne, risk ne, önerimiz ne. Teknik ayrıntıları ise ekibiniz ya da ileride çalışacağınız geliştiriciler için ayrıca yazarız.',
         },
         {
           q: 'Başka bir firmanın yazdığı projeyi devralıyor musunuz?',
-          a: "Evet, ama önce denetimle: mevcut kodun durumunu çıkarır, devralmanın maliyetini yazılı gösteririz. 'Önce bakalım, sonra söz verelim' sırası iki tarafı da korur.",
+          a: 'Evet, ama önce bir denetim yaparız. Kodun bugünkü durumunu çıkarır, devralmanın maliyetini yazılı olarak gösteririz. Önce bakıp sonra söz vermek iki tarafı da korur.',
         },
         {
           q: 'Danışmanlık tek seferlik mi, sürekli mi?',
-          a: 'İkisi de mümkün. Tek seferlik denetim ya da karar desteğiyle başlayabilir, isterseniz aylık düzenli destekle devam edebilirsiniz; kapsam baştan yazılıdır.',
+          a: 'İkisi de mümkün. Tek seferlik bir denetimle ya da karar desteğiyle başlayıp isterseniz aylık düzenli destekle devam edebilirsiniz. Kapsamı baştan yazılı olarak belirleriz.',
         },
         {
           q: 'Sonunda geliştirmeyi size vermek zorunda mıyız?',
-          a: 'Hayır. Rapor ve yol haritası kendi başına ayakta durur; uygulamayı kendi ekibinizle ya da başka bir firmayla da yapabilirsiniz.',
+          a: 'Hayır. Rapor ve yol haritası kendi başına ayakta durur. Uygulamayı kendi ekibinizle ya da başka bir firmayla da yapabilirsiniz.',
         },
       ],
     },
@@ -459,56 +459,56 @@ export const services: Service[] = [
       slug: 'software-consulting',
       title: 'Software Consulting',
       summary:
-        'Architecture decisions, technology choices and support for your team. If we are taking over an existing system, we first put its current state in writing.',
+        "Architecture decisions, technology choices and technical support for your team. If we're taking over an existing system, we first put its current state in writing.",
       imageAlt: 'Two people reviewing code together on a laptop screen',
       intro: [
-        'The most expensive software decision is the wrong one. We stand beside you before you decide — on architecture, on technology choices, and on systems you are taking over.',
-        'The first deliverable is always a written assessment: where you stand, what the risks are, what the options cost. The decision is yours; our job is making the options clear.',
+        "In software, the biggest costs often come from a decision made the wrong way. That's why we work alongside you before you decide: on architecture, on technology and on systems you're taking over.",
+        'The first thing we hand over is always a written assessment: where you stand, what the risks are and what your options are. The decision is yours; our job is to make the options clear.',
       ],
       scope: [
         {
-          title: 'Audit of an existing system',
-          text: 'We examine the software you have and report its technical debt, risks and priorities in writing. Every report starts with a summary a non-technical manager can read.',
+          title: 'Auditing your current system',
+          text: 'We review the software you have and report in writing on its risks, its technical debt (shortcuts that will cost money later) and what to tackle first. Every report opens with a summary a non-technical manager can read.',
         },
         {
-          title: 'Architecture and technology selection',
-          text: "Before a new investment we compare the options by cost, team and scale, and give a reasoned recommendation. What fits your business wins — not what's fashionable.",
+          title: 'Architecture and technology choices',
+          text: 'Before a new investment, we compare the options on cost, team and scale. Then we recommend the one that fits your business and explain why.',
         },
         {
           title: 'Support for your team',
-          text: 'Code review, architecture sketches, technical evaluation in hiring — an experienced outside eye for companies with their own developers.',
+          text: 'Code reviews, architecture sketches and technical assessments for hiring: outside support for companies that have their own developers.',
         },
       ],
       approach: [
         {
-          title: 'Every finding is in writing',
-          text: "What's said in a meeting evaporates. Audits and recommendations are delivered as documents you can reopen six months later or hand to the next team.",
+          title: 'We put every finding in writing',
+          text: "What's said in a meeting tends to get forgotten. That's why we deliver audits and recommendations as documents you can reopen six months later or share with the next team.",
         },
         {
-          title: 'Advice is independent of sales',
-          text: "You're not obliged to give us the development work afterwards. The report stands on its own with any team — so our recommendation is what you need, not what we'd like to sell.",
+          title: "Our advice isn't tied to a sale",
+          text: "You don't have to give us the development work afterwards. Any team can put the report into practice, so we recommend what you need, not what we'd like to sell.",
         },
         {
-          title: 'We speak from production',
-          text: 'Our advice draws on products we have built and keep running ourselves. We come from operating software, not from slide decks.',
+          title: 'Our advice comes from our own products',
+          text: 'Our advice draws on products we have built and keep running ourselves. What we recommend to you, we also do in our own products.',
         },
       ],
       faq: [
         {
-          q: 'We have no developers — will we understand the report?',
-          a: 'Yes. Every report opens with a summary written for a non-technical reader: the situation, the risk, our recommendation. The technical detail is written separately for your team or future developers.',
+          q: 'We have no developers. Will we understand the report?',
+          a: 'Yes. Every report opens with a summary written for a non-technical reader: the situation, the risks and our recommendation. We write the technical detail separately, for your team or future developers.',
         },
         {
           q: 'Do you take over projects written by another company?',
-          a: "Yes, but audit first: we map the state of the existing code and put the cost of taking it over in writing. 'Look first, promise after' protects both sides.",
+          a: 'Yes, but we start with an audit. We map the state of the existing code and put the cost of taking it over in writing. Looking first and promising afterwards protects both sides.',
         },
         {
           q: 'Is consulting one-off or ongoing?',
-          a: 'Either. You can start with a one-off audit or decision support and continue with monthly advisory if you want; the scope is written down up front.',
+          a: 'Either. You can start with a one-off audit or decision support and, if you like, continue with regular monthly support. We agree the scope in writing up front.',
         },
         {
           q: 'Are we obliged to hire you for the development?',
-          a: 'No. The report and roadmap stand on their own; you can implement them with your own team or another company.',
+          a: 'No. The report and roadmap stand on their own. You can put them into practice with your own team or with another company.',
         },
       ],
     },

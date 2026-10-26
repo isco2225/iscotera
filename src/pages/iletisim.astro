@@ -35,7 +35,7 @@ const channels = [
 
 <BaseLayout
   title="İletişim"
-  description="Projeniz için İscotera ile iletişime geçin: e-posta, telefon, WhatsApp veya Instagram."
+  description="Projenizi konuşmak için İscotera'ya e-posta, telefon, WhatsApp veya Instagram üzerinden ulaşın."
   lang="tr"
   alternate="/en/contact/"
   back={{ href: '/', label: 'Ana Sayfa' }}
@@ -43,7 +43,7 @@ const channels = [
   <section class="mx-auto max-w-3xl px-4 py-16">
     <h1 class="text-3xl font-bold text-ink-strong">İletişim</h1>
     <p class="mt-3 text-ink-muted">
-      Projenizi konuşmak için bize yazın; en kısa sürede dönüş yapalım.
+      Projenizi konuşmak için bize yazın ya da arayın. Size en kısa sürede dönelim.
     </p>
     <div class="mt-8 grid gap-4 sm:grid-cols-2">
       {channels.map((channel) => <ContactCard {...channel} />)}

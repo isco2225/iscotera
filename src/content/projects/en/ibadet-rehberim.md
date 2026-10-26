@@ -16,16 +16,14 @@ video:
   src: "/media/ibadet-rehberim/tanitim.mp4"
   uploadDate: 2026-08-29
 stores:
-  appStore: "https://apps.apple.com/tr/app/i-badet-rehberim/id6759827771"
-  googlePlay: "https://play.google.com/store/apps/details?id=com.omran.huzur_islamda"
   web: "https://ibadetrehberim.com/"
 features:
   - title: "Prayer times for where you are"
-    text: "Times are calculated for your location using the method of the Turkish Directorate of Religious Affairs. A notification arrives the moment a prayer time begins, even when the phone is offline. You need neither a clock nor a connection."
+    text: "The app calculates prayer times for your location, using the method of Diyanet, Türkiye's Presidency of Religious Affairs. When a prayer time begins, a notification arrives even if the phone is offline, so you don't have to watch the clock."
     image: "../_images/ibadet-rehberim/screen-prayer-times.png"
     alt: "İbadet Rehberim prayer times screen: daily prayer times for the user's city and the notification sent when a prayer time begins"
-  - title: "An Islamic assistant you can ask"
-    text: "Type the religious question on your mind and the AI-powered assistant answers it. Each answer states the source it rests on, so you can check what you just read."
+  - title: "Answers to religious questions, with sources"
+    text: "Type in a religious question and the AI-powered assistant answers it. Each answer shows the source it draws on, so you can check what you've read for yourself."
     image: "../_images/ibadet-rehberim/screen-assistant.png"
     alt: "İbadet Rehberim assistant screen: an answer to a religious question with its source cited"
 # Mağaza puanı bilerek yok: uydurma bir puan yerine ölçülebilir tek gerçek
@@ -54,65 +52,62 @@ draft: false
 ---
 
 **İbadet Rehberim** is a mobile app that makes it easier to keep up with daily
-worship. The idea, the design and the software are all ours; we built it
-end to end at İscotera.
+worship. The idea, the design and the software are all ours, and we built it
+from start to finish at İscotera.
 
-Every feature, screen and common question about the app lives on its own site:
-[ibadetrehberim.com](https://ibadetrehberim.com/). This page is not there to
-sell the app; it is there to explain how we built it.
+You'll find every feature, the screenshots and answers to common questions on
+the app's own site, [ibadetrehberim.com](https://ibadetrehberim.com/). On this
+page we explain how we built it.
 
 ## How we built it
 
-### An interface that needs no learning
+### An interface you don't have to learn
 
-We designed the interface for every age from the start: large, legible type,
-few but unambiguous buttons, and navigation built on five fixed tabs. People
-always know which screen they are on and never hunt for things through menus.
-If someone has increased the text size on their phone, the app scales its text
-to match; a person who set it once does not have to set it again here.
+We designed the interface with users of every age in mind from the start:
+large, legible type, a few clear buttons and navigation built on five fixed
+tabs. People always know which screen they're on and never have to hunt
+through menus. If someone has made the text larger on their phone, the app's
+text grows to match, so they don't have to change the setting again.
 
 ### One codebase, two platforms
 
 We built the app with Flutter, from a single source, for both iPhone and
-Android. For our clients that means something concrete: you do not commission
-two separate apps, a new feature reaches both platforms at the same time, and
-maintenance does not cost twice as much.
+Android. Here's what that means for you: you don't need two separate apps
+built, a new feature reaches both platforms at the same time, and maintenance
+doesn't cost twice as much.
 
 ### Data on the device first, the cloud as backup
 
-Dhikr records, preferences and downloaded prayer times live in the phone's own
-database; the cloud steps in only for backup and for syncing when someone
-changes device. Users feel that in three places: the app opens in seconds, the
-dhikr counter and prayer times work with no connection, and because reminders
-depend on the device clock rather than a server, they arrive on time even
-where there is no signal.
+We keep dhikr counts, preferences and downloaded prayer times on the phone
+itself. The cloud comes in only for backups and for moving data across when
+someone changes phone. Users notice the difference in everyday use: the app
+opens in seconds, and the dhikr counter and prayer times work without a
+connection. Because reminders rely on the phone's own clock rather than a
+server, they arrive on time even where there's no signal.
 
 ### Managed cloud on the server side
 
 We used Firebase for sign-in, content and server-side operations, and the
 assistant runs on Google's Gemini model. That gave us a system a small team
-can sustain and that will not buckle as the user count grows. We did not leave
-sensitive operations to the phone: when someone deletes their account, every
-related record is cleared server-side in a single operation.
+can maintain, and one that won't run into trouble as the number of users
+grows. We didn't leave sensitive operations to the phone: when someone deletes
+their account, all of their records are removed on the server in a single
+step.
 
 ### A codebase ready to change
 
 We wrote the app with a layered architecture: the interface, the business
-rules and data access stay separate from one another. In practice that means
-where a screen gets its data is changed in one place, a new feature carries no
-risk of breaking existing screens, and a developer joining later knows where
-to look.
+rules and data access are kept separate. So we can change where a screen gets
+its data in one place, and a new feature does not risk breaking existing
+screens. A developer who joins later also knows where to look.
 
 ## Where it is today
 
-The app is live on the App Store and Google Play and free to download.
-Prayer times, the dhikr counter, the prayer–hadith–verse feed and
-the AI-powered assistant are in users' hands today, and anyone who wants it
-ad-free can move to the support plan.
+The app is live on the App Store and Google Play, and it's free to download.
+Prayer times, the smart dhikr counter, a feed of prayers, hadith and verses,
+and the AI-powered assistant are in users' hands today. Anyone who'd rather
+use it without ads can switch to the support plan.
 
-We wrote the first line in November 2025, and the project has been developed
-steadily ever since.
-
-If you have a mobile app in mind, [get in touch](/en/contact/). Two platforms,
-a data layer that works offline and an AI-powered assistant — we delivered all
-of it with a single team. Let's talk about how to make yours real.
+We built both platform versions, the offline-ready design and the AI-powered
+assistant with a single team. If you have a mobile app in mind,
+[get in touch](/en/contact/) and let's talk about how to build it.

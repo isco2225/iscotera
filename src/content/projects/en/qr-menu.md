@@ -1,6 +1,6 @@
 ---
 title: "QR Menu"
-description: "A QR menu system for restaurants and cafés, designed individually for each business. Guests scan the code on the table to open the menu; price and product changes made in the control panel appear at once."
+description: "A QR menu system for restaurants and cafés. Guests scan the code on the table to open the menu, and the price and product changes you make in the control panel appear at once."
 type: product
 tagline: "A digital menu for your restaurant or café, designed around your brand."
 status: live
@@ -34,22 +34,23 @@ results: []
 # package table and no setup steps.
 features:
   - title: "Designed for your business"
-    text: "The menu is designed around your concept and brand identity. Your guests see your menu, not an interface everyone else uses."
+    text: "On request, we design the menu around your concept and brand identity. Your guests see your own menu rather than an interface everyone else uses."
   - title: "Changes appear at once"
-    text: "Prices, products and descriptions are updated in the control panel and published immediately. No reprints."
+    text: "You update prices, products and descriptions in the control panel, and the changes show on the menu straight away. There's nothing to reprint."
   - title: "Contactless, with nothing to install"
-    text: "Guests scan the QR code on the table with their phone camera and the menu opens in the browser. No app to install, no account to create."
+    text: "Guests scan the QR code on the table with their phone camera and the menu opens in the browser. They don't need to install an app or create an account."
 order: 3
 draft: false
 ---
 
-**QR Menu** is a digital menu system that lets restaurants and cafés
-present their menu through a QR code on the table. The idea, the design and
-the software are ours; it is set up separately for each business and, on
-request, designed around the business's identity.
+**QR Menu** is a digital menu system that brings a restaurant's or café's
+menu to its guests through a QR code on the table. The idea, the design and
+the software are ours. We set it up separately for each business and, if you
+like, design it around your brand identity.
 
-Guests scan the code with their phone and the menu opens in the browser;
-price and product changes made in the control panel appear at once. Panel
-training and ongoing support are part of the setup.
+Guests scan the code with their phone and the menu opens in the browser.
+Price and product changes made in the control panel appear on the menu at
+once. Training on the panel and support afterwards are included in the setup.
 
-Features, packages and quotes: [webmenu.info](https://webmenu.info/).
+You can see the features and packages, and ask for a quote, on
+[webmenu.info](https://webmenu.info/).

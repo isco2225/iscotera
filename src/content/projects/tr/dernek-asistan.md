@@ -2,7 +2,7 @@
 title: "Dernek Asistan"
 description: "Dernekler için geliştirdiğimiz bağış takip sistemi. Bütün bağışlar tek yerde, kayıt saniyeler sürüyor, yönetim raporu tek tıkla hazır."
 type: case-study
-tagline: "Derneğin bütün bağışları tek sistemde: daha az uğraş, daha çok kontrol."
+tagline: "Derneğin bütün bağışları tek sistemde, kayıt ve takip daha kolay."
 status: live
 category: "Web uygulaması"
 # Müşteri adı bilerek yok: kullanıcı kurumun adının projede geçmesini
@@ -33,47 +33,51 @@ results: []
 # 2026-09-21).
 features:
   - title: "Zaman kazandırıyor"
-    text: "Bağış kaydı saniyeler sürüyor. Tutarı ve sıra numarasını sistem kendisi veriyor; çalışan hesap yapmıyor, fiyat listesine bakmıyor."
+    text: "Bağış kaydı saniyeler sürüyor, çünkü tutarı ve sıra numarasını sistem kendisi veriyor. Çalışanın hesap yapmasına ya da fiyat listesine bakmasına gerek kalmıyor."
   - title: "Her bağış kayıt altında"
-    text: "Yemek, ekmek, kurban, Kuran, su kuyusu; türü ne olsun, her bağış kendi yerinde duruyor. Kim, ne zaman, ne için bağış yaptı: aramak yok, açıp bakmak var."
+    text: "Yemek, ekmek, kurban, Kur'an ya da su kuyusu; türü ne olursa olsun her bağış kendi yerinde duruyor. Kimin, ne zaman ve ne için bağış yaptığını aramadan, açıp görebiliyorsunuz."
   - title: "Takip kolaylaşıyor"
-    text: "Hisseli projelerde kaç hissenin dolduğu ve kaç hissenin kaldığı ekranda görünüyor. Dolan proje kendiliğinden tamamlananlara geçiyor; elle sayım bitti."
+    text: "Hisseli projelerde kaç hissenin dolduğunu ve kaç hissenin kaldığını tek bakışta görüyorsunuz. Dolan proje kendiliğinden tamamlananlara geçiyor, kimsenin elle saymasına gerek kalmıyor."
   - title: "Veriler tutarlı"
-    text: "Fiyatlar tek yerden ve yalnızca yetkili kişi tarafından güncelleniyor; herkes aynı rakamla çalışıyor. Her kaydın kim tarafından, ne zaman girildiği belli; dağınık tablo ve çelişen rakam sorunu ortadan kalkıyor."
+    text: "Fiyatları tek bir yerden yalnızca yetkili kişi güncelliyor, böylece herkes aynı rakamla çalışıyor. Her kaydı kimin ve ne zaman girdiği de belli olduğu için dağınık tablolar ve birbirini tutmayan rakamlar ortadan kalkıyor."
   - title: "Raporlar tek tıkla"
-    text: "Tarih aralığını seçin, dönemin bağış raporu PDF olarak hazır. Yönetim kurulu toplantısı için saatlerce tablo birleştirmek yok."
+    text: "Tarih aralığını seçiyorsunuz, o dönemin bağış raporu PDF olarak hazırlanıyor. Yönetim kurulu toplantısından önce saatlerce tablo birleştirmeniz gerekmiyor."
   - title: "Aynı ekiple daha çok iş"
-    text: "Ofis ve saha aynı sistemde çalışıyor; yoğun dönemi ek personel değil sistem karşılıyor. Ekip vaktini kayıt tutmaya değil bağışçıya ve yardımın kendisine ayırıyor."
+    text: "Ofisteki ekip de sahadaki gönüllüler de aynı sistemle çalıştığı için yoğun dönemleri ek personel almadan karşılayabiliyorsunuz. Ekip de zamanını kayıt tutmak yerine bağışçılara ve yardımın kendisine ayırıyor."
 order: 2
 draft: false
 ---
 
 **Dernek Asistan**, derneklerin bütün bağış işlerini tek yerden yönetmesi
 için geliştirdiğimiz sistem. Ofisteki çalışan da sahadaki gönüllü de aynı
-ekrana giriyor.
+sistemi kullanıyor.
 
-## Sorun neydi
+## Sorun
 
 Kurban ve Ramazan dönemlerinde kısa sürede yüzlerce bağış geliyor. Kayıtlar
-tablolara, mesaj gruplarına ve deftere dağılınca hep aynı sıkıntılar çıkıyor:
+tablolara, mesaj gruplarına ve deftere dağılınca hep aynı sorunlar çıkıyor:
 
 - Bir bağışın kimden, ne zaman, ne için alındığı sonradan bulunamıyor.
-- Tutarlar elle hesaplanıyor; hata ve çelişen rakam kaçınılmaz oluyor.
-- "Bu ay kaç bağış aldık?" sorusu saatler süren bir toplama işi.
-- Yoğun dönemi kaldırmak için fazladan insan gerekiyor.
+- Tutarlar elle hesaplanıyor, hatalar ve birbirini tutmayan rakamlar da
+  kaçınılmaz oluyor.
+- "Bu ay kaç bağış aldık?" sorusunun cevabı saatler süren bir toplama işine
+  dönüşüyor.
+- Yoğun dönemleri karşılamak için fazladan insan gerekiyor.
 
 ## Bugün
 
-Dernek Asistan bugün dernekler tarafından kullanılıyor. Bağışlar tek
-sistemde, tutarlar ve raporlar hazır, her kaydın izi belli. Dernekler, kayıt
-ve raporlamaya harcadıkları zamanı yardım faaliyetlerine ayırabiliyor.
+Dernek Asistan'ı bugün dernekler kullanıyor. Bağışlar tek sistemde duruyor,
+tutarlar ve raporlar hazır geliyor, her kaydı kimin girdiği belli. Dernekler
+de kayıt ve rapor için harcadıkları zamanı yardım çalışmalarına
+ayırabiliyor.
 
 ## Derneğinize özel bir sistem
 
-Her derneğin yardım türleri, fiyatlandırması ve iş akışı kendine özgüdür. Bu
-nedenle her projeye derneğin mevcut işleyişini inceleyerek başlıyor, sistemi
-bu işleyişe göre tasarlıyoruz.
+Her derneğin yardım türleri, fiyatları ve iş akışı farklı. Bu yüzden işe
+derneğinizin bugün nasıl çalıştığını inceleyerek başlıyor, sistemi bu işleyişe
+göre tasarlıyoruz.
 
-İhtiyaçlarınızı değerlendirmek için [bizimle iletişime geçebilir](/iletisim/)
-ya da [özel yazılım çözümlerimizi](/hizmetler/ozel-yazilim-cozumleri/)
-inceleyebilirsiniz.
+İhtiyacınızı birlikte değerlendirmek isterseniz [bize yazın](/iletisim/). Bu
+tür projelere nasıl yaklaştığımızı
+[Özel Yazılım Çözümleri](/hizmetler/ozel-yazilim-cozumleri/) sayfasında
+anlatıyoruz.

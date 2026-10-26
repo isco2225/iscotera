@@ -12,27 +12,27 @@ import planningImg from '../assets/about/planning.jpg';
 const principles = [
   {
     title: 'Önce gerekliliği değerlendiririz',
-    text: 'Her ihtiyaç yeni bir yazılım geliştirmeyi gerektirmez. Hazır bir çözüm ya da mevcut sistemde yapılacak bir iyileştirme yeterli olacaksa bunu açıkça belirtiriz. Önceliğimiz, uzun vadeli ve güvene dayalı bir iş ilişkisidir.',
+    text: 'Her ihtiyaç için yeni bir yazılım gerekmez. Hazır bir ürün ya da elinizdeki sistemde yapılacak bir iyileştirme yetecekse bunu açıkça söyleriz. Bizim için önemli olan, yıllarca birlikte çalışabileceğimiz bir ilişki kurmak.',
   },
   {
-    title: 'Belirsizliğin sorumluluğunu üstleniriz',
-    text: 'Süre ve maliyet konusunda net bir tahmin sunmak bizim sorumluluğumuzdadır; belirsizliği muğlak ifadelerle size bırakmayız. İşin başında onaylanan yazılı belge, proje sonuna kadar iki tarafın ortak referansıdır.',
+    title: 'Net bir tahmin vermek bizim işimiz',
+    text: 'Süreyi ve maliyeti baştan netleştirmeyi kendi sorumluluğumuz sayıyoruz. Belirsiz kalan bir konuyu yuvarlak cümlelerle geçiştirmeyiz. İşin başında onayladığınız yazılı belge, proje bitene kadar iki tarafın da dayanağı olur.',
   },
   {
     title: 'Teknolojiyi ihtiyaca göre seçeriz',
-    text: 'Her projeye aynı çözümü uygulamayız. Teknoloji seçiminde projenin ölçeği, bütçeniz ve sistemin ileride kim tarafından işletileceği belirleyicidir; güncel eğilimler tek başına bir gerekçe oluşturmaz.',
+    text: 'Her projeye aynı kalıbı uygulamayız. Seçimi projenin ölçeğine, bütçenize ve sistemi ileride kimin işleteceğine bakarak yaparız. Bir teknolojinin o dönem popüler olması, onu seçmemiz için yeterli olmaz.',
   },
   {
-    title: 'Muhatabınız, projeyi geliştiren ekiptir',
-    text: 'Sizinle geliştirme ekibi arasında aracı bir katman bulunmaz. Teknik sorularınızı doğrudan yanıtı verecek kişiye iletirsiniz; böylece talepler doğru anlaşılır, olası yanlış anlamalar erken aşamada giderilir.',
+    title: 'Projeyi geliştiren ekiple doğrudan konuşursunuz',
+    text: 'Sizinle geliştirme ekibi arasında aracı biri yok. Sorunuzu doğrudan yanıtı verecek kişiye sorarsınız. Böylece talebiniz doğru anlaşılır, yanlış anlamalar da erken fark edilir.',
   },
   {
-    title: 'Bağımlılık oluşturmayız',
-    text: 'Kaynak kod, veriler ve hesaplar size aittir; mağaza ve sunucu hesapları sizin adınıza açılır. Projeye başka bir ekiple devam etmeye karar vermeniz hâlinde, çalışır durumdaki sistem ve tüm erişim bilgileri sizde kalır.',
+    title: 'Sizi bize bağımlı bırakmayız',
+    text: 'Kaynak kod, veriler ve hesaplar size ait. Mağaza ve sunucu hesaplarını sizin adınıza açıyoruz. İleride başka bir ekiple devam etmek isterseniz, çalışan sistem ve bütün erişim bilgileri sizde kalır.',
   },
   {
     title: 'Teslimden sonra da destek veririz',
-    text: 'Yayına alma, ürünün kullanım sürecinin başlangıcıdır. Gerçek kullanımda ortaya çıkan ihtiyaçlar, bakım ve yeni geliştirmeler için aynı ekip desteğini sürdürür.',
+    text: 'Bir ürünün asıl kullanımı yayına alındıktan sonra başlar. Kullanımda ortaya çıkan ihtiyaçlar, bakım ve yeni geliştirmeler için aynı ekip sizinle çalışmayı sürdürür.',
   },
 ];
 
@@ -52,7 +52,7 @@ const aboutSchema = {
 
 <BaseLayout
   title="Hakkımızda"
-  description="İscotera'nın çalışma ilkeleri: yazılı kapsam, süre ve maliyet; müşteri adına açılan hesaplar ve teslim sonrası destek. Kendi ürünlerimizi de geliştiriyoruz."
+  description="İscotera'nın çalışma ilkeleri. Kapsamı, süreyi ve maliyeti yazılı olarak belirliyor, hesapları sizin adınıza açıyor, teslimden sonra da destek veriyoruz."
   lang="tr"
   alternate="/en/about/"
   back={{ href: '/', label: 'Ana Sayfa' }}
@@ -73,10 +73,9 @@ const aboutSchema = {
         İş süreçlerinizi kolaylaştıran yazılımlar geliştiriyoruz
       </h1>
       <p class="mt-5 text-lg text-ink-muted">
-        İscotera; işletmeler ve kurumlar için web uygulamaları, mobil
-        uygulamalar ve özel yazılım çözümleri geliştiren bir yazılım
-        firmasıdır. Müşteri projelerinin yanı sıra kendi ürünlerimizi de
-        geliştirip yayınlıyoruz.
+        İscotera'da işletmeler ve kurumlar için web uygulamaları, mobil
+        uygulamalar ve işe özel yazılımlar geliştiriyoruz. Müşteri
+        projelerinin yanında kendi ürünlerimizi de yayına alıyoruz.
       </p>
       <div class="mt-8 flex flex-wrap items-center gap-4">
         <a
@@ -104,17 +103,17 @@ const aboutSchema = {
           Projelerde öngörülebilirlik
         </h2>
         <p class="mt-4 leading-relaxed text-ink-muted">
-          Yazılım projelerinde karşılaşılan sorunların önemli bir kısmı süreç
-          yönetiminden kaynaklanır: süreler uzar, maliyetler başlangıçta
-          öngörülen tutarı aşar ve proje tamamlandığında sistemin işleyişine
-          ilişkin bilgi yalnızca geliştirici firmada kalır.
+          Yazılım projelerindeki sorunların önemli bir kısmı, işin nasıl
+          yürütüldüğünden kaynaklanır. Süreler uzar, maliyet ilk tahmini aşar.
+          Proje bittiğinde de sistemin nasıl çalıştığını yalnızca onu
+          geliştiren firma bilir.
         </p>
         <p class="mt-4 leading-relaxed text-ink-muted">
-          Bu riskleri en aza indirmek için projelerimizi baştan yazılı bir
-          çerçeveye dayandırıyoruz. Kapsam, süre ve maliyet geliştirme
-          başlamadan önce belgelenir; proje boyunca ilerlemeyi siz de yakından
-          takip edebilirsiniz. Mağaza ve sunucu hesapları sizin adınıza açılır,
-          verileriniz her zaman sizde kalır. Böylece süreç, başından sonuna
+          Bu riskleri azaltmak için her projeye yazılı bir çerçeveyle
+          başlıyoruz. Kapsamı, süreyi ve maliyeti geliştirmeye başlamadan önce
+          belgeliyoruz. Proje boyunca da ilerlemeyi sizinle şeffaf bir şekilde
+          paylaşıyoruz. Mağaza ve sunucu hesaplarını sizin adınıza açıyoruz,
+          verileriniz her zaman sizde kalıyor. Böylece iş, başından sonuna
           kadar öngörülebilir biçimde ilerler.
         </p>
       </div>
@@ -133,8 +132,7 @@ const aboutSchema = {
     <div class="mx-auto max-w-5xl px-4 py-14">
       <h2 class="text-2xl font-bold text-ink-strong">Çalışma ilkelerimiz</h2>
       <p class="mt-3 max-w-2xl text-ink-muted">
-        Aşağıdaki ilkeler, teklif aşamasında yazılı hâle getirdiğimiz
-        taahhütlerimizdir.
+        Bu ilkeler, teklif hazırlarken yazıya döktüğümüz sözler.
       </p>
       <div class="mt-8 grid gap-8 md:grid-cols-3 md:gap-x-10 md:gap-y-10">
         {
@@ -160,16 +158,15 @@ const aboutSchema = {
         Kendi ürünlerimiz
       </h2>
       <p class="mt-4 leading-relaxed text-ink-muted">
-        Sipariş üzerine geliştirdiğimiz projelerin yanı sıra kendi
-        ürünlerimizi de geliştiriyor ve işletiyoruz. Mağaza onay süreçleri,
-        kullanıcı geri bildirimleri ve yayındaki bir uygulamanın bakımı
-        konusundaki deneyimimizi ürünlerimiz üzerinden ediniyoruz; süre ve
-        bakım tahminlerimiz de bu deneyime dayanır.
+        Kendi ürünlerimizi yalnızca geliştirmiyor, yayında tutup işletiyoruz
+        da. Mağaza onay süreçlerini, kullanıcı geri bildirimlerini ve yayındaki
+        bir uygulamanın bakımını bu ürünlerde kendimiz yaşıyoruz. Süre ve bakım
+        tahminlerimizi de bu deneyime dayanarak veriyoruz.
       </p>
       <p class="mt-4 leading-relaxed text-ink-muted">
-        Çalışmalarımızı somut örnekler üzerinden inceleyebilirsiniz: ürünlerimiz
-        ve vaka çalışmalarımız Ürünler sayfasında, çalışma yöntemimizi anlatan
-        yazılarımız blogda yer alır.
+        İşimizi örnekler üzerinden görmek isterseniz, ürünlerimiz ve vaka
+        çalışmalarımız Ürünler sayfasında duruyor. Nasıl çalıştığımızı da
+        blogdaki yazılarımızda anlatıyoruz.
       </p>
       <div class="mt-5 flex flex-wrap items-center gap-x-6 gap-y-2">
         <a
@@ -223,8 +220,8 @@ const aboutSchema = {
         Projenizi birlikte değerlendirelim
       </h2>
       <p class="mx-auto mt-3 max-w-xl text-ink-muted">
-        İhtiyaçlarınızı bizimle paylaşın; size net bir süre ve bütçe içeren
-        bir değerlendirme sunalım.
+        İhtiyacınızı bize anlatın, süresi ve bütçesi net bir değerlendirmeyle
+        size dönelim.
       </p>
       <a
         href="/iletisim/"

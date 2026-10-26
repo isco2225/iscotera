@@ -7,63 +7,64 @@ cover: "../_images/e-ticaret-sitesi-maliyeti/cover.jpg"
 coverAlt: "Açık sarı bir zeminde duran, kapalı ve etiketsiz bir karton kutu"
 ---
 
-E-ticaret sitesi maliyeti sorulduğunda akla çoğunlukla sitenin yapım bedeli
-gelir. Oysa e-ticarette giderlerin büyük bölümü site açıldıktan sonra ortaya
-çıkar. Bu yazıda kurulum kalemlerini, satış başına ödenen giderleri ve aylık
-sabit giderleri ayrı ayrı ele alıyoruz. Rakam vermiyoruz; nedenini sonda
-açıklıyoruz.
+E-ticaret sitesi maliyeti denince akla çoğunlukla sitenin yapım bedeli
+gelir. Oysa e-ticarette giderlerin büyük bölümü site açıldıktan sonra
+ortaya çıkar. Bu yazıda kurulum kalemlerini, satış başına ödenen giderleri
+ve aylık sabit giderleri ayrı ayrı ele alıyoruz. Rakam vermiyoruz, nedenini
+yazının sonunda açıklıyoruz.
 
 ## Maliyetin yapısı seçtiğiniz yola bağlıdır
 
-İnternetten satışın üç yolu vardır ve her birinin maliyet yapısı farklıdır:
+İnternetten satış yapmanın üç yolu var ve her birinin maliyet yapısı
+farklı:
 
-- **Pazaryeri:** Kurulum gideri yok denecek kadar azdır; her satıştan
-  komisyon ödenir.
-- **Hazır e-ticaret altyapısı:** Düşük bir başlangıç bedeli ve süreklilik
-  taşıyan bir abonelik ücreti vardır.
-- **Özel geliştirme:** Başlangıç bedeli yüksektir; abonelik yoktur, bunun
+- **Pazaryeri:** Kurulum gideri yok denecek kadar azdır, ama her satıştan
+  komisyon ödersiniz.
+- **Hazır e-ticaret altyapısı:** Başlangıç bedeli düşüktür, buna karşılık
+  abonelik ücretini sürekli ödersiniz.
+- **Özel geliştirme:** Başlangıç bedeli yüksektir. Abonelik yoktur, onun
   yerine barındırma ve bakım gideri vardır.
 
-Yolların karşılaştırması
+Bu yolları
 [e-ticaret sitesi kurmak istiyorum](/blog/e-ticaret-sitesi-kurmak-istiyorum/)
-yazısında. Aşağıdaki kalemler, kendi sitenizi kurduğunuz iki yol için
-geçerlidir.
+yazısında karşılaştırdık. Aşağıdaki kalemler, kendi sitenizi kurduğunuz iki
+yol için geçerli.
 
 ## Kurulum kalemleri
 
-**1. Tasarım.** Hazır bir temanın uyarlanması ile markaya özel tasarım
-arasında belirgin bir emek farkı vardır. Ürün ve sepet sayfalarının
-kullanım kolaylığı satışı doğrudan etkilediği için bu kalem yalnızca
-görünüşle ilgili değildir.
+**1. Tasarım.** Hazır bir temayı uyarlamak ile markaya özel tasarım
+arasında belirgin bir emek farkı var. Ürün ve sepet sayfalarının kullanım
+kolaylığı satışı doğrudan etkiler, bu yüzden bu kalem yalnızca görünüşle
+ilgili değil.
 
-**2. Ürün sayısı ve içerik.** Ürün fotoğraflarının çekilmesi, açıklamaların
-yazılması ve ürünlerin siteye girilmesi çoğu zaman öngörülenden fazla emek
-ister. Yüzlerce ürünü olan bir mağazada bu kalem, sitenin kendisinden daha
-maliyetli olabilir.
+**2. Ürün sayısı ve içerik.** Ürün fotoğraflarını çekmek, açıklamaları
+yazmak ve ürünleri siteye girmek çoğu zaman beklenenden fazla emek ister.
+Yüzlerce ürünü olan bir mağazada bu kalem, sitenin kendisinden daha
+pahalıya gelebilir.
 
 **3. Ödeme ve kargo bağlantıları.** Sanal POS ya da ödeme kuruluşu, kargo
-firması ve fatura sistemi bağlantıları. Hazır altyapılarda çoğu hazır
-gelir; özel geliştirmede her biri ayrı bir iştir.
+firması ve fatura sistemi bağlantıları. Hazır altyapılarda bunların çoğu
+hazır gelir, özel geliştirmede ise her biri ayrı bir iştir.
 
 **4. Entegrasyonlar.** Pazaryerleriyle stok ve sipariş eşitlemesi, muhasebe
 programı, depo ya da üretim sistemi bağlantısı. Maliyeti en çok değiştiren
 kalem budur.
 
-**5. Özel işleyiş.** Bayi fiyatlandırması, kişiye özel ürün, abonelik,
-kampanya kurguları gibi standart dışı her kural ek geliştirme gerektirir.
+**5. Özel işleyiş.** Bayi fiyatlandırması, kişiye özel ürün, abonelik ya da
+kampanya kurguları gibi standart dışındaki her kural ek geliştirme ister.
 
 **6. Yasal ve mali hazırlık.** Sözleşme metinleri, şirket kuruluşu ve resmî
-kayıtlar için alınan mali ve hukuki danışmanlık.
+kayıtlar için alacağınız mali ve hukuki danışmanlık.
 
 ## Satış başına giderler
 
-Bu kalemler her siparişle birlikte ödenir ve ürün fiyatlandırılırken hesaba
-katılmalıdır:
+Bu kalemleri her siparişte ödersiniz, bu yüzden ürünü fiyatlandırırken
+hesaba katın:
 
 - **Ödeme komisyonu.** Banka ya da ödeme kuruluşu her işlemden bir pay
-  alır; taksitli satışlarda bu pay artar.
-- **Kargo.** Gönderim ücreti ve iade kargosu. Ücretsiz kargo sunuluyorsa
-  bedeli siz karşılarsınız.
+  alır. Taksitli satışlarda bu pay artar.
+- **Kargo.** Gönderim ücreti ve iade kargosu. Kargoyu ücretsiz yapıyorsanız
+  bedelini siz karşılarsınız.
 - **Ambalaj.** Kutu, koruyucu malzeme ve etiket.
 - **İadeler.** İade edilen ürünün kargo, yeniden paketleme ve değer kaybı
   maliyeti.
@@ -82,33 +83,34 @@ katılmalıdır:
 ## En büyük kalem: ziyaretçi getirmek
 
 Yeni açılan bir e-ticaret sitesine ziyaretçi kendiliğinden gelmez. Arama
-motoru ve sosyal medya reklamları, içerik üretimi ve kampanyalar için
-ayrılan bütçe, birçok işletmede sitenin yapım bedelini kısa sürede aşar.
-Bütçe planlanırken bu kalemin en başta ayrılması gerekir; siteye bütün
-bütçeyi harcayıp tanıtıma kaynak bırakmamak en sık yapılan hatadır.
+motoru ve sosyal medya reklamlarına, içerik üretimine ve kampanyalara
+ayrılan bütçe, birçok işletmede kısa sürede sitenin yapım bedelini aşar. Bu
+yüzden bütçeyi planlarken bu kalemi en başta ayırın. En sık yapılan hata,
+bütün bütçeyi siteye harcayıp tanıtıma para bırakmamak.
 
 ## Bütçe nasıl planlanır?
 
 - **Üç ayrı hesap yapın:** kurulum, satış başına gider ve aylık sabit gider.
   Tek bir "site fiyatı" bu üçünü göstermez.
-- **Küçük başlayın.** Önce sınırlı ürünle ve hazır altyapıyla ürünün satıp
-  satmadığını görün. Satış kanıtlandıktan sonra yapılan yatırım daha
-  isabetlidir.
+- **Küçük başlayın.** Önce az sayıda ürünle ve hazır altyapıyla ürünün
+  satıp satmadığını görün. Satış kanıtlandıktan sonra yapacağınız yatırım
+  daha isabetli olur.
 - **Geçiş noktasını hesaplayın.** Komisyon ve abonelik giderlerinin toplamı
-  özel bir sitenin maliyetine yaklaştığında özel geliştirme gündeme
-  alınabilir.
+  özel bir sitenin maliyetine yaklaştığında özel geliştirmeyi düşünmeye
+  başlayabilirsiniz.
 - **Teklifleri maddeli isteyin.** Özel geliştirme teklifinde ödeme, kargo,
   entegrasyon ve bakım kalemlerinin ayrı ayrı yazılmasını isteyin.
 
 ## Neden rakam vermiyoruz?
 
-E-ticarette toplam maliyet, seçilen yola, ürün sayısına, bağlanacak
-sistemlere ve tanıtım bütçesine göre çok geniş bir aralıkta değişir; kapsam
-bilinmeden verilen rakam yanıltıcı olur. Yöntemimiz, ihtiyacı maddelere
-ayırmak ve her maddenin süresi ile maliyetini yazılı olarak belirlemektir.
+E-ticarette toplam maliyet seçilen yola, ürün sayısına, bağlanacak
+sistemlere ve tanıtım bütçesine göre çok geniş bir aralıkta değişir. Kapsam
+bilinmeden verilen rakam yanıltıcı olur. Bizim yöntemimiz, ihtiyacı
+maddelere ayırmak ve her maddenin süresini ve maliyetini yazılı olarak
+belirlemek.
 
-Diğer proje türleri için maliyet kalemlerini
+Diğer proje türlerinin maliyet kalemlerini
 [web sitesi yaptırma maliyeti](/blog/web-sitesi-yaptirma-maliyeti/) ve
 [yazılım yaptırma maliyeti](/blog/yazilim-yaptirma-maliyeti/) yazılarında
-ele aldık. İşiniz için hangi yolun ekonomik olduğunu birlikte değerlendirmek
-isterseniz [iletişime geçebilirsiniz](/iletisim/).
+anlattık. İşiniz için hangi yolun ekonomik olduğunu birlikte değerlendirmek
+isterseniz [bize yazın](/iletisim/).
