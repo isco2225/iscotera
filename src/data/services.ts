@@ -44,7 +44,7 @@ export interface Service {
 export const services: Service[] = [
   {
     id: 'web',
-    caseStudy: 'qr-menu',
+    caseStudy: 'meydan-sport-club',
     tr: {
       slug: 'web-uygulama-gelistirme',
       title: 'Web Uygulama Geliştirme',

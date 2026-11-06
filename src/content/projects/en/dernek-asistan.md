@@ -44,7 +44,7 @@ features:
     text: "Pick a date range and the donation report for that period is ready as a PDF. You no longer spend hours merging spreadsheets before a board meeting."
   - title: "More donations, same team"
     text: "Office staff and field volunteers work in the same system, so you can get through the busy season without taking on extra staff. The team spends its time on donors and the aid itself rather than on record-keeping."
-order: 2
+order: 3
 draft: false
 ---
 

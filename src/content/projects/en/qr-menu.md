@@ -39,7 +39,7 @@ features:
     text: "You update prices, products and descriptions in the control panel, and the changes show on the menu straight away. There's nothing to reprint."
   - title: "Contactless, with nothing to install"
     text: "Guests scan the QR code on the table with their phone camera and the menu opens in the browser. They don't need to install an app or create an account."
-order: 3
+order: 4
 draft: false
 ---
 

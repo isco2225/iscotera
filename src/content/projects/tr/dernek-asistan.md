@@ -44,7 +44,7 @@ features:
     text: "Tarih aralığını seçiyorsunuz, o dönemin bağış raporu PDF olarak hazırlanıyor. Yönetim kurulu toplantısından önce saatlerce tablo birleştirmeniz gerekmiyor."
   - title: "Aynı ekiple daha çok iş"
     text: "Ofisteki ekip de sahadaki gönüllüler de aynı sistemle çalıştığı için yoğun dönemleri ek personel almadan karşılayabiliyorsunuz. Ekip de zamanını kayıt tutmak yerine bağışçılara ve yardımın kendisine ayırıyor."
-order: 2
+order: 3
 draft: false
 ---
 

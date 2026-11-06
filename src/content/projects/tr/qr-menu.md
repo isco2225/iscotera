@@ -39,7 +39,7 @@ features:
     text: "Fiyatları, ürünleri ve açıklamaları kontrol panelinden güncelliyorsunuz, değişiklik o anda menüde görünüyor. Menüyü yeniden bastırmanız gerekmiyor."
   - title: "Uygulama indirmeden, temassız"
     text: "Müşteriniz masadaki QR kodu telefonunun kamerasıyla okutuyor, menü tarayıcıda açılıyor. Uygulama kurmasına ya da üye olmasına gerek yok."
-order: 3
+order: 4
 draft: false
 ---
 

@@ -149,6 +149,19 @@ kafe masası fotoğrafı (kaynaklar `src/content/projects/_images/README.md`).
 - [ ] İsteğe bağlı: webmenu.info'daki müşteri yorumları gerçek ve onaylıysa
       `testimonials` alanına girer; doğrulanmamış yorum şemaya bildirilmez.
 
+### Meydan Sport Club ürün sayfası
+
+Beykoz'daki spor salonu için yaptığımız sitenin vaka sayfası (2026-11-06).
+Görseller canlı siteden alınan ekran görüntüleri; ölçüler ve kaynak
+`src/content/projects/_images/README.md` dosyasında.
+
+- [ ] İsteğe bağlı: salon sahibinden onaylı, gerçek bir görüş gelirse
+      `testimonials` alanına girer.
+- [ ] İsteğe bağlı: doğrulanmış bir sonuç (ör. Search Console'dan aylık
+      tıklama) gelirse `results` alanına en fazla üç madde olarak girer.
+- [ ] Salon ücretleri değişirse ekran görüntüleri aynı ölçülerle yeniden
+      çekilir.
+
 ### Site geneli
 
 - [x] Logo + favicon (İ monogramı: siyah zemin, beyaz gövde, kırmızı nokta)
