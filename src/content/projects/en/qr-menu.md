@@ -9,8 +9,7 @@ client: "Our own product"
 sector: "Restaurants and cafés"
 tags: ["web", "qr menu", "restaurant", "café"]
 # Vitrin panelinin zemini (ProductPanel): webmenu.info'nun mor kimliğinin
-# koyu tonu; İbadet Rehberim'in yeşili ve Dernek Asistan'ın petrol
-# mavisiyle karışmasın diye.
+# koyu tonu; diğer ürünlerin panel renkleriyle karışmasın diye.
 color: "#581c87"
 # The logo was redrawn as a vector from the 97 px PNG on webmenu.info; the
 # cover is a café-table photo from Pexels (sources in _images/README.md).
@@ -39,7 +38,7 @@ features:
     text: "You update prices, products and descriptions in the control panel, and the changes show on the menu straight away. There's nothing to reprint."
   - title: "Contactless, with nothing to install"
     text: "Guests scan the QR code on the table with their phone camera and the menu opens in the browser. They don't need to install an app or create an account."
-order: 4
+order: 3
 draft: false
 ---
 

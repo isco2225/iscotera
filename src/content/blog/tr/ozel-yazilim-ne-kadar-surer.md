@@ -115,10 +115,6 @@ kullanılırken öğrendiklerinizle gelsin. Bu yaklaşımın iki kazancı var. �
 faydayı aylar yerine haftalar içinde görürsünüz, ikinci sürümün kapsamı da
 varsayıma değil gerçek kullanıma dayanır.
 
-[Dernek Asistan](/urunler/dernek-asistan/) da böyle ilerledi: önce bağış
-kaydını ve raporlamayı yayına aldık, geri kalanını sonraki sürümlerde
-ekledik. Böylece kimse "her şey bitince kullanırız" diye aylarca beklemedi.
-
 ## Kısa cevap
 
 Özel yazılım ne kadar sürer? Küçük bir araç haftalar, çok modüllü bir sistem

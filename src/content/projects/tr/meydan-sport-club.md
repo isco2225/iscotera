@@ -36,7 +36,7 @@ stores:
 results: []
 # Bu sayfayı salon sahibi gibi bir işletme sahibi okuyor. Her özelliğin
 # başlığı bir fayda, metni en fazla iki cümle; teknik terim yazılmaz
-# (Dernek Asistan ile aynı kural, docs/content-decisions.md).
+# (vaka çalışmalarının ortak kuralı, docs/content-decisions.md).
 features:
   - title: "Salonu olduğu gibi tanıtıyor"
     text: "Sitede salonun sarı-siyah kimliği, kendi fotoğrafları ve antrenör kadrosu öne çıkıyor. Salonu merak eden biri, gelmeden önce nasıl bir yere geleceğini görüyor."

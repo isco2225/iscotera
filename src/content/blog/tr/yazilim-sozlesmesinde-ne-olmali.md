@@ -68,7 +68,7 @@ sistem demektir. Biz de böyle çalışıyoruz:
 
 ### 6. Verinin sahibi ve yeri
 
-Müşteri listeniz, siparişleriniz, bağış kayıtlarınız size aittir ve
+Müşteri listeniz, siparişleriniz, faturalarınız size aittir ve
 sözleşmede bu açıkça yazmalıdır. Ayrıca verinin nerede tutulduğu (hangi
 ülke, hangi sağlayıcı) ve istediğinizde dışa aktarılabileceği de yazılmalı.
 Kişisel veri içeriyorsa KVKK yükümlülüklerinin kimde olduğu da netleşmeli.

@@ -16,7 +16,6 @@ sonrası kayıtlar tarafında.
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | `/` | 100 | 100 | 100 | 100 | 1,2 s | 0 ms | 0 |
 | `/hizmetler/web-uygulama-gelistirme/` | 100 | 100 | 100 | 100 | 0,9 s | 0 ms | 0 |
-| `/urunler/dernek-asistan/` | 99 | 100 | 100 | 100 | 2,0 s | 0 ms | 0 |
 | `/blog/` | 100 | 100 | 100 | 100 | 1,1 s | 0 ms | 0 |
 | `/blog/clean-architecture-ne-zaman-deger/` | 100 | 100 | 100 | 100 | 0,9 s | 0 ms | 0 |
 
@@ -34,7 +33,7 @@ sonrası kayıtlar tarafında.
 - Görsellerde `width`/`height` var (CLS 0), ilk ekran dışındakiler
   `loading="lazy"`, hero görselleri `fetchpriority="high"`.
 - Blog kapakları `srcset` ile responsive üretiliyor.
-- Dernek Asistan ekran görüntüleri DPR 2 ile çekilmiş (2940×1604 vb.).
+- Ürün ekran görüntüleri DPR 2 ile çekilmiş.
 - Sekiz yayınlanmış Türkçe blog yazısı, hepsi kapaklı ve tarihli.
 - Yanlışlıkla konmuş `noindex` yok.
 
@@ -68,7 +67,7 @@ sonrası kayıtlar tarafında.
    site geneli bir varsayılan görsel kullanılabilir. (README'de TODO,
    `BaseLayout.astro`'da yeri işaretli.)
 2. **Kapak görsellerinin alt metni boş.** Koleksiyon şemasında ürün `cover`
-   alanı için alt yok; Dernek Asistan'ın hero görseli ve ana sayfadaki ürün
+   alanı için alt yok; ürün sayfasının hero görseli ve ana sayfadaki ürün
    şeridi `alt=""` ile çıkıyor. Blog listesindeki sekiz kapak da boş alt
    taşıyor (başlıkla aynı bağlantıda oldukları için kabul edilebilir, ama
    görsel aramada kaybettiriyor). `content.config.ts`'e `coverAlt` eklenip
@@ -88,8 +87,6 @@ sonrası kayıtlar tarafında.
    | --- | --- | --- |
    | `/hakkimizda/` / `/en/about/` | 52 / 44 | çok kısa |
    | `/urunler/` / `/en/products/` | 54 / 50 | çok kısa |
-   | `/en/products/dernek-asistan/` | 199 | kesilir |
-   | `/urunler/dernek-asistan/` | 172 | kesilir |
    | `/blog/mobil-uygulama-mi-web-sitesi-mi/` | 187 | kesilir |
    | `/blog/kucuk-isletme-icin-sunucu-secimi/` | 186 | kesilir |
    | Diğer dört blog yazısı | 162–166 | sınırda |
@@ -120,8 +117,6 @@ Teknik puan tavanda; bundan sonrasını sıralamada şunlar belirler:
   "web uygulama geliştirme" gibi genel terimler çok rekabetli; uzun kuyruk
   daha erişilebilir. Mevcut yazılar ("web sitesi yaptırma maliyeti", "özel
   yazılım ne kadar sürer") tam bu tür sorguları hedefliyor, doğru yön.
-  "dernek bağış yönetim programı", "dernek yazılımı" gibi sorgular için
-  Dernek Asistan vaka çalışması ve ona bağlı yazılar niş trafik getirir.
   Her yazı ilgili hizmet sayfasına iç bağlantı vermeli.
 - **Uzmanlık sinyalleri (E-E-A-T).** Gerçek bir Hakkımızda sayfası, kurucu
   ve ekip tanıtımı, blogda "İscotera Ekibi" yerine isimli yazar satırı
@@ -140,7 +135,7 @@ Teknik puan tavanda; bundan sonrasını sıralamada şunlar belirler:
 ## Kod tarafına düşen iş listesi
 
 - [x] BreadcrumbList, WebSite ve BlogPosting JSON-LD
-- [x] Dernek Asistan ekran görüntülerini DPR 2 ile yeniden çek
+- [x] Yatay ürün ekran görüntülerini DPR 2 ile yeniden çek
 - [x] Blog kapakları ve responsive `srcset`
 - [ ] `og:image` altyapısı (`BaseLayout` + varsayılan görsel + blog kapağı
       ile geçersiz kılma) ve `twitter:card` = `summary_large_image`

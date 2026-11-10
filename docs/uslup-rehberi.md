@@ -124,12 +124,12 @@ Kendi sorduğumuz ve hemen kendimizin yanıtladığı süslü sorular yasak ("Ne
 - **İki nokta:** Arkasından tam cümle geliyorsa o cümle büyük harfle başlar, sıralama geliyorsa küçük harfle. Daha iyisi iki noktayı azaltmak: çoğu zaman nokta koyup yeni cümle kurmak daha doğal okunur.
 - **Şapka:** Sitede zaten kullanılan biçimleri koruyun: "yapay zekâ", "hâline", "dinî". Yeni metinde de aynı yazımı kullanın.
 - **"Sizinle" ve "sizlerle":** İkisi de doğru. Varsayılan "sizinle". Sahibin ana sayfa cümlesindeki "sizlerle" olduğu gibi kalır; başka yerlerde idareli kullanın.
-- **Büyük harf:** Başlıklarda ve butonlarda yalnızca ilk sözcük büyük harfle başlar (5. bölüm). Ürün ve hizmet adları istisnadır: "Dernek Asistan", "Web Uygulama Geliştirme".
+- **Büyük harf:** Başlıklarda ve butonlarda yalnızca ilk sözcük büyük harfle başlar (5. bölüm). Ürün ve hizmet adları istisnadır: "İbadet Rehberim", "Web Uygulama Geliştirme".
 
 ## 7. Blog yazıları
 
 Sahibi blog yazılarının da bu üsluba geçmesini onayladı (2026-10-26). İlkeler şunlar:
-- Blog uzun bir yazı türü: okuru bilgilendirir, satış yapmaz. Sıcaklık okura doğrudan seslenmekten ("İşletmeniz için bir yazılım yaptırmak istiyorsunuz: ..."), okurun yaşadığı durumu tanıyan cümlelerden ve gerçek örneklerden gelir. Excel yazısındaki "O dosyayı Ayşe Hanım biliyor" sahnesi ve Dernek Asistan örneği bunun iyi örnekleri.
+- Blog uzun bir yazı türü: okuru bilgilendirir, satış yapmaz. Sıcaklık okura doğrudan seslenmekten ("İşletmeniz için bir yazılım yaptırmak istiyorsunuz: ..."), okurun yaşadığı durumu tanıyan cümlelerden ve gerçek örneklerden gelir. Excel yazısındaki "O dosyayı Ayşe Hanım biliyor" sahnesi bunun iyi bir örneği.
 - Sayfalara göre biraz daha uzun cümleler ve paragraflar olabilir (cümle en fazla 30 kelime, paragraf 3–5 cümle). Ara başlıklar soru olabilir, çünkü okurun aradığı soruyu karşılar ("Hazır bir paket işinizi görüyor mu?").
 - "Biz" bilgi verirken öne çıkmaz, deneyim aktarırken çıkar: "Bize gelen işlerin önemli bir kısmı şu cümleyle başlıyor...".
 - Her yazı en fazla bir CTA ile kapanır. Bu CTA tek cümlelik ve davet biçiminde olur, gövde metnine satış cümlesi serpiştirilmez.
@@ -160,7 +160,7 @@ Sahibi blog yazılarının da bu üsluba geçmesini onayladı (2026-10-26). İlk
 6. **Argo, deyimsel rahatlık, vecize ve sevimli kapanış cümlesi kullanılmaz** ("Geriye konuşulacak sürpriz kalmıyor").
 7. **Samimi, satışçı ya da abartılı demek değildir.** Ünlem, aciliyet ("hemen"), kampanya dili ve "ücretsiz" vaadi kullanılmaz.
 8. **Hakkımızda sayfası ilkelerle konuşur.** Misyon/Vizyon bölümü olmaz. İlkeler sıfat değil, rakibin tersini yapabileceği davranışlardır. İlkeler ana sayfadaki süreç adımlarını tekrar etmez (ana sayfa sırayı anlatır, Hakkımızda gerekçeyi). İngilizce Hakkımızda sayfasında blog bağlantısı yoktur.
-9. **Ürün girdilerinin bilerek boş bırakılan bölümleri doldurulmaz.** QR Menü uzatılmaz, Dernek Asistan'da müşteri adı geçmez. Bir ürünü düzenlemeden önce docs/content-decisions.md'deki ilgili bölüm okunur.
+9. **Ürün girdilerinin bilerek boş bırakılan bölümleri doldurulmaz.** QR Menü uzatılmaz. Bir ürünü düzenlemeden önce docs/content-decisions.md'deki ilgili bölüm okunur.
 10. **Sahibin yazdığı cümleler olduğu gibi kalır:** ana sayfa hero alt metni ve "İlerlemeye siz de şahit olursunuz".
 
 ## Kaynaklar (incelenen siteler, 2026-10-26)

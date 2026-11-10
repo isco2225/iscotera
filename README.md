@@ -55,7 +55,7 @@ görünüyor.
 
 Her bölüm kendi alanından beslenir ve **boş bıraktığınız alanın bölümü hiç
 görünmez**. Alanların tek tek ne yaptığı `src/content.config.ts` içindeki şema
-yorumlarında yazılı; yayındaki `dernek-asistan.md` / `ibadet-rehberim.md`
+yorumlarında yazılı; yayındaki `ibadet-rehberim.md` / `meydan-sport-club.md`
 dosyaları da dolu birer örnek.
 
 Üç kural içeriği yazarken önemli:
@@ -85,10 +85,6 @@ panelde görünür. Renk frontmatter'a `color: "#253e22"` biçiminde yazılır v
 koyu olmalı: beyazla 7:1'in altında kalan bir renk derlemeyi durdurur. Alan boş
 bırakılırsa koyu gri kullanılır. Dikey kapağın arkasında, ürünün ilk dikey
 özellik görseli ikinci telefon olarak durur.
-
-**Kurum adı:** Dernek Asistan'ın müşterisi olan kurumun adı projede geçmez
-(kullanıcının kararı, 2026-09-23). `client` alanı bu yüzden boş; metin yalnızca
-sistemin dernekler tarafından kullanıldığını söyler.
 
 **Mağaza rozetleri:** App Store ve Google Play rozetlerinin resmî görselleri
 `public/badges/` altına konur (adresler ve marka kuralları oradaki

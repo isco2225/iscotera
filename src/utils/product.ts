@@ -29,7 +29,7 @@ type ProjectData = CollectionEntry<'projects'>['data'];
 export const PRODUCT_IMAGE_WIDTH = 640;
 
 /**
- * Yatay ekran görüntüleri (masaüstü/web uygulaması, ör. Dernek Asistan) için
+ * Yatay ekran görüntüleri (masaüstü/web sitesi, ör. Meydan Sport Club kapağı) için
  * genişlik. Dikey telefon ekranı en fazla ~320px yer kaplarken yatay görsel
  * ürün sayfasında kapsayıcının tamamına (1024 − 2×16 = 992px) yayılıyor;
  * 2x ekran için 1984 gerekiyor. Kaynak bundan küçükse Astro büyütmez, kaynak

@@ -94,9 +94,7 @@ anlattık.
 Yazılım projelerinde en sık yapılan hata, her şeyi ilk sürüme sığdırmaya
 çalışmak. İlk sürüm size en çok zaman kaybettiren tek bir işi çözerse
 yazılım erken kullanıma girer, ekibiniz ona alışır ve sonraki adımları
-gerçek kullanımdan öğrendiklerinizle planlarsınız. Dernekler için
-geliştirdiğimiz [Dernek Asistan](/urunler/dernek-asistan/) projesinde de
-önce en çok zaman alan sorunu çözdük, diğer bölümleri onun üzerine ekledik.
+gerçek kullanımdan öğrendiklerinizle planlarsınız.
 
 ## Süre, maliyet ve sözleşme
 

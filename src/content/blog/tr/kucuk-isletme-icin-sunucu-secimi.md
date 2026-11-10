@@ -30,10 +30,10 @@ oluyor.
 
 **Hazır servis.** Veritabanı, kullanıcı girişi, dosya depolama gibi
 parçaları hazır veren platformlar. Bu seçenekte bir sunucuyla hiç
-uğraşmazsınız. Dernek Asistan'da veritabanı ve yetkilendirme (kimin neyi
-görebileceği) için tam olarak bunu yaptık. [Supabase](https://supabase.com/)
-üzerinde, küçük bir ekibin sürdürebileceği ve derneğin verisinin derneğe
-ait kaldığı bir yapı kurduk. Bu sitenin kendisi de sunucusuz çalışıyor:
+uğraşmazsınız. [Supabase](https://supabase.com/) bu türün bir örneği:
+Veritabanını ve yetkilendirmeyi (kimin neyi görebileceğini) hazır verir,
+küçük bir ekip de böyle bir yapıyı sürdürebilir. Bu sitenin kendisi de
+sunucusuz çalışıyor:
 Sabit dosyalar olarak yayınlanıyor ve bakım isteyen bir makine yok.
 
 Bir de dördüncü bir durum var, ama aslında seçenek sayılmaz: yazılımcının

@@ -40,7 +40,7 @@ toplam getiriyor ve yarım saat hangisinin doğru olduğu konuşuluyor. Karar
 vermeye yardım etmesi gereken tablo, tartışmanın konusu olmuş.
 
 **5. Kurallar insanların kafasında.** "Bu ülke için asgari adet üç",
-"şu tür bağışta fiyat farklı", "bu müşteriye vade uygulanmaz" gibi kurallar
+"şu ürün grubunda fiyat farklı", "bu müşteriye vade uygulanmaz" gibi kurallar
 tabloda değil, deneyimli çalışanın hafızasında. Yeni gelen çalışan bunları
 yanlış uyguluyor, kimse de bunu hemen fark etmiyor.
 
@@ -48,24 +48,6 @@ Beş belirtiden ikisini ya da üçünü aynı anda görüyorsanız tablo artık 
 yükünü taşımıyor demektir. Yalnızca biri varsa henüz erken: Excel'i biraz
 daha düzenleyerek yolunuza devam edebilirsiniz. Bunu size söylemek de bizim
 işimiz.
-
-## Dernek Asistan'ın öncesi tam olarak buydu
-
-Dernekler için geliştirdiğimiz [Dernek Asistan](/urunler/dernek-asistan/)
-bu durumun ders kitabı gibi bir örneği. Kurban ve Ramazan döneminde kısa
-sürede yüzlerce bağış kaydı alınıyordu. Bu kayıtlar tablolara, mesajlaşma
-uygulamalarına ve kişisel notlara dağılmış durumdaydı. Fiyat listesi ayrı
-bir yerdeydi, tutarlar elle hesaplanıyordu, su kuyusu gibi hisseli
-projelerde kaç hissenin dolduğu elle sayılıyordu. Ay sonu raporu saatler
-süren bir toplama işiydi.
-
-Yukarıdaki beş belirtiye bakın: hepsi vardı.
-
-İlk işimiz yeni ekranlar çizmek olmadı. Önce derneğin fiyat tablosunu ve
-kurallarını sistemin içine taşıdık. Kural bir kez tanımlanıyor, her kayıtta
-kendiliğinden uygulanıyor. Çalışan fiyat aramıyor, tutar hesaplamıyor,
-asgari adedi hatırlamak zorunda kalmıyor. Yani önce beşinci belirtiyi,
-insanların kafasındaki kuralları çözdük. Diğerleri onun üstüne geldi.
 
 ## Geçiş nasıl yapılır: her şeyi birden değil
 

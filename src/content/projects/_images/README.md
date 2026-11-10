@@ -9,7 +9,6 @@ aksi hâlde Retina'da bulanık kalır.
 | Klasör | Dosya | Kaynak |
 | --- | --- | --- |
 | `ibadet-rehberim/` | `logo.png`, `screen-*.png` | Kendi ürünümüz; uygulamanın kendi ikonu ve ekranları |
-| `dernek-asistan/` | `cover.png` | Kullanıcının verdiği tanıtım kompozisyonu (örnek veri) |
 | `qr-menu/` | `logo.svg` | webmenu.info'daki 97 px `web_site_logo.png` dosyasından piksel piksel ölçülerek vektöre çizildi (aynı mor, `#6e64c5`); büyük boy kaynak yoktu |
 | `qr-menu/` | `cover.jpg` | https://www.pexels.com/photo/10032377/ (Pexels, ücretsiz ticari lisans, atıf gerekmez). Dikey kaynak 2000 px genişlikte indirildi, 3:2 kırpıldı ve yatay aynalandı: QR kartı sol kenara gelsin diye — panel, yatay kapağın sağ ~%25'ini keser |
 | `meydan-sport-club/` | `logo.png` | Müşterinin logosu: salon sitesindeki `public/images/logo/meydansport_logo.png` (497×495), kare olsun diye 495×495 kırpıldı |

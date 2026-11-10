@@ -9,8 +9,7 @@ client: "Kendi ürünümüz"
 sector: "Restoran ve kafe"
 tags: ["web", "qr menü", "restoran", "kafe"]
 # Vitrin panelinin zemini (ProductPanel): webmenu.info'nun mor kimliğinin
-# koyu tonu; İbadet Rehberim'in yeşili ve Dernek Asistan'ın petrol
-# mavisiyle karışmasın diye.
+# koyu tonu; diğer ürünlerin panel renkleriyle karışmasın diye.
 color: "#581c87"
 # Logo, webmenu.info'daki 97 px PNG'den vektöre çizildi; kapak Pexels'ten
 # bir kafe masası fotoğrafı (kaynaklar _images/README.md'de). Ürün ekranı
@@ -39,7 +38,7 @@ features:
     text: "Fiyatları, ürünleri ve açıklamaları kontrol panelinden güncelliyorsunuz, değişiklik o anda menüde görünüyor. Menüyü yeniden bastırmanız gerekmiyor."
   - title: "Uygulama indirmeden, temassız"
     text: "Müşteriniz masadaki QR kodu telefonunun kamerasıyla okutuyor, menü tarayıcıda açılıyor. Uygulama kurmasına ya da üye olmasına gerek yok."
-order: 4
+order: 3
 draft: false
 ---
 

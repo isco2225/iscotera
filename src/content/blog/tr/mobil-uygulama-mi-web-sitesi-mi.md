@@ -1,6 +1,6 @@
 ---
 title: "Mobil Uygulama mı, Mobil Uyumlu Web Sitesi mi?"
-description: "Mağazada bir uygulamanız olsun mu, yoksa telefonda iyi çalışan bir web sitesi yeter mi? İki kendi projemizde verdiğimiz kararlar üzerinden, hangisinin ne zaman doğru olduğunu anlatıyoruz."
+description: "Mağazada bir uygulamanız olsun mu, yoksa telefonda iyi çalışan bir web sitesi yeter mi? Hangisinin ne zaman doğru olduğunu anlatıyoruz."
 pubDate: 2026-09-01
 tags: ["mobil", "web", "karar rehberi"]
 cover: "../_images/mobil-uygulama-mi-web-sitesi-mi/cover.jpg"
@@ -15,9 +15,8 @@ ikisi de tek başına uygulama yaptırmak için yeterli sebep değil. Çünkü
 çalışan bir web sitesi çözüyor ve bunun maliyeti, mağazaya çıkan bir
 uygulamanın epey altında kalıyor.
 
-Bu yazı o soruyu cevaplamak için. Genel kurallar yerine kendi
-projelerimizde bu kararı nasıl verdiğimizi anlatacağız, çünkü aynı soruya
-iki projede iki farklı cevap verdik.
+Bu yazı o soruyu cevaplamak için. Önce kendi uygulamamız İbadet Rehberim'i
+neden mağazaya çıkardığımızı, sonra web'in ne zaman yettiğini anlatacağız.
 
 ## Önce kavramları netleştirelim
 
@@ -26,8 +25,7 @@ iki projede iki farklı cevap verdik.
 - **Mobil uyumlu web sitesi.** Tarayıcıda açılır, ekrana göre kendini
   düzenler. Kurulum yok, mağaza yok; bir bağlantı yeter.
 - **Web uygulaması.** Bu da tarayıcıda çalışır, ama bir siteden çok bir
-  araçtır: Giriş yaparsınız, veri girersiniz, rapor alırsınız. Dernek
-  Asistan'ın ofisteki hâli böyle.
+  araçtır: Giriş yaparsınız, veri girersiniz, rapor alırsınız.
 - **Mobil uygulama.** App Store ve Google Play'den indirilir, telefonun
   içinde yaşar. Bildirim gönderir, konumu kullanır, internet yokken de
   çalışabilir. İbadet Rehberim böyle bir uygulama.
@@ -61,28 +59,28 @@ Fikriniz telefonun hangi özelliğine ihtiyaç duyuyor? Bildirim, kamera,
 konum, çevrimdışı çalışma, sensörler... Bunlardan hiçbiri gerekmiyorsa
 büyük ihtimalle uygulamaya da ihtiyacınız yok.
 
-## Dernek Asistan'ı neden önce web yaptık?
+## Web ne zaman yeterli?
 
-Dernek Asistan, bir yardım derneğinin bağış kayıtlarını tuttuğu bir sistem.
-Kullanıcıları dernek personeli; herkese açık bir ürün değil. Burada karar
-farklı oldu.
+Şimdi tersi bir durumu düşünün. Sipariş, stok ya da randevu kayıtlarını
+tuttuğunuz, raporunu aldığınız bir sistem. Kullanıcıları kendi
+çalışanlarınız; herkese açık bir ürün değil.
 
-Ofisteki çalışan bilgisayar başında, gün boyu kayıt giriyor, rapor alıyor.
-Bu iş için en uygun ortam tarayıcı: büyük ekran, klavye, açık duran
-sekmeler. Uygulama yapsaydık aynı işi daha küçük bir ekranda yaptırmış
-olurduk. Ayrıca personel değiştikçe herkese "mağazadan indir, şu hesapla
-gir" demek yerine bir bağlantı paylaşmak yetiyor.
+Böyle bir sistemi çalışanlarınız çoğunlukla bilgisayar başında, gün boyu
+kayıt girip rapor alarak kullanır. Bu iş için en uygun ortam tarayıcıdır:
+büyük ekran, klavye, açık duran sekmeler. Uygulama yaptırsanız aynı işi
+daha küçük bir ekrana taşımış olursunuz. Ekibe yeni biri katıldığında
+"mağazadan indir, şu hesapla gir" demek yerine bir bağlantı paylaşmanız
+yeter.
 
-Ama sahada çalışanlar da var: bağışı yerinde alan, kaydı telefonundan
-girmek isteyenler. Bu yüzden sistem mobilde de çalışıyor. Burada bir ayrım
-önemli: Bu bir mobil uygulama değil, mobilde de çalışan aynı sistem.
-Sahadaki ihtiyaç ofistekinin küçültülmüş hâli ve telefonun özel bir
-yeteneğine gerek duymuyor. İleride bildirim gerekirse (örneğin "bu bağışın
-ödemesi gecikti"), bunu o zaman ele alırız.
+Dışarıda çalışan, kaydı telefonundan girmek isteyen biri varsa sistem
+mobilde de çalışır. Burada bir ayrım önemli: Bu bir mobil uygulama değil,
+mobilde de çalışan aynı sistemdir. Dışarıdaki ihtiyaç çoğu zaman
+ofistekinin küçültülmüş hâlidir ve telefonun özel bir yeteneğine gerek
+duymaz. İleride bildirim gerekirse bunu o zaman ele alırız.
 
 Bu kararın parasal karşılığı şu: tek sistem, tek bakım, mağaza süreci yok.
-Aynı işi mağazaya çıkan bir uygulamayla yapsaydık dernek daha fazla
-ödeyecek ve karşılığında fazladan bir şey almayacaktı.
+Aynı işi mağazaya çıkan bir uygulamayla yaptırsaydınız daha fazla öder,
+karşılığında fazladan bir şey almazdınız.
 
 ## Mobil uygulamanın görünmeyen maliyetleri
 
@@ -119,8 +117,7 @@ Kendi kararımızı verirken sırayla şunlara bakıyoruz:
    verir, ama bu ancak birinci sorunun cevabı evetse anlamlı.
 4. **Bütçe kısıtlıysa hangisiyle başlanır?** Neredeyse her zaman web.
    Çalışan bir sistemin üstüne uygulama eklemek, uygulamayı baştan yazmaktan
-   ucuzdur. Dernek Asistan'da bu yüzden web ile başladık; uygulama gerekirse
-   sonradan eklenir.
+   ucuzdur. Uygulama gerekirse sonradan eklenir.
 
 "Herkesin var" cevabını bu listeye bilerek almadık.
 
